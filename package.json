@@ -1,0 +1,22 @@
+{
+  "name": "hackreactor-front-end-capstone-",
+  "version": "1.0.0",
+  "description": "FEC front end project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Asok/hackreactor-front-end-capstone-.git"
+  },
+  "author": "Team-Asok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Asok/hackreactor-front-end-capstone-/issues"
+  },
+  "homepage": "https://github.com/Team-Asok/hackreactor-front-end-capstone-#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
