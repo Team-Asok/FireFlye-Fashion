@@ -3,7 +3,7 @@ import React from 'react';
 const QandA = function () {
   return (
     <div>
-      Hello world
+      Questions and Answers
     </div>
   );
 };
