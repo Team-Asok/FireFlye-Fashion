@@ -1,15 +1,23 @@
 
-### Project-Name: FEC front end project
+# Project-Name: Team-Asok Front-End Capstone
 
-#### Table of Contents
-1.Usage
-2.Requirements
-3.Development
+### Overview
+A front-end focused project providing a user interface for customers to browse items in a retail catalog.
 
+### Table of Contents
+* Description
+* Installation
+* Usage
+* Requirements
+* Team Members
 
-#### Usage
+### Description
 
+### Installation
 
-#### Requirements
+### Usage
+_Images to come_
 
-#### Development
+### Requirements
+
+### Team Members
