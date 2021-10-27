@@ -1,0 +1,32 @@
+* {
+
+}
+
+#index {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 500px 500px 500px;
+
+
+}
+
+#QandA {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  font-size: 100px;
+
+}
+
+#RandR {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 100px;
+
+}
+
+#Overview {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-size: 100px;
+
+}

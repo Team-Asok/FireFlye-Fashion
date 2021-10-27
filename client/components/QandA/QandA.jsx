@@ -2,7 +2,7 @@ import React from 'react';
 
 const QandA = function () {
   return (
-    <div>
+    <div id="QandA">
       Questions and Answers
     </div>
   );
