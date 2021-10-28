@@ -11,10 +11,11 @@
 }
 
 #QandA {
+  background-color: rosybrown;
   grid-row-start: 3;
   grid-row-end: 4;
   font-size: 100px;
-
+  display: grid;
 }
 
 #RandR {

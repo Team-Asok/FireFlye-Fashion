@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Overview = function() {
+// eslint-disable-next-line func-names
+const Overview = function () {
   return (
     <div id="Overview">Overview</div>
   );
