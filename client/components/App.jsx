@@ -44,16 +44,13 @@ class App extends React.Component {
   -------------------------------------------------------------------------------- */
 
   getProductReviews(productID) {
-    console.log(productID);
     axios.get(`/reviews/${productID}`)
       .then((results) => {
-        this.setAsyncState({ products: results.data })
-          .then(() => console.log(this.state.products));
+        this.setState({ reviews: results.data });
       });
   }
 
   getProductQandA(productID) {
-    console.log(productID);
     axios.get(`/qa/questions/${productID}`)
       .then((results) => {
         this.setState({ qAndA: results.data });
