@@ -4,11 +4,11 @@ const app = express();
 
 const port = 3000;
 
-const path = require('path');
-
 const product = require('./helpers/products');
 
 const qa = require('./helpers/questions-answers');
+
+const review = require('./helpers/review');
 
 // middleware
 app.use(express.json());
@@ -29,12 +29,22 @@ app.get('/products', (req, res) => {
     });
 });
 
+// GET ALL QUESTIONS SPECIFIC TO A PRODUCT ID
 app.get('/qa/questions/:product_id', (req, res) => {
-  // console.log(req.url);
   // console.log('this is insde get qa', req.params); <--- PRODUCT ID
   qa.getAllQuestions(req.params.product_id)
     .then((response) => {
-      console.log(response);
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// GET ALL REVIEWS SPECIFIC TO A PRODUCT ID
+app.get('/reviews/:product_id', (req, res) => {
+  review.getAllReviews(req.params.product_id)
+    .then((response) => {
       res.status(200).send(response);
     })
     .catch((err) => {

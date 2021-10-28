@@ -30,7 +30,7 @@ class App extends React.Component {
     const { displayedProduct } = this.state;
     axios.get('/products')
       .then((results) => {
-        this.setState({ products: results.data })
+        this.setState({ products: results.data });
       })
       .catch((err) => { console.log(`Error: ${err}`); })
       /* Creates random index and select product based on that index. Sets product to
@@ -46,7 +46,7 @@ class App extends React.Component {
       })
       // Invokes getProductQandA passing in productId for displayed product
       .then(() => {
-        this.getProductQandA(37311); // <--- REMOVE THIS LATER
+        this.getProductQandA({ displayedProduct }.id);
       });
   }
   /* Sends axios request to server at /reviews with parameter equal to the product id
