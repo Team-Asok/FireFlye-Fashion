@@ -42,7 +42,7 @@ const getReviewMeta = (productID) => {
 // POST REVIEW
 const addReview = (paramsObj) => {
   let options = {
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta',
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews',
     method: 'post',
     headers: {
       'User-Agent': 'request',
@@ -57,10 +57,31 @@ const addReview = (paramsObj) => {
   );
 };
 
+// PUT REVIEW HELPFUL
+const markReviewHelpful = (reviewID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/helpful`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      review_id: reviewID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
 module.exports = {
   getAllReviews,
   getReviewMeta,
   addReview,
+  markReviewHelpful,
 };
 
 /*
