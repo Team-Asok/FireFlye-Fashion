@@ -107,7 +107,7 @@ const markQuestionHelpful = (questionID) => {
 // PUT QUESTION REPORT
 const reportReview = (questionID) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/helpful`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/report`,
     method: 'put',
     headers: {
       'User-Agent': 'request',
@@ -124,6 +124,45 @@ const reportReview = (questionID) => {
   );
 };
 
+// PUT ANSWER HELPFUL
+const markAnswerHelpful = (answerID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/answers/${answerID}/helpful`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      answer_id: answerID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// PUT QUESTION REPORT
+const reportAnswer = (answerID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/answers/${answerID}/report`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      answer_id: answerID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
 module.exports = {
   getAllQuestions,
   getAnswers,
@@ -131,6 +170,8 @@ module.exports = {
   addAnswer,
   markQuestionHelpful,
   reportReview,
+  markAnswerHelpful,
+  reportAnswer,
 };
 
 /*
