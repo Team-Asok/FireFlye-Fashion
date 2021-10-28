@@ -1,8 +1,14 @@
 import React from 'react';
+import ReviewList from './ReviewList';
+import ReviewMetaDataContainer from './ReviewMetaDataContainer';
 
 const RandR = function () {
   return (
-    <div>Reviews and Ratings</div>
+    <div>
+      <ReviewMetaDataContainer />
+      <ReviewList />
+    </div>
+
   );
 };
 export default RandR;
