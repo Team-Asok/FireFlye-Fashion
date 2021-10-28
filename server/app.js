@@ -10,7 +10,7 @@ const product = require('./helpers/products');
 
 // middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static('dist'));
 
 app.listen(port, () => {
   console.log(`Currently listening to ${port}`);
@@ -19,7 +19,7 @@ app.listen(port, () => {
 app.get('/products', (req, res) => {
   product.getProductList()
     .then((response) => {
-      res.send(response.data)
+      res.send(response.data);
     })
     .catch((err) => {
       console.log(err);
