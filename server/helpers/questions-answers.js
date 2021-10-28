@@ -3,7 +3,7 @@ const config = require('../config');
 
 // GET QUESTIONS
 const getAllQuestions = (productID) => {
-  const options = {
+  let options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/',
     headers: {
       'User-Agent': 'request',
@@ -28,7 +28,7 @@ const getAllQuestions = (productID) => {
 //     count
 // FIX THIS LATER
 const getAnswers = (questionID) => {
-  const options = {
+  let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe//qa/questions/:${questionId}/answers`,
     headers: {
       'User-Agent': 'request',

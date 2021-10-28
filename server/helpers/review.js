@@ -3,7 +3,7 @@ const config = require('../config');
 
 // GET REVIEW LIST
 const getAllReviews = (productID) => {
-  const options = {
+  let options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/',
     headers: {
       'User-Agent': 'request',
@@ -22,7 +22,7 @@ const getAllReviews = (productID) => {
 
 // GET REVIEW METADATA
 const getReviewMeta = (productID) => {
-  const options = {
+  let options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta',
     headers: {
       'User-Agent': 'request',
@@ -39,24 +39,31 @@ const getReviewMeta = (productID) => {
   );
 };
 
+// POST REVIEW
+const addReview = (paramsObj) => {
+  let options = {
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta',
+    method: 'post',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: paramsObj,
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
 module.exports = {
   getAllReviews,
   getReviewMeta,
+  addReview,
 };
 
 /*
-POST REVIEW
-  body params
-    product_id
-    rating
-    summary
-    body
-    recommend
-    name
-    email
-    photos
-    characteristics
-
 PUT REVIEW HELPFUL
   review_id
 
