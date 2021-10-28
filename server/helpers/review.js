@@ -77,11 +77,32 @@ const markReviewHelpful = (reviewID) => {
   );
 };
 
+// PUT REVIEW HELPFUL
+const reportReview = (reviewID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/report`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      review_id: reviewID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
 module.exports = {
   getAllReviews,
   getReviewMeta,
   addReview,
   markReviewHelpful,
+  reportReview,
 };
 
 /*
