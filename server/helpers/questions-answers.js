@@ -2,9 +2,6 @@ const axios = require('axios');
 const config = require('../config');
 
 // GET QUESTIONS
-//   product_id
-//   page
-//   count
 const getAllQuestions = (productID) => {
   const options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/',
@@ -12,7 +9,7 @@ const getAllQuestions = (productID) => {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
     },
-    params: {
+    params: { // ADD PAGE AND COUNT PARAMS LATER
       product_id: productID,
     },
   };
