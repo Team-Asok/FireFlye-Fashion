@@ -48,7 +48,7 @@ const addReview = (paramsObj) => {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
     },
-    params: paramsObj,
+    data: paramsObj,
   };
   return (
     axios(options)
@@ -104,11 +104,3 @@ module.exports = {
   markReviewHelpful,
   reportReview,
 };
-
-/*
-PUT REVIEW HELPFUL
-  review_id
-
-PUT REVIEW REPORT
-  review_id
-*/
