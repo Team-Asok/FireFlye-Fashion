@@ -29,8 +29,8 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/qa/questions/:product_id', (req, res) => {
-  // console.log(req.url)
-  // console.log('this is insde get qa', req.params);
+  console.log(req.url)
+  console.log('this is insde get qa', req.params);
 });
 
 app.post('/', (req, res) => {
