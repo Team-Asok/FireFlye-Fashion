@@ -13,11 +13,14 @@ class App extends React.Component {
       qAndA: [],
       displayedProduct: null,
     };
+    this.getAllProducts = this.getAllProducts.bind(this);
+    this.getProductQandA = this.getProductQandA.bind(this);
+    this.getProductReviews = this.getProductReviews.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.getAllProducts();
-  // }
+  componentDidMount() {
+    this.getAllProducts();
+  }
 
   /* Sends Axios get request to server to retrieve product data from Product API
 -------------------------------------------------------------------------------- */
