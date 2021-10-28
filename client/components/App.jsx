@@ -33,7 +33,7 @@ class App extends React.Component {
       /* Creates random index and select product based on that index. Sets product to
       displayed Product */
       .then(() => {
-        const index = (Math.random() * { products }.length);
+        const index = Math.floor((Math.random() * { products }.length));
         this.setState({ displayedProduct: { products }[index] });
       })
       // Invokes getProductReviews passing in productId for displayed product
