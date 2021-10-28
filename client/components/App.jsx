@@ -13,11 +13,14 @@ class App extends React.Component {
       qAndA: [],
       displayedProduct: null,
     };
+    this.getAllProducts = this.getAllProducts.bind(this);
+    this.getProductQandA = this.getProductQandA.bind(this);
+    this.getProductReviews = this.getProductReviews.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.getAllProducts();
-  // }
+  componentDidMount() {
+    this.getAllProducts();
+  }
 
   /* Sends Axios get request to server to retrieve product data from Product API
 -------------------------------------------------------------------------------- */
@@ -27,14 +30,15 @@ class App extends React.Component {
     const { displayedProduct } = this.state;
     axios.get('/products')
       .then((results) => {
-        this.setState({ products: results.data });
+        this.setState({ products: results.data })
       })
       .catch((err) => { console.log(`Error: ${err}`); })
       /* Creates random index and select product based on that index. Sets product to
       displayed Product */
       .then(() => {
+        // console.log('this is products ', {products})
         const index = Math.floor((Math.random() * { products }.length));
-        this.setState({ displayedProduct: { products }[index] });
+        this.setState({ displayedProduct: { products }[index] })
       })
       // Invokes getProductReviews passing in productId for displayed product
       .then(() => {
@@ -57,6 +61,7 @@ class App extends React.Component {
   }
 
   getProductQandA(productID) {
+    // console.log(productID)
     axios.get(`/qa/questions/${productID}`)
       .then((results) => {
         this.setState({ qAndA: results.data });

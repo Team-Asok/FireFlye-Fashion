@@ -1,8 +1,7 @@
 const axios = require('axios');
 const config = require('../config');
 
-// https://app-hrsei-api.herokuapp.com/api/fec2/:CAMPUS_CODE/.
-
+// GET PRODUCT LIST
 const getProductList = () => {
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/`,
@@ -22,10 +21,6 @@ module.exports = {
   getProductList,
 };
 /*
-GET PRODUCT LIST
-  page
-  count
-
 GET PRODUCT INFO
   product_id
 
