@@ -19,8 +19,7 @@ app.listen(port, () => {
 app.get('/products', (req, res) => {
   product.getProductList()
     .then((response) => {
-      console.log('response inside get products ')
-      res.send(response);
+      res.send(response.data)
     })
     .catch((err) => {
       console.log(err);
