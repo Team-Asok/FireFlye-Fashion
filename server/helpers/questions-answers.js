@@ -5,17 +5,20 @@ const config = require('../config');
 //   product_id
 //   page
 //   count
-const getAllQuestions = () => {
+const getAllQuestions = (productID) => {
   const options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/',
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
     },
+    params: {
+      product_id: productID,
+    },
   };
   return (
     axios(options)
-      .then((response) => response)
+      .then((response) => response.data)
       .catch((err) => err)
   );
 };
@@ -47,18 +50,6 @@ module.exports = {
 };
 
 /*
-GET QUESTIONS
-  product_id
-  page
-  count
-
-GET ANSWERS
-  params
-    question_id
-  query parameters
-    page
-    count
-
 POST QUESTIONS
   body params
     body

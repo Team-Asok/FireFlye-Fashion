@@ -18,19 +18,28 @@ app.listen(port, () => {
   console.log(`Currently listening to ${port}`);
 });
 
+// GET ALL PRODUCTS
 app.get('/products', (req, res) => {
   product.getProductList()
     .then((response) => {
-      res.send(response.data);
+      res.status(200).send(response.data);
     })
     .catch((err) => {
-      console.log(err);
+      res.status(404).send(err);
     });
 });
 
 app.get('/qa/questions/:product_id', (req, res) => {
-  console.log(req.url)
-  console.log('this is insde get qa', req.params);
+  // console.log(req.url);
+  // console.log('this is insde get qa', req.params); <--- PRODUCT ID
+  qa.getAllQuestions(req.params.product_id)
+    .then((response) => {
+      console.log(response);
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
 });
 
 app.post('/', (req, res) => {

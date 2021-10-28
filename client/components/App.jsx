@@ -46,7 +46,7 @@ class App extends React.Component {
       })
       // Invokes getProductQandA passing in productId for displayed product
       .then(() => {
-        this.getProductQandA({ displayedProduct }.id);
+        this.getProductQandA(37311); // <--- REMOVE THIS LATER
       });
   }
   /* Sends axios request to server at /reviews with parameter equal to the product id
