@@ -29,7 +29,86 @@ const getAllQuestions = (productID) => {
 // FIX THIS LATER
 const getAnswers = (questionID) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe//qa/questions/:${questionId}/answers`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/:${questionId}/answers`,
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      question_id: questionID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// POST QUESTIONS
+const addQuestion = (paramsObj) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions`,
+    method: 'post',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    data: paramsObj,
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// POST ANSWER
+const addAnswer = (questionID, paramsObj) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/answers`,
+    method: 'post',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    data: paramsObj,
+    params: {
+      question_id: questionID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// PUT QUESTION HELPFUL
+const markQuestionHelpful = (questionID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/helpful`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      question_id: questionID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// PUT QUESTION REPORT
+const reportReview = (questionID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/helpful`,
+    method: 'put',
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
@@ -48,24 +127,13 @@ const getAnswers = (questionID) => {
 module.exports = {
   getAllQuestions,
   getAnswers,
+  addQuestion,
+  addAnswer,
+  markQuestionHelpful,
+  reportReview,
 };
 
 /*
-POST QUESTIONS
-  body params
-    body
-    name
-    email
-    product_id
-
-POST ANSWERS
-  params
-    question_id
-  body params
-    body
-    name
-    email
-    photos
 
 PUT QUESTIONS HELPFUL
   question_id

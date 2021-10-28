@@ -77,7 +77,7 @@ const markReviewHelpful = (reviewID) => {
   );
 };
 
-// PUT REVIEW HELPFUL
+// PUT REVIEW REPORT
 const reportReview = (reviewID) => {
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/report`,
