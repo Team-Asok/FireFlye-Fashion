@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import QandA from './QandA/QandA';
-import RandR from './RandR/RandR';
-import Overview from './Overview/Overview';
+import QandA from './QandA/QandA.jsx';
+import RandR from './RandR/RandR.jsx';
+import Overview from './Overview/Overview.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,9 +15,9 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.getAllProducts();
-  }
+  // componentDidMount() {
+  //   this.getAllProducts();
+  // }
 
   /* Sends Axios get request to server to retrieve product data from Product API
 -------------------------------------------------------------------------------- */
@@ -68,7 +68,7 @@ class App extends React.Component {
     const { products } = this.state;
     const { qAndA } = this.state;
     return (
-      <div>
+      <div id="index">
         <Overview products={{ products }} />
         <QandA qAndA={{ qAndA }} />
         <RandR reviews={{ reviews }} />
