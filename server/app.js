@@ -6,14 +6,25 @@ const port = 3000;
 
 const path = require('path');
 
+const product = require('./helpers/products');
+
+// middleware
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.listen(port, () => {
   console.log(`Currently listening to ${port}`);
 });
 
-app.get('/', (req, res) => {
-  res.send('this is from get request inside app.js');
+app.get('/products', (req, res) => {
+  product.getProductList()
+    .then((response) => {
+      console.log('response inside get products ')
+      res.send(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 app.post('/', (req, res) => {
