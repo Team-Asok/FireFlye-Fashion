@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import QandA from './QandA/QandA.jsx';
-import RandR from './RandR/RandR.jsx';
-import Overview from './Overview/Overview.jsx';
+import QandA from './QandA/QandA';
+import RandR from './RandR/RandR';
+import Overview from './Overview/Overview';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       products: [],
       reviews: [],
-      qAandA: [],
+      qAndA: [],
       displayedProduct: null,
     };
   }
@@ -48,26 +48,30 @@ class App extends React.Component {
   /* Sends axios request to server at /reviews with parameter equal to the product id
   of current display product. Sets state of reviews equal to response.data
   -------------------------------------------------------------------------------- */
+
   getProductReviews(productID) {
     axios.get(`/reviews/${productID}`)
-
+      .then((results) => {
+        this.setState({ reviews: results.data });
+      });
   }
 
-  getProductQandA() {
-
+  getProductQandA(productID) {
+    axios.get(`/qa/questions/${productID}`)
+      .then((results) => {
+        this.setState({ qAndA: results.data });
+      });
   }
-
-
-
-
 
   render() {
+    const { reviews } = this.state;
+    const { products } = this.state;
+    const { qAndA } = this.state;
     return (
       <div>
-        Hello world
-        <Overview />
-        <QandA />
-        <RandR />
+        <Overview products={{ products }} />
+        <QandA qAndA={{ qAndA }} />
+        <RandR reviews={{ reviews }} />
       </div>
     );
   }
