@@ -16,6 +16,13 @@
   display: grid;
 }
 
+#QAList {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 12px;
+  display: grid;
+}
+
 #RandR {
   background-color: rgb(161, 233, 192);
   grid-row-start: 3;
