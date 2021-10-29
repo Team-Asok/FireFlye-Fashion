@@ -147,6 +147,28 @@ app.put('/qa/questions/:question_id/report', (req, res) => {
     });
 });
 
+// MARK answer HELPFUL
+app.put('/qa/answers/:answer_id/helpful', (req, res) => {
+  qa.markQuestionHelpful(req.params.answer_id)
+    .then((response) => {
+      res.status(204).send();
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
+// REPORT QUESTION
+app.put('/qa/answers/:answer_id/report', (req, res) => {
+  qa.markQuestionHelpful(req.params.answer_id)
+    .then((response) => {
+      res.status(204).send();
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
 /*
 * REVIEW REQUEST HANDLERS ------------------
 */
