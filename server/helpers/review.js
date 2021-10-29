@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 const axios = require('axios');
 const config = require('../config');
 

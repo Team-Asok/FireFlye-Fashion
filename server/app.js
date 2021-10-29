@@ -80,6 +80,34 @@ app.get('/qa/questions/:product_id', (req, res) => {
     });
 });
 
+// GET ALL ANSWER SPECIFIC TO A PRODUCT ID
+app.get('/qa/questions/:product_id', (req, res) => {
+  qa.getAnswers(req.params.question_id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// POST QUESTION
+app.post('/qa/questions', (req, res) => {
+  let questionData = {
+    body: req.data.body,
+    name: req.data.name,
+    email: req.data.email,
+    product_id: req.data.product_id,
+  };
+  qa.addQuestion(questionData)
+    .then((response) => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
 /*
 * REVIEW REQUEST HANDLERS ------------------
 */
@@ -96,7 +124,7 @@ app.get('/reviews/:product_id', (req, res) => {
 
 // GET REVIEW METADATA
 app.get('/reviews/meta', (req, res) => {
-  review.getAllReviews(req.params.product_id)
+  review.getReviewMeta(req.params.product_id)
     .then((response) => {
       res.status(200).send(response);
     })
@@ -140,7 +168,7 @@ app.put('/reviews/:review_id/helpful', (req, res) => {
 
 // PUT REVIEW REPORT
 app.put('/reviews/:review_id/report', (req, res) => {
-  review.markReviewHelpful(req.params.review_id)
+  review.reportReview(req.params.review_id)
     .then((response) => {
       res.status(204).send();
     })
