@@ -108,6 +108,23 @@ app.post('/qa/questions', (req, res) => {
     });
 });
 
+// POST ANSWER
+app.post('qa/questions/:question_id/answers', (req, res) => {
+  let answerData = {
+    body: req.data.body,
+    name: req.data.name,
+    email: req.data.email,
+    photos: req.data.photos,
+  };
+  qa.addAnswer(req.params.question_id, answerData)
+    .then((response) => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
 /*
 * REVIEW REQUEST HANDLERS ------------------
 */
