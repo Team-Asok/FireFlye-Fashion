@@ -105,6 +105,28 @@ app.get('/reviews/meta', (req, res) => {
     });
 });
 
+// POST REVIEW
+app.post('/reviews', (req, res) => {
+  let reviewData = {
+    product_id: req.data.product_id,
+    rating: req.data.rating,
+    summary: req.data.summary,
+    body: req.data.body,
+    recommend: req.data.recommend,
+    name: req.data.name,
+    email: req.data.email,
+    photos: req.data.photos,
+    characteristics: req.data.characteristics,
+  };
+  review.addReview(reviewData)
+    .then((response) => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      res.status(400).send(err);
+    });
+});
+
 // ----------------------------------
 app.post('/', (req, res) => {
   res.send('this is from post request inside app.js');
