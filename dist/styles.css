@@ -5,7 +5,7 @@
 #index {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1000px 1000px 1000px;
+  grid-template-rows: 1000px 1000px 1fr;
 }
 
 #QandA {
@@ -20,11 +20,13 @@
   grid-column: 1 / 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  margin: 10px
+  margin: 10px;
+  list-style-type: none;
 }
 #reviewtile {
   background-color: teal;
   margin: 10px;
+  list-style-type: none;
 }
 
 #RandR {
@@ -58,6 +60,7 @@
   grid-template-columns: auto;
   grid-template-rows: 10% 70% 20%;
   align-content: space-evenly;
+
   /* justify-content: space-evenly; */
 }
 
