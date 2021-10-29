@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
 import AddAReview from './AddAReview.jsx';
 import MoreReviews from './MoreReviews.jsx';
+import ReviewCount from './ReviewCount.jsx'
 
 const StyledDiv = styled.div`
    border-style: dotted;
@@ -15,6 +16,7 @@ const ReviewList = (props) => {
     return (
       <>
         <StyledDiv id="reviewlist">
+          <ReviewCount />
           <ul id="reviewListTilescontainer">
           {props.reviews.results.map((review) => <ReviewTile review={review} />)}
           </ul>

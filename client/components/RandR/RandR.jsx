@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewList from './ReviewList.jsx';
+import ReviewList from '.ReviewListContainer/ReviewList.jsx';
 import ReviewMetaDataContainer from './ReviewMetaDataContainer.jsx';
 
 // class RandR extends React.Component {

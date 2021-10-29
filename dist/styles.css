@@ -76,22 +76,25 @@
 }
 
 button#more-reviews {
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 100px;
+  grid-column: 1 / 2;
   grid-row-start: 3;
   grid-row-end: 4;
   background-color:rgb(161, 233, 192);
+  place-self: left;
   align-self: center;
 
 }
 
 button#add-a-review {
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 100px;
+  grid-column: 1 / 2;
   grid-row-start: 3;
   grid-row-end: 4;
   background-color:rgb(161, 233, 192);
-  align-self: center;
+  place-self: center;
 
 }
 
