@@ -184,7 +184,7 @@ app.get('/reviews/:product_id', (req, res) => {
 });
 
 // GET REVIEW METADATA
-app.get('/reviews/meta', (req, res) => {
+app.get('/reviews/meta/:product_id', (req, res) => {
   review.getReviewMeta(req.params.product_id)
     .then((response) => {
       res.status(200).send(response);
