@@ -58,14 +58,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { reviews } = this.state;
-    const { products } = this.state;
-    const { qAndA } = this.state;
     return (
       <div id="index">
-        <Overview products={{ products }} />
-        <QandA qAndA={{ qAndA }} />
-        <RandR reviews={{ reviews }} />
+        <Overview products={this.state.products} />
+        <QandA qAndA={this.state.qAndA} />
+        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews} />
       </div>
     );
   }
