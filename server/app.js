@@ -18,6 +18,9 @@ app.listen(port, () => {
   console.log(`Currently listening to ${port}`);
 });
 
+/*
+* PRODUCT REQUEST HANDLERS ------------------
+*/
 // GET ALL PRODUCTS
 app.get('/products', (req, res) => {
   product.getProductList()
@@ -62,6 +65,9 @@ app.get('/products/:product_id/related', (req, res) => {
     });
 });
 
+/*
+* Q&A REQUEST HANDLERS ------------------
+*/
 // GET ALL QUESTIONS SPECIFIC TO A PRODUCT ID
 app.get('/qa/questions/:product_id', (req, res) => {
   // console.log('this is insde get qa', req.params); <--- PRODUCT ID
@@ -74,6 +80,9 @@ app.get('/qa/questions/:product_id', (req, res) => {
     });
 });
 
+/*
+* REVIEW REQUEST HANDLERS ------------------
+*/
 // GET ALL REVIEWS SPECIFIC TO A PRODUCT ID
 app.get('/reviews/:product_id', (req, res) => {
   review.getAllReviews(req.params.product_id)
@@ -85,6 +94,18 @@ app.get('/reviews/:product_id', (req, res) => {
     });
 });
 
+// GET REVIEW METADATA
+app.get('/reviews/meta', (req, res) => {
+  review.getAllReviews(req.params.product_id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// ----------------------------------
 app.post('/', (req, res) => {
   res.send('this is from post request inside app.js');
 });
