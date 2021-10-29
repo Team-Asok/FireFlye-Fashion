@@ -3,7 +3,7 @@ const config = require('../config');
 
 // GET REVIEW LIST
 const getAllReviews = (productID) => {
-  const options = {
+  let options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/',
     headers: {
       'User-Agent': 'request',
@@ -22,7 +22,7 @@ const getAllReviews = (productID) => {
 
 // GET REVIEW METADATA
 const getReviewMeta = (productID) => {
-  const options = {
+  let options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/meta',
     headers: {
       'User-Agent': 'request',
@@ -39,26 +39,68 @@ const getReviewMeta = (productID) => {
   );
 };
 
+// POST REVIEW
+const addReview = (paramsObj) => {
+  let options = {
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews',
+    method: 'post',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    data: paramsObj,
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// PUT REVIEW HELPFUL
+const markReviewHelpful = (reviewID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/helpful`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      review_id: reviewID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
+// PUT REVIEW REPORT
+const reportReview = (reviewID) => {
+  let options = {
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/report`,
+    method: 'put',
+    headers: {
+      'User-Agent': 'request',
+      Authorization: config.API_KEY,
+    },
+    params: {
+      review_id: reviewID,
+    },
+  };
+  return (
+    axios(options)
+      .then((response) => response)
+      .catch((err) => err)
+  );
+};
+
 module.exports = {
   getAllReviews,
   getReviewMeta,
+  addReview,
+  markReviewHelpful,
+  reportReview,
 };
-/*
-POST REVIEW
-  body params
-    product_id
-    rating
-    summary
-    body
-    recommend
-    name
-    email
-    photos
-    characteristics
-
-PUT REVIEW HELPFUL
-  review_id
-
-PUT REVIEW REPORT
-  review_id
-*/

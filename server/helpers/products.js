@@ -19,7 +19,6 @@ const getProductList = () => {
 };
 
 // GET PRODUCT INFO
-//   product_id
 const getProductInfo = (productID) => {
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${product_id}`,
@@ -39,7 +38,6 @@ const getProductInfo = (productID) => {
 };
 
 // GET PRODUCT STYLES
-//   product_id
 const getProductStyles = (productID) => {
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${product_id}/styles`,
@@ -59,7 +57,6 @@ const getProductStyles = (productID) => {
 };
 
 // GET RELATED PRODUCTS
-//   product_id
 const getRelatedProducts = (productID) => {
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${product_id}/related`,
