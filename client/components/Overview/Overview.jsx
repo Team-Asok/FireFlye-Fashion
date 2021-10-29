@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from './Banner.jsx';
-import Gallery from './ImageGallery.jsx';
-import ProductDescription from './ProductDescription.jsx';
-import ProductInfo from './ProductInfo.jsx';
-import SiteMessage from './SiteMessage.jsx';
+import Banner from './Overview components/Banner.jsx';
+import Gallery from './Overview components/ImageGallery.jsx';
+import ProductDescription from './Overview components/ProductDescription.jsx';
+import ProductInfo from './Overview components/ProductInfo.jsx';
+import SiteMessage from './Overview components/SiteMessage.jsx';
 
 // Should also need Review Info for Star component
 class Overview extends React.Component {
