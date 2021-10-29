@@ -15,17 +15,18 @@ class ReviewList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'two-reviews',
+      view: 'default',
     };
     this.renderView = this.renderView.bind(this);
     this.expandReviewsClickHandler = this.expandReviewsClickHandler.bind(this);
   }
 
-  expandReviewsClickHandler(e) {
+  expandReviewsClickHandler() {
+    this.setState({ view: 'all-reviews' });
   }
 
   renderView(view) {
-    if (view === 'two-reviews') {
+    if (view === 'default') {
       return (
         <>
           <ReviewTile review={this.props.reviews.results[0]} />
@@ -46,7 +47,7 @@ class ReviewList extends React.Component {
             {this.renderView(this.state.view)}
             </ul>
             <AddAReview />
-            <MoreReviews />
+            <MoreReviews onClick={this.expandReviewsClickHandler} />
           </StyledDiv>
         </>
       );
