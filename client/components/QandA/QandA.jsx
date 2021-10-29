@@ -2,8 +2,8 @@ import React from 'react';
 import QAList from './QAComponents/QAList.jsx';
 
 class QandA extends React.Component {
-  constructor({ qAndA }) {
-    super({ qAndA });
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 

@@ -1,15 +1,12 @@
 import React from 'react';
+import QAListEntry from '/QAListEntry';
 
-const QAList = ({ questions }) => {
+const QAList = () => {
   return (
     <ul id="QAList">
-    <li>THIS IS A LIST</li>
-    <li>THIS IS A LIST</li>
-    <li>THIS IS A LIST</li>
-    <li>THIS IS A LIST</li>
-    <li>THIS IS A LIST</li>
+      <QAListEntry />
   </ul>
-  )
+  );
 };
 
 export default QAList;
