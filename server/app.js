@@ -40,6 +40,17 @@ app.get('/products/:product_id', (req, res) => {
     });
 });
 
+// GET PRODUCT STYLES
+app.get('/products/:product_id/styles', (req, res) => {
+  product.getProductInfo(req.params.product_id)
+    .then((response) => {
+      res.status(200).send(response.data);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
 // GET ALL QUESTIONS SPECIFIC TO A PRODUCT ID
 app.get('/qa/questions/:product_id', (req, res) => {
   // console.log('this is insde get qa', req.params); <--- PRODUCT ID
