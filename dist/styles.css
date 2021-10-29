@@ -56,24 +56,29 @@
   background-color: lightcoral;
   grid-column-start: 1;
   grid-column-end: 3;
+  display: grid;
 }
 
 #SiteMessage {
   background-color: yellow;
   grid-column-start: 1;
   grid-column-end: 3;
+  display: grid;
 }
 
 #Gallery {
   background-color: gray;
+  display: grid;
 }
 
 #ProductInfo {
   background-color: teal;
+  display: grid;
 }
 
 #ProductDescription {
   background-color: violet;
   grid-column-start: 1;
   grid-column-end: 3;
+  display: grid;
 }
