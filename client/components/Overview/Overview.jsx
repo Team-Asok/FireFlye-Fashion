@@ -18,7 +18,7 @@ class Overview extends React.Component {
         <Banner />
         <SiteMessage />
         <Gallery />
-        <ProductInfo />
+        <ProductInfo product={this.props.products.products[0]} />
         <ProductDescription />
       </div>
     );

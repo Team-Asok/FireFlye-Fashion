@@ -7,7 +7,7 @@ import Cart from './ProductInfo components/Cart.jsx';
 const ProductInfo = (props) => (
   <div id="ProductInfo">
     <RatingLink />
-    <Info />
+    <Info product={props.product} />
     <Styles />
     <Cart />
   </div>
