@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
+import AddAReview from './AddAReview.jsx';
+import MoreReviews from './MoreReviews.jsx';
 
 const StyledDiv = styled.div`
    border-style: dotted;
@@ -11,11 +13,15 @@ const StyledDiv = styled.div`
 const ReviewList = (props) => {
   if (props.reviews.results) {
     return (
-    <StyledDiv id="reviewlist">
-      <ul id="reviewListTilescontainer">
-      {props.reviews.results.map((review) => <ReviewTile review={review} />)}
-      </ul>
-    </StyledDiv>
+      <>
+        <StyledDiv id="reviewlist">
+          <ul id="reviewListTilescontainer">
+          {props.reviews.results.map((review) => <ReviewTile review={review} />)}
+          </ul>
+          <AddAReview />
+          <MoreReviews />
+        </StyledDiv>
+      </>
     );
   }
   return null;
