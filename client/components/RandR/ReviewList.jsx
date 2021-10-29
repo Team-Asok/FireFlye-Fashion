@@ -1,35 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import ReviewTile from './ReviewTile.jsx';
 
-// class ReviewList extends React.Component {
-//   constructor(props) {
-//     console.log(props.reviews)
-//     super(props);
-//     this.state = {
-//       reviews: props.reviews.results
-//     };
-//   }
+const StyledDiv = styled.div`
+   border-style: dotted;
+   background-color: red;
+   border-size 50px;
+ `;
 
-//   componentDidMount() {
-//     this.props.getReviews();
-//   }
-
-//   render() {
-//     return (
-//       <div id="reviewlist">
-//         {/* {this.props.reviews.map((review) => <ReviewTile review={review} />)} */}
-//       </div>
-//     );
-//   }
-// }
 const ReviewList = (props) => {
   if (props.reviews.results) {
-  return (<div id="reviewlist">
-    {console.log(props.reviews.results)}
-    {props.reviews.results.map((review) => <ReviewTile review={review} />)}
-  </div>)
-  } else {
-    return null;
+    return (
+    <StyledDiv id="reviewlist">
+      <ul id="reviewListTilescontainer">
+      {props.reviews.results.map((review) => <ReviewTile review={review} />)}
+      </ul>
+    </StyledDiv>
+    );
   }
+  return null;
 };
 export default ReviewList;
