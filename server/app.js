@@ -127,6 +127,17 @@ app.post('/reviews', (req, res) => {
     });
 });
 
+// PUT REVIEW AS HELPFUL
+app.put('/reviews/:review_id/helpful', (req, res) => {
+  review.markReviewHelpful(req.params.review_id)
+    .then((response) => {
+      res.status(204).send();
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
 // ----------------------------------
 app.post('/', (req, res) => {
   res.send('this is from post request inside app.js');
