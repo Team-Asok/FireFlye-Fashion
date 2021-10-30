@@ -34,6 +34,7 @@ class ReviewList extends React.Component {
         </>
       );
     }
+    console.log(this.props.reviews.results.map((review) => <ReviewTile review={review} />))
     return this.props.reviews.results.map((review) => <ReviewTile review={review} />);
   }
 

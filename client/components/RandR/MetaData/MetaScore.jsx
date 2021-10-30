@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MetaScore = (props) => (
-  <h1>3.5 starts</h1>
+  <div id="meta-score">3.5 starts</div>
 );
 
 export default MetaScore;

@@ -2,7 +2,7 @@ import React from 'react';
 
 const PercentBar = (props) => {
   console.log(props.percentage)
-  return (<td>
+  return (<td style={{'width': '75%'}}>
         <svg width="250" height="15">
           <defs>
               <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
