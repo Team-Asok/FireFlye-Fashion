@@ -1,12 +1,18 @@
 import React from 'react';
-import QAListEntry from '/QAListEntry';
+import QAListEntry from './QAListEntry.jsx';
 
-const QAList = () => {
-  return (
-    <ul id="QAList">
-      <QAListEntry />
-  </ul>
-  );
-};
-
+const QAList = ({ questions }) => {
+  if (!questions) {
+    return <ul></ul>
+  } else {
+    let qaEntry = questions.map((question) => {
+      <QAListEntry question={question} />
+    })
+    return (
+      <ul id="QAList">
+        {qaEntry}
+      </ul>
+    )
+  };
+}
 export default QAList;
