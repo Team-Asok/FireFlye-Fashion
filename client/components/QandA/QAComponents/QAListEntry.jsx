@@ -1,7 +1,7 @@
 import React from 'react';
 
 const QAListEntry = ({ question }) => {
-  console.log('this is questions isnde qa list entry ', question)
+  //console.log('this is questions isnde qa list entry ', question)
   return (
     <li>
       <div>
