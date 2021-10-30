@@ -1,8 +1,11 @@
 import React from 'react';
+import PercentBar from './PercentBar.jsx'
 
 const StarRating = (props) => {
 
   if (props.metaData.ratings) {
+
+// Helper fn. Find total stars of given review
   const findTotalStars = function(ratings) {
     let totalRatings = 0;
     for (var key in ratings) {
@@ -10,9 +13,15 @@ const StarRating = (props) => {
     }
     return totalRatings;
   }
+
+  // Total amount of stars for any given review
+
   let totalStars = findTotalStars(props.metaData.ratings)
-  // Line 14 Gets percentage of total rounded to second decimal point
-  let starPercentage = ((parseInt(props.metaData.ratings['1']) / totalStars) * 100).toFixed(2);
+
+  // Gets percentage of total rounded to second decimal point
+
+  let starPercentage = (starRating) => {
+    return ((parseInt(props.metaData.ratings[starRating]) / totalStars) * 100).toFixed(2);
 }
 
 
@@ -23,17 +32,7 @@ const StarRating = (props) => {
     </tr>
     <tr>
       <td>5 stars</td>
-      <td>
-        <svg width="100" height="20">
-          <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="50%" style={{'stop-color':'rgb(255,255,0)', 'stop-opacity':1}} />
-                <stop offset="51%" style={{'stop-color':'rgb(255,0,0)', 'stop-opacity':1}} />
-              </linearGradient>
-          </defs>
-          <rect width="100" height="20" fill="url(#grad1)"/>
-        </svg>
-      </td>
+       <PercentBar percentage={starPercentage('5')} />
     </tr>
     <tr>
       <td>4 stars</td>
@@ -54,5 +53,6 @@ const StarRating = (props) => {
 
   </table>)
 };
+}
 
 export default StarRating;
