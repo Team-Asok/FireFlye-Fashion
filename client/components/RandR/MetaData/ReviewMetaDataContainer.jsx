@@ -7,7 +7,8 @@ const ReviewMetaDataContainer = function(props) {
   if (props.metaData.product_id) {
   return (
     <div id="review-meta-data-container">
-      <MetaScore metaData={props.metaData}/>
+      <MetaScore metaData={props.metaData} findTotalStars={findTotalStars}/>
+      <div id="percent-recommended">100% of People recommended this product</div>
       <StarRating metaData={props.metaData}/>
       <Characteristics />
     </div>

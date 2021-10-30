@@ -39,7 +39,6 @@ class StarRating extends React.Component {
 render() {
   return (
     <>
-      <div id="percent-recommended">100% of People recommended this product_id</div>
       <StyledTable id="star-rating-table">
         <tr>
           <td>5 stars</td>
