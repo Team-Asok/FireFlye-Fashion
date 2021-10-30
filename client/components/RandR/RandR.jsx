@@ -5,8 +5,8 @@ import ReviewMetaDataContainer from './MetaData/ReviewMetaDataContainer.jsx';
 const RandR = (props) => (
   <div id="RandR">
     Reviews and ratings
-    <ReviewMetaDataContainer />
-    <ReviewList reviews={props.reviews} getReviews={props.getAllProducts} />
+    <ReviewMetaDataContainer metaData={props.metaData} />
+    <ReviewList reviews={props.reviews} />
   </div>
 
 );

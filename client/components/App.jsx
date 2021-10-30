@@ -11,11 +11,13 @@ class App extends React.Component {
       products: [],
       reviews: [],
       qAndA: [],
+      metaData: [],
       displayedProduct: null,
     };
     this.getAllProducts = this.getAllProducts.bind(this);
     this.getProductQandA = this.getProductQandA.bind(this);
     this.getProductReviews = this.getProductReviews.bind(this);
+    this.getMetaData = this.getMetaData.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +36,7 @@ class App extends React.Component {
             () => {
               this.getProductQandA(this.state.displayedProduct.id);
               this.getProductReviews(this.state.displayedProduct.id);
+              this.getMetaData(this.state.displayedProduct.id);
             });
         });
       })
@@ -42,6 +45,12 @@ class App extends React.Component {
   /* Sends axios request to server at /reviews with parameter equal to the product id
   of current display product. Sets state of reviews equal to response.data
   -------------------------------------------------------------------------------- */
+  getMetaData(productID) {
+    axios.get(`/reviews/meta/${productID}`)
+    .then((results) => {
+      this.setState({metaData: results.data})
+    })
+  }
 
   getProductReviews(productID) {
     axios.get(`/reviews/${productID}`)
@@ -62,7 +71,7 @@ class App extends React.Component {
       <div id="index">
         <Overview products={this.state.products} />
         <QandA qAndA={this.state.qAndA} />
-        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews} />
+        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews} metaData={this.state.metaData}/>
       </div>
     );
   }

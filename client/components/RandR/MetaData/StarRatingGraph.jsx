@@ -1,7 +1,24 @@
 import React from 'react';
 
-const StarRating = (props) => (
-  <table id="characteristics">
+const StarRating = (props) => {
+  if (props.metaData.ratings) {
+  const findTotalStars = function(ratings) {
+    let totalRatings = 0;
+    for (var key in ratings) {
+      totalRatings += parseInt(ratings[key])
+    }
+    return totalRatings;
+  }
+  let totalStars = findTotalStars(props.metaData.ratings)
+  // Line 14 Gets percentage of total rounded to second decimal point
+  let starPercentage = ((parseInt(props.metaData.ratings['1']) / totalStars) * 100).toFixed(2);
+  console.log(starPercentage)
+
+}
+
+
+
+  return (<table id="characteristics">
     <tr>
       <th>100% of reviews recommend this product</th>
     </tr>
@@ -26,7 +43,7 @@ const StarRating = (props) => (
       <td>graph</td>
     </tr>
 
-  </table>
-);
+  </table>)
+};
 
 export default StarRating;
