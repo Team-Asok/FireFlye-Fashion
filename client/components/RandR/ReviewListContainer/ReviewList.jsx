@@ -6,9 +6,6 @@ import MoreReviews from './MoreReviews.jsx';
 import ReviewCount from './ReviewCount.jsx'
 
 const StyledDiv = styled.div`
-   border-style: dotted;
-   background-color: red;
-   border-size 50px;
  `;
 
 class ReviewList extends React.Component {
@@ -34,7 +31,6 @@ class ReviewList extends React.Component {
         </>
       );
     }
-    console.log(this.props.reviews.results.map((review) => <ReviewTile review={review} />))
     return this.props.reviews.results.map((review) => <ReviewTile review={review} />);
   }
 

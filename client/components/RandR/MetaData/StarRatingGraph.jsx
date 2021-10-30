@@ -27,7 +27,6 @@ class StarRating extends React.Component {
     this.totalStars = findTotalStars(this.props.metaData.ratings)
     this.starPercentage = this.starPercentage.bind(this);
   }
-  // Total amount of stars for any given review
 
 
   // Gets percentage of total rounded to second decimal point
@@ -43,14 +42,14 @@ render() {
       <div id="percent-recommended">100% of People recommended this product_id</div>
       <StyledTable id="star-rating-table">
         <tr>
+          <td>5 stars</td>
+          <PercentBar percentage={this.starPercentage('5')} />
+        </tr>
         <tr>
           <td>4 stars</td>
           <PercentBar percentage={this.starPercentage('4')} />
         </tr>
         <tr>
-          <td>5 stars</td>
-          <PercentBar percentage={this.starPercentage('5')} />
-        </tr>
           <td>3 stars</td>
           <PercentBar percentage={this.starPercentage('3')} />
         </tr>
