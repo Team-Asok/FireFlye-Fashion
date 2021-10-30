@@ -6,12 +6,12 @@ const StyledPInfoContainer = styled.div`
 `;
 
 const Info = (props) => {
-  if (props.product) {
+  if (props.products[0]) {
     return (
       <StyledPInfoContainer id="info">
-        {props.product.category}
-        {props.product.name}
-        {props.product.default_price}
+        {props.products[0].category}
+        {props.products[0].name}
+        {props.products[0].default_price}
       </StyledPInfoContainer>
     );
   }
