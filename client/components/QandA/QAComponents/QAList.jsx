@@ -5,12 +5,11 @@ const QAList = ({ questions }) => {
   if (!questions) {
     return <ul></ul>
   } else {
-    let qaEntry = questions.map((question) => {
-      <QAListEntry question={question} />
-    })
     return (
       <ul id="QAList">
-        {qaEntry}
+        {questions.map((question) =>
+        <QAListEntry question={question} />
+        )}
       </ul>
     )
   };
