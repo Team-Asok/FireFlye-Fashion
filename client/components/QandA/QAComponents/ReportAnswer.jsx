@@ -1,8 +1,17 @@
 import React from 'react';
+import axios from 'axios';
 
-const ReportAnswer = () => {
+const ReportAnswer = ({answerID}) => {
+  const updateAnswerReport = (targetAnswer) => {
+    axios.put(`/qa/answers/${targetAnswer}/report`, {
+      params: targetAnswer
+    })
+    .then(response => response)
+    .catch(err => err);
+  }
+
   return (
-    <button id="report-answer" type="button">Report answer!</button>
+    <button onClick={() => updateAnswerReport(answerID)} id="report-answer" type="button">Report answer!</button>
   )
 }
 

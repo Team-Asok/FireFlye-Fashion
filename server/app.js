@@ -138,7 +138,6 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
 
 // REPORT QUESTION
 app.put('/qa/questions/:question_id/report', (req, res) => {
-
   qa.reportQuestion(req.params.question_id)
     .then((response) => {
       res.status(204).send();
@@ -159,9 +158,9 @@ app.put('/qa/answers/:answer_id/helpful', (req, res) => {
     });
 });
 
-// REPORT QUESTION
+// REPORT ANSWER
 app.put('/qa/answers/:answer_id/report', (req, res) => {
-  qa.markQuestionHelpful(req.params.answer_id)
+  qa.reportAnswer(req.params.answer_id)
     .then((response) => {
       res.status(204).send();
     })
