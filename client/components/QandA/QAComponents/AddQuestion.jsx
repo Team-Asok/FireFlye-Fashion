@@ -16,6 +16,8 @@ class AddQuestion extends React.Component {
   render() {
     return (
       <form id="AddQuestion">
+        <input type="text" placeholder="ADD QUESTION HERE"/>
+        <input type="submit" />
       </form>
     )
   }

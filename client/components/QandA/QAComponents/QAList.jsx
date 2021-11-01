@@ -8,7 +8,7 @@ const QAList = ({ questions }) => {
     return (
       <ul id="QAList">
         {questions.map((question) =>
-        <QAListEntry question={question} />
+        <QAListEntry key={question.question_id} question={question} />
         )}
       </ul>
     )
