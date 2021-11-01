@@ -24,7 +24,7 @@ const getAllQuestions = (productID) => {
 // GET ANSWERS
 const getAnswers = (questionID) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/:${questionId}/answers`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/answers`,
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,

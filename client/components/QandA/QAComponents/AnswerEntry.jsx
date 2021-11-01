@@ -19,8 +19,8 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <HelpfulAnswer />
-        <ReportAnswer />
+        <HelpfulAnswer answerID={answer[0][1].id}/>
+        <ReportAnswer answerID={answer[0][1].id}/>
       </div>
     )
   } else {
@@ -35,8 +35,8 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <HelpfulAnswer />
-        <ReportAnswer />
+        <HelpfulAnswer answerID={answer[0][1].id}/>
+        <ReportAnswer answerID={answer[0][1].id}/>
         <LoadAnswers />
       </div>
     )

@@ -40,7 +40,7 @@ const getProductInfo = (productID) => {
 // GET PRODUCT STYLES
 const getProductStyles = (productID) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${product_id}/styles`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productID}/styles`,
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
@@ -59,7 +59,7 @@ const getProductStyles = (productID) => {
 // GET RELATED PRODUCTS
 const getRelatedProducts = (productID) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${product_id}/related`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productID}/related`,
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
