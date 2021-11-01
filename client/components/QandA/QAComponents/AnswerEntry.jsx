@@ -1,6 +1,7 @@
 import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
 import HelpfulButton from './HelpfulButton.jsx'
+import ReportButton from './ReportButton.jsx'
 
 const AnswerEntry = ({ answer }) => {
 
@@ -19,6 +20,7 @@ const AnswerEntry = ({ answer }) => {
         when: {answer[0][1].date}
         </div>
         <HelpfulButton />
+        <ReportButton />
       </div>
     )
   } else {
@@ -34,6 +36,7 @@ const AnswerEntry = ({ answer }) => {
         when: {answer[0][1].date}
         </div>
         <HelpfulButton />
+        <ReportButton />
         <LoadAnswers />
       </div>
     )
