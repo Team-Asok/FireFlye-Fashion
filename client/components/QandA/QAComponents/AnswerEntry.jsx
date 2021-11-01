@@ -1,5 +1,6 @@
 import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
+import HelpfulButton from './HelpfulButton.jsx'
 
 const AnswerEntry = ({ answer }) => {
 
@@ -17,6 +18,7 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
+        <HelpfulButton />
       </div>
     )
   } else {
@@ -31,6 +33,7 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
+        <HelpfulButton />
         <LoadAnswers />
       </div>
     )
