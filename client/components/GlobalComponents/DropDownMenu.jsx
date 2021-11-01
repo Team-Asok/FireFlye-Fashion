@@ -12,7 +12,7 @@ const DropDownMenu = (props) => {
   if (props.dataList) {
     return (
         <select id={`${props.default}}`} onChange={props.select} value={`${props.default}}`}>
-          <option selected={`${props.default}}`}>{`${props.default}`}</option>
+          <option value={`${props.default}}`} selected disabled hidden>{`${props.default}`}</option>
           {props.dataList.map(entry => {
             return <option value={entry}>{entry}</option>
           })}
