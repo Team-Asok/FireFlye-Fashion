@@ -11,8 +11,9 @@ const MetaScore = (props) => {
   }
 
   const totalStars = props.findTotalStars(props.metaData.ratings)
+
   let metaScore = (scoreSum(props.metaData.ratings) / totalStars).toFixed(1)
-  if (metaScore) {
+  if (isNaN(metaScore)){
     metaScore = '0.0';
     return (
     <h3 id="meta-score">{metaScore}</h3>
