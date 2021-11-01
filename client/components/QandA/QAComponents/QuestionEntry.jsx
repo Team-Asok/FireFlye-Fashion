@@ -6,7 +6,7 @@ const QuestionEntry = ({ questionBody, questionID }) => {
   return (
     <div id="question-entry">
       Question: {questionBody}
-      <HelpfulQuestion value={questionID}/>
+      <HelpfulQuestion questionID={questionID}/>
       <ReportQuestion />
     </div>
   )
