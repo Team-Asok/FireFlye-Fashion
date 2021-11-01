@@ -1,5 +1,6 @@
 const sortReviews = (reviews, criteria) => {
 
+  console.log(reviews);
   var sortByHelpful = (reviews) => {
     var compareFunction = (a, b) => {
       if (a.helpfulness < b.helpfulness) {
@@ -14,13 +15,16 @@ const sortReviews = (reviews, criteria) => {
     return reviews.sort(compareFunction);
   }
 
+  var sortByDate = (reviews) => {
+
+  }
+
   if (criteria === 'helpful') {
-    reviews = sortByHelpful(reviews);
-    console.log(reviews);
-    return reviews;
+    var sortedReviews = sortByHelpful(reviews);
+    return sortedReviews;
   }
   if (criteria === 'relevance') {
-    return reviews;
+    return reviews.sort();
   }
 
 }
