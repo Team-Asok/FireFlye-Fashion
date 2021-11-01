@@ -4,6 +4,8 @@ const QuestionEntry = ({ questionBody }) => {
   return (
     <div id="QuestionBody">
       Question: {questionBody}
+      <button>Helpful?</button>
+      <button>Report!</button>
     </div>
   )
 };

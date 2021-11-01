@@ -1,26 +1,9 @@
 import React from 'react';
 
-class AddQuestion extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      entry: ''
-    }
-  }
-  handleChange () {
-
-  }
-  handleSubmit () {
-
-  }
-  render() {
-    return (
-      <form id="AddQuestion">
-        <input type="text" placeholder="ADD QUESTION HERE"/>
-        <input type="submit" />
-      </form>
-    )
-  }
+const AddQuestion = (props) => {
+  return (
+    <button id="add-question" type="button">Add a question</button>
+  )
 }
-// checking
+
 export default AddQuestion;

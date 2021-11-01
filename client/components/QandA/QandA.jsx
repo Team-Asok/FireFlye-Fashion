@@ -6,8 +6,8 @@ const QandA = ({ qAndA }) => {
   return (
     <div id="QandA">
       Questions and Answers
-      <AddQuestion />
       <QAList questions={qAndA.results}/>
+      <AddQuestion />
     </div>
   );
 };
