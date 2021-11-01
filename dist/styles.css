@@ -40,6 +40,13 @@ button#add-question {
   margin-left: 20px;
 }
 
+button#more-answered-questions {
+  width: 275px;
+  height: 70px;
+  background-color:red;
+  margin-left: 20px;
+}
+
 #RandR {
   background-color: rgb(161, 233, 192);
   grid-row-start: 3;
