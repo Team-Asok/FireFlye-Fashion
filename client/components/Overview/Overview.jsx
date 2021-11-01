@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Banner from './Overview components/Banner.jsx';
 import Gallery from './Overview components/ImageGallery.jsx';
 import ProductDescription from './Overview components/ProductDescription.jsx';
@@ -18,8 +19,8 @@ class Overview extends React.Component {
         <Banner />
         <SiteMessage />
         <Gallery />
-        <ProductInfo products={this.props.products} />
-        <ProductDescription />
+        <ProductInfo products={this.props.products} currentProd={this.props.currentProd} />
+        <ProductDescription currentProd={this.props.currentProd} />
       </div>
     );
   }
