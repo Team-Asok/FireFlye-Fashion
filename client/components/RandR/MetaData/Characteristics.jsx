@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Characteristics = (props) => (
-  <ul>
+  <ul id="characteristics">
     <li>Characteristics go here</li>
   </ul>
 );
