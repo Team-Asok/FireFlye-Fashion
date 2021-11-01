@@ -5,13 +5,13 @@ const StyledPInfoContainer = styled.div`
   background-color: lightcoral;
 `;
 
-const Info = (props) => {
-  if (props.currentProd) {
+const Info = ({currentProd}) => {
+  if (currentProd) {
     return (
       <StyledPInfoContainer id="info">
-        {props.currentProd.category}
-        {props.currentProd.name}
-        {props.currentProd.default_price}
+        {currentProd.category}
+        {currentProd.name}
+        {currentProd.default_price}
       </StyledPInfoContainer>
     );
   }

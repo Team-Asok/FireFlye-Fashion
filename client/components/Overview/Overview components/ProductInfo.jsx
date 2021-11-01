@@ -4,11 +4,11 @@ import Info from './ProductInfo components/Info.jsx';
 import Styles from './ProductInfo components/Styles.jsx';
 import Cart from './ProductInfo components/Cart.jsx';
 
-const ProductInfo = (props) => (
+const ProductInfo = ({currentProd, products}) => (
   <div id="ProductInfo">
     <RatingLink />
-    <Info currentProd={props.currentProd} />
-    <Styles products={props.products}/>
+    <Info currentProd={currentProd} />
+    <Styles products={products} />
     <Cart />
   </div>
 );

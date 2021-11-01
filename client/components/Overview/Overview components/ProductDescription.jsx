@@ -1,14 +1,14 @@
 import React from 'react';
 
-const ProductDescription = (props) => {
-  if (props.currentProd) {
+const ProductDescription = ({currentProd}) => {
+  if (currentProd) {
     return (
       <div id="ProductDescription">
         <h3>
-          {props.currentProd.slogan}
+          {currentProd.slogan}
         </h3>
         <span>
-          {props.currentProd.description}
+          {currentProd.description}
         </span>
       </div>
     );
