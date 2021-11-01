@@ -6,8 +6,8 @@ const QuestionEntry = ({ questionBody, questionID }) => {
   return (
     <div id="question-entry">
       Question: {questionBody}
-      <HelpfulButton questionID={questionID} path={`/qa/questions/${questionID}/helpful`}/>
-      <ReportButton questionID={questionID} path={`/qa/questions/${questionID}/report`}/>
+      <HelpfulButton id={questionID} path={`/qa/questions/${questionID}/helpful`}/>
+      <ReportButton id={questionID} path={`/qa/questions/${questionID}/report`}/>
     </div>
   )
 };
