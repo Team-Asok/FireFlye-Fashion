@@ -8,7 +8,7 @@ const ReportButton =({id, path}) => {
       params: targetId,
     })
     .then(response => response)
-    .catch(err => err)
+    .catch(err => console.log(err))
   }
   return (
     <button onClick={() => updateReport(id)} id="report-button" type="button">Report!</button>

@@ -8,7 +8,7 @@ const HelpfulButton = ({id, path}) => {
       params : targetId
     })
     .then(response => response)
-    .catch(err => err);
+    .catch(err => console.log(err));
   }
 
   return (
