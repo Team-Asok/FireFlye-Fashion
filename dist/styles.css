@@ -5,7 +5,7 @@
 #index {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1000px 1000px 1000px;
+  grid-template-rows: 1000px 1000px 1fr;
 }
 
 #QandA {
@@ -17,14 +17,27 @@
 }
 #reviewListTilescontainer {
   background-color: turquoise;
-  grid-column: 1 / 3;
+  grid-column: 1 / -1;
   grid-row-start: 2;
   grid-row-end: 3;
-  margin: 10px
+  margin: 10px;
+  list-style-type: none;
+  place-content: left;
+
 }
 #reviewtile {
   background-color: teal;
   margin: 10px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas:
+  "header . timestamp"
+  "body body body"
+  "body body body"
+  "body body body"
+  "response response response";
 }
 
 #QAList {
@@ -39,9 +52,40 @@
   grid-row-end: 4;
   font-size: 20px;
   display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 10% 90%;
+  grid-template-columns: 2fr 6fr;
+  grid-template-rows: 50px 9fr;
 }
+
+#star-rating-table {
+  grid-row: 3/ 4;
+  grid-column: 1 / 2;
+  font-size: 15px;
+  height: 150px;
+  width: 350px;
+
+}
+
+#percent-recommended {
+  grid-row: 2 / 3;
+}
+
+#meta-score {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
+
+#review-meta-data-container {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  grid-template-rows: 1fr 1fr 3fr 2fr;
+  grid-template-columns: 1fr;
+  display: grid;
+}
+
+#characteristics {
+  grid-row: 5 / 6;
+}
+
 
 #Overview {
   background-color:rgb(209, 161, 233);
@@ -53,18 +97,26 @@
   grid-template-rows: 7.5% 5% 65% 22.5%;
   justify-content: left;
 }
-
+#review-count {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
 #reviewlist {
+  grid-column: 2 / 3;
+  grid-row: 1 / -1;
   background-color: seagreen;
   margin: 10px 10px 10px 10px;
-  font-size: 30px;
   grid-column-start: 2;
   grid-column-end: 3;
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 10% 70% 20%;
-  align-content: space-evenly;
-  /* justify-content: space-evenly; */
+  grid-template-columns: 1fr 1fr 5fr;
+  grid-template-rows: 60px 5fr 1fr;
+}
+#review-tile-body {
+}
+
+#timestamp {
+  grid-area: timestamp;
 }
 
 #review-meta-data-container {
@@ -83,25 +135,24 @@
 }
 
 button#more-reviews {
-  width: 200px;
-  height: 100px;
+  width: 275px;
+  height: 70px;
   grid-column: 1 / 2;
   grid-row-start: 3;
   grid-row-end: 4;
   background-color:rgb(161, 233, 192);
-  place-self: left;
-  align-self: center;
+  margin-left: 10px;
 
 }
 
 button#add-a-review {
-  width: 200px;
-  height: 100px;
-  grid-column: 1 / 2;
+  width: 275px;
+  height: 70px;
+  grid-column: 2 / 3;
   grid-row-start: 3;
   grid-row-end: 4;
   background-color:rgb(161, 233, 192);
-  place-self: center;
+  margin-left: 20px;
 
 }
 

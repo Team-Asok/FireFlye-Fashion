@@ -7,8 +7,8 @@ import Cart from './ProductInfo components/Cart.jsx';
 const ProductInfo = (props) => (
   <div id="ProductInfo">
     <RatingLink />
-    <Info />
-    <Styles />
+    <Info products={props.products} />
+    <Styles products={props.products}/>
     <Cart />
   </div>
 );
