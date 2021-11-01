@@ -40,26 +40,28 @@ render() {
   return (
     <>
       <StyledTable id="star-rating-table">
-        <tr>
-          <td>5 stars</td>
-          <PercentBar percentage={this.starPercentage('5')} />
-        </tr>
-        <tr>
-          <td>4 stars</td>
-          <PercentBar percentage={this.starPercentage('4')} />
-        </tr>
-        <tr>
-          <td>3 stars</td>
-          <PercentBar percentage={this.starPercentage('3')} />
-        </tr>
-        <tr>
-          <td>2 stars</td>
-          <PercentBar percentage={this.starPercentage('2')} />
-        </tr>
-        <tr>
-          <td>1 stars</td>
-          <PercentBar percentage={this.starPercentage('1')} />
-        </tr>
+        <tbody>
+          <tr>
+            <td>5 stars</td>
+            <PercentBar percentage={this.starPercentage('5')} />
+          </tr>
+          <tr>
+            <td>4 stars</td>
+            <PercentBar percentage={this.starPercentage('4')} />
+          </tr>
+          <tr>
+            <td>3 stars</td>
+            <PercentBar percentage={this.starPercentage('3')} />
+          </tr>
+          <tr>
+            <td>2 stars</td>
+            <PercentBar percentage={this.starPercentage('2')} />
+          </tr>
+          <tr>
+            <td>1 stars</td>
+            <PercentBar percentage={this.starPercentage('1')} />
+          </tr>
+        </tbody>
       </StyledTable>
         </>
         )
