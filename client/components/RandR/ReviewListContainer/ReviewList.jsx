@@ -39,7 +39,7 @@ class ReviewList extends React.Component {
       return (
         <>
           <StyledDiv id="reviewlist">
-            <ReviewCount />
+            <ReviewCount count={this.props.reviews.results.length}/>
             <ul id="reviewListTilescontainer">
             {this.renderView(this.state.view)}
             </ul>

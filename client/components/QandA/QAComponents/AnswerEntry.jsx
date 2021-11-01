@@ -5,17 +5,17 @@ const AnswerEntry = ({ answer }) => {
   if (!answer[0]) {
     return null;
   } else {
-    let answer = answer[0][1];
+    // let answer = answer[0][1];
     return (
       <div id="AnswerEntry">
         <div>
-        Answer: {answer.body}
+        Answer: {answer[0][1].body}
         </div>
         <div>
-        by: {answer.answerer_name}
+        by: {answer[0][1].answerer_name}
         </div>
         <div>
-        when: {answer.date}
+        when: {answer[0][1].date}
         </div>
         <button>Load More Answers</button>
       </div>
