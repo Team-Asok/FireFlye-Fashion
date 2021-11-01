@@ -3,7 +3,9 @@ import QAListEntry from './QAListEntry.jsx';
 
 const QAList = ({ questions }) => {
   if (!questions) {
-    return <ul></ul>
+    return (
+    <ul id="qa-list">BE THE FIRST ONE TO ASK A QUESTION</ul>
+    )
   } else {
     return (
       <ul id="qa-list">

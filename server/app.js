@@ -81,10 +81,10 @@ app.get('/qa/questions/:product_id', (req, res) => {
 });
 
 // GET ALL ANSWER SPECIFIC TO A PRODUCT ID
-app.get('/qa/questions/:product_id', (req, res) => {
+app.get('/qa/questions/:question_id/answers', (req, res) => {
   qa.getAnswers(req.params.question_id)
     .then((response) => {
-      res.status(200).send(response);
+      res.status(200).send(response.data);
     })
     .catch((err) => {
       res.status(404).send(err);
@@ -138,7 +138,7 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
 
 // REPORT QUESTION
 app.put('/qa/questions/:question_id/report', (req, res) => {
-  qa.markQuestionHelpful(req.params.question_id)
+  qa.reportQuestion(req.params.question_id)
     .then((response) => {
       res.status(204).send();
     })
@@ -149,7 +149,7 @@ app.put('/qa/questions/:question_id/report', (req, res) => {
 
 // MARK answer HELPFUL
 app.put('/qa/answers/:answer_id/helpful', (req, res) => {
-  qa.markQuestionHelpful(req.params.answer_id)
+  qa.markAnswerHelpful(req.params.answer_id)
     .then((response) => {
       res.status(204).send();
     })
@@ -158,9 +158,9 @@ app.put('/qa/answers/:answer_id/helpful', (req, res) => {
     });
 });
 
-// REPORT QUESTION
+// REPORT ANSWER
 app.put('/qa/answers/:answer_id/report', (req, res) => {
-  qa.markQuestionHelpful(req.params.answer_id)
+  qa.reportAnswer(req.params.answer_id)
     .then((response) => {
       res.status(204).send();
     })
