@@ -10,7 +10,6 @@ const DropDownMenu = (props) => {
   // The change handler event should be passed down as select={changehandlerevent}
 
   if (props.dataList) {
-   console.log(props.select);
     return (
         <select id={`${props.default}}`} onChange={props.select} value={`${props.default}}`}>
           <option value={`${props.default}}`} selected disabled hidden>{`${props.default}`}</option>

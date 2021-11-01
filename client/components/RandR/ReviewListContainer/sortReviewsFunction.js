@@ -16,6 +16,7 @@ const sortReviews = (reviews, criteria) => {
 
   if (criteria === 'helpful') {
     reviews = sortByHelpful(reviews);
+    console.log(reviews);
     return reviews;
   }
   if (criteria === 'relevance') {

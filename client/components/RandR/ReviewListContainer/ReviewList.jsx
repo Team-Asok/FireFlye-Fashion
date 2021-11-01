@@ -26,14 +26,14 @@ class ReviewList extends React.Component {
 
   handleSortSubmit() {
     event.preventDefault();
-    console.log(event.target.value);
-    // this.setState({sort: value})
+    this.setState({sort: event.target.value})
   }
 
 
   renderView(view) {
     // sort the reviews into a sorted array before rendering
     var sortedReviews = sortReviews(this.props.reviews.results, this.state.sort);
+    console.log(this.props.reviews.results);
     if (view === 'default') {
       return (
         <>
