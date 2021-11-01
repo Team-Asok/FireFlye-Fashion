@@ -100,7 +100,7 @@ const markQuestionHelpful = (questionID) => {
 };
 
 // PUT QUESTION REPORT
-const reportReview = (questionID) => {
+const reportQuestion = (questionID) => {
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/report`,
     method: 'put',
@@ -111,6 +111,9 @@ const reportReview = (questionID) => {
     params: {
       question_id: questionID,
     },
+    data: {
+      reported: true
+    }
   };
   return (
     axios(options)
@@ -164,7 +167,7 @@ module.exports = {
   addQuestion,
   addAnswer,
   markQuestionHelpful,
-  reportReview,
+  reportQuestion,
   markAnswerHelpful,
   reportAnswer,
 };

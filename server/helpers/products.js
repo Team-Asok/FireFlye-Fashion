@@ -21,7 +21,7 @@ const getProductList = () => {
 // GET PRODUCT INFO
 const getProductInfo = (productID) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${product_id}`,
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productID}`,
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,

@@ -138,7 +138,8 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
 
 // REPORT QUESTION
 app.put('/qa/questions/:question_id/report', (req, res) => {
-  qa.markQuestionHelpful(req.params.question_id)
+
+  qa.reportQuestion(req.params.question_id)
     .then((response) => {
       res.status(204).send();
     })

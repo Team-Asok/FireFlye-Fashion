@@ -2,8 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 const HelpfulQuestion = ({questionID}) => {
-  console.log(questionID)
-  const updateQuestion = (targetQuestion) => {
+  const updateQuestionHelpful = (targetQuestion) => {
     axios.put(`/qa/questions/${targetQuestion}/helpful`, {
       params : targetQuestion
     })
@@ -12,7 +11,7 @@ const HelpfulQuestion = ({questionID}) => {
   }
 
   return (
-    <button onClick={() => updateQuestion(questionID)} id="helpful-question" type="button">Helpful question?</button>
+    <button onClick={() => updateQuestionHelpful(questionID)} id="helpful-question" type="button">Helpful question?</button>
   )
 }
 
