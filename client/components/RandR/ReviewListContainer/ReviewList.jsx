@@ -13,6 +13,7 @@ class ReviewList extends React.Component {
     super(props);
     this.state = {
       view: 'default',
+      sort: 'relevance'
     };
     this.renderView = this.renderView.bind(this);
     this.expandReviewsClickHandler = this.expandReviewsClickHandler.bind(this);
@@ -31,7 +32,9 @@ class ReviewList extends React.Component {
         </>
       );
     }
+    if(view === 'all-reviews') {
     return this.props.reviews.results.map((review) => <ReviewTile review={review} />);
+    }
   }
 
   render() {
