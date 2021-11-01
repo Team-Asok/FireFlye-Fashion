@@ -178,6 +178,15 @@ button#add-a-review {
   grid-column-end: 3;
 }
 
+#ProductDescription ul {
+  list-style-type: none;
+}
+
+#ProductDescription ul li:before {
+  content: '✓';
+  margin: 20px;
+}
+
 #Separator {
   width: 10px;
   background-color: gray;
