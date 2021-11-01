@@ -174,8 +174,11 @@ button#add-a-review {
 }
 
 #ProductDescription {
-  background-color: violet;
   grid-column-start: 1;
   grid-column-end: 3;
-  display: grid;
+}
+
+#Separator {
+  width: 10px;
+  background-color: gray;
 }
