@@ -67,13 +67,21 @@ class App extends React.Component {
   }
 
   render() {
+    if (this.state.displayedProduct === null) {
+      return null;
+    } else  if (this.state.reviews.length === 0 || this.state.metaData.length === 0 || this.state.qAndA.length === 0) {
+      return null;
+    } else {
+
+
     return (
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} />
         <QandA qAndA={this.state.qAndA} />
-        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews} metaData={this.state.metaData} />
+        <RandR getReviews={this.getProductReviews} productId={this.state.displayedProduct.id} reviews={this.state.reviews} metaData={this.state.metaData} />
       </div>
     );
+    }
   }
 }
 export default App;

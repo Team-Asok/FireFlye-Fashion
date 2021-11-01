@@ -42,7 +42,9 @@ render() {
       <StyledTable id="star-rating-table">
         <tbody>
           <tr>
-            <td>5 stars</td>
+            <td>
+              <button onClick={() => {this.props.filter('5')}}>5 stars</button>
+            </td>
             <PercentBar percentage={this.starPercentage('5')} />
           </tr>
           <tr>

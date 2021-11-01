@@ -18,6 +18,7 @@ class ReviewList extends React.Component {
     };
     this.renderView = this.renderView.bind(this);
     this.expandReviewsClickHandler = this.expandReviewsClickHandler.bind(this);
+    console.log(this.props)
   }
 
   expandReviewsClickHandler() {
