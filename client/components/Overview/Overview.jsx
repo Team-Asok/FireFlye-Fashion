@@ -19,7 +19,7 @@ class Overview extends React.Component {
         <SiteMessage />
         <Gallery />
         <ProductInfo products={this.props.products} />
-        <ProductDescription />
+        <ProductDescription products={this.props.products} />
       </div>
     );
   }
