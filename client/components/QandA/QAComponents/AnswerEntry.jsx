@@ -1,7 +1,5 @@
 import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
-import HelpfulAnswer from './HelpfulAnswer.jsx'
-import ReportAnswer from './ReportAnswer.jsx'
 
 const AnswerEntry = ({ answer }) => {
 
@@ -19,8 +17,6 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <HelpfulAnswer answerID={answer[0][1].id}/>
-        <ReportAnswer answerID={answer[0][1].id}/>
       </div>
     )
   } else {
@@ -35,8 +31,6 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <HelpfulAnswer answerID={answer[0][1].id}/>
-        <ReportAnswer answerID={answer[0][1].id}/>
         <LoadAnswers />
       </div>
     )
