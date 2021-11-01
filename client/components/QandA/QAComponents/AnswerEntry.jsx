@@ -1,7 +1,7 @@
 import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
-import HelpfulButton from './HelpfulButton.jsx'
-import ReportButton from './ReportButton.jsx'
+import HelpfulAnswer from './HelpfulAnswer.jsx'
+import ReportAnswer from './ReportAnswer.jsx'
 
 const AnswerEntry = ({ answer }) => {
 
@@ -19,8 +19,8 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <HelpfulButton />
-        <ReportButton />
+        <HelpfulAnswer />
+        <ReportAnswer />
       </div>
     )
   } else {
@@ -35,8 +35,8 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <HelpfulButton />
-        <ReportButton />
+        <HelpfulAnswer />
+        <ReportAnswer />
         <LoadAnswers />
       </div>
     )

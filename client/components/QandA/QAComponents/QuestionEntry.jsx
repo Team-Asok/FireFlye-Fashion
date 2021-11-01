@@ -1,13 +1,13 @@
 import React from 'react';
-import HelpfulButton from './HelpfulButton.jsx'
-import ReportButton from './ReportButton.jsx'
+import HelpfulQuestion from './HelpfulQuestion.jsx'
+import ReportQuestion from './ReportQuestion.jsx'
 
-const QuestionEntry = ({ questionBody }) => {
+const QuestionEntry = ({ questionBody, questionID }) => {
   return (
     <div id="question-entry">
       Question: {questionBody}
-      <HelpfulButton />
-      <ReportButton />
+      <HelpfulQuestion value={questionID}/>
+      <ReportQuestion />
     </div>
   )
 };
