@@ -4,7 +4,7 @@ import ReportButton from './ReportButton.jsx'
 
 const QuestionEntry = ({ questionBody }) => {
   return (
-    <div id="QuestionBody">
+    <div id="question-entry">
       Question: {questionBody}
       <HelpfulButton />
       <ReportButton />

@@ -27,7 +27,7 @@
   margin: 10px;
 }
 
-#QAList {
+#qa-list {
   grid-row-start: 2 / 3;
   font-size: 12px;
   display: grid;

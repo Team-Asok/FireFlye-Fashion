@@ -9,7 +9,7 @@ const AnswerEntry = ({ answer }) => {
     return null;
   } else if (answer.length === 1) {
     return (
-      <div id="AnswerEntry">
+      <div id="answer-entry">
         <div>
         Answer: {answer[0][1].body}
         </div>
@@ -25,7 +25,7 @@ const AnswerEntry = ({ answer }) => {
     )
   } else {
     return (
-      <div id="AnswerEntry">
+      <div id="answer-entry">
         <div>
         Answer: {answer[0][1].body}
         </div>

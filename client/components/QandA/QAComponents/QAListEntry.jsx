@@ -7,9 +7,9 @@ const QAListEntry = ({ question }) => {
   let answerArray = Object.entries(question.answers)
   return (
     <li>
-      <div id="QuestionEntry">
+      <div id="question-entry">
         <QuestionEntry questionBody={question.question_body}/>
-        <AnswerEntry id="AnswerEntry" answer={answerArray}/>
+        <AnswerEntry answer={answerArray}/>
       </div>
   </li>
   )
