@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadAnswers from './LoadAnswers.jsx'
 
 const AnswerEntry = ({ answer }) => {
 
@@ -17,7 +18,7 @@ const AnswerEntry = ({ answer }) => {
         <div>
         when: {answer[0][1].date}
         </div>
-        <button>Load More Answers</button>
+        <LoadAnswers />
       </div>
     )
   }
