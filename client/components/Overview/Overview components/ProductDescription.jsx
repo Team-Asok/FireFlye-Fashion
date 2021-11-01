@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledProdDesc = styled.div`
-  background-color: yellow;
+  background-color: violet;
   display: flex;
   flex-direction: row;
+  font-size: 25px;
 `;
 
 const ProductDescription = ({currentProd}) => {
@@ -12,9 +13,9 @@ const ProductDescription = ({currentProd}) => {
     return (
       <StyledProdDesc id="ProductDescription">
         <div>
-          <h3>
+          <h4>
             {currentProd.slogan}
-          </h3>
+          </h4>
           <span>
             {currentProd.description}
           </span>
