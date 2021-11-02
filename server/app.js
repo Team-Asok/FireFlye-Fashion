@@ -45,7 +45,7 @@ app.get('/products/:product_id', (req, res) => {
 
 // GET PRODUCT STYLES
 app.get('/products/:product_id/styles', (req, res) => {
-  product.getProductInfo(req.params.product_id)
+  product.getProductStyles(req.params.product_id)
     .then((response) => {
       res.status(200).send(response.data);
     })
@@ -93,13 +93,7 @@ app.get('/qa/questions/:question_id/answers', (req, res) => {
 
 // POST QUESTION
 app.post('/qa/questions', (req, res) => {
-  let questionData = {
-    body: req.data.body,
-    name: req.data.name,
-    email: req.data.email,
-    product_id: req.data.product_id,
-  };
-  qa.addQuestion(questionData)
+  qa.addQuestion(req.body.data)
     .then((response) => {
       res.status(201).send();
     })

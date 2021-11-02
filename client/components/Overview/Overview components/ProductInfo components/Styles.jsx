@@ -1,21 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledStyleThumbnail = styled.div`
-  width: 75px;
-  height: 75px;
-  background-color: yellow;
-  border-radius: 50%;
-`;
 
 const styles = {
-  tn: {
+  direction: {
     display: 'flex',
     flexDirection: 'row'
+  },
+  tn: {
+    width: 75,
+    height: 75,
+    borderRadius: 50,
+    margin: 20
+  },
+  noImage: {
+    fontSize: 20,
+    margin: 10
   }
 }
 
-//Props currently getting product info, not styles. Where does that info need to start?
 class Styles extends React.Component {
   constructor(props) {
     super(props);
@@ -23,26 +24,21 @@ class Styles extends React.Component {
   }
 
   render() {
-    if (this.props.products) {
-      return (
-        <div id="Styles">
-          <div>
-            <strong>STYLE > </strong>
-            Selected Style
-          </div>
-          <div style={styles.tn}>
-          {/* Products, Not Styles. Will dynamically render styles as thumbnails */}
-            {this.props.products.map((product) => {
-              return <StyledStyleThumbnail>TN</StyledStyleThumbnail>;
-            })}
-          </div>
-        </div>
-      );
-    }
     return (
-      <div>
-        <strong>STYLE</strong>
-        Selected Style
+      <div id="Styles">
+        <div>
+          <strong>STYLE > </strong>
+          Selected Style
+        </div>
+        <div style={styles.direction}>
+          {this.props.styles.map((style) => (
+            style.photos[0].thumbnail_url ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styles.tn}/>
+            : <div style={styles.noImage}>
+                <div>{style.name}</div>
+                <div>No Image Available</div>
+             </div>
+          ))}
+        </div>
       </div>
     );
   }

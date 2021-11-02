@@ -49,7 +49,7 @@ const addQuestion = (paramsObj) => {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
     },
-    data: paramsObj,
+    data: paramsObj
   };
   return (
     axios(options)

@@ -74,8 +74,13 @@ class App extends React.Component {
     return (
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} />
+<<<<<<< HEAD
         <QandA qAndA={this.state.qAndA} />
         <RandR getReviews={this.getProductReviews} productId={this.state.displayedProduct.id} reviews={this.state.reviews.results} metaData={this.state.metaData} />
+=======
+        <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
+        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews} metaData={this.state.metaData} />
+>>>>>>> dev
       </div>
     );
     }
