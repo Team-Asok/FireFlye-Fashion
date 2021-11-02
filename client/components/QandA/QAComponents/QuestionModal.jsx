@@ -1,6 +1,7 @@
 import React from 'react';
 
 const QuestionModal = (props) => {
+
   const handleSubmit = (e) => {
     e.preventDefault();
   }
@@ -18,7 +19,7 @@ const QuestionModal = (props) => {
           <form onSubmit={handleSubmit}>
             <div className="modal-question">
             <label> QUESTION:
-              <input type="text" name="question"/>
+              <input type="text" name="question" maxlength="1000"/>
             </label>
             </div>
             <div className="modal-name">
@@ -53,6 +54,4 @@ export default QuestionModal;
  nickname - req
  email - req
  submit button
-
-
  */
