@@ -10,7 +10,7 @@ const QandA = ({ qAndA }) => {
       Questions and Answers
       <SearchAnswer />
       <QAList questions={qAndA.results}/>
-      <AddQuestion />
+      <AddQuestion productID={qAndA.product_id}/>
       <MoreAnsweredQuestions />
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class QuestionModal extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class QuestionModal extends React.Component {
       question: '',
       name: '',
       email: '',
+      productID: this.props.productID
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -14,9 +16,24 @@ class QuestionModal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('you asked this question ', this.state.question)
-    console.log('this is the name ', this.state.name)
-    console.log('this is the email ', this.state.email)
+    // console.log('you asked this question ', this.state.question)
+    // console.log('this is the name ', this.state.name)
+    // console.log('this is the email ', this.state.email)
+    axios.post('/qa/questions', {
+      data: {
+        body: this.state.question,
+        name: this.state.name,
+        email: this.state.email,
+        product_id: Number(this.state.productID)
+      }
+    })
+    .then((response) => {
+      console.log('Question posted')
+      this.props.handleClose()
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
