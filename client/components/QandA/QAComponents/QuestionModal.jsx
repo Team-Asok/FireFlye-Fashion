@@ -30,6 +30,7 @@ class QuestionModal extends React.Component {
     .then((response) => {
       console.log('Question posted')
       this.props.handleClose()
+      this.props.getProductQandA(this.state.productID);
     })
     .catch((err) => {
       console.log(err)
