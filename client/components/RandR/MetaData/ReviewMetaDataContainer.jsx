@@ -3,6 +3,7 @@ import Characteristics from './Characteristics.jsx';
 import MetaScore from './MetaScore.jsx';
 import { StarRating, findTotalStars } from './StarRatingGraph.jsx';
 import StarGraphic from '../../GlobalComponents/StarGraphic.jsx'
+import getMetaScore from './getMetaScoreFn.js'
 
 const ReviewMetaDataContainer = function(props) {
   if (props.metaData.product_id) {
@@ -12,7 +13,7 @@ const ReviewMetaDataContainer = function(props) {
       <div id="percent-recommended">100% of People recommended this product</div>
       <StarRating metaData={props.metaData} filter={props.filter}/>
       <Characteristics />
-      <StarGraphic />
+      <StarGraphic metaScore={getMetaScore(props.metaData.ratings, findTotalStars)}/>
     </div>
   );
   }

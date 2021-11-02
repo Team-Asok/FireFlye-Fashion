@@ -1,6 +1,7 @@
 import React from 'react'
 
 const StarGraphic = (props) => {
+  // props.metaScore === total meta score set into percentage finding function
   return (
     <div>
      <svg xmlns="http://www.w3.org/2000/svg" className="star" viewBox="0 0 20 20" fill="url(#test)">
