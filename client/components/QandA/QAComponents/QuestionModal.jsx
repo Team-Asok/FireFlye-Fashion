@@ -1,6 +1,9 @@
 import React from 'react';
 
 const QuestionModal = (props) => {
+  if (!props.show) {
+    return null
+  }
   return (
     <div className="modal">
       <div className="modal-content">
@@ -11,7 +14,7 @@ const QuestionModal = (props) => {
           This is the modal content
         </div>
         <div className="modal-footer">
-          <button className="modal-close-button">Close</button>
+          <button className="modal-close-button" onClick={props.handleClose}>Close</button>
         </div>
       </div>
     </div>

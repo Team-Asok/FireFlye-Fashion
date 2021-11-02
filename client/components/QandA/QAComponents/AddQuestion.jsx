@@ -5,23 +5,23 @@ class AddQuestion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalState: false
+      show: false
     }
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this)
   }
-  showModal () {
-
+  showModal (e) {
+    this.setState({show: true})
   }
   hideModal () {
-
+    this.setState({show: false})
   }
 
   render () {
     return (
       <div className="add-question">
-        <button>Show modal</button>
-        <QuestionModal />
+        <button onClick={(e) => this.showModal()}>Show modal</button>
+        <QuestionModal show={this.state.show} handleClose={this.hideModal}/>
       </div>
     )
   }
