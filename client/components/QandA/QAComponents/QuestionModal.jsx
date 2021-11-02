@@ -18,20 +18,20 @@ const QuestionModal = (props) => {
         <div className="modal-body">
           <form onSubmit={handleSubmit}>
             <div className="modal-question">
-            <label> QUESTION:
-              <input type="text" name="question" maxlength="1000"/>
+            <label> QUESTION:*
+              <input type="text" name="question" maxlength="1000" required/>
             </label>
             </div>
             <div className="modal-name">
-            <label> NAME:
-              <input type="text" name="nickname" placeholder="Example: jackson11!" maxlength="60"/>
+            <label> NAME:*
+              <input type="text" name="nickname" placeholder="Example: jackson11!" maxlength="60" required/>
               <span>For privacy reasons, do not use your full name or email address</span>
             </label>
             </div>
             <div className="modal-email">
             </div>
-            <label> EMAIL:
-              <input type="email" name="email" maxlength="60" placeholder="Why did you like the product or not?"/>
+            <label> EMAIL:*
+              <input type="email" name="email" maxlength="60" placeholder="Why did you like the product or not?" required/>
               <span>For authentication reasons, you will not be emailed</span>
             </label>
             <div className="modal-submit">
