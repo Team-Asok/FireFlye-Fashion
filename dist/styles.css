@@ -159,6 +159,6 @@ button#add-a-review {
   width: 30px;
   height: 30px;
   stroke: black;
-  stroke-width: 2px;
+  stroke-width: 1px;
   stroke-linejoin: miter;
 }
