@@ -31,7 +31,7 @@ const QuestionModal = (props) => {
             <div className="modal-email">
             </div>
             <label> EMAIL:
-              <input type="text" name="email" maxlength="60" placeholder="Why did you like the product or not?"/>
+              <input type="email" name="email" maxlength="60" placeholder="Why did you like the product or not?"/>
               <span>For authentication reasons, you will not be emailed</span>
             </label>
             <div className="modal-submit">
