@@ -103,14 +103,8 @@ app.post('/qa/questions', (req, res) => {
 });
 
 // POST ANSWER
-app.post('qa/questions/:question_id/answers', (req, res) => {
-  let answerData = {
-    body: req.data.body,
-    name: req.data.name,
-    email: req.data.email,
-    photos: req.data.photos,
-  };
-  qa.addAnswer(req.params.question_id, answerData)
+app.post('/qa/questions/:question_id/answers', (req, res) => {
+  qa.addAnswer(req.params.question_id, req.body.data)
     .then((response) => {
       res.status(201).send();
     })

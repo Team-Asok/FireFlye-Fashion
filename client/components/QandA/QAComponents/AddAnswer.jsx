@@ -5,11 +5,12 @@ class AddAnswer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
     }
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this)
   }
+
   showModal (e) {
     this.setState({show: true})
   }
@@ -20,8 +21,8 @@ class AddAnswer extends React.Component {
   render () {
     return (
       <div className="add-question">
-        <button onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
-        <AnswerModal show={this.state.show} handleClose={this.hideModal}/>
+        <button value="123123"onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
+        <AnswerModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.id} show={this.state.show} handleClose={this.hideModal}/>
       </div>
     )
   }
