@@ -28,7 +28,7 @@ class AnswerModal extends React.Component {
       }
     })
     .then((response) => {
-      console.log('Question posted')
+      console.log('Answer posted')
       this.props.handleClose()
       this.props.getProductQandA(Number(this.state.product_id));
     })
