@@ -24,13 +24,15 @@ const QuestionModal = (props) => {
             </div>
             <div className="modal-name">
             <label> NAME:
-              <input type="text" name="nickname"/>
+              <input type="text" name="nickname" placeholder="Example: jackson11!" maxlength="60"/>
+              <span>For privacy reasons, do not use your full name or email address</span>
             </label>
             </div>
             <div className="modal-email">
             </div>
             <label> EMAIL:
-              <input type="text" name="email"/>
+              <input type="text" name="email" maxlength="60" placeholder="Why did you like the product or not?"/>
+              <span>For authentication reasons, you will not be emailed</span>
             </label>
             <div className="modal-submit">
             <label>
