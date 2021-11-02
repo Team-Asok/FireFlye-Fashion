@@ -9,7 +9,7 @@ const QandA = ({ qAndA, getProductQandA }) => {
     <div id="QandA">
       Questions and Answers
       <SearchAnswer />
-      <QAList questions={qAndA.results}/>
+      <QAList questions={qAndA.results} getProductQandA={getProductQandA} productID={qAndA.product_id}/>
       <AddQuestion productID={qAndA.product_id} getProductQandA={getProductQandA}/>
       <MoreAnsweredQuestions />
     </div>
