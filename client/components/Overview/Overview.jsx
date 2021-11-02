@@ -45,7 +45,7 @@ class Overview extends React.Component {
 
   render() {
     if (this.state.currentFeatures.length === 0) {
-      return <div>Hello There!</div>;
+      return null;
     }
     return (
       <div id="Overview">
