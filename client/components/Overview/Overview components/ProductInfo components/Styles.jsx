@@ -23,26 +23,18 @@ class Styles extends React.Component {
   }
 
   render() {
-    if (this.props.products) {
-      return (
-        <div id="Styles">
-          <div>
-            <strong>STYLE > </strong>
-            Selected Style
-          </div>
-          <div style={styles.tn}>
-          {/* Products, Not Styles. Will dynamically render styles as thumbnails */}
-            {this.props.products.map((product) => {
-              return <StyledStyleThumbnail>TN</StyledStyleThumbnail>;
-            })}
-          </div>
-        </div>
-      );
-    }
     return (
-      <div>
-        <strong>STYLE</strong>
-        Selected Style
+      <div id="Styles">
+        <div>
+          <strong>STYLE > </strong>
+          Selected Style
+        </div>
+        <div style={styles.tn}>
+        {/* Products, Not Styles. Will dynamically render styles as thumbnails */}
+          {this.props.products.map((product) => {
+            return <StyledStyleThumbnail>TN</StyledStyleThumbnail>;
+          })}
+        </div>
       </div>
     );
   }

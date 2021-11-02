@@ -10,17 +10,37 @@ import SiteMessage from './Overview components/SiteMessage.jsx';
 class Overview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentFeatures: []
+    };
+    this.getProductFeatures = this.getProductFeatures.bind(this);
+  }
+
+  componentDidMount() {
+    this.getProductFeatures();
+  }
+
+  getProductFeatures() {
+    axios.get(`/products/${this.props.currentProd.id}`)
+      .then((product) => {
+        this.setState({currentFeatures: product.data.features});
+      })
+      .catch((err) => {
+        console.log('Axios getProductFeatures Error: ', err);
+      });
   }
 
   render() {
+    if (this.state.currentFeatures.length === 0) {
+      return <div>Hello There!</div>;
+    }
     return (
       <div id="Overview">
         <Banner />
         <SiteMessage />
         <Gallery />
         <ProductInfo products={this.props.products} currentProd={this.props.currentProd} />
-        <ProductDescription currentProd={this.props.currentProd} />
+        <ProductDescription currentProd={this.props.currentProd} features={this.state.currentFeatures} />
       </div>
     );
   }
