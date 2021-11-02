@@ -67,6 +67,10 @@ class App extends React.Component {
   }
 
   render() {
+    if (this.state.displayedProduct === null || this.state.products.length === 0 || this.state.reviews.length === 0 || this.state.metaData.length === 0 || this.state.qAndA.length === 0 ) {
+      return null;
+    }
+
     return (
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} />
