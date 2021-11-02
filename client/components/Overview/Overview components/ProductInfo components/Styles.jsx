@@ -8,7 +8,7 @@ const styles = {
   tn: {
     width: 75,
     height: 75,
-    borderradius: 50
+    borderRadius: 50
   }
 }
 
@@ -28,7 +28,7 @@ class Styles extends React.Component {
         <div style={styles.direction}>
           {this.props.styles.map((style) => {
             return (
-              <img src={`${style.photos[0].thumbnail_url}`} style={styles.tn}/>
+              <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styles.tn}/>
             )
           })}
         </div>
