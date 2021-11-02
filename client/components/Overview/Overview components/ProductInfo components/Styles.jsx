@@ -30,8 +30,7 @@ class Styles extends React.Component {
           Selected Style
         </div>
         <div style={styles.tn}>
-        {/* Products, Not Styles. Will dynamically render styles as thumbnails */}
-          {this.props.products.map((product) => {
+          {this.props.styles.map((style) => {
             return <StyledStyleThumbnail>TN</StyledStyleThumbnail>;
           })}
         </div>

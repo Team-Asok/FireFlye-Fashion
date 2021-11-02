@@ -11,13 +11,16 @@ class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFeatures: []
+      currentFeatures: [],
+      currentStyles: [],
     };
     this.getProductFeatures = this.getProductFeatures.bind(this);
+    this.getProductStyles = this.getProductStyles.bind(this);
   }
 
   componentDidMount() {
     this.getProductFeatures();
+    this.getProductStyles();
   }
 
   getProductFeatures() {
@@ -30,6 +33,16 @@ class Overview extends React.Component {
       });
   }
 
+  getProductStyles() {
+    axios.get(`/products/${this.props.currentProd.id}/styles`)
+      .then((styles) => {
+        this.setState({currentStyles: styles.data.results});
+      })
+      .catch((err) => {
+        console.log('Axios getProductStyles Error: ', err);
+      });
+  }
+
   render() {
     if (this.state.currentFeatures.length === 0) {
       return <div>Hello There!</div>;
@@ -39,7 +52,7 @@ class Overview extends React.Component {
         <Banner />
         <SiteMessage />
         <Gallery />
-        <ProductInfo products={this.props.products} currentProd={this.props.currentProd} />
+        <ProductInfo products={this.props.products} currentProd={this.props.currentProd} styles={this.state.currentStyles} />
         <ProductDescription currentProd={this.props.currentProd} features={this.state.currentFeatures} />
       </div>
     );
