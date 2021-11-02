@@ -54,19 +54,19 @@ class AnswerModal extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="modal-question">
               <label> ANSWER:*
-                <input type="text" name="question" maxlength="1000" onChange={this.handleChange} required/>
+                <input type="text" name="question" maxLength="1000" onChange={this.handleChange} required/>
               </label>
               </div>
               <div className="modal-name">
               <label> NAME:*
-                <input type="text" name="name" placeholder="Example: jack543!" maxlength="60" onChange={this.handleChange} required/>
+                <input type="text" name="name" placeholder="Example: jack543!" maxLength="60" onChange={this.handleChange} required/>
                 <span>For privacy reasons, do not use your full name or email address</span>
               </label>
               </div>
               <div className="modal-email">
               </div>
               <label> EMAIL:*
-                <input type="email" name="email" maxlength="60" placeholder="Example: jack@email.com" onChange={this.handleChange} required/>
+                <input type="email" name="email" maxLength="60" placeholder="Example: jack@email.com" onChange={this.handleChange} required/>
                 <span>For authentication reasons, you will not be emailed</span>
               </label>
               <div className="modal-submit">

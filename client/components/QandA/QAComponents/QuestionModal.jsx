@@ -26,8 +26,8 @@ class QuestionModal extends React.Component {
     })
     .then((response) => {
       console.log('Question posted')
-      this.props.handleClose()
       this.props.getProductQandA(this.state.productID);
+      this.props.handleClose()
     })
     .catch((err) => {
       console.log(err)
@@ -51,19 +51,19 @@ class QuestionModal extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="modal-question">
               <label> QUESTION:*
-                <input type="text" name="question" maxlength="1000" onChange={this.handleChange} required/>
+                <input type="text" name="question" maxLength="1000" onChange={this.handleChange} required/>
               </label>
               </div>
               <div className="modal-name">
               <label> NAME:*
-                <input type="text" name="name" placeholder="Example: jackson11!" maxlength="60" onChange={this.handleChange} required/>
+                <input type="text" name="name" placeholder="Example: jackson11!" maxLength="60" onChange={this.handleChange} required/>
                 <span>For privacy reasons, do not use your full name or email address</span>
               </label>
               </div>
               <div className="modal-email">
               </div>
               <label> EMAIL:*
-                <input type="email" name="email" maxlength="60" placeholder="Why did you like the product or not?" onChange={this.handleChange} required/>
+                <input type="email" name="email" maxLength="60" placeholder="Why did you like the product or not?" onChange={this.handleChange} required/>
                 <span>For authentication reasons, you will not be emailed</span>
               </label>
               <div className="modal-submit">
