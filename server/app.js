@@ -45,7 +45,7 @@ app.get('/products/:product_id', (req, res) => {
 
 // GET PRODUCT STYLES
 app.get('/products/:product_id/styles', (req, res) => {
-  product.getProductInfo(req.params.product_id)
+  product.getProductStyles(req.params.product_id)
     .then((response) => {
       res.status(200).send(response.data);
     })
