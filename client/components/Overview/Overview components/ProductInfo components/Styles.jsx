@@ -8,7 +8,8 @@ const styles = {
   tn: {
     width: 75,
     height: 75,
-    borderRadius: 50
+    borderRadius: 50,
+    margin: 20
   }
 }
 
