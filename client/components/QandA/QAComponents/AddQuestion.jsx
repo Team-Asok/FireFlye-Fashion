@@ -28,5 +28,3 @@ class AddQuestion extends React.Component {
 }
 
 export default AddQuestion;
-
-// <button id="add-question" type="button">Add a question</button>
