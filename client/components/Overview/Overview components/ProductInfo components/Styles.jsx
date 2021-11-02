@@ -31,7 +31,7 @@ class Styles extends React.Component {
         </div>
         <div style={styles.tn}>
           {this.props.styles.map((style) => {
-            return <StyledStyleThumbnail>TN</StyledStyleThumbnail>;
+            return <StyledStyleThumbnail key={style.style_id}>TN</StyledStyleThumbnail>;
           })}
         </div>
       </div>
