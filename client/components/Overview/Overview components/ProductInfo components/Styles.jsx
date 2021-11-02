@@ -1,21 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledStyleThumbnail = styled.div`
-  width: 75px;
-  height: 75px;
-  background-color: yellow;
-  border-radius: 50%;
-`;
 
 const styles = {
-  tn: {
+  direction: {
     display: 'flex',
     flexDirection: 'row'
+  },
+  tn: {
+    width: 75,
+    height: 75,
+    borderradius: 50
   }
 }
 
-//Props currently getting product info, not styles. Where does that info need to start?
 class Styles extends React.Component {
   constructor(props) {
     super(props);
@@ -29,9 +25,11 @@ class Styles extends React.Component {
           <strong>STYLE > </strong>
           Selected Style
         </div>
-        <div style={styles.tn}>
+        <div style={styles.direction}>
           {this.props.styles.map((style) => {
-            return <StyledStyleThumbnail key={style.style_id}>TN</StyledStyleThumbnail>;
+            return (
+              <img src={`${style.photos[0].thumbnail_url}`} style={styles.tn}/>
+            )
           })}
         </div>
       </div>
