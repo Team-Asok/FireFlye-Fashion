@@ -7,27 +7,38 @@ class RandR extends React.Component {
     super(props);
     this.state = {
       allreviews: this.props.reviews,
-      filteredreviews: this.props.reviews
+      starsFiltered: [],
+      filteredReviews: this.props.reviews
     }
+    this.starsFiltered = [];
   }
 
-  filterReviews(stars) {
-    var filteredReviews = [];
+  filterReviews(starRating) {
+    if (this.starsFiltered.indexOf(starRating) === -1) {
+      this.starsFiltered.push(starRating)
+    }
+
+    var reviewsFilteredByStarRating = [];
+
+    this.state.allreviews.forEach((review) => {
+      if (this.starsFiltered.indexOf(review.rating) !== -1) {
+        reviewsFilteredByStarRating.push(review);
+      }
+    })
+
+    this.setState({filteredReviews: reviewsFilteredByStarRating})
 
  }
 
 
 
   render() {
-    if (this.props.reviews.length === 0) {
-      return null;
-    }
 
     return (
     <div id="RandR">
       Reviews and ratings
       <ReviewMetaDataContainer metaData={this.props.metaData} filter={this.filterReviews.bind(this)} reviews={this.state.allreviews} />
-      <ReviewList reviews={this.state.filteredreviews} />
+      <ReviewList reviews={this.state.filteredReviews} />
     </div>
     )
   }

@@ -18,7 +18,6 @@ class ReviewList extends React.Component {
     };
     this.renderView = this.renderView.bind(this);
     this.expandReviewsClickHandler = this.expandReviewsClickHandler.bind(this);
-    console.log(this.props)
   }
 
   expandReviewsClickHandler() {
@@ -33,7 +32,7 @@ class ReviewList extends React.Component {
 
   renderView(view) {
     // sort the reviews into a sorted array before rendering
-    var sortedReviews = sortReviews(this.props.reviews.results, this.state.sort);
+    var sortedReviews = sortReviews(this.props.reviews, this.state.sort);
     if (view === 'default') {
       return (
         <>
@@ -48,11 +47,10 @@ class ReviewList extends React.Component {
   }
 
   render() {
-    if (this.props.reviews.results) {
-      return (
+    return (
         <>
           <StyledDiv id="reviewlist">
-            <ReviewCount default={this.state.sort} count={this.props.reviews.results.length} select={this.handleSortSubmit.bind(this)}/>
+            <ReviewCount default={this.state.sort} count={this.props.reviews.length} select={this.handleSortSubmit.bind(this)}/>
             <ul id="reviewListTilescontainer">
             {this.renderView(this.state.view)}
             </ul>
@@ -62,7 +60,5 @@ class ReviewList extends React.Component {
         </>
       );
     }
-    return null;
-  }
 }
 export default ReviewList;

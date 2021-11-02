@@ -43,24 +43,32 @@ render() {
         <tbody>
           <tr>
             <td>
-              <button onClick={() => {this.props.filter('5')}}>5 stars</button>
+              <button onClick={() => {this.props.filter(5)}}>5 stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('5')} />
           </tr>
           <tr>
-            <td>4 stars</td>
+          <td>
+              <button onClick={() => {this.props.filter(4)}}>4  stars</button>
+            </td>
             <PercentBar percentage={this.starPercentage('4')} />
           </tr>
           <tr>
-            <td>3 stars</td>
+          <td>
+              <button onClick={() => {this.props.filter(3)}}>3 stars</button>
+            </td>
             <PercentBar percentage={this.starPercentage('3')} />
           </tr>
           <tr>
-            <td>2 stars</td>
+          <td>
+              <button onClick={() => {this.props.filter(2)}}>2 stars</button>
+            </td>
             <PercentBar percentage={this.starPercentage('2')} />
           </tr>
           <tr>
-            <td>1 stars</td>
+          <td>
+              <button onClick={() => {this.props.filter(1)}}>1 star</button>
+            </td>
             <PercentBar percentage={this.starPercentage('1')} />
           </tr>
         </tbody>
