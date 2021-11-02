@@ -154,3 +154,11 @@ button#add-a-review {
   width: 10px;
   background-color: gray;
 }
+
+.star {
+  width: 30px;
+  height: 30px;
+  stroke: black;
+  stroke-width: 2px;
+  stroke-linejoin: miter;
+}
