@@ -8,9 +8,9 @@ const StyledProdDesc = styled.div`
   font-size: 25px;
 `;
 
-const ProductDescription = ({currentProd}) => (
+const ProductDescription = ({currentProd, features}) => (
   <StyledProdDesc id="ProductDescription">
-    <div>
+    <div style={{width: 900}}>
       <h4>
         {currentProd.slogan}
       </h4>
@@ -20,9 +20,9 @@ const ProductDescription = ({currentProd}) => (
     </div>
     <div id="Separator" />
     <ul>
-      <li>
-        HardCoding!
-      </li>
+      {features.map((feature) => (
+        feature.value ? <li>{feature.feature}: {feature.value}</li> : <li>{feature.feature}</li>
+      ))}
     </ul>
   </StyledProdDesc>
 );
