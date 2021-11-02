@@ -32,6 +32,7 @@ class ReviewList extends React.Component {
 
   renderView(view) {
     // sort the reviews into a sorted array before rendering
+    console.log(this.props.reviews);
     var sortedReviews = sortReviews(this.props.reviews, this.state.sort);
     if (view === 'default') {
       return (
