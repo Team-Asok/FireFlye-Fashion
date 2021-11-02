@@ -16,9 +16,6 @@ class QuestionModal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log('you asked this question ', this.state.question)
-    // console.log('this is the name ', this.state.name)
-    // console.log('this is the email ', this.state.email)
     axios.post('/qa/questions', {
       data: {
         body: this.state.question,

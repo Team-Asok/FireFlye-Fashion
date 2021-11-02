@@ -3,7 +3,6 @@ import QuestionEntry from './QuestionEntry.jsx';
 import AnswerEntry from './AnswerEntry.jsx';
 
 const QAListEntry = ({ question, getProductQandA, productID }) => {
- // console.log('this is questions isnde qa list entry ', question)
   let answerArray = Object.entries(question.answers)
   return (
     <li>
@@ -16,5 +15,3 @@ const QAListEntry = ({ question, getProductQandA, productID }) => {
 };
 
 export default QAListEntry;
-
-// <AnswerEntry answer={question.answers} />
