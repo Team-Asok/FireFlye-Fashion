@@ -20,7 +20,7 @@ class AddQuestion extends React.Component {
   render () {
     return (
       <div className="add-question">
-        <button onClick={(e) => this.showModal()}>Show modal</button>
+        <button onClick={(e) => this.showModal()}>ADD A QUESTION</button>
         <QuestionModal show={this.state.show} handleClose={this.hideModal}/>
       </div>
     )
