@@ -8,28 +8,23 @@ const StyledProdDesc = styled.div`
   font-size: 25px;
 `;
 
-const ProductDescription = ({currentProd}) => {
-  if (currentProd) {
-    return (
-      <StyledProdDesc id="ProductDescription">
-        <div>
-          <h4>
-            {currentProd.slogan}
-          </h4>
-          <span>
-            {currentProd.description}
-          </span>
-        </div>
-        <div id="Separator" />
-        <ul>
-          <li>
-            HardCoding!
-          </li>
-        </ul>
-      </StyledProdDesc>
-    );
-  }
-  return null;
-};
+const ProductDescription = ({currentProd}) => (
+  <StyledProdDesc id="ProductDescription">
+    <div>
+      <h4>
+        {currentProd.slogan}
+      </h4>
+      <span>
+        {currentProd.description}
+      </span>
+    </div>
+    <div id="Separator" />
+    <ul>
+      <li>
+        HardCoding!
+      </li>
+    </ul>
+  </StyledProdDesc>
+);
 
 export default ProductDescription;
