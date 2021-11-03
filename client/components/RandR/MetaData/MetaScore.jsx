@@ -1,4 +1,7 @@
 import React from 'react';
+import StarGraphic from '../../GlobalComponents/StarGraphic.jsx';
+import { findTotalStars } from './StarRatingGraph.jsx';
+
 
 const MetaScore = (props) => {
 
@@ -16,12 +19,18 @@ const MetaScore = (props) => {
   if (isNaN(metaScore)){
     metaScore = '0.0';
     return (
-    <h3 id="meta-score">{metaScore}</h3>
+    <div id="meta-score">
+      {metaScore}
+      <StarGraphic metaScore={props.metaScore}/>
+    </div>
     )
   }
 
   return (
-    <h3 id="meta-score">{metaScore}</h3>
+    <div id="meta-score">
+      {metaScore}
+      <StarGraphic metaScore={props.metaScore}/>
+    </div>
   )
 }
 
