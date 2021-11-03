@@ -11,14 +11,17 @@ class ReviewModal extends React.Component {
       photos: [],
       product_id: this.props.productID,
       recommend: false,
-      characteristics: {}
-    }
+   }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.minCharacterLength = this.minCharacterLength.bind(this);
+    this.renderFactors = this.renderFactors.bind(this);
+    this.handleRadioSelect = this.handleRadioSelect.bind(this);
+    this.characteristics = {};
   }
 
   handleSubmit = (e) => {
+    console.log(e)
     e.preventDefault();
     // axios.post(`/reviews`, {
     //   params: this.state.product_id,
@@ -59,6 +62,43 @@ class ReviewModal extends React.Component {
     }
 
   }
+  handleRadioSelect() {
+    let id = event.target.id.substring(0, event.target.id.length -1);
+    this.characteristics[id] = event.target.value
+    console.log(this.characteristics);
+  }
+
+  renderFactors() {
+    let characteristicsGuide = {
+      'Size': ['A size too small', '1/2 a size too small', 'Perfect', '1/2 a size too big', 'A size too wide'],
+      'Width': ['Too narrow', 'Slightly narrow', 'Perfect', 'Slightly wide', 'Too wide'],
+      'Comfort': ['Uncomfortable', 'Slightly uncomfortable', 'Ok', 'Comfortable', 'Perfect'],
+      'Quality': ['Poor', 'Below average', 'What i expected', 'Pretty great', 'Perfect'],
+      'Length': ['Runs Short', 'Runs slightly short', 'Perfect', 'Runs slightly long', 'Runs long'],
+      'Fit': ['Runs tight', 'Runs slightly tight', 'Perfect', 'Runs slightly long', 'Runs long']
+    }
+
+    let characteristicsArray = Object.entries(this.props.metaData.characteristics)
+   return characteristicsArray.map((characteristic) => {
+      return (
+      <>
+        <div className="factors" key={characteristic[1].id} id={characteristic[0]}> {characteristic[0]}: <br/>
+          <label htmlFor={`${characteristic[1].id}1` }>{characteristicsGuide[characteristic[0]][0]}</label>
+              <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}1`} name={characteristic[0]} value="1" />
+          <label htmlFor={`${characteristic[1].id}2`}>{characteristicsGuide[characteristic[0]][1]}</label>
+              <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}2`} name={characteristic[0]} value="2" />
+          <label htmlFor={`${characteristic[1].id}3`}>{characteristicsGuide[characteristic[0]][2]}</label>
+              <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}3`} name={characteristic[0]} value="3" />
+          <label htmlFor={`${characteristic[1].id}4`}>{characteristicsGuide[characteristic[0]][3]}</label>
+              <input onChange={this.handleRadioSelect}  type="radio" id={`${characteristic[1].id}4`} name={characteristic[0]} value="4" />
+          <label htmlFor={`${characteristic[1].id}5`}>{characteristicsGuide[characteristic[0]][4]}</label>
+              <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}5`} name={characteristic[0]} value="5" />
+        </div>
+      <br/>
+      </>)
+    })
+
+  }
 
   render () {
     if (!this.props.show) {
@@ -86,11 +126,7 @@ class ReviewModal extends React.Component {
               </div>
 
               <div className="factors">
-                <input type="radio" id="1" name="factor" value="1" />
-                <input type="radio" id="2" name="factor" value="2" />
-                <input type="radio" id="3" name="factor" value="3" />
-                <input type="radio" id="1" name="factor" value="4" />
-                <input type="radio" id="4" name="factor" value="5" />
+                {this.renderFactors()}
               </div>
 
               <div className="modal-name">

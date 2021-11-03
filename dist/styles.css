@@ -177,7 +177,7 @@ button#add-review {
 }
 
 .modal-content{
-  width: 500px;
+  width: auto;
   background-color: white;
 }
 
