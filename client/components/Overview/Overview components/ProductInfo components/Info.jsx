@@ -5,7 +5,7 @@ const StyledPInfoContainer = styled.div`
   background-color: lightcoral;
 `;
 
-const Info = ({currentProd}) => (
+const Info = ({currentProd, style}) => (
   <StyledPInfoContainer id="info">
     {currentProd.category}
     {currentProd.name}
