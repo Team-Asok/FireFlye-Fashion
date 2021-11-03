@@ -5,7 +5,7 @@ const styling = {
     width: 75,
     height: 75,
     borderRadius: 50,
-    margin: 20,
+    margin: 15,
   },
   noImage: {
     fontSize: 20,

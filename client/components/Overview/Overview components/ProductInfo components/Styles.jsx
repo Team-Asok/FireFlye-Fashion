@@ -21,6 +21,23 @@ class Styles extends React.Component {
     this.setState({currentStyle: style})
   }
 
+  //Creating rows of four
+  separateRows() {
+    let rows = [];
+
+    for (let i = 0; i < this.props.styles.length; i += 4) {
+      let row = [];
+      row.push(this.props.styles.slice(i, i + 4).map((style) => {
+        return <Style key={style.style_id} style={style} select={this.selectStyle} />
+      }))
+      rows.push(row.map((item) => {
+        return <div>{item}</div>
+      }))
+    }
+
+    return rows;
+  }
+
   render() {
     return (
       <div id="Styles">
@@ -28,10 +45,8 @@ class Styles extends React.Component {
           <strong>STYLE > </strong>
           {this.state.currentStyle.name}
         </div>
-        <div style={styling.direction}>
-          {this.props.styles.map((style) => (
-            <Style key={style.style_id} style={style} select={this.selectStyle} />
-          ))}
+        <div>
+          {this.separateRows()}
         </div>
       </div>
     );
