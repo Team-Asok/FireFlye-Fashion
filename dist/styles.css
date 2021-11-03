@@ -155,7 +155,15 @@ button#add-a-review {
   background-color: gray;
 }
 
-.modal{
+.star {
+  width: 30px;
+  height: 30px;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+}
+
+  .modal{
   font-size: 12px;
   position: fixed;
   left: 0;
