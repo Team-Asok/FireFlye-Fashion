@@ -52,7 +52,7 @@ class Overview extends React.Component {
         <Banner />
         <SiteMessage />
         <Gallery />
-        <ProductInfo products={this.props.products} currentProd={this.props.currentProd} styles={this.state.currentStyles} metaData={this.props.metaData} reviews={this.props.reviews} />
+        <ProductInfo products={this.props.products} currentProd={this.props.currentProd} styles={this.state.currentStyles} metaScore={this.props.metaScore} reviews={this.props.reviews} />
         <ProductDescription currentProd={this.props.currentProd} features={this.state.currentFeatures} />
       </div>
     );
