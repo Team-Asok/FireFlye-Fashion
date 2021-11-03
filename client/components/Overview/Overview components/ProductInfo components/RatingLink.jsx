@@ -1,7 +1,5 @@
 import React from 'react';
 import StarGraphic from '../../../GlobalComponents/StarGraphic.jsx';
-import getMetaScore from '../../../RandR/MetaData/getMetaScoreFn.js';
-import { findTotalStars } from '../../../RandR/MetaData/StarRatingGraph.jsx';
 
 const styling = {
   format: {
