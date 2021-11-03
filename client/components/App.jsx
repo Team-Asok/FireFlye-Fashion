@@ -75,7 +75,11 @@ class App extends React.Component {
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
+<<<<<<< HEAD
         <RandR getReviews={this.getProductReviews} productId={this.state.displayedProduct.id} reviews={this.state.reviews.results} metaData={this.state.metaData} />
+=======
+        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} />
+>>>>>>> caacf34357b80cdc8f794a885b67794e0c466e8a
       </div>
     );
     }
