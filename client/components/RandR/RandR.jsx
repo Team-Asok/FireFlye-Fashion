@@ -38,7 +38,7 @@ class RandR extends React.Component {
     <div id="RandR">
       Reviews and ratings
       <ReviewMetaDataContainer metaData={this.props.metaData} filter={this.filterReviews.bind(this)} reviews={this.state.allreviews} />
-      <ReviewList reviews={this.state.filteredReviews} />
+      <ReviewList reviews={this.state.filteredReviews} productID={this.props.productID}/>
     </div>
     )
   }
