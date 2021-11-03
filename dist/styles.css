@@ -194,3 +194,14 @@ button#add-review {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
+
+#characteristics-table {
+  table-layout: fixed;
+  font-size: 17px;
+  text-align: center;
+}
+
+#characteristics-table,
+td {
+  width: 100px;
+}

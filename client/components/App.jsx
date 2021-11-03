@@ -14,7 +14,7 @@ class App extends React.Component {
       reviews: [],
       qAndA: [],
       metaData: [],
-      metaScore: 0,
+      metaScore: 0.0,
       displayedProduct: null,
     };
     this.getAllProducts = this.getAllProducts.bind(this);
@@ -81,7 +81,7 @@ class App extends React.Component {
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
-        <RandR productID={this.state.displayedProduct.id} getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} />
+        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
       </div>
     );
     }

@@ -10,7 +10,8 @@ class ReviewModal extends React.Component {
       email: '',
       photos: [],
       product_id: this.props.productID,
-      recommend: false
+      recommend: false,
+      characteristics: {}
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -83,6 +84,15 @@ class ReviewModal extends React.Component {
                 <label htmlFor='no'>No</label>
                 <input type="radio" id='no' name="recommend" value="NO" />
               </div>
+
+              <div className="factors">
+                <input type="radio" id="1" name="factor" value="1" />
+                <input type="radio" id="2" name="factor" value="2" />
+                <input type="radio" id="3" name="factor" value="3" />
+                <input type="radio" id="1" name="factor" value="4" />
+                <input type="radio" id="4" name="factor" value="5" />
+              </div>
+
               <div className="modal-name">
               <label> NAME:* <br />
                 <input type="text" name="name" placeholder="Example: jack543!" maxLength="60" onChange={this.handleChange} required/>
