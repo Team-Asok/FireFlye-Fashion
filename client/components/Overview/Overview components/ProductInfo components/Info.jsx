@@ -5,11 +5,40 @@ const StyledPInfoContainer = styled.div`
   background-color: lightcoral;
 `;
 
+const styling = {
+  sale: {
+    color: 'red',
+    fontSize: 25,
+    marginLeft: 15,
+  },
+  original: {
+    textDecoration: 'line-through',
+    fontSize: 25,
+  },
+  flex: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  category: {
+    fontSize: 35,
+  },
+  name: {
+    fontSize: 65,
+  },
+};
+
 const Info = ({currentProd, style}) => (
   <StyledPInfoContainer id="info">
-    {currentProd.category}
-    {currentProd.name}
-    {currentProd.default_price}
+    <div style={styling.category}>{currentProd.category}</div>
+    <div style={styling.name}>{currentProd.name}</div>
+    {style.sale_price
+      ? (
+        <div style={styling.flex}>
+          <div style={styling.original}>${style.original_price}</div>
+          <div style={styling.sale}>${style.sale_price}</div>
+        </div>
+      )
+      : <div style={styling.original}>${style.original_price}</div>}
   </StyledPInfoContainer>
 );
 
