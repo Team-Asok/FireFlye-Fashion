@@ -36,7 +36,7 @@ const StarGraphic = (props) => {
     <div>
       {starValues.map((value, index) => {
         return (
-        <svg xmlns="http://www.w3.org/2000/svg" className="star" viewBox="0 0 20 20" fill={`url(#${index})`}>
+        <svg xmlns="http://www.w3.org/2000/svg" key={`${index}`} className="star" viewBox="0 0 20 20" fill={`url(#${index})`}>
           <defs>
               <linearGradient id={`${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset={`${value * 100}%`} style={{'stopColor':'rgb(0, 0, 0)', 'stopOpacity':1}} />
