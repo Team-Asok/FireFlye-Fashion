@@ -5,6 +5,9 @@ const styling = {
   direction: {
     display: 'flex',
     flexDirection: 'row',
+  },
+  selected: {
+    fontSize: 32
   }
 };
 
@@ -15,6 +18,7 @@ class Styles extends React.Component {
       currentStyle: ''
     };
     this.selectStyle = this.selectStyle.bind(this);
+    this.separateRows = this.separateRows.bind(this);
   }
 
   selectStyle(style) {
@@ -41,7 +45,7 @@ class Styles extends React.Component {
   render() {
     return (
       <div id="Styles">
-        <div>
+        <div style={styling.selected}>
           <strong>STYLE > </strong>
           {this.state.currentStyle.name}
         </div>
