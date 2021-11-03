@@ -44,7 +44,7 @@ class Overview extends React.Component {
   }
 
   render() {
-    if (this.state.currentFeatures.length === 0) {
+    if (this.state.currentFeatures.length === 0 || this.state.currentStyles.length === 0) {
       return null;
     }
     return (
