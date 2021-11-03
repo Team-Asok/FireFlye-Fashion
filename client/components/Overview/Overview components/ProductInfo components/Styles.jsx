@@ -5,6 +5,9 @@ const styling = {
   direction: {
     display: 'flex',
     flexDirection: 'row',
+  },
+  selected: {
+    fontSize: 32
   }
 };
 
@@ -12,9 +15,24 @@ class Styles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStyle: ''
+      currentStyle: props.styles[0]
     };
     this.selectStyle = this.selectStyle.bind(this);
+    this.separateRows = this.separateRows.bind(this);
+    this.setDefault = this.setDefault.bind(this);
+  }
+
+  componentDidMount() {
+    this.setDefault();
+  }
+
+  setDefault() {
+    for (let j = 1; j < this.props.styles.length; j++) {
+      if (this.props.styles[j]['default?'] === true) {
+        this.setState({currentStyle: this.props.styles[j]})
+        break;
+      }
+    }
   }
 
   selectStyle(style) {
@@ -41,7 +59,7 @@ class Styles extends React.Component {
   render() {
     return (
       <div id="Styles">
-        <div>
+        <div style={styling.selected}>
           <strong>STYLE > </strong>
           {this.state.currentStyle.name}
         </div>
