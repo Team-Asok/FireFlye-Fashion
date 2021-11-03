@@ -1,6 +1,23 @@
 import React from 'react';
 import Style from './Style.jsx';
 
+const styling = {
+  direction: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  tn: {
+    width: 75,
+    height: 75,
+    borderRadius: 50,
+    margin: 20,
+  },
+  noImage: {
+    fontSize: 20,
+    margin: 10,
+  },
+};
+
 class Styles extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +38,11 @@ class Styles extends React.Component {
           <strong>STYLE > </strong>
           {this.state.currentStyle.name}
         </div>
-        <Style styles={this.props.styles} select={this.selectStyle} />
+        <div style={styling.direction}>
+          {this.props.styles.map((style) => (
+            <Style key={style.style_id} style={style} select={this.selectStyle} />
+          ))}
+        </div>
       </div>
     );
   }

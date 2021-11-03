@@ -17,17 +17,13 @@ const styling = {
   },
 };
 
-const Style = ({styles, select}) => (
-  <div style={styling.direction}>
-    {styles.map((style) => (
-      style.photos[0].thumbnail_url
-      ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => select(style)} />
-      : <div style={styling.noImage}>
-          <div onClick={() => select(style)}>{style.name}</div>
-          <div onClick={() => select(style)}>No Image Available</div>
-        </div>
-    ))}
-  </div>
+const Style = ({style, select}) => (
+  style.photos[0].thumbnail_url
+    ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => select(style)} />
+    : <div style={styling.noImage}>
+        <div onClick={() => select(style)}>{style.name}</div>
+        <div onClick={() => select(style)}>No Image Available</div>
+      </div>
 );
 
 export default Style;
