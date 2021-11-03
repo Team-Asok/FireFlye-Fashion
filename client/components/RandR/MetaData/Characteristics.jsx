@@ -14,16 +14,6 @@ const Characteristics = (props) => {
   return (
     characteristicsArray.map((characteristic, index) => {
       return (
-        // <>
-        // <div key={`${index}`} id='characteristic'>{characteristic[0]}</div>
-        // <div key={`${index + 1}`} id='characteristic-value'>{characteristic[1].value}</div>
-        // <div key={`${index + 2}`} id='characteristic-rating-criteria'>{`
-        //   ${characteristicsGuide[characteristic[0]][0]}
-        //   ${characteristicsGuide[characteristic[0]][2]}
-        //   ${characteristicsGuide[characteristic[0]][4]}
-        // `}
-        // </div>
-        // </>
         <div id="characteristic" key={`${index}`}>{characteristic[0]}
           <table id="characteristics-table">
             <tbody>
