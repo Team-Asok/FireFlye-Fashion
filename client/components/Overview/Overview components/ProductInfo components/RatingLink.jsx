@@ -15,10 +15,10 @@ const styling = {
   },
 };
 
-const RatingLink = ({metaData}) => (
+const RatingLink = ({metaData, reviews}) => (
   <div id="OverviewRating" style={styling.format}>
     <StarGraphic metaScore={getMetaScore(metaData.ratings, findTotalStars)} />
-    <a href="#RandR" style={styling.anchor}>Read all reviews</a>
+    {reviews.results.length > 0 ? <a href="#RandR" style={styling.anchor}>Read all reviews</a> : null}
   </div>
 );
 
