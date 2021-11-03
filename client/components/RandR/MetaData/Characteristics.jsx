@@ -28,9 +28,20 @@ const Characteristics = (props) => {
           <table id="characteristics-table">
             <tbody>
               <tr>
-                <td>bar 1</td>
-                <td>bar 2</td>
-                <td>bar 3</td>
+                <td>
+                  <svg width="100" height="10">
+                    <rect width="100" height="10" fill='grey'/>
+                  </svg>
+                </td>
+                <td>
+                  <svg width="100" height="10">
+                    <rect width="100" height="10" fill='grey'/>
+                  </svg></td>
+                <td>
+                  <svg width="100" height="10">
+                    <rect width="100" height="10" fill='grey'/>
+                  </svg>
+                </td>
               </tr>
               <tr>
                 <td>{characteristicsGuide[characteristic[0]][0]}</td>
