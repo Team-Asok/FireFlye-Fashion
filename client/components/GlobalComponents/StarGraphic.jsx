@@ -1,7 +1,6 @@
 import React from 'react'
 
 const StarGraphic = (props) => {
-  // props.metaScore === total meta score set into percentage finding function
   const roundToNearestQuarter = (num) => {
     if (num > 0 && num < 0.125) {
       return num = 0;
@@ -31,10 +30,11 @@ const StarGraphic = (props) => {
        metaScore = 0;
     }
   }
+
+
   return (
     <div>
       {starValues.map((value, index) => {
-        console.log(value, index);
         return (
         <svg xmlns="http://www.w3.org/2000/svg" className="star" viewBox="0 0 20 20" fill={`url(#${index})`}>
           <defs>
