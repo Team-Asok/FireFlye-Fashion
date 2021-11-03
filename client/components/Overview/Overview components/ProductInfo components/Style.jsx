@@ -1,10 +1,6 @@
 import React from 'react';
 
 const styling = {
-  direction: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
   tn: {
     width: 75,
     height: 75,
