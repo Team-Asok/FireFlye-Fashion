@@ -23,8 +23,8 @@ const Style = ({styles, select}) => (
       style.photos[0].thumbnail_url
       ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => select(style)} />
       : <div style={styling.noImage}>
-          <div>{style.name}</div>
-          <div>No Image Available</div>
+          <div onClick={() => select(style)}>{style.name}</div>
+          <div onClick={() => select(style)}>No Image Available</div>
         </div>
     ))}
   </div>
