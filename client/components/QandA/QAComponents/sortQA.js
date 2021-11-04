@@ -1,5 +1,5 @@
-const sortQA = (questions) => {
-  var sortByHelpful = (questions) => {
+const sortQA = (arr) => {
+  var sortByHelpful = (arr) => {
     var compareFunction = (a, b) => {
       if (a[1].helpfulness > b[1].helpfulness) {
         return -1;
@@ -10,7 +10,7 @@ const sortQA = (questions) => {
 
       return 0;
     }
-    return questions.sort(compareFunction);
+    return arr.sort(compareFunction);
   }
 }
 
