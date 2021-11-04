@@ -1,46 +1,53 @@
 import React from 'react';
 import axios from 'axios'
+import { StarGraphic } from '../../GlobalComponents/StarGraphic.jsx'
 
 class ReviewModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       review: '',
+      summary:'',
       name: '',
       email: '',
       photos: [],
       product_id: this.props.productID,
       recommend: false,
+      rating: 2
    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.minCharacterLength = this.minCharacterLength.bind(this);
     this.renderFactors = this.renderFactors.bind(this);
     this.handleRadioSelect = this.handleRadioSelect.bind(this);
+    this.starRatingGraphic = this.starRatingGraphic.bind(this);
     this.characteristics = {};
+    StarGraphic = StarGraphic.bind(this);
   }
 
   handleSubmit = (e) => {
-    console.log(e)
     e.preventDefault();
-    // axios.post(`/reviews`, {
-    //   params: this.state.product_id,
-    //   data: {
-    //     body: this.state.review,
-    //     recommend: this.state.recommend,
-    //     name: this.state.name,
-    //     email: this.state.email,
-    //     photos: []
-    //   }
-    // })
-    // .then((response) => {
-    //   console.log('Review posted')
-    //   this.props.handleClose()
-    //   // need to get product reviews after submitting will handle that later;
-    // })
-    // .catch((err) => {
-    //   console.log(err)
-    // })
+    axios.post(`/reviews`, {
+        data: {
+        product_id: this.state.product_id,
+        rating: this.state.rating,
+        body: this.state.review,
+        summary: this.state.summary,
+        recommend: this.state.recommend,
+        name: this.state.name,
+        email: this.state.email,
+        photos: this.state.photos,
+        characteristics: this.characteristics
+      }
+    })
+    .then((response) => {
+      console.log('Review posted')
+      this.props.handleClose()
+      // need to get product reviews after submitting will handle that later;
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
@@ -66,6 +73,20 @@ class ReviewModal extends React.Component {
     let id = event.target.id.substring(0, event.target.id.length -1);
     this.characteristics[id] = event.target.value
     console.log(this.characteristics);
+  }
+
+  starRatingGraphic() {
+  console.log(this.state.rating);
+    return (
+      <StarGraphic metaScore={this.state.rating} onClick={this.handleStarRatingGraphicClick.bind(this)} />
+    )
+
+  }
+
+  handleStarRatingGraphicClick() {
+    console.log(event.target.value);
+    this.setState({rating: event.target.value})
+
   }
 
   renderFactors() {
@@ -109,6 +130,9 @@ class ReviewModal extends React.Component {
         <div className="modal-content">
           <div className="model-header">
             <h4 className="modal-title">ADD Review HERE</h4>
+            <div>
+              {this.starRatingGraphic()}
+            </div>
           </div>
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
