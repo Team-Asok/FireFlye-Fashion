@@ -4,16 +4,21 @@ import AddQuestion from './QAComponents/AddQuestion.jsx'
 import MoreAnsweredQuestions from './QAComponents/MoreAnsweredQuestions.jsx'
 import SearchAnswer from './QAComponents/SearchAnswer.jsx'
 
-const QandA = ({ qAndA, getProductQandA }) => {
-  return (
-    <div id="QandA">
-      Questions and Answers
-      <SearchAnswer />
-      <QAList questions={qAndA.results} getProductQandA={getProductQandA} productID={qAndA.product_id}/>
-      <AddQuestion productID={qAndA.product_id} getProductQandA={getProductQandA}/>
-      <MoreAnsweredQuestions />
-    </div>
-  );
+class QandA extends React.Component {
+
+  render () {
+    return (
+      <div id="QandA">
+        Questions and Answers
+        <SearchAnswer />
+        <QAList questions={qAndA.results} getProductQandA={getProductQandA} productID={qAndA.product_id}/>
+        <AddQuestion productID={qAndA.product_id} getProductQandA={getProductQandA}/>
+        <MoreAnsweredQuestions />
+      </div>
+    );
+  }
 };
+
+
 
 export default QandA;
