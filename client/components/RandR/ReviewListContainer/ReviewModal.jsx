@@ -21,6 +21,7 @@ class ReviewModal extends React.Component {
     this.handleRadioSelect = this.handleRadioSelect.bind(this);
     this.starRatingGraphic = this.starRatingGraphic.bind(this);
     this.handleRecommendSelect = this.handleRecommendSelect.bind(this);
+    this.handleUploadPhotosChange = this.handleUploadPhotosChange.bind(this);
     this.characteristics = {};
 
   }
@@ -94,6 +95,10 @@ class ReviewModal extends React.Component {
   handleStarRatingGraphicClick(starvalue) {
     this.setState({rating: starvalue})
 
+  }
+
+  handleUploadPhotosChange() {
+    console.log(event.target.files)
   }
 
   renderFactors() {
@@ -180,8 +185,8 @@ class ReviewModal extends React.Component {
               </div>
               <br/>
               <div className="modal-upload-pics">
-                <label>
-                  <button>Upload pictures</button>
+                <label for="img">Select Photos:
+                  <input onChange={this.handleUploadPhotosChange} type="file" id="img" accept="image/*" multiple/>
                 </label>
               </div>
             </form>
