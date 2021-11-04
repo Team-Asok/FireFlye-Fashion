@@ -3,16 +3,22 @@ import axios from 'axios';
 
 const HelpfulButton = ({id, path, helpfulness}) => {
 
+  let clickable = true
+
   const updateHelpful = (targetId) => {
     axios.put(path, {
       params : targetId
     })
-    .then(response => console.log(response))
+    .then(response => {
+      console.log('testing the button bounce')
+    })
     .catch(err => console.log(err));
   }
 
   return (
-    <button onClick={() => {updateHelpful(id)}} id="helpful-button" type="button">Helpful? Yes({helpfulness})</button>
+    <button onClick={() => {
+      updateHelpful(id);
+    }} id="helpful-button" type="button" disable={clickable ? false : true}>Helpful? Yes({helpfulness})</button>
   )
 }
 
