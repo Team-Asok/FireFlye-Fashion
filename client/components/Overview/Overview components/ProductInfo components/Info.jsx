@@ -11,8 +11,11 @@ const styling = {
     fontSize: 25,
     marginLeft: 15,
   },
-  original: {
+  originalSale: {
     textDecoration: 'line-through',
+    fontSize: 25,
+  },
+  originalNoSale: {
     fontSize: 25,
   },
   flex: {
@@ -34,11 +37,11 @@ const Info = ({currentProd, style}) => (
     {style.sale_price
       ? (
         <div style={styling.flex}>
-          <div style={styling.original}>${style.original_price}</div>
+          <div style={styling.originalSale}>${style.original_price}</div>
           <div style={styling.sale}>${style.sale_price}</div>
         </div>
       )
-      : <div style={styling.original}>${style.original_price}</div>}
+      : <div style={styling.originalNoSale}>${style.original_price}</div>}
   </StyledPInfoContainer>
 );
 
