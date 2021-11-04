@@ -19,9 +19,45 @@ class AnswerEntry extends React.Component {
 
   showAllAnswers () {
     if (!this.state.showAll) {
-      return
+      return (
+        this.state.limitedAnswers.map(answer =>
+          <li key={answer.id}>
+            <div>
+              <div id="answer-name">
+                {answer.answerer_name}
+              </div>
+              <div id="answer-body">
+                {answer.body}
+              </div>
+              <div id="answer-date">
+                {answer.date}
+              </div>
+            <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness}/>
+            <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`}/>
+            </div>
+          </li>
+        )
+      )
     } else {
-      return
+      return (
+        this.state.sortedAnswers.map(answer =>
+          <li key={answer.id}>
+            <div>
+              <div id="answer-name">
+                {answer.answerer_name}
+              </div>
+              <div id="answer-body">
+                {answer.body}
+              </div>
+              <div id="answer-date">
+                {answer.date}
+              </div>
+            <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness}/>
+            <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`}/>
+            </div>
+          </li>
+        )
+      )
     }
   }
 
@@ -36,8 +72,7 @@ class AnswerEntry extends React.Component {
   render () {
     return (
         <ul>
-          <li>THIS IS SAMPLE answer</li>
-          <li>THIS IS SAMPLE answer</li>
+          {this.showAllAnswers()}
         </ul>
     )
   }
