@@ -9,9 +9,11 @@ class Cart extends React.Component {
       items: [],
       inventory: [],
       sizes: [],
+      currentSize: '',
       quantities: [],
     };
     this.parseInventory = this.parseInventory.bind(this);
+    this.updateSizeSelection = this.updateSizeSelection.bind(this);
   }
 
   componentDidMount() {
@@ -22,16 +24,31 @@ class Cart extends React.Component {
     if (skus.null) {
       return;
     }
-    this.setState({ inventory: skus });
+
+    let sizes = [];
+    let quantities = [];
+    let inventory = Object.values(skus);
+    inventory.forEach((product) => {
+      sizes.push(product.size);
+      quantities.push(product.quantity);
+    });
+
+    this.setState({
+      inventory: skus,
+      sizes: sizes,
+      quantities: quantities
+    });
+  }
+
+  updateSizeSelection(size) {
+    this.setState({currentSize: size.target.value});
   }
 
   render() {
     return (
       <div id="Cart">
-        Cart
-        <DropDownSize />
-        {/* Testing DropDown */}
-        <DropDownQuantity dataList={[1, 2, 3]} default={'2'} />
+        <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
+        <DropDownQuantity dataList={this.state.quantities} />
       </div>
     );
   }
