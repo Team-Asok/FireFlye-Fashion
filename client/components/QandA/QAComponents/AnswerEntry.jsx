@@ -2,7 +2,50 @@ import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
 import HelpfulButton from './HelpfulButton.jsx'
 import ReportButton from './ReportButton.jsx'
-import sortQA from './sortQA.js'
+// import sortQA from './sortQA.js'
+
+class AnswerEntry extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      sortedAnswers: this.props.answers,
+      limitedAnswers: this.props.answers.slice(0, 2),
+      showAll: false
+    }
+    this.showAllAnswers = this.showAllAnswers.bind(this);
+    this.setView = this.setView.bind(this);
+    this.closeView = this.closeView.bind(this);
+  }
+
+  showAllAnswers () {
+    if (!this.state.showAll) {
+      return
+    } else {
+      return
+    }
+  }
+
+  setView () {
+    this.setState({showAll: true})
+  }
+
+  closeView () {
+    this.setState({showAll: false})
+  }
+
+  render () {
+    return (
+        <ul>
+          <li>THIS IS SAMPLE answer</li>
+          <li>THIS IS SAMPLE answer</li>
+        </ul>
+    )
+  }
+};
+
+export default AnswerEntry;
+
+/**
 
 const AnswerEntry = ({ answers }) => {
 
@@ -27,12 +70,10 @@ const AnswerEntry = ({ answers }) => {
   )
 
   return (
-    <React.Fragment>
       <ul>
         {singleAnswer}
       </ul>
-    </React.Fragment>
   )
 };
 
-export default AnswerEntry;
+ */
