@@ -26,6 +26,7 @@ class ReviewList extends React.Component {
 
   handleSortSubmit() {
     event.preventDefault();
+    console.log(event);
     this.setState({sort: event.target.value})
   }
 
@@ -54,7 +55,7 @@ class ReviewList extends React.Component {
             <ul id="reviewListTilescontainer">
             {this.renderView(this.state.view)}
             </ul>
-            <AddAReview productID={this.props.productId} metaData={this.props.metaData}/>
+            <AddAReview getProductReviews={this.props.getProductReviews} productId={this.props.productId} metaData={this.props.metaData}/>
             <MoreReviews onClick={this.expandReviewsClickHandler} />
           </StyledDiv>
         </>

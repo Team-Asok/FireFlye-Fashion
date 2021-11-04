@@ -7,11 +7,10 @@ class ReviewModal extends React.Component {
     super(props)
     this.state = {
       review: '',
-      summary:'',
       name: '',
       email: '',
       photos: [],
-      product_id: this.props.productID,
+      product_id: this.props.productId,
       recommend: false,
       rating: 0
    }
@@ -21,18 +20,22 @@ class ReviewModal extends React.Component {
     this.renderFactors = this.renderFactors.bind(this);
     this.handleRadioSelect = this.handleRadioSelect.bind(this);
     this.starRatingGraphic = this.starRatingGraphic.bind(this);
+    this.handleRecommendSelect = this.handleRecommendSelect.bind(this);
     this.characteristics = {};
 
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+    let review = this.state.review
+    let summary = review.substring(0, 60) + '...'
+
     axios.post(`/reviews`, {
         data: {
         product_id: this.state.product_id,
         rating: this.state.rating,
         body: this.state.review,
-        summary: this.state.summary,
+        summary: summary,
         recommend: this.state.recommend,
         name: this.state.name,
         email: this.state.email,
@@ -43,7 +46,7 @@ class ReviewModal extends React.Component {
     .then((response) => {
       console.log('Review posted')
       this.props.handleClose()
-      // need to get product reviews after submitting will handle that later;
+      this.props.getProductReviews(Number(this.state.product_id))
     })
     .catch((err) => {
       console.log(err)
@@ -71,8 +74,15 @@ class ReviewModal extends React.Component {
   }
   handleRadioSelect() {
     let id = event.target.id.substring(0, event.target.id.length -1);
-    this.characteristics[id] = event.target.value
-    console.log(this.characteristics);
+    this.characteristics[id] = Number(event.target.value);
+  }
+
+  handleRecommendSelect() {
+    if (event.target.value === 'true') {
+      this.setState({recommend: true})
+    } else {
+      this.setState({recommend: false})
+    }
   }
 
   starRatingGraphic() {
@@ -82,8 +92,8 @@ class ReviewModal extends React.Component {
 
   }
 
-  handleStarRatingGraphicClick() {
-    this.setState({rating: event.target.value})
+  handleStarRatingGraphicClick(starvalue) {
+    this.setState({rating: starvalue})
 
   }
 
@@ -142,9 +152,9 @@ class ReviewModal extends React.Component {
               </div>
               <div className="modal-recommended">Would you recommend this product?<br />
                 <label htmlFor='yes'>Yes</label>
-                <input type="radio" id='yes' name="recommend" value="Yes" />
+                <input onChange={this.handleRecommendSelect} type="radio" id='yes' name="recommend" value={true} />
                 <label htmlFor='no'>No</label>
-                <input type="radio" id='no' name="recommend" value="NO" />
+                <input onChange={this.handleRecommendSelect} type="radio" id='no' name="recommend" value={false} />
               </div>
 
               <div className="factors">

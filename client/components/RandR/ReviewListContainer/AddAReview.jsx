@@ -21,7 +21,7 @@ class AddReview extends React.Component {
     return (
       <>
         <button id="add-review" onClick={(e) => this.showModal()}>Add a Review</button>
-        <ReviewModal  productID={this.props.productID} show={this.state.show} handleClose={this.hideModal} metaData={this.props.metaData}/>
+        <ReviewModal getProductReviews={this.props.getProductReviews} productId={this.props.productId} show={this.state.show} handleClose={this.hideModal} metaData={this.props.metaData}/>
       </>
     )
   }
