@@ -14,29 +14,8 @@ const styling = {
 class Styles extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentStyle: props.styles[0]
-    };
-    this.selectStyle = this.selectStyle.bind(this);
+    this.state = {};
     this.separateRows = this.separateRows.bind(this);
-    this.setDefault = this.setDefault.bind(this);
-  }
-
-  componentDidMount() {
-    this.setDefault();
-  }
-
-  setDefault() {
-    for (let j = 1; j < this.props.styles.length; j++) {
-      if (this.props.styles[j]['default?'] === true) {
-        this.setState({currentStyle: this.props.styles[j]})
-        break;
-      }
-    }
-  }
-
-  selectStyle(style) {
-    this.setState({currentStyle: style})
   }
 
   //Creating rows of four
@@ -46,7 +25,7 @@ class Styles extends React.Component {
     for (let i = 0; i < this.props.styles.length; i += 4) {
       let row = [];
       row.push(this.props.styles.slice(i, i + 4).map((style) => {
-        return <Style key={style.style_id} style={style} select={this.selectStyle} />
+        return <Style key={style.style_id} style={style} select={this.props.select} />
       }))
       rows.push(row.map((item) => {
         return <div>{item}</div>
@@ -61,7 +40,7 @@ class Styles extends React.Component {
       <div id="Styles">
         <div style={styling.selected}>
           <strong>STYLE > </strong>
-          {this.state.currentStyle.name}
+          {this.props.currentStyle.name}
         </div>
         <div>
           {this.separateRows()}
