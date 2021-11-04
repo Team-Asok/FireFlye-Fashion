@@ -11,7 +11,7 @@ const DropDownSize = (props) => {
 
   return (
     <select id={`${props.default}}`} onChange={props.select}>
-      <option selected disabled>Select Size</option>
+      <option selected disabled>SELECT SIZE</option>
       {props.sizes.map((size) => {
         return <option value={size}>{size}</option>
       })}

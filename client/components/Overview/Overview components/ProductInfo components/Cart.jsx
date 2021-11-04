@@ -2,6 +2,29 @@ import React from 'react';
 import DropDownQuantity from '../../../GlobalComponents/DropDownMenu.jsx';
 import DropDownSize from './DropDownSize.jsx';
 
+const styling = {
+  container: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
+  },
+  size: {
+    gridColumnStart: 1,
+    gridColumnEnd: 2,
+    gridRowStart: 1,
+    gridRowEnd: 2,
+  },
+  quantity: {
+    gridColumnStart: 2,
+    gridColumnEnd: 3,
+    gridRowStart: 1,
+    gridRowEnd: 2,
+  },
+  button: {
+    gridRowStart: 2,
+  },
+};
+
 class Cart extends React.Component {
   constructor(props) {
     super(props);
@@ -46,9 +69,14 @@ class Cart extends React.Component {
 
   render() {
     return (
-      <div id="Cart">
-        <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
-        <DropDownQuantity dataList={this.state.quantities} />
+      <div style={styling.container}>
+        <div style={styling.size}>
+          <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
+        </div>
+        <div style={styling.quantity}>
+          <DropDownQuantity dataList={this.state.quantities} />
+        </div>
+        <button type="button" style={styling.button}>ADD TO BAG</button>
       </div>
     );
   }
