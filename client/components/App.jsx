@@ -81,11 +81,7 @@ class App extends React.Component {
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
-<<<<<<< HEAD
-        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} />
-=======
         <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
->>>>>>> 861f26609101f0e08f7c63f8c928be26ddcb00a4
       </div>
     );
     }
