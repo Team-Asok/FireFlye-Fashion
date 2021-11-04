@@ -1,9 +1,15 @@
 import React from 'react';
 
 const LoadAnswers = (props) => {
-  return (
-    <button id="load-answers" type="button">Load more answers</button>
-  )
+  if (!props.showAll) {
+    return (
+      <button onClick={props.onClick} id="load-answers" type="button">Load more answers</button>
+    )
+  } else {
+    return (
+      <button onClick={props.closeView} id="load-answers" type="button">Hide some answers</button>
+    )
+  }
 }
 
 export default LoadAnswers;

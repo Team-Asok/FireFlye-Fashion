@@ -10,7 +10,6 @@ const MoreAnsweredQuestions = (props) => {
       <button onClick={props.closeView} id="more-answered-questions" type="button">Hide some questions</button>
     )
   }
-
 }
 
 export default MoreAnsweredQuestions
