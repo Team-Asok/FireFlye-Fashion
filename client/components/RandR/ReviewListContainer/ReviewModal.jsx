@@ -44,7 +44,6 @@ class ReviewModal extends React.Component {
       }
     })
     .then((response) => {
-      console.log('Review posted')
       this.props.handleClose()
       this.props.getProductReviews(Number(this.state.product_id))
     })

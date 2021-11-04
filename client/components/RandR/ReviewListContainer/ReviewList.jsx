@@ -26,7 +26,6 @@ class ReviewList extends React.Component {
 
   handleSortSubmit() {
     event.preventDefault();
-    console.log(event);
     this.setState({sort: event.target.value})
   }
 
