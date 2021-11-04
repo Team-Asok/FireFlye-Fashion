@@ -54,7 +54,7 @@ class ReviewList extends React.Component {
             <ul id="reviewListTilescontainer">
             {this.renderView(this.state.view)}
             </ul>
-            <AddAReview />
+            <AddAReview getProductReviews={this.props.getProductReviews} productId={this.props.productId} metaData={this.props.metaData}/>
             <MoreReviews onClick={this.expandReviewsClickHandler} />
           </StyledDiv>
         </>

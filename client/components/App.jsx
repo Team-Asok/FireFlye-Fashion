@@ -52,8 +52,6 @@ class App extends React.Component {
     axios.get(`/reviews/meta/${productID}`)
     .then((results) => {
       var metaScore = getMetaScore(results.data.ratings, findTotalStars)
-      console.log(metaScore);
-
       this.setState({metaData: results.data, metaScore: parseFloat(metaScore)})
     })
   }
@@ -81,7 +79,7 @@ class App extends React.Component {
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
-        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
+        <RandR getProductReviews={this.getProductReviews} reviews={this.state.reviews.results} productId={this.state.displayedProduct.id} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
       </div>
     );
     }

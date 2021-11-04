@@ -12,6 +12,8 @@ const getAllReviews = (productID) => {
     },
     params: {
       product_id: productID,
+      count: 50,
+      sort: "relevant"
     },
   };
   return (

@@ -184,20 +184,10 @@ app.get('/reviews/meta/:product_id', (req, res) => {
 
 // POST REVIEW
 app.post('/reviews', (req, res) => {
-  let reviewData = {
-    product_id: req.data.product_id,
-    rating: req.data.rating,
-    summary: req.data.summary,
-    body: req.data.body,
-    recommend: req.data.recommend,
-    name: req.data.name,
-    email: req.data.email,
-    photos: req.data.photos,
-    characteristics: req.data.characteristics,
-  };
-  review.addReview(reviewData)
+  console.log(req.body.data);
+  review.addReview(req.body.data)
     .then((response) => {
-      res.status(201).send();
+      res.status(201).send('Review Recieved');
     })
     .catch((err) => {
       res.status(400).send(err);

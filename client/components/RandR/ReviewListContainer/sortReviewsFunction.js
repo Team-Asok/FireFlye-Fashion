@@ -67,6 +67,7 @@ const sortReviews = (reviews, criteria) => {
 
   var sortByRelevance = (reviews) => {
     sortedByHelpfulness = reviews(sortByHelpful);
+
   }
 
   if (criteria === 'helpful') {

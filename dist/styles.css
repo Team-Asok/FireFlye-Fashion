@@ -108,7 +108,7 @@ button#more-reviews {
 
 }
 
-button#add-a-review {
+button#add-review {
   width: 200px;
   height: 100px;
   grid-column: 1 / 2;
@@ -177,7 +177,7 @@ button#add-a-review {
 }
 
 .modal-content{
-  width: 500px;
+  width: auto;
   background-color: white;
 }
 
