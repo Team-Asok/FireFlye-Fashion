@@ -9,7 +9,7 @@ const ProductInfo = ({currentProd, styles, style, metaScore, reviews, select}) =
     <RatingLink metaScore={metaScore} reviews={reviews} />
     <Info currentProd={currentProd} style={style} />
     <Styles currentStyle={style} styles={styles} select={select} />
-    <Cart />
+    <Cart currentStyle={style} />
   </div>
 );
 
