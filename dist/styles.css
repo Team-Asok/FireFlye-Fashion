@@ -155,7 +155,15 @@ button#add-a-review {
   background-color: gray;
 }
 
-.modal{
+.star {
+  width: 30px;
+  height: 30px;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+}
+
+  .modal{
   font-size: 12px;
   position: fixed;
   left: 0;
@@ -185,4 +193,15 @@ button#add-a-review {
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+#characteristics-table {
+  table-layout: fixed;
+  font-size: 17px;
+  text-align: center;
+}
+
+#characteristics-table,
+td {
+  width: 100px;
 }

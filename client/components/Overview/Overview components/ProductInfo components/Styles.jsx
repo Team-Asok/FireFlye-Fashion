@@ -1,43 +1,49 @@
 import React from 'react';
+import Style from './Style.jsx';
 
-const styles = {
+const styling = {
   direction: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
-  tn: {
-    width: 75,
-    height: 75,
-    borderRadius: 50,
-    margin: 20
-  },
-  noImage: {
-    fontSize: 20,
-    margin: 10
+  selected: {
+    fontSize: 32
   }
-}
+};
 
 class Styles extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.separateRows = this.separateRows.bind(this);
+  }
+
+  //Creating rows of four
+  separateRows() {
+    let rows = [];
+
+    for (let i = 0; i < this.props.styles.length; i += 4) {
+      let row = [];
+      row.push(this.props.styles.slice(i, i + 4).map((style) => {
+        return <Style key={style.style_id} style={style} select={this.props.select} />
+      }))
+      rows.push(row.map((item) => {
+        return <div>{item}</div>
+      }))
+    }
+
+    return rows;
   }
 
   render() {
     return (
       <div id="Styles">
-        <div>
+        <div style={styling.selected}>
           <strong>STYLE > </strong>
-          Selected Style
+          {this.props.currentStyle.name}
         </div>
-        <div style={styles.direction}>
-          {this.props.styles.map((style) => (
-            style.photos[0].thumbnail_url ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styles.tn}/>
-            : <div style={styles.noImage}>
-                <div>{style.name}</div>
-                <div>No Image Available</div>
-             </div>
-          ))}
+        <div>
+          {this.separateRows()}
         </div>
       </div>
     );

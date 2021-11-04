@@ -3,6 +3,8 @@ import axios from 'axios';
 import QandA from './QandA/QandA.jsx';
 import RandR from './RandR/RandR.jsx';
 import Overview from './Overview/Overview.jsx';
+import getMetaScore from './RandR/MetaData/getMetaScoreFn.js';
+import { findTotalStars } from './RandR/MetaData/StarRatingGraph.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +14,7 @@ class App extends React.Component {
       reviews: [],
       qAndA: [],
       metaData: [],
+      metaScore: 0.0,
       displayedProduct: null,
     };
     this.getAllProducts = this.getAllProducts.bind(this);
@@ -48,7 +51,10 @@ class App extends React.Component {
   getMetaData(productID) {
     axios.get(`/reviews/meta/${productID}`)
     .then((results) => {
-      this.setState({metaData: results.data})
+      var metaScore = getMetaScore(results.data.ratings, findTotalStars)
+      console.log(metaScore);
+
+      this.setState({metaData: results.data, metaScore: parseFloat(metaScore)})
     })
   }
 
@@ -73,9 +79,13 @@ class App extends React.Component {
 
     return (
       <div id="index">
-        <Overview products={this.state.products} currentProd={this.state.displayedProduct} />
+        <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
+<<<<<<< HEAD
         <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} />
+=======
+        <RandR getReviews={this.getAllProducts} reviews={this.state.reviews.results} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
+>>>>>>> 861f26609101f0e08f7c63f8c928be26ddcb00a4
       </div>
     );
     }
