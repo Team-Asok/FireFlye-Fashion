@@ -7,7 +7,7 @@ const QAListEntry = ({ question, getProductQandA, productID }) => {
   return (
     <li>
       <div id="question-entry">
-        <QuestionEntry productID={productID} questionBody={question.question_body} questionID={question.question_id} getProductQandA={getProductQandA}/>
+        <QuestionEntry helpfulness={question.question_helpfulness} productID={productID} questionBody={question.question_body} questionID={question.question_id} getProductQandA={getProductQandA}/>
         <AnswerEntry answer={answerArray}/>
       </div>
   </li>
