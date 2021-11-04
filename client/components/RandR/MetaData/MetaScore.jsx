@@ -16,7 +16,7 @@ const MetaScore = (props) => {
   const totalStars = props.findTotalStars(props.metaData.ratings)
 
   let metaScore = (scoreSum(props.metaData.ratings) / totalStars).toFixed(1)
-  if (isNaN(metaScore)){
+  if (isNaN(metaScore)) {
     metaScore = '0.0';
     return (
     <div id="meta-score">
@@ -29,7 +29,7 @@ const MetaScore = (props) => {
   return (
     <div id="meta-score">
       {metaScore}
-      <StarGraphic metaScore={props.metaScore}/>
+      <StarGraphic metaScore={metaScore}/>
     </div>
   )
 }

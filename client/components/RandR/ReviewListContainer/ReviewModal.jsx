@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-import { StarGraphic } from '../../GlobalComponents/StarGraphic.jsx'
+import StarGraphic from '../../GlobalComponents/StarGraphic.jsx'
 
 class ReviewModal extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class ReviewModal extends React.Component {
       photos: [],
       product_id: this.props.productID,
       recommend: false,
-      rating: 2
+      rating: 0
    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,7 +22,7 @@ class ReviewModal extends React.Component {
     this.handleRadioSelect = this.handleRadioSelect.bind(this);
     this.starRatingGraphic = this.starRatingGraphic.bind(this);
     this.characteristics = {};
-    StarGraphic = StarGraphic.bind(this);
+
   }
 
   handleSubmit = (e) => {
@@ -76,7 +76,6 @@ class ReviewModal extends React.Component {
   }
 
   starRatingGraphic() {
-  console.log(this.state.rating);
     return (
       <StarGraphic metaScore={this.state.rating} onClick={this.handleStarRatingGraphicClick.bind(this)} />
     )
@@ -84,7 +83,6 @@ class ReviewModal extends React.Component {
   }
 
   handleStarRatingGraphicClick() {
-    console.log(event.target.value);
     this.setState({rating: event.target.value})
 
   }
