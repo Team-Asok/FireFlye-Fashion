@@ -43,6 +43,12 @@ class Cart extends React.Component {
     this.parseInventory(this.props.currentStyle.skus);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.currentStyle.style_id !== prevProps.currentStyle.style_id) {
+      this.parseInventory(this.props.currentStyle.skus);
+    }
+  }
+
   parseInventory(skus) {
     if (skus.null) {
       return;
