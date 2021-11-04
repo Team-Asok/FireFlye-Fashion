@@ -2,10 +2,13 @@ import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
 import HelpfulButton from './HelpfulButton.jsx'
 import ReportButton from './ReportButton.jsx'
+import sortQA from './sortQA.js'
 
 const AnswerEntry = ({ answers }) => {
 
-  let singleAnswer = answers.map(answer =>
+  let sortedAnswer = sortQA(answers)
+
+  let singleAnswer = sortedAnswer.map(answer =>
     <li key={answer.id}>
       <div>
           <div id="answer-name">
