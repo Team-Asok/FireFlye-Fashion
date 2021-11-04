@@ -32,7 +32,6 @@ class Cart extends React.Component {
       items: [],
       inventory: [],
       sizes: [],
-      currentSize: '',
       quantities: [],
     };
     this.parseInventory = this.parseInventory.bind(this);
@@ -49,28 +48,41 @@ class Cart extends React.Component {
     }
   }
 
-  parseInventory(skus) {
+  parseInventory(skus, currentSize) {
     if (skus.null) {
       return;
     }
 
     let sizes = [];
     let quantities = [];
+
     let inventory = Object.values(skus);
     inventory.forEach((product) => {
       sizes.push(product.size);
-      quantities.push(product.quantity);
+
+      // Fill quantities based on selected size. Max 15
+      if (currentSize === product.size) {
+        let totalQuantity = product.quantity;
+        if (totalQuantity > 15) {
+          totalQuantity = 15;
+        }
+        while (totalQuantity > 0) {
+          quantities.unshift(totalQuantity);
+          totalQuantity--;
+        }
+      }
     });
 
     this.setState({
       inventory: skus,
       sizes: sizes,
-      quantities: quantities
+      quantities: quantities,
     });
   }
 
+  // Pass selected style into parse to render correct quantities
   updateSizeSelection(size) {
-    this.setState({currentSize: size.target.value});
+    this.parseInventory(this.props.currentStyle.skus, size.target.value);
   }
 
   render() {
@@ -80,7 +92,7 @@ class Cart extends React.Component {
           <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
         </div>
         <div style={styling.quantity}>
-          <DropDownQuantity dataList={this.state.quantities} />
+          <DropDownQuantity dataList={this.state.quantities} default={'1'} />
         </div>
         <button type="button" style={styling.button}>ADD TO BAG</button>
       </div>
