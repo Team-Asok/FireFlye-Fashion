@@ -1,9 +1,11 @@
 import React from 'react';
 import QuestionEntry from './QuestionEntry.jsx';
 import AnswerEntry from './AnswerEntry.jsx';
+import sortQA from './sortQA.js'
 
 const QAListEntry = ({ question, getProductQandA, productID }) => {
   let answerArray = Object.entries(question.answers)
+  sortQA(answerArray)
   return (
     <li>
       <div id="question-entry">
