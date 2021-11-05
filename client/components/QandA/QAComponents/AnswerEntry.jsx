@@ -2,7 +2,7 @@ import React from 'react';
 import LoadAnswers from './LoadAnswers.jsx'
 import HelpfulButton from './HelpfulButton.jsx'
 import ReportButton from './ReportButton.jsx'
-// import sortQA from './sortQA.js'
+import moment from 'moment'
 
 class AnswerEntry extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class AnswerEntry extends React.Component {
                 {answer.body}
               </div>
               <div id="answer-date">
-                {answer.date}
+                {moment(answer.date).format('MMMM Do YYYY')}
               </div>
             <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness}/>
             <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`}/>
