@@ -7,25 +7,25 @@ const StyledPInfoContainer = styled.div`
 const styling = {
   sale: {
     color: 'red',
-    fontSize: 25,
+    fontSize: 18,
     marginLeft: 15,
   },
   originalSale: {
     textDecoration: 'line-through',
-    fontSize: 25,
+    fontSize: 18,
   },
   originalNoSale: {
-    fontSize: 25,
+    fontSize: 18,
   },
   flex: {
     display: 'flex',
     flexDirection: 'row',
   },
   category: {
-    fontSize: 35,
+    fontSize: 25,
   },
   name: {
-    fontSize: 65,
+    fontSize: 55,
   },
 };
 
