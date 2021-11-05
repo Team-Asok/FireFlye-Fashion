@@ -58,6 +58,12 @@ class Cart extends React.Component {
 
     let inventory = Object.values(skus);
     inventory.forEach((product) => {
+      // Handle duplicate XL entry
+      if (product.size === 'XL' && sizes.includes(product.size)) {
+        product.size = 'XXL';
+        currentSize = 'XXL';
+      }
+
       sizes.push(product.size);
 
       // Fill quantities based on selected size. Max 15
