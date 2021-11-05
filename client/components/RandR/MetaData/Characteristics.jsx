@@ -1,4 +1,5 @@
 import React from 'react';
+import triangle from './Triangle.png'
 
 const Characteristics = (props) => {
   let characteristicsGuide = {
@@ -11,37 +12,44 @@ const Characteristics = (props) => {
   }
 
   let characteristicsArray = Object.entries(props.characteristics)
+
   return (
     <div id="characteristics-area">
     {characteristicsArray.map((characteristic, index) => {
+      let percentageValue = ((characteristic[1].value / 5) * 100).toFixed(0);
+      console.log(percentageValue)
       return (
-        <div id="characteristic" key={`${index}`}>{characteristic[0]}
-          <table id="characteristics-table">
-            <tbody>
-              <tr>
-                <td>
-                  <svg width="100" height="10">
-                    <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
-                  </svg>
-                </td>
-                <td>
-                  <svg width="100" height="10">
-                    <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
-                  </svg></td>
-                <td>
-                  <svg width="100" height="10">
-                    <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
-                  </svg>
-                </td>
-              </tr>
-              <tr>
-                <td>{characteristicsGuide[characteristic[0]][0]}</td>
-                <td>{characteristicsGuide[characteristic[0]][2]}</td>
-                <td>{characteristicsGuide[characteristic[0]][4]}</td>
-              </tr>
-            </tbody>
-          </table>
+        <>
+        <div id="characteristic" key={`${index}`}>{`${characteristic[0]}:`}
+          <div id="rating-bar">
+
+              <span id="bar-1">
+              <svg width="100" height="10">
+                <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
+              </svg>
+              </span>
+
+              <span id="bar-2">
+              <svg width="100" height="10">
+                <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
+              </svg>
+              </span>
+
+              <span id="bar-3">
+              <svg width="100" height="10">
+                <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
+              </svg>
+              </span>
+              <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (percentageValue / 100)}px)`}} />
+          </div>
+          <div id="characteristic-criteria-container">
+            <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][0]}</span>
+            <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][2]}</span>
+            <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][4]}</span>
+          </div>
         </div>
+        <br/>
+        </>
       )
 
     })}
