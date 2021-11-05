@@ -4,15 +4,15 @@ import styled from 'styled-components';
 const StyledProdDesc = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 25px;
+  font-size: 18px;
 `;
 
 const ProductDescription = ({currentProd, features}) => (
   <StyledProdDesc id="ProductDescription">
     <div style={{width: 900}}>
-      <h4>
+      <h3>
         {currentProd.slogan}
-      </h4>
+      </h3>
       <span>
         {currentProd.description}
       </span>
