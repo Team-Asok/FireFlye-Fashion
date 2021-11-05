@@ -23,11 +23,11 @@ class AnswerEntry extends React.Component {
         this.state.limitedAnswers.map(answer =>
           <li key={answer.id}>
             <div>
-              <div id="answer-name">
-                {answer.answerer_name}
-              </div>
               <div id="answer-body">
-                {answer.body}
+                A: {answer.body}
+              </div>
+              <div id="answer-name">
+                by: {answer.answerer_name}
               </div>
               <div id="answer-date">
                 {moment(answer.date).format('MMMM Do YYYY')}

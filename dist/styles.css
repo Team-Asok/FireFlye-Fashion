@@ -23,6 +23,10 @@
   padding-block: 20px;
 }
 
+#qa-list, #question-entry {
+  display: grid;
+  grid-template-rows: auto;
+}
 
 #load-questions {
   height: auto;
@@ -51,6 +55,25 @@
   flex: 1;
   margin: 20px;
 }
+
+#add-answer-button {
+  border: 0px;
+  grid-row: 2/3;
+  display: flex;
+}
+
+#add-answer-button:hover {
+  background-color: rgb(251, 198, 136);
+  border-color: rgb(216, 123, 16)
+}
+#add-answer-button:active {
+  background-color: rgb(59, 43, 43);
+  color:rgb(251, 198, 136);
+}
+
+ul {
+  list-style-type: none;
+ }
 
 #reviewListTilescontainer {
   grid-column: 1 / 3;
