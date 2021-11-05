@@ -12,13 +12,17 @@ const Characteristics = (props) => {
   }
 
   let characteristicsArray = Object.entries(props.characteristics)
+
   return (
     <div id="characteristics-area">
     {characteristicsArray.map((characteristic, index) => {
+      let percentageValue = ((characteristic[1].value / 5) * 100).toFixed(0);
+      console.log(percentageValue)
       return (
         <>
         <div id="characteristic" key={`${index}`}>{`${characteristic[0]}:`}
           <div id="rating-bar">
+
               <span id="bar-1">
               <svg width="100" height="10">
                 <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
@@ -36,6 +40,7 @@ const Characteristics = (props) => {
                 <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
               </svg>
               </span>
+              <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (percentageValue / 100)}px)`}} />
           </div>
           <div id="characteristic-criteria-container">
             <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][0]}</span>

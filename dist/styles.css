@@ -312,13 +312,6 @@ div#rating-bar {
 
 }
 
-.chevron {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  margin-left: 50px;
-
-}
-
 #bar-1 {
   margin-right: auto;
 }
@@ -333,7 +326,7 @@ div#rating-bar {
 
 *[id="charactistic-criteria"] {
   font-size: 12px;
-  margin-right: auto;
+  margin-right: 50px;
 }
 
 #characteristic-criteria-container {
@@ -343,5 +336,8 @@ div#rating-bar {
   align-items: start;
 }
 
+*[id="triangle"] {
+  background-color: rgb(0, 0 , 0 ,0);
+}
 
 
