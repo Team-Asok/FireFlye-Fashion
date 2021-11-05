@@ -41,16 +41,24 @@ class QandA extends React.Component {
     this.setState({showAll: false})
   }
 
+
   search (searchedTerm) {
-    this.setState({search: searchedTerm});
-    console.log('this is what im searching for ', this.state.search)
+    if (searchedTerm.length > 3) {
+      this.setState({search: searchedTerm});
+      //console.log('this is what im searching for ', this.state.search)
+      this.state.questions.find((question) => {
+        if (question.question_body.includes(this.state.search)) {
+          console.log(question.question_body)
+        }
+      })
+    }
   }
 
   render () {
     return (
       <div id="QandA">
         Questions and Answers
-        <SearchAnswer search={this.search} questions={this.state.questions}/>
+        <SearchAnswer search={this.search}/>
         {this.showAllQuestions()}
         <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
         {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
