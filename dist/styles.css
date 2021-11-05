@@ -276,3 +276,27 @@ td {
   font-size: 15px;
 }
 
+#star-button {
+  border: 0px;
+  text-decoration: underline;
+}
+
+#star-button:hover {
+  background-color: rgb(251, 198, 136);
+  border-color: rgb(216, 123, 16)
+}
+#star-button:active {
+  background-color: rgb(59, 43, 43);
+  color:rgb(251, 198, 136);
+}
+
+#table-data-button {
+  width: 15px;
+  overflow: hidden;
+  text-align: left;
+  vertical-align: center;
+}
+
+#percent-bar {
+  align-content: end;
+}
