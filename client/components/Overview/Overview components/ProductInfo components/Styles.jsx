@@ -27,8 +27,8 @@ class Styles extends React.Component {
       row.push(this.props.styles.slice(i, i + 4).map((style) => {
         return <Style key={style.style_id} style={style} select={this.props.select} />
       }))
-      rows.push(row.map((item) => {
-        return <div>{item}</div>
+      rows.push(row.map((item, index) => {
+        return <div key={index}>{item}</div>
       }))
     }
 
