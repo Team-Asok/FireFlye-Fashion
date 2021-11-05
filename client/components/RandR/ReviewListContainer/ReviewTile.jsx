@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment'
 import StarGraphic from '../../GlobalComponents/StarGraphic.jsx';
 import HelpfulButton from '../../QandA/QAComponents/HelpfulButton.jsx'
+import ReportButton from '../../QandA/QAComponents/ReportButton.jsx';
 
 const ReviewTile = function(props) {
   if (props.review) {
@@ -17,6 +18,8 @@ const ReviewTile = function(props) {
        <div className="review-body" id="review-tile-response">{props.review.response}</div>
        <div id="helpful-report-buttons">
          <HelpfulButton path={`/reviews/${props.review.review_id}/helpful`} id={props.review.review_id} helpfulness={props.review.helpfulness} />
+         <span id="button-separator"> || </span>
+         <ReportButton path={`/reviews/${props.review.review_id}/report`} id={props.review.review_id} />
        </div>
      </div>
     );

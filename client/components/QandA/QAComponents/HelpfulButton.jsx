@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 const HelpfulButton = ({id, path, helpfulness}) => {
+  console.log(path);
   const updateHelpful = (targetId) => {
     axios.put(path, {
       params : targetId
