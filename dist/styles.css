@@ -221,12 +221,17 @@ div#buttons-container {
   height: 50px;
 }
 
+div#characteristic {
+  text-decoration: underline;
+}
+
 #characteristics-table,
 td {
   width: 100px;
 }
 
 #characteristics-area {
+  width: 350px;
   grid-column: 1 / 2;
   grid-row: 4 / 5;
 }
@@ -299,5 +304,44 @@ td {
   vertical-align: center;
 }
 
-#percent-bar {
+div#rating-bar {
+  display: flex;
+  flex-direction: row;
+  justify-items: start;
+  align-items: start;
+
 }
+
+.chevron {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin-left: 50px;
+
+}
+
+#bar-1 {
+  margin-right: auto;
+}
+
+#bar-2 {
+  margin-right: auto;
+}
+
+#bar-3 {
+  margin-right: auto;
+}
+
+*[id="charactistic-criteria"] {
+  font-size: 12px;
+  margin-right: auto;
+}
+
+#characteristic-criteria-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+}
+
+
+
