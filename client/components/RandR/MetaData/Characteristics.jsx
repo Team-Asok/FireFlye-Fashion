@@ -12,7 +12,8 @@ const Characteristics = (props) => {
 
   let characteristicsArray = Object.entries(props.characteristics)
   return (
-    characteristicsArray.map((characteristic, index) => {
+    <div id="characteristics-area">
+    {characteristicsArray.map((characteristic, index) => {
       return (
         <div id="characteristic" key={`${index}`}>{characteristic[0]}
           <table id="characteristics-table">
@@ -43,7 +44,8 @@ const Characteristics = (props) => {
         </div>
       )
 
-    })
+    })}
+    </div>
   )
 
 }
