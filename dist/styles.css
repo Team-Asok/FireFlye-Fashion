@@ -7,15 +7,19 @@
 #index {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows:  1200px 1000px 1000px;
+  grid-template-rows:  auto;
 }
 
 #QandA {
-
+  border-top:rgb(59, 43, 43);
+  border-width: 5px 0px 0px 0px;
+  border-style: solid;
   grid-row-start: 2;
   grid-row-end: 3;
-  font-size: 100px;
+  font-size: 18px;
   display: grid;
+  grid-template-rows: auto;
+  margin-top: 40px;
 }
 #reviewListTilescontainer {
   grid-column: 1 / 3;
@@ -51,7 +55,6 @@
 button#add-question {
   width: 275px;
   height: 70px;
-  background-color:red;
   margin-left: 20px;
 }
 
@@ -71,6 +74,7 @@ button#more-answered-questions {
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 30px 1fr;
+  margin-top: 40px;
 }
 
 #Overview {
