@@ -9,17 +9,21 @@ const DropDownMenu = (props) => {
 
   // The change handler event should be passed down as select={changehandlerevent}
 
-  if (props.dataList) {
+  if (props.dataList.length > 0) {
     return (
-        <select id={props.id} onChange={props.select} defaultValue={`${props.default}`}>
-          {props.dataList.map(entry => {
-            return <option value={entry}>{entry}</option>
-          })}
-        </select>
-    )
+      <select id={props.id} onChange={props.select} defaultValue={`${props.default}`}>
+        {props.dataList.map(entry => {
+          return <option value={entry}>{entry}</option>
+        })}
+      </select>
+    );
   }
 
-
-}
+  return (
+    <select disabled>
+      <option>-</option>
+    </select>
+  );
+};
 
 export default DropDownMenu;
