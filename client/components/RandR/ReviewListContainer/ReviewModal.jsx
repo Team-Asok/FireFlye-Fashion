@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import StarGraphic from '../../GlobalComponents/StarGraphic.jsx'
+import ReactFileReader from 'react-file-reader';
 
 class ReviewModal extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class ReviewModal extends React.Component {
       photos: [],
       product_id: this.props.productId,
       recommend: false,
+      thumbnail: '',
       rating: 0
    }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -97,9 +99,28 @@ class ReviewModal extends React.Component {
 
   }
 
-  handleUploadPhotosChange() {
-    console.log(event.target.files)
-    this.setState({photos: event.target.files})
+  handleUploadPhotosChange(files) {
+    let fileData = new FileReader();
+    fileData.onloadend = (e) => {
+      const content = e.target.result;
+      this.setState({
+        thumbnail: content,
+        photos: files
+      })
+    }
+    fileData.readAsDataURL(files[0])
+    // if(event.target.files && event.target.files[0]) {
+    //   var reader = new FileReader();
+    //   var
+
+    //   reader.onload = function (event) {
+    //     console.log(event.target.result);
+
+    //   }
+
+    //   reader.readAsDataURL(event.target.files[0]);
+    // }
+    // this.setState({photos: event.target.files})
   }
 
   renderFactors() {
@@ -186,9 +207,14 @@ class ReviewModal extends React.Component {
               </div>
               <br/>
               <div className="modal-upload-pics">
-                <label for="img">Select Photos:
+                {/* <label for="img">Select Photos:
                   <input onChange={this.handleUploadPhotosChange} type="file" id="img" accept="image/*" multiple/>
-                </label>
+                </label> */}
+                <ReactFileReader handleFiles={this.handleUploadPhotosChange}>
+                  <button className="btn">Upload Photo</button>
+                </ReactFileReader>
+                <p>Preview:</p>
+                <img src={this.state.thumbnail} height="10%" width="10%" />
               </div>
             </form>
           </div>
