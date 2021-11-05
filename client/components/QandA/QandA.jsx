@@ -10,11 +10,13 @@ class QandA extends React.Component {
     this.state = {
       questions: this.props.qAndA.results,
       limitedQuestions: this.props.qAndA.results.slice(0, 2),
-      showAll: false
+      showAll: false,
+      search: ''
     }
     this.showAllQuestions = this.showAllQuestions.bind(this);
     this.setView = this.setView.bind(this);
     this.closeView = this.closeView.bind(this);
+    this.search = this.search.bind(this);
   }
 
   showAllQuestions () {
@@ -39,11 +41,17 @@ class QandA extends React.Component {
     this.setState({showAll: false})
   }
 
+  search (searchedTerm) {
+    // console.log('this is inside search ', searchedTerm)
+    this.setState({search: searchedTerm});
+    console.log('this is what im searching for ', this.state.search)
+  }
+
   render () {
     return (
       <div id="QandA">
         Questions and Answers
-        <SearchAnswer />
+        <SearchAnswer search={this.search}/>
         {this.showAllQuestions()}
         <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
         {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
