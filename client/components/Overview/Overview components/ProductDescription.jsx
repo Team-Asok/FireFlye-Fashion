@@ -10,9 +10,9 @@ const StyledProdDesc = styled.div`
 const ProductDescription = ({currentProd, features}) => (
   <StyledProdDesc id="ProductDescription">
     <div style={{width: 900}}>
-      <h4>
+      <h3>
         {currentProd.slogan}
-      </h4>
+      </h3>
       <span>
         {currentProd.description}
       </span>
