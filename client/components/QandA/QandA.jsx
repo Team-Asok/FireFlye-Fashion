@@ -12,11 +12,13 @@ class QandA extends React.Component {
       limitedQuestions: this.props.qAndA.results.slice(0, 2),
       showAll: false,
       search: '',
+      found: []
     }
     this.showAllQuestions = this.showAllQuestions.bind(this);
     this.setView = this.setView.bind(this);
     this.closeView = this.closeView.bind(this);
     this.search = this.search.bind(this);
+    this.showSearchedQuestion = this.showSearchedQuestion.bind(this);
   }
 
   showAllQuestions () {
@@ -41,16 +43,24 @@ class QandA extends React.Component {
     this.setState({showAll: false})
   }
 
+  showSearchedQuestion () {
+    return (
+      <QAList questions={this.state.found} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id}/>
+    )
+  }
 
   search (searchedTerm) {
     if (searchedTerm.length > 3) {
       this.setState({search: searchedTerm});
-      //console.log('this is what im searching for ', this.state.search)
       this.state.questions.find((question) => {
         if (question.question_body.includes(this.state.search)) {
-          console.log(question.question_body)
+          // this.setState({found: [question]})
+          console.log(question)
         }
       })
+    } else if (!searchedTerm.length) {
+      this.setState({search: ''});
+      this.setState({found: []})
     }
   }
 
