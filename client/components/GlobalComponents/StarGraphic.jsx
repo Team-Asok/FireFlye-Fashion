@@ -42,7 +42,7 @@ const StarGraphic = (props) => {
       <svg xmlns="http://www.w3.org/2000/svg" key={`${index}`} className="star" viewBox="0 0 20 20" fill={`url(#${id})`} onClick={() => {props.onClick(index + 1)}}>
         <defs>
             <linearGradient id={`${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset={`${values * 100}%`} style={{'stopColor':'rgb(0, 0, 0)', 'stopOpacity':1}} />
+              <stop offset={`${values * 100}%`} style={{'stopColor':'rgb(59, 43, 43', 'stopOpacity':1}} />
               <stop offset={`${(values * 100) + 1}%`} style={{'stopColor':'rgb(255, 255, 255)', 'stopOpacity':0}} />
             </linearGradient>
           </defs>
