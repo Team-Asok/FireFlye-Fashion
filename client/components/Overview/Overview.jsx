@@ -67,7 +67,7 @@ class Overview extends React.Component {
       <div id="Overview">
         <Banner />
         <SiteMessage />
-        <Gallery />
+        <Gallery style={this.state.currentStyle} />
         <ProductInfo
           select={this.selectStyle}
           style={this.state.currentStyle}
