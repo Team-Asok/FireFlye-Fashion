@@ -87,7 +87,7 @@ class Cart extends React.Component {
 
   render() {
     return (
-      <div style={styling.container}>
+      <div style={styling.container} id="Cart">
         <div style={styling.size}>
           <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
         </div>
