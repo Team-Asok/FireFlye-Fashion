@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoadAnswers = (props) => {
-  if (!props.showAll) {
+  if (!props.return) {
     return (
       <button onClick={props.onClick} id="load-answers" type="button">Load more answers</button>
     )
