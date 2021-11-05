@@ -25,18 +25,18 @@
 
 
 #load-questions {
-  height: 100px;
-  width: 350px;
+  height: auto;
+  width: auto;
   margin: 10px;
   font-size: 30px;
   font-weight: bold;
 }
 
 #add-question {
-  height: 100px;
-  width: 350px;
+  height: auto;
+  width: auto;
   margin: 10px;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -47,10 +47,9 @@
 #search-answer {
   text-align: center;
   font-size: 30px;
-  grid-column: 2/3;
-  height: 100px;
+  height: auto;
   flex: 1;
-  margin: 5px;
+  margin: 20px;
 }
 
 #reviewListTilescontainer {
