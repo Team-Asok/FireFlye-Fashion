@@ -20,16 +20,16 @@ const Characteristics = (props) => {
               <tr>
                 <td>
                   <svg width="100" height="10">
-                    <rect width="100" height="10" fill='grey'/>
+                    <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
                   </svg>
                 </td>
                 <td>
                   <svg width="100" height="10">
-                    <rect width="100" height="10" fill='grey'/>
+                    <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
                   </svg></td>
                 <td>
                   <svg width="100" height="10">
-                    <rect width="100" height="10" fill='grey'/>
+                    <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
                   </svg>
                 </td>
               </tr>

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledProdDesc = styled.div`
-  background-color: violet;
   display: flex;
   flex-direction: row;
   font-size: 25px;
