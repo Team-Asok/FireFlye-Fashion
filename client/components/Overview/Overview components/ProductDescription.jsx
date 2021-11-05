@@ -19,8 +19,8 @@ const ProductDescription = ({currentProd, features}) => (
     </div>
     <div id="Separator" />
     <ul>
-      {features.map((feature) => (
-        feature.value ? <li>{feature.feature}: {feature.value}</li> : <li>{feature.feature}</li>
+      {features.map((feature, index) => (
+        feature.value ? <li key={index}>{feature.feature}: {feature.value}</li> : <li key={index}>{feature.feature}</li>
       ))}
     </ul>
   </StyledProdDesc>
