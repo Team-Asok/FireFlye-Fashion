@@ -340,4 +340,8 @@ div#rating-bar {
   background-color: rgb(0, 0 , 0 ,0);
 }
 
+*[id='star-in-metascore'] {
+  transform: translateY(-25px);
+}
+
 
