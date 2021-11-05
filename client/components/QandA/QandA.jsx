@@ -52,10 +52,10 @@ class QandA extends React.Component {
   search (searchedTerm) {
     if (searchedTerm.length > 3) {
       this.setState({search: searchedTerm});
-      this.state.questions.find((question) => {
+      this.state.questions.filter((question) => {
         if (question.question_body.includes(this.state.search)) {
           // this.setState({found: [question]})
-          console.log(question)
+          console.log(question.question_body)
         }
       })
     } else if (!searchedTerm.length) {
