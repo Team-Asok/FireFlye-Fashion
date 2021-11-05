@@ -50,18 +50,19 @@ class QandA extends React.Component {
   }
 
   search (searchedTerm) {
-    if (searchedTerm.length > 3) {
+    let result = [];
+    if (searchedTerm.length) {
       this.setState({search: searchedTerm});
       this.state.questions.filter((question) => {
-        if (question.question_body.includes(this.state.search)) {
-          // this.setState({found: [question]})
-          console.log(question.question_body)
+        if (question.question_body.toLowerCase().includes(this.state.search)) {
+          result.push(question)
         }
       })
     } else if (!searchedTerm.length) {
       this.setState({search: ''});
       this.setState({found: []})
     }
+    this.setState({found: result})
   }
 
   render () {
@@ -69,7 +70,7 @@ class QandA extends React.Component {
       <div id="QandA">
         Questions and Answers
         <SearchAnswer search={this.search}/>
-        {this.showAllQuestions()}
+        {!this.state.found.length ? this.showAllQuestions() : this.showSearchedQuestion()}
         <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
         {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
       </div>

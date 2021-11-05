@@ -20,9 +20,8 @@ class SearchAnswer extends React.Component {
 
   render() {
     return (
-      <form id="searc-answer" onSubmit={this.handleSubmit}>
+      <form id="search-answer">
         <input type="text" placeholder="Search a question here" onChange={()=>this.handleChange(event)}/>
-        <input type="submit" />
       </form>
     )
   }
