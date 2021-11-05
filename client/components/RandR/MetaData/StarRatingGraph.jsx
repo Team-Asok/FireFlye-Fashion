@@ -8,6 +8,7 @@ const StyledTable = styled.table`
   width: 500px;
   height: 250px;
   grid-row: 3 / 4;
+  table-layout: fixed;
 
   `;
 
@@ -40,32 +41,32 @@ render() {
       <StyledTable id="star-rating-table">
         <tbody>
           <tr>
-            <td width="300px">
-              <button onClick={() => {this.props.filter(5)}}>5 stars</button>
+            <td id="table-data-button">
+              <button id="star-button" onClick={() => {this.props.filter(5)}}>5 stars</button>
             </td >
             <PercentBar percentage={this.starPercentage('5')} />
           </tr>
           <tr>
-          <td>
-              <button onClick={() => {this.props.filter(4)}}>4  stars</button>
+          <td id="table-data-button">
+              <button id="star-button" onClick={() => {this.props.filter(4)}}>4  stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('4')} />
           </tr>
           <tr>
-          <td>
-              <button onClick={() => {this.props.filter(3)}}>3 stars</button>
+          <td id="table-data-button">
+              <button id="star-button" onClick={() => {this.props.filter(3)}}>3 stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('3')} />
           </tr>
           <tr>
-          <td>
-              <button onClick={() => {this.props.filter(2)}}>2 stars</button>
+          <td id="table-data-button">
+              <button id="star-button" onClick={() => {this.props.filter(2)}}>2 stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('2')} />
           </tr>
           <tr>
-          <td>
-              <button onClick={() => {this.props.filter(1)}}>1 star</button>
+          <td id="table-data-button">
+              <button id="star-button" onClick={() => {this.props.filter(1)}}>1 star</button>
             </td>
             <PercentBar percentage={this.starPercentage('1')} />
           </tr>
