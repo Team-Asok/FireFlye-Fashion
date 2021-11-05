@@ -30,9 +30,9 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       items: [],
-      inventory: [],
       sizes: [],
       quantities: [],
+      currentStyle: '',
     };
     this.parseInventory = this.parseInventory.bind(this);
     this.updateSizeSelection = this.updateSizeSelection.bind(this);
@@ -67,7 +67,7 @@ class Cart extends React.Component {
       sizes.push(product.size);
 
       // Fill quantities based on selected size. Max 15
-      if (currentSize === product.size) {
+      if (currentSize === product.size && this.state.currentStyle.length > 0) {
         let totalQuantity = product.quantity;
         if (totalQuantity > 15) {
           totalQuantity = 15;
@@ -80,7 +80,6 @@ class Cart extends React.Component {
     });
 
     this.setState({
-      inventory: skus,
       sizes: sizes,
       quantities: quantities,
     });
@@ -88,7 +87,9 @@ class Cart extends React.Component {
 
   // Pass selected style into parse to render correct quantities
   updateSizeSelection(size) {
-    this.parseInventory(this.props.currentStyle.skus, size.target.value);
+    this.setState({ currentStyle: size.target.value }, () => {
+      this.parseInventory(this.props.currentStyle.skus, size.target.value);
+    });
   }
 
   render() {
