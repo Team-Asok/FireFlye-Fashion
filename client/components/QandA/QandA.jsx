@@ -10,11 +10,15 @@ class QandA extends React.Component {
     this.state = {
       questions: this.props.qAndA.results,
       limitedQuestions: this.props.qAndA.results.slice(0, 2),
-      showAll: false
+      showAll: false,
+      search: '',
+      found: []
     }
     this.showAllQuestions = this.showAllQuestions.bind(this);
     this.setView = this.setView.bind(this);
     this.closeView = this.closeView.bind(this);
+    this.search = this.search.bind(this);
+    this.showSearchedQuestion = this.showSearchedQuestion.bind(this);
   }
 
   showAllQuestions () {
@@ -39,12 +43,34 @@ class QandA extends React.Component {
     this.setState({showAll: false})
   }
 
+  showSearchedQuestion () {
+    return (
+      <QAList questions={this.state.found} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id}/>
+    )
+  }
+
+  search (searchedTerm) {
+    let result = [];
+    if (searchedTerm.length) {
+      this.setState({search: searchedTerm});
+      this.state.questions.filter((question) => {
+        if (question.question_body.toLowerCase().includes(this.state.search)) {
+          result.push(question)
+        }
+      })
+    } else if (!searchedTerm.length) {
+      this.setState({search: ''});
+      this.setState({found: []})
+    }
+    this.setState({found: result})
+  }
+
   render () {
     return (
       <div id="QandA">
         Questions and Answers
-        <SearchAnswer />
-        {this.showAllQuestions()}
+        <SearchAnswer search={this.search}/>
+        {!this.state.found.length ? this.showAllQuestions() : this.showSearchedQuestion()}
         <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
         {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
       </div>

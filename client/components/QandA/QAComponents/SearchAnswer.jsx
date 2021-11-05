@@ -9,17 +9,19 @@ class SearchAnswer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange() {
 
+  handleChange(event) {
+    this.props.search(event.target.value)
   }
+
   handleSubmit(event) {
   event.preventDefault()
   }
+
   render() {
     return (
-      <form id="searc-answer" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Search a question here" />
-        <input type="submit" />
+      <form id="search-answer">
+        <input type="text" placeholder="Search a question here" onChange={()=>this.handleChange(event)}/>
       </form>
     )
   }
