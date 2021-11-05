@@ -9,7 +9,7 @@ const PercentBar = (props) => {
   }
 
   return (
-    <td style={{'width': '75%'}}>
+    <td id="percent-bar">
       <svg width="250" height="15">
         <defs>
             <linearGradient id={`grad${percentage}`} x1="0%" y1="0%" x2="100%" y2="0%">

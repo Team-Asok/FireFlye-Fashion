@@ -35,7 +35,7 @@ const StarGraphic = (props) => {
        metaScore = 0;
     }
   }
-  let returnValue = (<div>
+  let returnValue = (<span>
     {starValues.map((values, index) => {
       id += 1
       return (
@@ -50,7 +50,7 @@ const StarGraphic = (props) => {
       </svg>
     )})
     }
-  </div>)
+  </span>)
 
   return returnValue;
 }

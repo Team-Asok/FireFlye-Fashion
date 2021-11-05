@@ -42,7 +42,7 @@ class ReviewList extends React.Component {
       );
     }
     if(view === 'all-reviews') {
-    return sortedReviews.map((review) => <ReviewTile review={review} />);
+    return sortedReviews.map((review) => <ReviewTile key={review.id} review={review} />);
     }
   }
 
@@ -51,11 +51,13 @@ class ReviewList extends React.Component {
         <>
           <StyledDiv id="reviewlist">
             <ReviewCount default={this.state.sort} count={this.props.reviews.length} select={this.handleSortSubmit.bind(this)}/>
-            <ul id="reviewListTilescontainer">
+            <div id="reviewListTilescontainer">
             {this.renderView(this.state.view)}
-            </ul>
-            <AddAReview getProductReviews={this.props.getProductReviews} productId={this.props.productId} metaData={this.props.metaData}/>
-            <MoreReviews onClick={this.expandReviewsClickHandler} />
+            </div>
+            <div id='buttons-container'>
+              <AddAReview getProductReviews={this.props.getProductReviews} productId={this.props.productId} metaData={this.props.metaData}/>
+              <MoreReviews onClick={this.expandReviewsClickHandler} />
+            </div>
           </StyledDiv>
         </>
       );

@@ -33,7 +33,10 @@ class App extends React.Component {
   getAllProducts() {
     axios.get('/products')
       .then((results) => {
+<<<<<<< HEAD
         //console.log(results);
+=======
+>>>>>>> dev
         this.setState({ products: results.data }, () => {
           const index = Math.floor(Math.random() * this.state.products.length);
           this.setState({ displayedProduct: this.state.products[index] },

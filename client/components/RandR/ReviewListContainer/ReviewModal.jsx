@@ -99,6 +99,7 @@ class ReviewModal extends React.Component {
 
   handleUploadPhotosChange() {
     console.log(event.target.files)
+    this.setState({photos: event.target.files})
   }
 
   renderFactors() {

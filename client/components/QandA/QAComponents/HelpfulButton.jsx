@@ -7,7 +7,6 @@ const HelpfulButton = ({id, path, helpfulness}) => {
       params : targetId
     })
     .then(response => {
-      console.log('testing the button bounce')
     })
     .catch(err => console.log(err));
   }
