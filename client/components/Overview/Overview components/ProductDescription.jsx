@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledProdDesc = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 25px;
+  font-size: 18px;
 `;
 
 const ProductDescription = ({currentProd, features}) => (
