@@ -11,7 +11,7 @@ const DropDownMenu = (props) => {
 
   if (props.dataList) {
     return (
-        <select id={`${props.default}}`} onChange={props.select} defaultValue={`${props.default}`}>
+        <select id={props.id} onChange={props.select} defaultValue={`${props.default}`}>
           {props.dataList.map(entry => {
             return <option value={entry}>{entry}</option>
           })}
