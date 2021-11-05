@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MoreAnsweredQuestions = (props) => {
-  if (!props.showAll) {
+  if (!props.return) {
     return (
       <button onClick={props.onClick} id="more-answered-questions" type="button">MORE ANSWERED QUESTIONS</button>
     )

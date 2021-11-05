@@ -11,7 +11,7 @@ class QandA extends React.Component {
       questions: this.props.qAndA.results,
       limitedQuestions: this.props.qAndA.results.slice(0, 2),
       showAll: false,
-      search: ''
+      search: '',
     }
     this.showAllQuestions = this.showAllQuestions.bind(this);
     this.setView = this.setView.bind(this);
@@ -42,7 +42,6 @@ class QandA extends React.Component {
   }
 
   search (searchedTerm) {
-    // console.log('this is inside search ', searchedTerm)
     this.setState({search: searchedTerm});
     console.log('this is what im searching for ', this.state.search)
   }
@@ -51,7 +50,7 @@ class QandA extends React.Component {
     return (
       <div id="QandA">
         Questions and Answers
-        <SearchAnswer search={this.search}/>
+        <SearchAnswer search={this.search} questions={this.state.questions}/>
         {this.showAllQuestions()}
         <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
         {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}

@@ -9,12 +9,15 @@ class SearchAnswer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(event) {
     this.props.search(event.target.value)
   }
+
   handleSubmit(event) {
   event.preventDefault()
   }
+
   render() {
     return (
       <form id="searc-answer" onSubmit={this.handleSubmit}>
