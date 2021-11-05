@@ -51,7 +51,7 @@ class QuestionModal extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="modal-question">
               <label> QUESTION:*
-                <input type="text" name="question" maxLength="1000" onChange={this.handleChange} required/>
+                <textarea type="text" name="question" maxLength="1000" onChange={this.handleChange} required/>
               </label>
               </div>
               <div className="modal-name">

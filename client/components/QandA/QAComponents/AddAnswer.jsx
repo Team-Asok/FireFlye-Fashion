@@ -20,8 +20,8 @@ class AddAnswer extends React.Component {
 
   render () {
     return (
-      <div className="add-question">
-        <button value="123123"onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
+      <div>
+        <button id="add-answer-button" value="123123"onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
         <AnswerModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.questionID} show={this.state.show} handleClose={this.hideModal}/>
       </div>
     )

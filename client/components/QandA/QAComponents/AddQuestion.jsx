@@ -19,10 +19,10 @@ class AddQuestion extends React.Component {
 
   render () {
     return (
-      <div className="add-question">
-        <button onClick={(e) => this.showModal()}>ADD A QUESTION</button>
+      <React.Fragment>
+        <button type="button" id="add-question" onClick={(e) => this.showModal()}>ADD A QUESTION</button>
         <QuestionModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} show={this.state.show} handleClose={this.hideModal}/>
-      </div>
+      </React.Fragment>
     )
   }
 }

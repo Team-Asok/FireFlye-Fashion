@@ -68,11 +68,15 @@ class QandA extends React.Component {
   render () {
     return (
       <div id="QandA">
+        <h3 id="qa-title">
         Questions and Answers
+        </h3>
         <SearchAnswer search={this.search}/>
         {!this.state.found.length ? this.showAllQuestions() : this.showSearchedQuestion()}
-        <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
-        {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
+        <div id="qa-buttons-container">
+          <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
+          {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
+        </div>
       </div>
     );
   }

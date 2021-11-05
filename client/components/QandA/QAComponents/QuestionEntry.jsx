@@ -6,7 +6,7 @@ import AddAnswer from './AddAnswer.jsx'
 const QuestionEntry = ({ questionBody, questionID, getProductQandA, productID, helpfulness}) => {
   return (
     <div id="question-entry">
-      Question: {questionBody}
+      Q: {questionBody}
       <div>
         <AddAnswer productID={productID} questionID={questionID} getProductQandA={getProductQandA}/>
       </div>
