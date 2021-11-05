@@ -5,12 +5,10 @@ import styled from 'styled-components'
 
 const StyledTable = styled.table`
   vertical-align: middle;
-  width:100%;
-  border: 1px solid black;
-  `;
-const StyledTd = styled.td`
-  width: 25%
-  border: 1px solid black;
+  width: 500px;
+  height: 250px;
+  grid-row: 3 / 4;
+
   `;
 
 const findTotalStars = function(ratings) {
@@ -42,9 +40,9 @@ render() {
       <StyledTable id="star-rating-table">
         <tbody>
           <tr>
-            <td>
+            <td width="300px">
               <button onClick={() => {this.props.filter(5)}}>5 stars</button>
-            </td>
+            </td >
             <PercentBar percentage={this.starPercentage('5')} />
           </tr>
           <tr>

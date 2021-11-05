@@ -6,10 +6,10 @@ const ReviewTile = function(props) {
   if (props.review) {
     return (
      <div list-style-type="none" id="reviewtile">
-       <div>
+       <span>
         <StarGraphic metaScore={props.review.rating} />
         <span id="timestamp">{moment(props.review.date).format('MMM do YYYY')}</span>
-       </div>
+       </span>
        <div id="review-tile-summary">{props.review.summary}</div>
        <div className="review-body" id="review-tile-body">{props.review.body}</div>
        <div className="review-body" id="review-tile-response">{props.review.response}</div>
