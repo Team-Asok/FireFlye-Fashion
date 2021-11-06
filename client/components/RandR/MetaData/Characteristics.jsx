@@ -17,7 +17,6 @@ const Characteristics = (props) => {
     <div id="characteristics-area">
     {characteristicsArray.map((characteristic, index) => {
       let percentageValue = ((characteristic[1].value / 5) * 100).toFixed(0);
-      console.log(percentageValue)
       return (
         <>
         <div id="characteristic" key={`${index}`}>{`${characteristic[0]}:`}
