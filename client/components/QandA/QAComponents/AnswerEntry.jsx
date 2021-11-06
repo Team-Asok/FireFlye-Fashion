@@ -17,7 +17,7 @@ class AnswerEntry extends React.Component {
     this.closeView = this.closeView.bind(this);
   }
 
-  showAllAnswers () {
+  showAllAnswers() {
     if (!this.state.showAll) {
       return (
         this.state.limitedAnswers.map(answer =>
@@ -26,14 +26,11 @@ class AnswerEntry extends React.Component {
               <div id="answer-body">
                 A: {answer.body}
               </div>
-              <div id="answer-name">
-                by: {answer.answerer_name}
+              <div id="answer-info">
+                by: {answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')} |
+                <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} /> |
+                <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
-              <div id="answer-date">
-                {moment(answer.date).format('MMMM Do YYYY')}
-              </div>
-            <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness}/>
-            <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`}/>
             </div>
           </li>
         )
@@ -43,17 +40,14 @@ class AnswerEntry extends React.Component {
         this.state.sortedAnswers.map(answer =>
           <li key={answer.id}>
             <div>
-              <div id="answer-name">
-                {answer.answerer_name}
-              </div>
               <div id="answer-body">
                 {answer.body}
               </div>
-              <div id="answer-date">
-                {answer.date}
+              <div id="answer-info">
+                by: {answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')}
+                <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} />
+                <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
-            <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness}/>
-            <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`}/>
             </div>
           </li>
         )
@@ -61,55 +55,22 @@ class AnswerEntry extends React.Component {
     }
   }
 
-  setView () {
-    this.setState({showAll: true})
+  setView() {
+    this.setState({ showAll: true })
   }
 
-  closeView () {
-    this.setState({showAll: false})
+  closeView() {
+    this.setState({ showAll: false })
   }
 
-  render () {
+  render() {
     return (
-        <ul>
-          {this.showAllAnswers()}
-          {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
-        </ul>
+      <ul>
+        {this.showAllAnswers()}
+        {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
+      </ul>
     )
   }
 };
 
 export default AnswerEntry;
-
-/**
-
-const AnswerEntry = ({ answers }) => {
-
-  let sortedAnswer = sortQA(answers)
-
-  let singleAnswer = sortedAnswer.map(answer =>
-    <li key={answer.id}>
-      <div>
-          <div id="answer-name">
-            {answer.answerer_name}
-          </div>
-          <div id="answer-body">
-            {answer.body}
-          </div>
-          <div id="answer-date">
-            {answer.date}
-          </div>
-        <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness}/>
-        <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`}/>
-      </div>
-    </li>
-  )
-
-  return (
-      <ul>
-        {singleAnswer}
-      </ul>
-  )
-};
-
- */

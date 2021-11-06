@@ -18,19 +18,20 @@
   display: grid;
   margin-top: 40px;
   grid-template-rows:  auto;
+  padding-block: 20px;
+  position: relative;
   align-content: center;
   justify-content: center;
-  padding-block: 20px;
 }
 
-#qa-list, #question-entry {
+#qa-list {
   display: grid;
   grid-template-rows: auto;
 }
 
 #question-buttons {
-  align-content: right;
-  justify-content: right;
+  margin-right: 20px;
+  margin-left: auto;
 }
 
 #load-questions {
@@ -41,6 +42,19 @@
   font-weight: bold;
 }
 
+#load-answers {
+  border: 0px;
+}
+
+#load-answer:hover {
+  background-color: rgb(251, 198, 136);
+  border-color: rgb(216, 123, 16)
+}
+#load-answer:active {
+  background-color: rgb(59, 43, 43);
+  color:rgb(251, 198, 136);
+}
+
 #add-question {
   height: auto;
   width: auto;
@@ -48,6 +62,10 @@
   font-size: 30px;
   font-weight: bold;
   grid-row: 1/2;
+}
+
+#answer-info {
+  font-size: 12px;
 }
 
 #search-container {
