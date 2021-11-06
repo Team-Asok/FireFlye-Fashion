@@ -7,7 +7,7 @@ const QAList = ({ questions, getProductQandA, productID }) => {
 
   if (!quesArr) {
     return (
-    <ul id="qa-list">BE THE FIRST ONE TO ASK A QUESTION</ul>
+      <h4>Be the first one to ask a question!</h4>
     )
   } else {
     return (
