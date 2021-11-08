@@ -8,8 +8,11 @@ const styling = {
     flexDirection: 'row',
   },
   main: {
-    width: 600,
-    height: 600,
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+    maxHeight: 800,
   },
   tn: {
     display: 'flex',
@@ -22,9 +25,10 @@ const Gallery = ({ style }) => (
   <div id="Gallery" style={styling.container}>
     { style.photos[0].thumbnail_url
       ? <div style={styling.tn}>
-          {style.photos.slice(0, 7).map((photo) => <ImageThumbnail photo={photo} />)}
+          {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} />)}
         </div>
-      : null}
+      : null
+    }
     {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
   </div>
 );

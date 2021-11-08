@@ -218,6 +218,7 @@ div#buttons-container {
 
 #ProductInfo {
   display: grid;
+  margin-left: 30px;
 }
 
 #ProductDescription {
