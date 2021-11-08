@@ -24,10 +24,10 @@ class AnswerEntry extends React.Component {
           <li key={answer.id}>
             <div>
               <div id="answer-body">
-                A: {answer.body}
+                {answer.body}
               </div>
               <div id="answer-info">
-                by: {answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')} |
+                by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')} |
                 <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} /> |
                 <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
@@ -44,7 +44,7 @@ class AnswerEntry extends React.Component {
                 {answer.body}
               </div>
               <div id="answer-info">
-                by: {answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')}
+              by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')}
                 <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} />
                 <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
@@ -64,12 +64,12 @@ class AnswerEntry extends React.Component {
   }
 
   render() {
-    return (
-      <ul>
-        {this.showAllAnswers()}
-        {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
-      </ul>
-    )
+      return (
+        <ul id="answer-list"> A:
+          {this.showAllAnswers()}
+          {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
+        </ul>
+      )
   }
 };
 

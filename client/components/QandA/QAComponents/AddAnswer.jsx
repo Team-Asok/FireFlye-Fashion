@@ -22,7 +22,7 @@ class AddAnswer extends React.Component {
     return (
       <div>
         <button id="add-answer-button" value="123123"onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
-        <AnswerModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.questionID} show={this.state.show} handleClose={this.hideModal}/>
+        <AnswerModal questionBody={this.props.questionBody} productName={this.props.productName} getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.questionID} show={this.state.show} handleClose={this.hideModal}/>
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import QAListEntry from './QAListEntry.jsx';
 import sortByAnswers from './sortByAnswers.js'
 
-const QAList = ({ questions, getProductQandA, productID }) => {
+const QAList = ({ questions, getProductQandA, productID, productName }) => {
   let quesArr = sortByAnswers(questions)
 
   if (!quesArr) {
@@ -13,7 +13,7 @@ const QAList = ({ questions, getProductQandA, productID }) => {
     return (
       <ul id="qa-list">
         {quesArr.map((question) =>
-        <QAListEntry productID={productID} getProductQandA={getProductQandA} key={question.question_id} question={question} />
+        <QAListEntry productName={productName} productID={productID} getProductQandA={getProductQandA} key={question.question_id} question={question} />
         )}
       </ul>
     )

@@ -18,7 +18,7 @@
   display: grid;
   margin-top: 40px;
   grid-template-rows:  auto;
-  padding-block: 20px;
+  padding: 20px;
   position: relative;
   align-content: center;
   justify-content: center;
@@ -27,6 +27,23 @@
 #qa-list {
   display: grid;
   grid-template-rows: auto;
+  overflow: scroll;
+  height: 500px;
+  width: auto;
+}
+
+#qa-list::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+#answer-list {
+  overflow: scroll;
+  height: 200px
+}
+#answer-list::-webkit-scrollbar {
+  width: 0;
+  display: none;
 }
 
 #question-buttons {
