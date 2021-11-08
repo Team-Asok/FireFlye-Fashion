@@ -25,7 +25,7 @@ const postAnalytic = function(data) {
   };
   return (
     axios(options)
-      .then((response) => response)
+      .then((response) => console.log(response))
       .catch((err) => err)
   );
 }
