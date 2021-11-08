@@ -10,7 +10,6 @@ const styling = {
   main: {
     width: 500,
     height: 500,
-    // objectFit: 'fill',
   },
   tn: {
     display: 'flex',
@@ -21,9 +20,11 @@ const styling = {
 
 const Gallery = ({ style }) => (
   <div id="Gallery" style={styling.container}>
-    <div style={styling.tn}>
-      {style.photos.map((photo) => <ImageThumbnail photo={photo} />)}
-    </div>
+    { style.photos[0].thumbnail_url
+      ? <div style={styling.tn}>
+          {style.photos.map((photo) => <ImageThumbnail photo={photo} />)}
+        </div>
+      : null}
     {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
   </div>
 );
