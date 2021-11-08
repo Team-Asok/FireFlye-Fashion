@@ -8,8 +8,8 @@ const styling = {
     flexDirection: 'row',
   },
   main: {
-    width: 500,
-    height: 500,
+    width: 600,
+    height: 600,
   },
   tn: {
     display: 'flex',
@@ -22,7 +22,7 @@ const Gallery = ({ style }) => (
   <div id="Gallery" style={styling.container}>
     { style.photos[0].thumbnail_url
       ? <div style={styling.tn}>
-          {style.photos.map((photo) => <ImageThumbnail photo={photo} />)}
+          {style.photos.slice(0, 7).map((photo) => <ImageThumbnail photo={photo} />)}
         </div>
       : null}
     {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
