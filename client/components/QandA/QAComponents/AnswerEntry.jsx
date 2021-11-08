@@ -10,7 +10,7 @@ class AnswerEntry extends React.Component {
     this.state = {
       sortedAnswers: this.props.answers,
       limitedAnswers: this.props.answers.slice(0, 2),
-      showAll: false
+      showAll: false,
     }
     this.showAllAnswers = this.showAllAnswers.bind(this);
     this.setView = this.setView.bind(this);
@@ -46,7 +46,7 @@ class AnswerEntry extends React.Component {
               <div id="answer-info">
               by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')}
                 <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} />
-                <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`} />
+                <ReportButton onReport={this.answerReported} id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
             </div>
           </li>

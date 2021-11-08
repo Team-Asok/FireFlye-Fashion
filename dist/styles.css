@@ -52,11 +52,12 @@
 }
 
 #load-questions {
-  height: auto;
-  width: auto;
+  height: 50px;
+  width: 150px;
   margin: 10px;
-  font-size: 30px;
+  font-size: auto;
   font-weight: bold;
+  grid-row: 1/2;
 }
 
 #load-answers {
@@ -73,10 +74,10 @@
 }
 
 #add-question {
-  height: auto;
-  width: auto;
+  height: 50px;
+  width: 150px;
   margin: 10px;
-  font-size: 30px;
+  font-size: auto;
   font-weight: bold;
   grid-row: 1/2;
 }

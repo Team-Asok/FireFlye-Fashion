@@ -10,7 +10,7 @@ const QuestionEntry = ({ questionBody, questionID, getProductQandA, productID, h
       <div id="question-buttons">
         <AddAnswer questionBody={questionBody} productID={productID} questionID={questionID} getProductQandA={getProductQandA} productName={productName}/>
         <HelpfulButton id={questionID} path={`/qa/questions/${questionID}/helpful`} helpfulness={helpfulness} getProductQandA={getProductQandA} productID={productID}/>
-        <ReportButton id={questionID} path={`/qa/questions/${questionID}/report`}/>
+        <ReportButton id={questionID} path={`/qa/questions/${questionID}/report`} getProductQandA={getProductQandA}/>
       </div>
     </div>
   )

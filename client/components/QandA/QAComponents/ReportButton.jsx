@@ -7,7 +7,9 @@ const ReportButton =({id, path}) => {
     axios.put(path, {
       params: targetId,
     })
-    .then(response => response)
+    .then(response => {
+
+    })
     .catch(err => console.log(err))
   }
   return (
