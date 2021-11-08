@@ -13,8 +13,10 @@ class RandR extends React.Component {
     this.starsFiltered = [];
   }
 
+  static contextType = AnalyticsContext;
+
   filterReviews(starRating) {
-    trackAnalytic('reviews', event.target)
+    console.log(this.context);
     if (this.starsFiltered.indexOf(starRating) === -1) {
       this.starsFiltered.push(starRating)
     }

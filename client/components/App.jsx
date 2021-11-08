@@ -5,6 +5,9 @@ import RandR from './RandR/RandR.jsx';
 import Overview from './Overview/Overview.jsx';
 import getMetaScore from './RandR/MetaData/getMetaScoreFn.js';
 import { findTotalStars } from './RandR/MetaData/StarRatingGraph.jsx';
+import trackAnalytic from './GlobalComponents/Analytics.jsx';
+
+const AnalyticsContext = React.createContext(trackAnalytic)
 
 class App extends React.Component {
   constructor(props) {
@@ -37,6 +40,7 @@ class App extends React.Component {
           const index = Math.floor(Math.random() * this.state.products.length);
           this.setState({ displayedProduct: this.state.products[index] },
             () => {
+             // use promise.all to promisify these 3 state changes -> optimization;
               this.getProductQandA(this.state.displayedProduct.id);
               this.getProductReviews(this.state.displayedProduct.id);
               this.getMetaData(this.state.displayedProduct.id);
@@ -76,11 +80,13 @@ class App extends React.Component {
     }
 
     return (
-      <div id="index">
-        <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
-        <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
-        <RandR getProductReviews={this.getProductReviews} reviews={this.state.reviews.results} productId={this.state.displayedProduct.id} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
-      </div>
+      <AnalyticsContext.Provider value={trackAnalytic}>
+        <div id="index">
+          <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
+          <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA}/>
+          <RandR getProductReviews={this.getProductReviews} reviews={this.state.reviews.results} productId={this.state.displayedProduct.id} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
+        </div>
+      </AnalyticsContext.Provider>
     );
     }
   }

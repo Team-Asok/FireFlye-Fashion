@@ -18,8 +18,8 @@ const Characteristics = (props) => {
     {characteristicsArray.map((characteristic, index) => {
       let percentageValue = ((characteristic[1].value / 5) * 100).toFixed(0);
       return (
-        <>
-        <div id="characteristic" key={`${index}`}>{`${characteristic[0]}:`}
+        <div key={`${index}`}>
+        <div id="characteristic" >{`${characteristic[0]}:`}
           <div id="rating-bar">
 
               <span id="bar-1">
@@ -48,7 +48,8 @@ const Characteristics = (props) => {
           </div>
         </div>
         <br/>
-        </>
+        </div>
+
       )
 
     })}
