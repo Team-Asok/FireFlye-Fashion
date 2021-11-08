@@ -18,7 +18,7 @@
   display: grid;
   margin-top: 40px;
   grid-template-rows:  auto;
-  padding-block: 20px;
+  padding: 20px;
   position: relative;
   align-content: center;
   justify-content: center;
@@ -28,7 +28,6 @@
   display: grid;
   grid-template-rows: auto;
   overflow: scroll;
-  overflow-x: hidden;
   height: 500px;
   width: auto;
 }

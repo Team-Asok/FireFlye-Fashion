@@ -48,7 +48,8 @@ class AnswerModal extends React.Component {
       <div className="modal">
         <div className="modal-content">
           <div className="model-header">
-            <h4 className="modal-title">ADD ANSWER HERE</h4>
+            <h4 className="modal-title">Submit your Answer</h4>
+            <div>{this.props.productName}: {this.props.questionBody}</div>
           </div>
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
