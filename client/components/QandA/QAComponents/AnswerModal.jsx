@@ -10,7 +10,7 @@ class AnswerModal extends React.Component {
       email: '',
       photos: [],
       question_id: this.props.questionID,
-      product_id: this.props.productID
+      product_id: this.props.productID,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -18,23 +18,22 @@ class AnswerModal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`/qa/questions/${this.props.questionID}/answers`, {
-      params: this.state.question_id,
-      data: {
-        body: this.state.question,
-        name: this.state.name,
-        email: this.state.email,
-        photos: []
-      }
-    })
-    .then((response) => {
-      console.log('Answer posted')
-      this.props.handleClose()
-      this.props.getProductQandA(Number(this.state.product_id));
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      axios.post(`/qa/questions/${this.props.questionID}/answers`, {
+        params: this.state.question_id,
+        data: {
+          body: this.state.question,
+          name: this.state.name,
+          email: this.state.email,
+          photos: []
+        }
+      })
+      .then((response) => {
+        this.props.handleClose()
+        this.props.getProductQandA(Number(this.state.product_id));
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})

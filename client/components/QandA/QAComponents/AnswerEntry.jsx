@@ -65,7 +65,7 @@ class AnswerEntry extends React.Component {
 
   render() {
       return (
-        <ul> A:
+        <ul id="answer-list"> A:
           {this.showAllAnswers()}
           {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
         </ul>

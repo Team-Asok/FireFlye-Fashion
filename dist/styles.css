@@ -37,6 +37,15 @@
   display: none;
 }
 
+#answer-list {
+  overflow: scroll;
+  height: 200px
+}
+#answer-list::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
 #question-buttons {
   margin-right: 20px;
   margin-left: auto;
