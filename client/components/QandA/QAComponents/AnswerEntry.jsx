@@ -64,12 +64,12 @@ class AnswerEntry extends React.Component {
   }
 
   render() {
-    return (
-      <ul>
-        {this.showAllAnswers()}
-        {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
-      </ul>
-    )
+      return (
+        <ul> A:
+          {this.showAllAnswers()}
+          {this.state.sortedAnswers.length > 2 ? <LoadAnswers onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
+        </ul>
+      )
   }
 };
 
