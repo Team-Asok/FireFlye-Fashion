@@ -9,15 +9,15 @@ const styling = {
   },
   main: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain',
+    maxWidth: 1000,
+    height: "auto",
     maxHeight: 800,
   },
   tn: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'start',
+
   },
 };
 
@@ -29,7 +29,9 @@ const Gallery = ({ style }) => (
         </div>
       : null
     }
+    <span height="1000px" width="1000px" justifyContent="end">
     {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
+    </span>
   </div>
 );
 
