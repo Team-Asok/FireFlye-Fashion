@@ -2,6 +2,7 @@ import React from 'react';
 import ImageThumbnail from './ImageThumbnail.jsx';
 
 const styling = {
+<<<<<<< HEAD
   container: {
     position: 'relative',
   },
@@ -16,6 +17,12 @@ const styling = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+=======
+  default: {
+    width: 600,
+    height: 600,
+    objectFill: 'contain',
+>>>>>>> dev
   },
 };
 
