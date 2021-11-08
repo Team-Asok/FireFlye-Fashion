@@ -24,7 +24,7 @@ class AnswerEntry extends React.Component {
           <li key={answer.id}>
             <div>
               <div id="answer-body">
-                A: {answer.body}
+                {answer.body}
               </div>
               <div id="answer-info">
                 by: {answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')} |
