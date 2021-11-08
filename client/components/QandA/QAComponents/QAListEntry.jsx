@@ -9,10 +9,10 @@ const QAListEntry = ({ question, getProductQandA, productID, productName }) => {
   return (
     <li>
       <div id="question-container">
-        <QuestionEntry helpfulness={question.question_helpfulness} productID={productID} questionBody={question.question_body} questionID={question.question_id} getProductQandA={getProductQandA} productName={productName}/>
-        <AnswerEntry answers={arrAnswer} questionBody={question.question_body} productName={productName}/>
+        <QuestionEntry helpfulness={question.question_helpfulness} productID={productID} questionBody={question.question_body} questionID={question.question_id} getProductQandA={getProductQandA} productName={productName} />
+        <AnswerEntry answers={arrAnswer} questionBody={question.question_body} productName={productName} />
       </div>
-  </li>
+    </li>
   )
 };
 

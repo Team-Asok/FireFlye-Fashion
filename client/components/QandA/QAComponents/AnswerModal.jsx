@@ -18,15 +18,15 @@ class AnswerModal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-      axios.post(`/qa/questions/${this.props.questionID}/answers`, {
-        params: this.state.question_id,
-        data: {
-          body: this.state.question,
-          name: this.state.name,
-          email: this.state.email,
-          photos: []
-        }
-      })
+    axios.post(`/qa/questions/${this.props.questionID}/answers`, {
+      params: this.state.question_id,
+      data: {
+        body: this.state.question,
+        name: this.state.name,
+        email: this.state.email,
+        photos: []
+      }
+    })
       .then((response) => {
         this.props.handleClose()
         this.props.getProductQandA(Number(this.state.product_id));
@@ -36,10 +36,10 @@ class AnswerModal extends React.Component {
       })
   }
   handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value })
   }
 
-  render () {
+  render() {
     if (!this.props.show) {
       return null
     }
@@ -53,26 +53,26 @@ class AnswerModal extends React.Component {
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
               <div className="modal-question">
-              <label> ANSWER:*
-                <textarea type="text" name="question" maxLength="1000" onChange={this.handleChange} required/>
-              </label>
+                <label> ANSWER:*
+                  <textarea type="text" name="question" maxLength="1000" onChange={this.handleChange} required />
+                </label>
               </div>
               <div className="modal-name">
-              <label> NAME:*
-                <input type="text" name="name" placeholder="Example: jack543!" maxLength="60" onChange={this.handleChange} required/>
-                <span>For privacy reasons, do not use your full name or email address</span>
-              </label>
+                <label> NAME:*
+                  <input type="text" name="name" placeholder="Example: jack543!" maxLength="60" onChange={this.handleChange} required />
+                  <span>For privacy reasons, do not use your full name or email address</span>
+                </label>
               </div>
               <div className="modal-email">
               </div>
               <label> EMAIL:*
-                <input type="email" name="email" maxLength="60" placeholder="Example: jack@email.com" onChange={this.handleChange} required/>
+                <input type="email" name="email" maxLength="60" placeholder="Example: jack@email.com" onChange={this.handleChange} required />
                 <span>For authentication reasons, you will not be emailed</span>
               </label>
               <div className="modal-submit">
-              <label>
-                <input type="submit" name="submit answer"/>
-              </label>
+                <label>
+                  <input type="submit" name="submit answer" />
+                </label>
               </div>
               <div className="modal-upload-pics">
                 <label>

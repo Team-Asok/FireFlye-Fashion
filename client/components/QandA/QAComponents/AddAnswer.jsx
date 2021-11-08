@@ -11,18 +11,18 @@ class AddAnswer extends React.Component {
     this.hideModal = this.hideModal.bind(this)
   }
 
-  showModal (e) {
-    this.setState({show: true})
+  showModal(e) {
+    this.setState({ show: true })
   }
-  hideModal () {
-    this.setState({show: false})
+  hideModal() {
+    this.setState({ show: false })
   }
 
-  render () {
+  render() {
     return (
       <div>
-        <button id="add-answer-button" value="123123"onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
-        <AnswerModal questionBody={this.props.questionBody} productName={this.props.productName} getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.questionID} show={this.state.show} handleClose={this.hideModal}/>
+        <button id="add-answer-button" value="123123" onClick={(e) => this.showModal()}>ANSWER THIS QUESTION</button>
+        <AnswerModal questionBody={this.props.questionBody} productName={this.props.productName} getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.questionID} show={this.state.show} handleClose={this.hideModal} />
       </div>
     )
   }

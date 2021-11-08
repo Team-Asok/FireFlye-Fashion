@@ -13,7 +13,7 @@ const QAList = ({ questions, getProductQandA, productID, productName }) => {
     return (
       <ul id="qa-list">
         {quesArr.map((question) =>
-        <QAListEntry productName={productName} productID={productID} getProductQandA={getProductQandA} key={question.question_id} question={question} />
+          <QAListEntry productName={productName} productID={productID} getProductQandA={getProductQandA} key={question.question_id} question={question} />
         )}
       </ul>
     )

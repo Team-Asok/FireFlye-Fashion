@@ -7,7 +7,7 @@ var sortByAnswers = (questions) => {
       return 1;
     }
     return 0;
-  }
+  };
   return questions.sort(compareFunction);
-}
-export default sortByAnswers
+};
+export default sortByAnswers;

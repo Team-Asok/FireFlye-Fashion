@@ -1,14 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 
-const HelpfulButton = ({id, path, helpfulness}) => {
+const HelpfulButton = ({ id, path, helpfulness }) => {
   const updateHelpful = (targetId) => {
     axios.put(path, {
-      params : targetId
+      params: targetId
     })
-    .then(response => {
-    })
-    .catch(err => console.log(err));
+      .then(response => {
+      })
+      .catch(err => console.log(err));
   }
 
   return (
