@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageThumbnail from './ImageThumbnail.jsx';
+import NoImage from './NoImage.png';
 
 const styling = {
   container: {
@@ -21,7 +22,7 @@ const styling = {
 
 const Gallery = ({ style }) => (
   <div id="Gallery" style={styling.container}>
-    <img src={style.photos[0].url} style={styling.main}/>
+    {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
     <div style={styling.tn}>
       {style.photos.map((photo) => <ImageThumbnail photo={photo} />)}
     </div>
