@@ -14,7 +14,9 @@ const ReviewTile = function(props) {
         <span id="timestamp">{moment(props.review.date).format('MMM do YYYY')}</span>
        </div>
        <div id="review-tile-summary">{props.review.summary}</div>
-       <div className="review-body" id="review-tile-body">{props.review.body}</div>
+       <br />
+       <span className="review-body" id="review-tile-body">{props.review.body}</span>
+       <br/>
        <div className="review-body" id="review-tile-response">{props.review.response}</div>
        <div id="helpful-report-buttons">
          <HelpfulButton path={`/reviews/${props.review.review_id}/helpful`} id={props.review.review_id} helpfulness={props.review.helpfulness} />
