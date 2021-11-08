@@ -10,6 +10,8 @@ const qa = require('./helpers/questions-answers');
 
 const review = require('./helpers/review');
 
+const interactions = require('./helpers/interactions')
+
 // middleware
 app.use(express.json());
 app.use(express.static('dist'));
@@ -215,6 +217,17 @@ app.put('/reviews/:review_id/report', (req, res) => {
       res.status(500).send(err);
     });
 });
+
+// INTERACTIONS API
+app.post('/interactions', (req, res) => {
+  interactions.postAnalytic(req.body.data)
+  .then((response) => {
+    res.status(201).send();
+  })
+  .catch((err) => {
+    res.status(422).send(err);
+  });
+})
 
 // ----------------------------------
 app.post('/', (req, res) => {
