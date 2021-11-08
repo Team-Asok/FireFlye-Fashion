@@ -33,7 +33,7 @@
   width: auto;
 }
 
-::-webkit-scrollbar {
+#qa-list::-webkit-scrollbar {
   width: 0;
   display: none;
 }
