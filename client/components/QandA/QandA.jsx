@@ -9,7 +9,7 @@ class QandA extends React.Component {
     super(props)
     this.state = {
       questions: this.props.qAndA.results,
-      limitedQuestions: this.props.qAndA.results.slice(0, 4),
+      limitedQuestions: this.props.qAndA.results.slice(0, 2),
       showAll: false,
       search: '',
       found: []

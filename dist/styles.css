@@ -27,6 +27,15 @@
 #qa-list {
   display: grid;
   grid-template-rows: auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  width: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
 }
 
 #question-buttons {
