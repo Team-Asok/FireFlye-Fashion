@@ -47,6 +47,8 @@ background-size: cover;
   width: auto;
   grid-column: 2/3;
   grid-row: 3/4;
+  padding-inline-start: 0px;
+  padding-bottom: 20px;
 }
 
 #qa-list::-webkit-scrollbar {
