@@ -14,27 +14,32 @@ class QAListEntry extends React.Component {
 
   render() {
     return (
-      <li>
-        <div id="question-container">
-          <div id="question-entry">
-            <QuestionEntry
-              helpfulness={this.state.question.question_helpfulness}
-              productID={this.props.productID}
-              productName={this.props.productName}
-              questionBody={this.state.question.question_body}
-              getProductQandA={this.getProductQandA}
-              questionID={this.state.question.question_id}
-            />
+      <React.Fragment>
+        <span id="q-marker">Q:</span>
+        <li id="question-container">
+          <div>
+            <div id="question-entry">
+              <QuestionEntry
+                helpfulness={this.state.question.question_helpfulness}
+                productID={this.props.productID}
+                productName={this.props.productName}
+                questionBody={this.state.question.question_body}
+                getProductQandA={this.props.getProductQandA}
+                questionID={this.state.question.question_id}
+              />
+            </div>
+            <div id="answer-entry">
+            {this.state.answers.length ?<span id="a-marker">A:</span> : null}
+              <AnswerEntry
+                answers={this.state.answers}
+                questionBody={this.state.question.question_body}
+                productName={this.props.productName}
+              />
+            </div>
           </div>
-          <div id="answer-entry">
-            <AnswerEntry
-            answers={this.state.answers}
-            questionBody={this.state.question.question_body}
-            productName={this.props.productName}
-            />
-          </div>
-        </div>
-      </li>
+        </li>
+      </React.Fragment>
+
     )
   }
 }

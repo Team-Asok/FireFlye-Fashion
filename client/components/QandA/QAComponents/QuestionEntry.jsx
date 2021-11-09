@@ -13,7 +13,6 @@ class QuestionEntry extends React.Component {
   render() {
     return (
       <div id="question-entry">
-        <span>Q:&nbsp;</span>
         {this.props.questionBody}
         <span id="question-buttons">
             <AddAnswer

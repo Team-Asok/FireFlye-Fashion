@@ -29,6 +29,7 @@
 #qa-list {
   display: grid;
   grid-template-rows: auto;
+  grid-template-columns: 5% 95%;
   overflow: scroll;
   height: 500px;
   width: auto;
@@ -39,6 +40,23 @@
 #qa-list::-webkit-scrollbar {
   width: 0;
   display: none;
+}
+
+#q-marker {
+  grid-column: 1/2;
+}
+
+#answer-entry {
+  display: grid;
+  grid-template-columns: 4% 96%;
+  grid-template-rows: auto;
+}
+
+#a-marker {
+}
+
+#question-container {
+  grid-column: 2/3;
 }
 
 #answer-list {
