@@ -24,8 +24,8 @@ const styling = {
   noImage: {
     height: 500,
     width: 500,
-    marginTop: '15%',
-    marginLeft: '15%',
+    marginTop: '10%',
+    marginLeft: '20%',
   },
 };
 

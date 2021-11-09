@@ -59,7 +59,7 @@ class Overview extends React.Component {
         this.setState({
           currentStyle: data[j],
           currentPhoto: data[j].photos[0],
-          photos: data[j].photos
+          photos: data[j].photos,
         });
         break;
       }
@@ -69,6 +69,7 @@ class Overview extends React.Component {
   updateStyle(style) {
     this.setState({
       currentStyle: style,
+      photos: style.photos,
       currentPhotoIndex: 0,
     });
   }
@@ -78,26 +79,24 @@ class Overview extends React.Component {
   }
 
   previousSlide() {
-    let lastIndex = this.state.photos.length - 1;
-    let currentPhotoIndex = this.state.currentPhotoIndex
-    let shouldResetIndex = currentPhotoIndex === 0;
-    let index = shouldResetIndex ? lastIndex : currentPhotoIndex - 1;
-
+    if (this.state.currentPhotoIndex === 0) {
+      return;
+    }
+    let current = this.state.currentPhotoIndex;
     this.setState({
-      currentPhoto: this.state.photos[index],
-      currentPhotoIndex: currentPhotoIndex - 1,
+      currentPhoto: this.state.photos[current - 1],
+      currentPhotoIndex: current - 1,
     });
   }
 
   nextSlide() {
-    let lastIndex = this.state.photos.length - 1;
-    let currentPhotoIndex = this.state.currentPhotoIndex
-    let shouldResetIndex = currentPhotoIndex === lastIndex;
-    let index = shouldResetIndex ? 0 : currentPhotoIndex + 1;
-
+    if (this.state.currentPhotoIndex === this.state.photos.length - 1) {
+      return;
+    }
+    let current = this.state.currentPhotoIndex;
     this.setState({
-      currentPhoto: this.state.photos[index],
-      currentPhotoIndex: currentPhotoIndex + 1,
+      currentPhoto: this.state.photos[current + 1],
+      currentPhotoIndex: current + 1,
     });
   }
 
