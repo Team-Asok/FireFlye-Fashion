@@ -14,12 +14,16 @@ class Overview extends React.Component {
       currentStyles: [],
       currentStyle: '',
       currentPhoto: '',
+      photos: [],
+      currentPhotoIndex: 0,
     };
     this.getProductFeatures = this.getProductFeatures.bind(this);
     this.getProductStyles = this.getProductStyles.bind(this);
     this.setDefaultStyle = this.setDefaultStyle.bind(this);
     this.updateStyle = this.updateStyle.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +59,7 @@ class Overview extends React.Component {
         this.setState({
           currentStyle: data[j],
           currentPhoto: data[j].photos[0],
+          photos: data[j].photos,
         });
         break;
       }
@@ -62,11 +67,37 @@ class Overview extends React.Component {
   }
 
   updateStyle(style) {
-    this.setState({ currentStyle: style });
+    this.setState({
+      currentStyle: style,
+      photos: style.photos,
+      currentPhotoIndex: 0,
+    });
   }
 
   updatePhoto(photo) {
     this.setState({ currentPhoto: photo });
+  }
+
+  previousSlide() {
+    if (this.state.currentPhotoIndex === 0) {
+      return;
+    }
+    let current = this.state.currentPhotoIndex;
+    this.setState({
+      currentPhoto: this.state.photos[current - 1],
+      currentPhotoIndex: current - 1,
+    });
+  }
+
+  nextSlide() {
+    if (this.state.currentPhotoIndex === this.state.photos.length - 1) {
+      return;
+    }
+    let current = this.state.currentPhotoIndex;
+    this.setState({
+      currentPhoto: this.state.photos[current + 1],
+      currentPhotoIndex: current + 1,
+    });
   }
 
   render() {
@@ -79,6 +110,8 @@ class Overview extends React.Component {
         <SiteMessage />
         <Gallery
         updatePhoto={this.updatePhoto}
+        previousSlide={this.previousSlide}
+        nextSlide={this.nextSlide}
         style={this.state.currentStyle}
         photo={this.state.currentPhoto}
         />

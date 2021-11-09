@@ -208,6 +208,38 @@ ul {
   justify-content: left;
 }
 
+#Gallery {
+  display: flex;
+  flex-direction: row;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#ProductInfo {
+  display: grid;
+  margin-left: 30px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+#ProductDescription {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#ProductDescription ul {
+  list-style-type: none;
+}
+
+#ProductDescription ul li:before {
+  content: '✓';
+  margin: 20px;
+}
+
+#Separator {
+  width: 10px;
+}
+
 #reviewlist {
   font-size: 30px;
   grid-column-start: 2;
@@ -298,29 +330,6 @@ div#buttons-container {
   grid-column-start: 1;
   grid-column-end: 3;
   display: grid;
-}
-
-#ProductInfo {
-  display: grid;
-  margin-left: 30px;
-}
-
-#ProductDescription {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-#ProductDescription ul {
-  list-style-type: none;
-}
-
-#ProductDescription ul li:before {
-  content: '✓';
-  margin: 20px;
-}
-
-#Separator {
-  width: 10px;
 }
 
 .star {
