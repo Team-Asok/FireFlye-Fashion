@@ -1,7 +1,7 @@
 import React from 'react'
 
 class SearchAnswer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       search: ''
@@ -15,13 +15,13 @@ class SearchAnswer extends React.Component {
   }
 
   handleSubmit(event) {
-  event.preventDefault()
+    event.preventDefault()
   }
 
   render() {
     return (
       <form id="search-container" onSubmit={this.handleSubmit}>
-        <input id="search-answer" type="text" placeholder="Have a question? Search here..." onChange={()=>this.handleChange(event)}/>
+        <input id="search-answer" type="text" placeholder="Have a question? Search here..." onChange={() => this.handleChange(event)} />
       </form>
     )
   }

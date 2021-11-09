@@ -8,8 +8,8 @@ const styling = {
   },
 };
 
-const ImageThumbnail = ({ photo }) => (
-  <img src={photo.thumbnail_url} style={styling.tn}/>
+const ImageThumbnail = ({ photo, updatePhoto }) => (
+  <img src={photo.thumbnail_url} style={styling.tn} onClick={() => updatePhoto(photo)}/>
 );
 
 export default ImageThumbnail;

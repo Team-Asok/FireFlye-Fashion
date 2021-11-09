@@ -23,30 +23,49 @@ background-size: cover;
 }
 
 #QandA {
-  border-top:rgb(59, 43, 43);
-  border-width: 5px 0px 0px 0px;
-  border-style: solid;
+  margin-top: 100px;
   font-size: 20px;
   display: grid;
-  margin-top: 40px;
-  grid-template-rows:  auto;
-  padding: 20px;
-  position: relative;
+  grid-row: 2/3;
+  grid-template-rows: 10% 10% 70% 30%;
+  grid-template-columns: 20% 60% 20%;
   align-content: center;
   justify-content: center;
+}
+
+#qa-title {
+  grid-row: 1/2;
+  grid-column: 2/3
 }
 
 #qa-list {
   display: grid;
   grid-template-rows: auto;
+  grid-template-columns: 5% 95%;
   overflow: scroll;
   height: 500px;
   width: auto;
+  grid-column: 2/3;
+  grid-row: 3/4;
 }
 
 #qa-list::-webkit-scrollbar {
   width: 0;
   display: none;
+}
+
+#q-marker {
+  grid-column: 1/2;
+}
+
+#answer-entry {
+  display: grid;
+  grid-template-columns: 4% 96%;
+  grid-template-rows: auto;
+}
+
+#question-container {
+  grid-column: 2/3;
 }
 
 #answer-list {
@@ -58,20 +77,25 @@ background-size: cover;
   display: none;
 }
 
+#qa-buttons-container {
+  grid-row: 4/5;
+  grid-column: 2/3;
+}
+
 #question-buttons {
-  margin-right: 20px;
-  margin-left: auto;
+  float: right;
 }
 
 #load-questions {
-  height: auto;
-  width: auto;
+  height: 75px;
+  width: 200px;
   margin: 10px;
-  font-size: 30px;
+  font-size: auto;
   font-weight: bold;
+  grid-row: 1/2;
 }
 
-#load-answers {
+#load-answers, #add-answer-button {
   border: 0px;
 }
 
@@ -84,44 +108,6 @@ background-size: cover;
   color:rgb(251, 198, 136);
 }
 
-#add-question {
-  height: auto;
-  width: auto;
-  margin: 10px;
-  font-size: 30px;
-  font-weight: bold;
-  grid-row: 1/2;
-}
-
-#answer-info {
-  font-size: 12px;
-}
-
-#search-container {
-  display: flex;
-}
-
-#question-entry {
-  display: flex;
-  flex-direction: rows;
-  justify-content: start;
-  align-items: start;
-}
-
-#search-answer {
-  text-align: center;
-  font-size: 30px;
-  height: auto;
-  flex: 1;
-  margin: 20px;
-}
-
-#add-answer-button {
-  border: 0px;
-  grid-row: 2/3;
-  display: flex;
-}
-
 #add-answer-button:hover {
   background-color: rgb(251, 198, 136);
   border-color: rgb(216, 123, 16)
@@ -129,6 +115,34 @@ background-size: cover;
 #add-answer-button:active {
   background-color: rgb(59, 43, 43);
   color:rgb(251, 198, 136);
+}
+
+#add-question {
+  height: 75px;
+  width: 200px;
+  margin: 10px;
+  font-size: auto;
+  font-weight: bold;
+}
+
+#answer-info {
+  font-size: 12px
+}
+
+#search-container {
+  display: flex;
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+#search-answer {
+  text-align: center;
+  font-size: 25px;
+  text-align: left;
+  height: 35px;
+  width: fit-content;
+  flex: 1;
+  margin: 20px;
 }
 
 ul {
