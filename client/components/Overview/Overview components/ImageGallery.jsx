@@ -9,15 +9,15 @@ const styling = {
   },
   main: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain',
+    maxWidth: 1000,
+    height: "auto",
     maxHeight: 800,
   },
   tn: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'start',
+
   },
 };
 

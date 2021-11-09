@@ -62,7 +62,6 @@ const addReview = (paramsObj) => {
 
 // PUT REVIEW HELPFUL
 const markReviewHelpful = (reviewID) => {
-  console.log(reviewID);
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/helpful`,
     method: 'put',
