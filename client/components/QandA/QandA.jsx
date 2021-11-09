@@ -74,7 +74,7 @@ class QandA extends React.Component {
         <SearchAnswer search={this.search} />
         {!this.state.found.length ? this.showAllQuestions() : this.showSearchedQuestion()}
         <div id="qa-buttons-container">
-          <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA} productName={this.props.productName}/>
+          <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA} productName={this.props.productName} />
           {this.state.questions.length > 4 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
         </div>
       </div>

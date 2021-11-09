@@ -1,22 +1,32 @@
 import React from 'react';
-import QAListEntry from './QAListEntry.jsx';
-import sortByAnswers from './sortByAnswers.js'
+import QAListEntry from './QAListEntry.jsx'
+import sortQA from './sortQA.js'
 
-const QAList = ({ questions, getProductQandA, productID, productName }) => {
-  let quesArr = sortByAnswers(questions)
+class QAList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      questions: sortQA(this.props.questions),
+      productID: this.props.productID,
+      productName: this.props.productName
+    }
+  }
 
-  if (!quesArr) {
-    return (
-      <h4>Be the first one to ask a question!</h4>
-    )
-  } else {
-    return (
+  render() {
+    if (!this.state.questions.length) {
+      return (
+        <h4>Be the first one to ask a question!</h4>
+      )
+    } else {
+      return (
       <ul id="qa-list">
-        {quesArr.map((question) =>
-        <QAListEntry productName={productName} productID={productID} getProductQandA={getProductQandA} key={question.question_id} question={question} />
+        {this.state.questions.map(question =>
+        <QAListEntry productName={this.state.productName} productID={this.state.productID} question={question} key={question.question_id} getProductQandA={this.props.getProductQandA}/>
         )}
       </ul>
-    )
-  };
+      )
+    }
+  }
 }
+
 export default QAList;

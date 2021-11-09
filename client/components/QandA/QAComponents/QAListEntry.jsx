@@ -3,17 +3,45 @@ import QuestionEntry from './QuestionEntry.jsx';
 import AnswerEntry from './AnswerEntry.jsx';
 import sortQA from './sortQA.js'
 
-const QAListEntry = ({ question, getProductQandA, productID, productName }) => {
-  let arrAnswer = Object.values(question.answers)
+class QAListEntry extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      answers: Object.values(this.props.question.answers),
+      question: this.props.question
+    }
+  }
 
-  return (
-    <li>
-      <div id="question-container">
-        <QuestionEntry helpfulness={question.question_helpfulness} productID={productID} questionBody={question.question_body} questionID={question.question_id} getProductQandA={getProductQandA} productName={productName}/>
-        <AnswerEntry answers={arrAnswer} questionBody={question.question_body} productName={productName}/>
-      </div>
-  </li>
-  )
-};
+  render() {
+    return (
+      <React.Fragment>
+        <span id="q-marker">Q:</span>
+        <li id="question-container">
+          <div>
+            <div id="question-entry">
+              <QuestionEntry
+                helpfulness={this.state.question.question_helpfulness}
+                productID={this.props.productID}
+                productName={this.props.productName}
+                questionBody={this.state.question.question_body}
+                getProductQandA={this.props.getProductQandA}
+                questionID={this.state.question.question_id}
+              />
+            </div>
+            <div id="answer-entry">
+            {this.state.answers.length ?<span id="a-marker">A:</span> : null}
+              <AnswerEntry
+                answers={this.state.answers}
+                questionBody={this.state.question.question_body}
+                productName={this.props.productName}
+              />
+            </div>
+          </div>
+        </li>
+      </React.Fragment>
+
+    )
+  }
+}
 
 export default QAListEntry;
