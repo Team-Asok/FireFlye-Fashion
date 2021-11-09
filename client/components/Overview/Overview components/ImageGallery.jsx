@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageThumbnail from './ImageThumbnail.jsx';
 import NoImage from './NoImage.png';
+import Arrow from './Arrow.jsx';
 
 const styling = {
   main: {
@@ -25,7 +26,9 @@ const Gallery = ({ style, photo, updatePhoto }) => (
         </div>
       : null
     }
+    <Arrow glyph="&#8592;" />
     {photo.url ? <img src={photo.url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
+    <Arrow glyph="&#8594;" />
   </div>
 );
 
