@@ -43,7 +43,7 @@ background-size: cover;
   grid-template-rows: auto;
   grid-template-columns: 5% 95%;
   overflow: scroll;
-  height: 500px;
+  height: 510px;
   width: auto;
   grid-column: 2/3;
   grid-row: 3/4;
@@ -58,6 +58,10 @@ background-size: cover;
 
 #q-marker {
   grid-column: 1/2;
+}
+
+#a-marker {
+  padding: 6px;
 }
 
 #answer-entry {
@@ -76,13 +80,17 @@ background-size: cover;
 
 #answer-list {
   overflow: scroll;
-  height: 180px;
+  height: 190px;
   padding-inline-start: 10px;
 }
+
 #answer-list::-webkit-scrollbar {
   width: 0;
   display: none;
 }
+ #single-answer-entry, #question-entry {
+   padding: 5px;
+ }
 
 #qa-buttons-container {
   grid-row: 4/5;
