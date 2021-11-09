@@ -29,7 +29,7 @@ const Gallery = ({ style }) => (
         </div>
       : null
     }
-    <span height="1000px" width="1000px" justifyContent="end">
+    <span height="1000px" width="1000px">
     {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
     </span>
   </div>
