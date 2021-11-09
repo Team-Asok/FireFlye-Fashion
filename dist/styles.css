@@ -76,6 +76,7 @@ background-size: cover;
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
+  height: auto;
 }
 
 #answer-list {
@@ -163,6 +164,7 @@ background-size: cover;
   width: fit-content;
   flex: 1;
   background-color: rgb(244, 232, 219);
+  border-radius: 10px;
 }
 
 ul {
