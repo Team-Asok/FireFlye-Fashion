@@ -240,7 +240,7 @@ ul {
 #Banner {
   background: rgb(170,44,217);
   background: linear-gradient(90deg, rgba(170,44,217,0) 0%, rgba(204,159,93,1) 41%, rgba(227,29,221,1) 73%, rgba(105,4,101,1) 100%);
-  color:rgb(245, 244, 232);
+  color:rgb(237, 220, 207);
   font-family: 'Bungee';
   font-size: 100px;
   grid-column-start: 1;
@@ -249,6 +249,7 @@ ul {
   height: 150px;
   justify-content: right;
   align-items: center;
+
 
 }
 
