@@ -24,20 +24,20 @@ class QuestionModal extends React.Component {
         product_id: Number(this.state.productID)
       }
     })
-    .then((response) => {
-      console.log('Question posted')
-      this.props.getProductQandA(this.state.productID);
-      this.props.handleClose()
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .then((response) => {
+        console.log('Question posted')
+        this.props.getProductQandA(this.state.productID);
+        this.props.handleClose()
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
   handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value })
   }
 
-  render () {
+  render() {
     if (!this.props.show) {
       return null
     }
@@ -51,26 +51,26 @@ class QuestionModal extends React.Component {
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
               <div className="modal-question">
-              <label> QUESTION:*
-                <textarea type="text" name="question" maxLength="1000" onChange={this.handleChange} required/>
-              </label>
+                <label> QUESTION:*
+                  <textarea type="text" name="question" maxLength="1000" onChange={this.handleChange} required />
+                </label>
               </div>
               <div className="modal-name">
-              <label> NAME:*
-                <input type="text" name="name" placeholder="Example: jackson11!" maxLength="60" onChange={this.handleChange} required/>
-                <span>For privacy reasons, do not use your full name or email address</span>
-              </label>
+                <label> NAME:*
+                  <input type="text" name="name" placeholder="Example: jackson11!" maxLength="60" onChange={this.handleChange} required />
+                  <span>For privacy reasons, do not use your full name or email address</span>
+                </label>
               </div>
               <div className="modal-email">
               </div>
               <label> EMAIL:*
-                <input type="email" name="email" maxLength="60" placeholder="Why did you like the product or not?" onChange={this.handleChange} required/>
+                <input type="email" name="email" maxLength="60" placeholder="Why did you like the product or not?" onChange={this.handleChange} required />
                 <span>For authentication reasons, you will not be emailed</span>
               </label>
               <div className="modal-submit">
-              <label>
-                <input type="submit" name="submit question"/>
-              </label>
+                <label>
+                  <input type="submit" name="submit question" />
+                </label>
               </div>
             </form>
           </div>
