@@ -21,15 +21,16 @@ const styling = {
   },
 };
 
-const Gallery = ({ style }) => (
+const Gallery = ({ style, photo, updatePhoto }) => (
   <div id="Gallery" style={styling.container}>
     { style.photos[0].thumbnail_url
       ? <div style={styling.tn}>
-          {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} />)}
+          {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
         </div>
       : null
     }
-    {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
+    {photo.url ? <img src={photo.url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
+    {/* {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>} */}
   </div>
 );
 
