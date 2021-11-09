@@ -72,7 +72,8 @@ background-size: cover;
 
 #answer-list {
   overflow: scroll;
-  height: 200px
+  height: 180px;
+  padding-inline-start: 10px;
 }
 #answer-list::-webkit-scrollbar {
   width: 0;
