@@ -11,7 +11,7 @@
 }
 
 #QandA {
-  margin-top: 50px;
+  margin-top: 100px;
   font-size: 20px;
   display: grid;
   grid-row: 2/3;
@@ -50,9 +50,6 @@
   display: grid;
   grid-template-columns: 4% 96%;
   grid-template-rows: auto;
-}
-
-#a-marker {
 }
 
 #question-container {
