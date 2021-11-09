@@ -90,12 +90,10 @@ background-size: cover;
 }
 
 #load-questions {
-  height: 75px;
-  width: 200px;
-  margin: 10px;
-  font-size: auto;
+  width: 300px;
+  height: 100px;
+  font-size: 30px;
   font-weight: bold;
-  grid-row: 1/2;
 }
 
 #load-answers, #add-answer-button {
@@ -121,11 +119,11 @@ background-size: cover;
 }
 
 #add-question {
-  height: 75px;
-  width: 200px;
-  margin: 10px;
-  font-size: auto;
+  width: 300px;
+  height: 100px;
+  font-size: 30px;
   font-weight: bold;
+  margin-right: 50px;
 }
 
 #answer-info {
@@ -140,12 +138,12 @@ background-size: cover;
 
 #search-answer {
   text-align: center;
-  font-size: 25px;
+  padding-left: 20px;
+  font-size: 15px;
   text-align: left;
-  height: 35px;
+  height: 50px;
   width: fit-content;
   flex: 1;
-  margin: 20px;
 }
 
 ul {
