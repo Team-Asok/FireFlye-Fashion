@@ -18,7 +18,6 @@ const ReviewMetaDataContainer = function(props) {
   return (
     <div id="review-meta-data-container">
       <MetaScore metaData={props.metaData} findTotalStars={findTotalStars} metaScore={props.metaScore} />
-      <br/>
       <div id="percent-recommended">{`${percentage}%`} of People recommended this product</div>
       <StarRating metaData={props.metaData} filter={props.filter}/>
       <Characteristics characteristics={props.metaData.characteristics}/>
