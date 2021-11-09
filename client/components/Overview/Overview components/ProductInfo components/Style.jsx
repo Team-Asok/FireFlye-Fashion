@@ -13,12 +13,12 @@ const styling = {
   },
 };
 
-const Style = ({style, select}) => (
+const Style = ({style, updateStyle, updatePhoto}) => (
   style.photos[0].thumbnail_url
-    ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => select(style)} />
+    ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => {updateStyle(style); updatePhoto(style.photos[0])}} />
     : <div style={styling.noImage}>
-        <div onClick={() => select(style)}>{style.name}</div>
-        <div onClick={() => select(style)}>No Image Available</div>
+        <div onClick={() => updateStyle(style)}>{style.name}</div>
+        <div onClick={() => updateStyle(style)}>No Image Available</div>
       </div>
 );
 
