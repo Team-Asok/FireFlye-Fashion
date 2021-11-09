@@ -4,7 +4,7 @@ import ReviewTile from './ReviewTile.jsx';
 import AddAReview from './AddAReview.jsx';
 import MoreReviews from './MoreReviews.jsx';
 import ReviewCount from './ReviewCount.jsx';
-import sortReviews from './sortReviewsFunction.js';
+import axios from 'axios';
 
 const StyledDiv = styled.div`
  `;
@@ -13,6 +13,7 @@ class ReviewList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      reviews: this.props.reviews,
       view: 'default',
       sort: 'relevance'
     };
@@ -26,23 +27,25 @@ class ReviewList extends React.Component {
 
   handleSortSubmit() {
     event.preventDefault();
-    this.setState({sort: event.target.value})
+    axios.get(`/reviews`, { params: {product_id: this.props.productId, sort: event.target.value}})
+    .then((results) => {
+      console.log(results.data);
+      this.setState({ reviews: results.data.results, sort: event.target.value});
+    });
   }
 
 
   renderView(view) {
-    // sort the reviews into a sorted array before rendering
-    var sortedReviews = sortReviews(this.props.reviews, this.state.sort);
     if (view === 'default') {
       return (
         <>
-          <ReviewTile review={sortedReviews[0]} />
-          <ReviewTile review={sortedReviews[1]} />
+          <ReviewTile review={this.state.reviews[0]} />
+          <ReviewTile review={this.state.reviews[1]} />
         </>
       );
     }
     if(view === 'all-reviews') {
-    return sortedReviews.map((review) => <ReviewTile key={review.id} review={review} />);
+    return this.state.reviews.map((review) => <ReviewTile key={review.id} review={review} />);
     }
   }
 
@@ -50,7 +53,7 @@ class ReviewList extends React.Component {
     return (
         <>
           <StyledDiv id="reviewlist">
-            <ReviewCount default={this.state.sort} count={this.props.reviews.length} select={this.handleSortSubmit.bind(this)}/>
+            <ReviewCount default={this.state.sort} count={this.state.reviews.length} select={this.handleSortSubmit.bind(this)}/>
             <div id="reviewListTilescontainer">
             {this.renderView(this.state.view)}
             </div>

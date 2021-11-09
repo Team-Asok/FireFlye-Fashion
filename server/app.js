@@ -70,7 +70,6 @@ app.get('/products/:product_id/related', (req, res) => {
 */
 // GET ALL QUESTIONS SPECIFIC TO A PRODUCT ID
 app.get('/qa/questions/:product_id', (req, res) => {
-  // console.log('this is insde get qa', req.params); <--- PRODUCT ID
   qa.getAllQuestions(req.params.product_id)
     .then((response) => {
       res.status(200).send(response);
@@ -161,8 +160,8 @@ app.put('/qa/answers/:answer_id/report', (req, res) => {
 * REVIEW REQUEST HANDLERS ------------------
 */
 // GET ALL REVIEWS SPECIFIC TO A PRODUCT ID
-app.get('/reviews/:product_id', (req, res) => {
-  review.getAllReviews(req.params.product_id)
+app.get('/reviews', (req, res) => {
+  review.getAllReviews(req.query.product_id, req.query.sort)
     .then((response) => {
       res.status(200).send(response);
     })
@@ -184,7 +183,6 @@ app.get('/reviews/meta/:product_id', (req, res) => {
 
 // POST REVIEW
 app.post('/reviews', (req, res) => {
-  console.log(req.body.data);
   review.addReview(req.body.data)
     .then((response) => {
       res.status(201).send('Review Recieved');

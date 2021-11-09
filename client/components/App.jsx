@@ -49,15 +49,22 @@ class App extends React.Component {
   of current display product. Sets state of reviews equal to response.data
   -------------------------------------------------------------------------------- */
   getMetaData(productID) {
-    axios.get(`/reviews/meta/${productID}`)
+   let options = {
+      url: `/reviews/meta/${productID}`,
+   }
+    axios(options)
     .then((results) => {
       var metaScore = getMetaScore(results.data.ratings, findTotalStars)
       this.setState({metaData: results.data, metaScore: parseFloat(metaScore)})
     })
   }
 
-  getProductReviews(productID) {
-    axios.get(`/reviews/${productID}`)
+  getProductReviews(productID, sort) {
+    if (!sort) {
+      sort = 'relevance';
+    }
+
+    axios.get(`/reviews`, { params: {product_id: productID, sort: sort}})
       .then((results) => {
         this.setState({ reviews: results.data });
       });

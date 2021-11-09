@@ -1,5 +1,6 @@
 import React from 'react';
 import triangle from './Triangle.png'
+import CharacteristicBar from './CharacteristicBar.jsx';
 
 const Characteristics = (props) => {
   let characteristicsGuide = {
@@ -18,37 +19,7 @@ const Characteristics = (props) => {
     {characteristicsArray.map((characteristic, index) => {
       let percentageValue = ((characteristic[1].value / 5) * 100).toFixed(0);
       return (
-        <div key={`${index}`}>
-        <div id="characteristic" key={`${index}`}>{`${characteristic[0]}:`}
-          <div id="rating-bar">
-
-              <span id="bar-1">
-              <svg width="100" height="10">
-                <rect width="100" style={{"strokeWidth": '2px', "stroke": 'black'}} height="10" fill='rgb(251, 198, 136)'/>
-              </svg>
-              </span>
-
-              <span id="bar-2">
-              <svg width="100" height="10">
-                <rect width="100" style={{"strokeWidth": '2px', "stroke": 'black'}} height="10" fill='rgb(251, 198, 136)'/>
-              </svg>
-              </span>
-
-              <span id="bar-3">
-              <svg width="100" height="10">
-                <rect width="100" style={{"strokeWidth": '2px', "stroke": 'black'}} height="10" fill='rgb(251, 198, 136)'/>
-              </svg>
-              </span>
-              <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (percentageValue / 100)}px)`}} />
-          </div>
-          <div id="characteristic-criteria-container">
-            <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][0]}</span>
-            <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][2]}</span>
-            <span id="charactistic-criteria">{characteristicsGuide[characteristic[0]][4]}</span>
-          </div>
-        </div>
-        <br/>
-        </div>
+        <CharacteristicBar percentageValue={percentageValue} index={index} characteristic={characteristic} characteristicsGuide={characteristicsGuide} />
       )
 
     })}

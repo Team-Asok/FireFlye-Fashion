@@ -33,7 +33,6 @@ class RandR extends React.Component {
 
 
   render() {
-
     return (
     <div id="RandR">
       Reviews and ratings
