@@ -90,10 +90,24 @@ background-size: cover;
 }
 
 #load-questions {
+  background-image: linear-gradient(to bottom right, rgb(255, 201, 25), rgb(161, 0, 215));
   width: 300px;
   height: 100px;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
+  border-radius: 90px;
+  color: white;
+}
+
+#add-question {
+  background-image: linear-gradient(to bottom right, rgb(255, 201, 25), rgb(161, 0, 215));
+  width: 300px;
+  height: 100px;
+  margin-right: 50px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 90px;
+  color: white;
 }
 
 #load-answers, #add-answer-button {
@@ -118,13 +132,6 @@ background-size: cover;
   color:rgb(251, 198, 136);
 }
 
-#add-question {
-  width: 300px;
-  height: 100px;
-  font-size: 30px;
-  font-weight: bold;
-  margin-right: 50px;
-}
 
 #answer-info {
   font-size: 12px
