@@ -29,11 +29,13 @@ const styling = {
   },
 };
 
-const Gallery = ({ style, photo, updatePhoto, previousSlide, nextSlide }) => (
+const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlide, nextSlide }) => (
   <div id="Gallery">
     { style.photos[0].thumbnail_url
       ? <div style={styling.tn}>
+          {currentIndex !== 0 ? <Arrow glyph="&#8593;" changePhoto={previousSlide} /> : null}
           {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
+          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8595;" changePhoto={nextSlide} /> : null}
         </div>
       : null
     }
@@ -41,9 +43,9 @@ const Gallery = ({ style, photo, updatePhoto, previousSlide, nextSlide }) => (
     {photo.url
       ? (
         <div style={styling.main}>
-          <Arrow glyph="&#8592;" changePhoto={previousSlide} />
+          {currentIndex !== 0 ? <Arrow glyph="&#8592;" changePhoto={previousSlide} /> : null}
           <img src={photo.url} style={styling.gallery}/>
-          <Arrow glyph="&#8594;" changePhoto={nextSlide} />
+          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8594;" changePhoto={nextSlide} /> : null}
         </div>
       )
       : <img src={NoImage} style={styling.noImage}/>}
