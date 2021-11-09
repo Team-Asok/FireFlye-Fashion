@@ -16,7 +16,6 @@ class QuestionEntry extends React.Component {
         <span>Q:&nbsp;</span>
         {this.props.questionBody}
         <span id="question-buttons">
-          <span>
             <AddAnswer
             questionBody={this.props.questionBody}
             productID={this.props.productID}
@@ -24,8 +23,6 @@ class QuestionEntry extends React.Component {
             getProductQandA={this.props.getProductQandA}
             productName={this.props.productName}
             />
-          </span>
-          <span>
             <HelpfulButton
             id={this.props.questionID}
             path={`/qa/questions/${this.props.questionID}/helpful`}
@@ -33,13 +30,10 @@ class QuestionEntry extends React.Component {
             productID={this.props.productID}
             getProductQandA={this.props.getProductQandA}
             />
-          </span>
-          <span>
             <ReportButton
             id={this.props.questionID}
             path={`/qa/questions/${this.props.questionID}/report`}
             />
-          </span>
         </span>
       </div>
     )
