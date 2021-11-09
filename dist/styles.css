@@ -27,7 +27,7 @@ background-size: cover;
   font-size: 20px;
   display: grid;
   grid-row: 2/3;
-  grid-template-rows: 10% 10% 70% 30%;
+  grid-template-rows: 10% 10% 70% 10%;
   grid-template-columns: 20% 60% 20%;
   align-content: center;
   justify-content: center;
@@ -43,12 +43,12 @@ background-size: cover;
   grid-template-rows: auto;
   grid-template-columns: 5% 95%;
   overflow: scroll;
-  height: 620px;
+  height: 500px;
   width: auto;
   grid-column: 2/3;
   grid-row: 3/4;
   padding-inline-start: 0px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #qa-list::-webkit-scrollbar {
@@ -68,7 +68,7 @@ background-size: cover;
 
 #question-container {
   grid-column: 2/3;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
