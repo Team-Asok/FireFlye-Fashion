@@ -109,18 +109,6 @@ class ReviewModal extends React.Component {
       })
     }
     fileData.readAsDataURL(files[0])
-    // if(event.target.files && event.target.files[0]) {
-    //   var reader = new FileReader();
-    //   var
-
-    //   reader.onload = function (event) {
-    //     console.log(event.target.result);
-
-    //   }
-
-    //   reader.readAsDataURL(event.target.files[0]);
-    // }
-    // this.setState({photos: event.target.files})
   }
 
   renderFactors() {
@@ -207,10 +195,7 @@ class ReviewModal extends React.Component {
               </div>
               <br/>
               <div className="modal-upload-pics">
-                {/* <label for="img">Select Photos:
-                  <input onChange={this.handleUploadPhotosChange} type="file" id="img" accept="image/*" multiple/>
-                </label> */}
-                <ReactFileReader handleFiles={this.handleUploadPhotosChange}>
+                <ReactFileReader handleFiles={this.handleUploadPhotosChange} >
                   <button className="btn">Upload Photo</button>
                 </ReactFileReader>
                 <p>Preview:</p>
