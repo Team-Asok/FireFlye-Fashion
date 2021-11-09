@@ -30,7 +30,6 @@ const Gallery = ({ style, photo, updatePhoto }) => (
       : null
     }
     {photo.url ? <img src={photo.url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>}
-    {/* {style.photos[0].url ? <img src={style.photos[0].url} style={styling.main}/> : <img src={NoImage} style={styling.main}/>} */}
   </div>
 );
 
