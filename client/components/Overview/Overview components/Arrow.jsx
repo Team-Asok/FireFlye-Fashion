@@ -6,8 +6,8 @@ const styling = {
   },
 };
 
-const Arrow = ({ click, glyph }) => (
-  <div style={styling.position} onClick={() => click()}>
+const Arrow = ({ changePhoto, glyph }) => (
+  <div style={styling.position} onClick={() => changePhoto()}>
     {glyph}
   </div>
 );

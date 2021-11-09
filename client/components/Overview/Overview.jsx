@@ -14,12 +14,16 @@ class Overview extends React.Component {
       currentStyles: [],
       currentStyle: '',
       currentPhoto: '',
+      photos: [],
+      currentPhotoIndex: 0,
     };
     this.getProductFeatures = this.getProductFeatures.bind(this);
     this.getProductStyles = this.getProductStyles.bind(this);
     this.setDefaultStyle = this.setDefaultStyle.bind(this);
     this.updateStyle = this.updateStyle.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +59,7 @@ class Overview extends React.Component {
         this.setState({
           currentStyle: data[j],
           currentPhoto: data[j].photos[0],
+          photos: data[j].photos
         });
         break;
       }
@@ -62,11 +67,38 @@ class Overview extends React.Component {
   }
 
   updateStyle(style) {
-    this.setState({ currentStyle: style });
+    this.setState({
+      currentStyle: style,
+      currentPhotoIndex: 0,
+    });
   }
 
   updatePhoto(photo) {
     this.setState({ currentPhoto: photo });
+  }
+
+  previousSlide() {
+    let lastIndex = this.state.photos.length - 1;
+    let currentPhotoIndex = this.state.currentPhotoIndex
+    let shouldResetIndex = currentPhotoIndex === 0;
+    let index = shouldResetIndex ? lastIndex : currentPhotoIndex - 1;
+
+    this.setState({
+      currentPhoto: this.state.photos[index],
+      currentPhotoIndex: currentPhotoIndex - 1,
+    });
+  }
+
+  nextSlide() {
+    let lastIndex = this.state.photos.length - 1;
+    let currentPhotoIndex = this.state.currentPhotoIndex
+    let shouldResetIndex = currentPhotoIndex === lastIndex;
+    let index = shouldResetIndex ? 0 : currentPhotoIndex + 1;
+
+    this.setState({
+      currentPhoto: this.state.photos[index],
+      currentPhotoIndex: currentPhotoIndex + 1,
+    });
   }
 
   render() {
@@ -79,6 +111,8 @@ class Overview extends React.Component {
         <SiteMessage />
         <Gallery
         updatePhoto={this.updatePhoto}
+        previousSlide={this.previousSlide}
+        nextSlide={this.nextSlide}
         style={this.state.currentStyle}
         photo={this.state.currentPhoto}
         />
