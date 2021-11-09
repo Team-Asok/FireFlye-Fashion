@@ -238,11 +238,18 @@ ul {
 }
 
 #Banner {
-  background-color: rgb(59, 43, 43);
-  color:rgb(241, 231, 223);
+  background: rgb(170,44,217);
+  background: linear-gradient(90deg, rgba(170,44,217,0) 0%, rgba(204,159,93,1) 41%, rgba(227,29,221,1) 73%, rgba(105,4,101,1) 100%);
+  color:rgb(245, 244, 232);
+  font-family: 'Bungee';
+  font-size: 100px;
   grid-column-start: 1;
   grid-column-end: 3;
-  display: grid;
+  display: flex;
+  height: 150px;
+  justify-content: right;
+  align-items: center;
+
 }
 
 button#more-reviews {
@@ -293,11 +300,17 @@ div#buttons-container {
 }
 
 #SiteMessage {
-  background-color:rgb(59, 43, 43);
+  background: rgb(170,44,217);
+  background: linear-gradient(90deg, rgba(170,44,217,0) 0%, rgba(205,79,201,1) 28%, rgba(227,29,221,1) 51%, rgba(227,29,221,1) 82%, rgba(105,4,101,0) 100%);
   color:rgb(241, 231, 223);
   grid-column-start: 1;
   grid-column-end: 3;
-  display: grid;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid rgb(238, 235, 206);
+  border-top: 3px solid rgb(238, 235, 206);
+
 }
 
 #ProductInfo {
