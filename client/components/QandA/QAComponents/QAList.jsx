@@ -1,9 +1,9 @@
 import React from 'react';
 import QAListEntry from './QAListEntry.jsx';
-import sortByAnswers from './sortByAnswers.js'
+import sortQA from './sortQA.js'
 
 const QAList = ({ questions, getProductQandA, productID, productName }) => {
-  let quesArr = sortByAnswers(questions)
+  let quesArr = sortQA(questions)
 
   if (!quesArr) {
     return (
