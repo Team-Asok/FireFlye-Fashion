@@ -122,9 +122,9 @@ class ReviewModal extends React.Component {
     }
 
     let characteristicsArray = Object.entries(this.props.metaData.characteristics)
-   return characteristicsArray.map((characteristic) => {
+   return characteristicsArray.map((characteristic, index) => {
       return (
-      <>
+      <div key={`${index}`}>
         <div className="factors" key={characteristic[1].id} id={characteristic[0]}> {characteristic[0]}: <br/>
           <label htmlFor={`${characteristic[1].id}1` }>{characteristicsGuide[characteristic[0]][0]}</label>
               <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}1`} name={characteristic[0]} value="1" />
@@ -138,7 +138,7 @@ class ReviewModal extends React.Component {
               <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}5`} name={characteristic[0]} value="5" />
         </div>
       <br/>
-      </>)
+      </div>)
     })
 
   }
