@@ -24,7 +24,6 @@ class QAListEntry extends React.Component {
                 productID={this.props.productID}
                 productName={this.props.productName}
                 questionBody={this.state.question.question_body}
-                getProductQandA={this.props.getProductQandA}
                 questionID={this.state.question.question_id}
               />
             </div>

@@ -19,7 +19,6 @@ class QuestionEntry extends React.Component {
             questionBody={this.props.questionBody}
             productID={this.props.productID}
             questionID={this.props.questionID}
-            getProductQandA={this.props.getProductQandA}
             productName={this.props.productName}
             />
             <HelpfulButton
@@ -27,7 +26,6 @@ class QuestionEntry extends React.Component {
             path={`/qa/questions/${this.props.questionID}/helpful`}
             helpfulness={this.props.helpfulness}
             productID={this.props.productID}
-            getProductQandA={this.props.getProductQandA}
             />
             <ReportButton
             id={this.props.questionID}

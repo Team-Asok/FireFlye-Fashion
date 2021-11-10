@@ -25,12 +25,12 @@ class QandA extends React.Component {
     if (!this.state.showAll) {
       return (
         <React.Fragment>
-          <QAList productName={this.props.productName} questions={this.state.limitedQuestions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
+          <QAList productName={this.props.productName} questions={this.state.limitedQuestions} productID={this.props.qAndA.product_id} />
         </React.Fragment>
       )
     } else {
       return (
-        <QAList productName={this.props.productName} questions={this.state.questions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
+        <QAList productName={this.props.productName} questions={this.state.questions} productID={this.props.qAndA.product_id} />
       )
     }
   }
@@ -45,7 +45,7 @@ class QandA extends React.Component {
 
   showSearchedQuestion() {
     return (
-      <QAList productName={this.props.productName} questions={this.state.found} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
+      <QAList productName={this.props.productName} questions={this.state.found} productID={this.props.qAndA.product_id} />
     )
   }
 
