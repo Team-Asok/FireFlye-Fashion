@@ -21,8 +21,19 @@ class AddAnswer extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <button id="add-answer-button" onClick={(e) => this.showModal()}>Add Answer</button>
-        <AnswerModal questionBody={this.props.questionBody} productName={this.props.productName} getProductQandA={this.props.getProductQandA} productID={this.props.productID} questionID={this.props.questionID} show={this.state.show} handleClose={this.hideModal} />
+        <button
+          id="add-answer-button"
+          onClick={(e) => this.showModal()}>
+          Add Answer
+        </button>
+        <AnswerModal
+          questionBody={this.props.questionBody}
+          productName={this.props.productName}
+          getProductQandA={this.props.getProductQandA}
+          productID={this.props.productID}
+          questionID={this.props.questionID}
+          show={this.state.show}
+          handleClose={this.hideModal} />
       </React.Fragment>
     )
   }
