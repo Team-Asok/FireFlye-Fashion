@@ -1,4 +1,4 @@
-/* eslint-disable prefer-const */
+/* eslint-disable camelcase */
 const axios = require('axios');
 const config = require('../config');
 

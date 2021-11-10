@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable prefer-const */
 const axios = require('axios');
 const config = require('../config');
@@ -43,7 +44,7 @@ const getAnswers = (questionID) => {
 // POST QUESTIONS
 const addQuestion = (paramsObj) => {
   let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions`,
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions',
     method: 'post',
     headers: {
       'User-Agent': 'request',
@@ -171,18 +172,3 @@ module.exports = {
   markAnswerHelpful,
   reportAnswer,
 };
-
-/*
-
-PUT QUESTIONS HELPFUL
-  question_id
-
-PUT QUESTIONS REPORT
-  question_id
-
-PUT ANSWERS REPORT
-  answer_id
-
-PUT ANSWERS HELPFUL
-  answer_id
-*/

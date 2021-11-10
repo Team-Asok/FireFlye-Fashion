@@ -1,19 +1,13 @@
 const express = require('express');
-
 const app = express();
-
 const port = 3000;
-
 const product = require('./helpers/products');
-
 const qa = require('./helpers/questions-answers');
-
 const review = require('./helpers/review');
 
 // middleware
 app.use(express.json());
 app.use(express.static('dist'));
-
 app.listen(port, () => {
   console.log(`Currently listening to ${port}`);
 });
