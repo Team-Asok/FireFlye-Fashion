@@ -58,7 +58,7 @@ class QandA extends React.Component {
           result.push(question)
         }
       })
-    } else if (!searchedTerm.length || searchedTerm.length < 3) {
+    } else if (!searchedTerm.length) {
       this.setState({ search: '' });
       this.setState({ found: [] })
     }

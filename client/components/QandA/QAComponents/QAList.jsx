@@ -20,7 +20,7 @@ class QAList extends React.Component {
     } else {
       return (
       <ul id="qa-list">
-        {this.state.questions.map(question =>
+        {this.props.questions.map(question =>
         <QAListEntry productName={this.state.productName} productID={this.state.productID} question={question} key={question.question_id} getProductQandA={this.props.getProductQandA}/>
         )}
       </ul>
