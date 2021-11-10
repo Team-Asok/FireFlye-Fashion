@@ -22,7 +22,7 @@ class AnswerEntry extends React.Component {
       return (
         this.state.limitedAnswers.map(answer =>
           <li key={answer.id}>
-            <div>
+            <div id="single-answer-entry">
               <div id="answer-body">
                 {answer.body}
               </div>
@@ -39,7 +39,7 @@ class AnswerEntry extends React.Component {
       return (
         this.state.sortedAnswers.map(answer =>
           <li key={answer.id}>
-            <div>
+            <div id="single-answer-entry">
               <div id="answer-body">
                 {answer.body}
               </div>
