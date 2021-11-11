@@ -1,15 +1,18 @@
-import React from 'react';
-import Style from './Style.jsx';
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from "react";
+import Style from "./Style";
 
 const styling = {
   direction: {
-    display: 'flex',
-    flexDirection: 'row',
+    display: "flex",
+    flexDirection: "row",
   },
   selected: {
     fontSize: 32,
-    color: 'white',
-  }
+    color: "white",
+  },
 };
 
 class Styles extends React.Component {
@@ -19,18 +22,29 @@ class Styles extends React.Component {
     this.separateRows = this.separateRows.bind(this);
   }
 
-  //Creating rows of four
+  // Creating rows of four
   separateRows() {
-    let rows = [];
+    const rows = [];
 
     for (let i = 0; i < this.props.styles.length; i += 4) {
-      let row = [];
-      row.push(this.props.styles.slice(i, i + 4).map((style) => {
-        return <Style key={style.style_id} style={style} updateStyle={this.props.updateStyle} updatePhoto={this.props.updatePhoto} />
-      }))
-      rows.push(row.map((item, index) => {
-        return <div key={index}>{item}</div>
-      }))
+      const row = [];
+      row.push(
+        this.props.styles.slice(i, i + 4).map((style) => {
+          return (
+            <Style
+              key={style.style_id}
+              style={style}
+              updateStyle={this.props.updateStyle}
+              updatePhoto={this.props.updatePhoto}
+            />
+          );
+        })
+      );
+      rows.push(
+        row.map((item, index) => {
+          return <div key={index}>{item}</div>;
+        })
+      );
     }
 
     return rows;
@@ -40,12 +54,10 @@ class Styles extends React.Component {
     return (
       <div id="Styles">
         <div style={styling.selected}>
-          <strong>STYLE > </strong>
+          <strong>STYLE `&gt;` </strong>
           {this.props.currentStyle.name}
         </div>
-        <div>
-          {this.separateRows()}
-        </div>
+        <div>{this.separateRows()}</div>
       </div>
     );
   }
