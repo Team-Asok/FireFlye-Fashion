@@ -1,3 +1,7 @@
+/* eslint-disable no-console */
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/destructuring-assignment */
 import React from "react";
 import axios from "axios";
 import QandA from "./QandA/QandA";
