@@ -56,7 +56,7 @@ const addReview = (paramsObj) => {
   return (
     axios(options)
       .then((response) => response)
-      .catch((err) => err)
+      .catch((err) => console.log(err))
   );
 };
 
