@@ -1,9 +1,15 @@
-import react from 'react'
+import React from 'react';
+import axios from 'axios';
 
-const trackAnalytic = (widget) => {
-  console.log(event.target) // needs to be stringified
-  console.log(new Date();) // needs to be stringified
-  // widget
+const trackAnalytic = (widget, element) => {
+  axios.post('/interactions', {
+    data: {
+      element: element.nodeName,
+      time: new Date().toString(),
+      widget: widget
+    }
+  })
+  .catch((err) => console.log(`Error: ${err}`))
 
 }
 

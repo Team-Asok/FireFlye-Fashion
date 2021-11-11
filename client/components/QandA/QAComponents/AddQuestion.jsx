@@ -21,7 +21,7 @@ class AddQuestion extends React.Component {
     return (
       <React.Fragment>
         <button type="button" id="add-question" onClick={(e) => this.showModal()}>Ask a question</button>
-        <QuestionModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} show={this.state.show} handleClose={this.hideModal} productName={this.props.productName} />
+        <QuestionModal productID={this.props.productID} show={this.state.show} handleClose={this.hideModal} productName={this.props.productName} />
       </React.Fragment>
     )
   }

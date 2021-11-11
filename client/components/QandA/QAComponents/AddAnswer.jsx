@@ -33,7 +33,6 @@ class AddAnswer extends React.Component {
         <AnswerModal
           questionBody={this.props.questionBody}
           productName={this.props.productName}
-          getProductQandA={this.props.getProductQandA}
           productID={this.props.productID}
           questionID={this.props.questionID}
           show={this.state.show}

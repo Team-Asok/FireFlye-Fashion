@@ -59,6 +59,7 @@ class App extends React.Component {
     })
   }
 
+
   getProductReviews(productID, sort) {
     if (!sort) {
       sort = 'relevance';

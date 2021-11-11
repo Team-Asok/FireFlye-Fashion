@@ -1,18 +1,55 @@
 import React from 'react';
 import axios from 'axios';
 
-const ReportButton = ({ id, path }) => {
-
-  const updateReport = (targetId) => {
-    axios.put(path, {
-      params: targetId,
-    })
-      .then(response => response)
-      .catch(err => console.log(err))
+class ReportButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      canClickButton: true
+    }
+    this.updateReport = this.updateReport.bind(this);
+    this.renderView = this.renderView.bind(this);
   }
-  return (
-    <button className="report-button" onClick={() => updateReport(id)} id={`report-button${id}`} type="button">Report!</button>
-  )
+
+  updateReport(id) {
+    axios.put(this.props.path, {
+      params: id
+    })
+      .then(response => {
+        if (response) {
+          this.setState({ canClickButton: false });
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  renderView() {
+    if (this.state.canClickButton) {
+      return (
+        <button
+          className="report-button"
+          id={`report-button${this.props.id}`}
+          onClick={() => { this.updateReport(this.props.id) }}>
+          Report?
+        </button>
+      )
+    } else {
+      return (
+        <button
+          id="report-button"
+          disabled>
+          Reported!
+        </button>
+      )
+    }
+  }
+
+  render() {
+    return (
+      this.renderView()
+    )
+  }
+
 }
 
-export default ReportButton;
+export default ReportButton
