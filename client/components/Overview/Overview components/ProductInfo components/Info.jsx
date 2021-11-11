@@ -3,15 +3,15 @@ import React from 'react';
 const styling = {
   sale: {
     color: 'red',
-    fontSize: 18,
+    fontSize: 20,
     marginLeft: 15,
   },
   originalSale: {
     textDecoration: 'line-through',
-    fontSize: 18,
+    fontSize: 20,
   },
   originalNoSale: {
-    fontSize: 18,
+    fontSize: 20,
   },
   flex: {
     display: 'flex',
