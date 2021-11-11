@@ -36,6 +36,7 @@ class Cart extends React.Component {
     };
     this.parseInventory = this.parseInventory.bind(this);
     this.updateSizeSelection = this.updateSizeSelection.bind(this);
+    this.resetSelections = this.resetSelections.bind(this);
   }
 
   componentDidMount() {
@@ -92,6 +93,16 @@ class Cart extends React.Component {
     });
   }
 
+  resetSelections() {
+    this.setState({
+      currentStyle: '',
+      quantities: [],
+      sizes: [],
+    }, () => {
+      this.parseInventory(this.props.currentStyle.skus);
+    });
+  }
+
   render() {
     return (
       <div style={styling.container} id="Cart">
@@ -101,7 +112,7 @@ class Cart extends React.Component {
         <div style={styling.quantity}>
           <DropDownQuantity dataList={this.state.quantities} default={'1'} />
         </div>
-        <button id="addCart" type="button" style={styling.button}>Add To Bag</button>
+        <button id="addCart" type="button" style={styling.button} onClick={this.resetSelections}>Add To Bag</button>
       </div>
     );
   }
