@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
 import React from "react";
 
-const SiteMessage = function () {
+const SiteMessage = function (props) {
   return (
     <div id="SiteMessage">
       Generic site message... Welcome to FyreFlye fashion....
