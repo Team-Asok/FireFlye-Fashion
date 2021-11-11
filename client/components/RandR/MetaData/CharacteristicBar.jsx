@@ -8,23 +8,29 @@ function CharacteristicBar(props) {
       <div id="rating-bar">
 
           <span id="bar-1">
-          <svg width="100" height="10">
-            <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
+          <svg width="100" height="10" border="2px solid black" >
+             <defs>
+                <linearGradient id={`characteristics-bar`} x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset={`0%`} style={{'stopColor':'rgb(236, 89, 255)', 'stopOpacity':1}} />
+                  <stop offset={'100%'} style={{'stopColor': 'rgb(255, 150, 3)', 'stopOpacity': 1}} />
+                </linearGradient>
+              </defs>
+            <rect className="percent-bar" width="100" height="10" fill='url(#characteristics-bar)'/>
           </svg>
           </span>
 
           <span id="bar-2">
           <svg width="100" height="10">
-            <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
+            <rect className="percent-bar" width="100" height="10" fill='url(#characteristics-bar)'/>
           </svg>
           </span>
 
           <span id="bar-3">
           <svg width="100" height="10">
-            <rect width="100" height="10" fill='rgb(251, 198, 136)'/>
+            <rect className="percent-bar" width="100" height="10" fill='url(#characteristics-bar)' />
           </svg>
           </span>
-          <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (props.percentageValue / 100)}px)`}} />
+          <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (props.percentageValue / 100)}px) translateY(-8px)` }} />
       </div>
       <div id="characteristic-criteria-container">
         <span id="charactistic-criteria">{props.characteristicsGuide[props.characteristic[0]][0]}</span>
