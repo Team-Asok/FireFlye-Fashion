@@ -1,17 +1,9 @@
 const axios = require('axios');
 const config = require('../config');
-/*
-POST interactions
-  body params
-    element
-    widget
-    time
-*/
 
-
-const postAnalytic = function(data) {
-  let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/interactions`,
+const postAnalytic = (data) => {
+  const options = {
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/interactions',
     method: 'post',
     headers: {
       'User-Agent': 'request',
@@ -20,7 +12,7 @@ const postAnalytic = function(data) {
     params: {
       element: data.element,
       widget: data.widget,
-      time: data.time
+      time: data.time,
     },
   };
   return (
@@ -28,6 +20,6 @@ const postAnalytic = function(data) {
       .then((response) => console.log(response))
       .catch((err) => err)
   );
-}
+};
 
-module.exports.postAnalytic = postAnalytic
+module.exports.postAnalytic = postAnalytic;

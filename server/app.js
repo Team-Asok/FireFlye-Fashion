@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 
 const app = express();
@@ -10,7 +11,7 @@ const qa = require('./helpers/questions-answers');
 
 const review = require('./helpers/review');
 
-const interactions = require('./helpers/interactions')
+const interactions = require('./helpers/interactions');
 
 // middleware
 app.use(express.json());
@@ -95,7 +96,7 @@ app.get('/qa/questions/:question_id/answers', (req, res) => {
 // POST QUESTION
 app.post('/qa/questions', (req, res) => {
   qa.addQuestion(req.body.data)
-    .then((response) => {
+    .then(() => {
       res.status(201).send();
     })
     .catch((err) => {
@@ -106,7 +107,7 @@ app.post('/qa/questions', (req, res) => {
 // POST ANSWER
 app.post('/qa/questions/:question_id/answers', (req, res) => {
   qa.addAnswer(req.params.question_id, req.body.data)
-    .then((response) => {
+    .then(() => {
       res.status(201).send();
     })
     .catch((err) => {
@@ -117,7 +118,7 @@ app.post('/qa/questions/:question_id/answers', (req, res) => {
 // MARK QUESTION HELPFUL
 app.put('/qa/questions/:question_id/helpful', (req, res) => {
   qa.markQuestionHelpful(req.params.question_id)
-    .then((response) => {
+    .then(() => {
       res.status(204).send();
     })
     .catch((err) => {
@@ -128,7 +129,7 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
 // REPORT QUESTION
 app.put('/qa/questions/:question_id/report', (req, res) => {
   qa.reportQuestion(req.params.question_id)
-    .then((response) => {
+    .then(() => {
       res.status(204).send();
     })
     .catch((err) => {
@@ -139,7 +140,7 @@ app.put('/qa/questions/:question_id/report', (req, res) => {
 // MARK answer HELPFUL
 app.put('/qa/answers/:answer_id/helpful', (req, res) => {
   qa.markAnswerHelpful(req.params.answer_id)
-    .then((response) => {
+    .then(() => {
       res.status(204).send();
     })
     .catch((err) => {
@@ -150,7 +151,7 @@ app.put('/qa/answers/:answer_id/helpful', (req, res) => {
 // REPORT ANSWER
 app.put('/qa/answers/:answer_id/report', (req, res) => {
   qa.reportAnswer(req.params.answer_id)
-    .then((response) => {
+    .then(() => {
       res.status(204).send();
     })
     .catch((err) => {
@@ -186,7 +187,7 @@ app.get('/reviews/meta/:product_id', (req, res) => {
 // POST REVIEW
 app.post('/reviews', (req, res) => {
   review.addReview(req.body.data)
-    .then((response) => {
+    .then(() => {
       res.status(201).send('Review Recieved');
     })
     .catch((err) => {
@@ -197,7 +198,7 @@ app.post('/reviews', (req, res) => {
 // PUT REVIEW AS HELPFUL
 app.put('/reviews/:review_id/helpful', (req, res) => {
   review.markReviewHelpful(req.params.review_id)
-    .then((response) => {
+    .then(() => {
       res.status(204).send();
     })
     .catch((err) => {
@@ -208,7 +209,7 @@ app.put('/reviews/:review_id/helpful', (req, res) => {
 // PUT REVIEW REPORT
 app.put('/reviews/:review_id/report', (req, res) => {
   review.reportReview(req.params.review_id)
-    .then((response) => {
+    .then(() => {
       res.status(204).send();
     })
     .catch((err) => {
@@ -219,13 +220,13 @@ app.put('/reviews/:review_id/report', (req, res) => {
 // INTERACTIONS API
 app.post('/interactions', (req, res) => {
   interactions.postAnalytic(req.body.data)
-  .then((response) => {
-    res.status(201).send();
-  })
-  .catch((err) => {
-    res.status(422).send(err);
-  });
-})
+    .then(() => {
+      res.status(201).send();
+    })
+    .catch((err) => {
+      res.status(422).send(err);
+    });
+});
 
 // ----------------------------------
 app.post('/', (req, res) => {
