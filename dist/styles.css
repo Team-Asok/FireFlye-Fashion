@@ -76,10 +76,11 @@ background-size: cover;
 
 #question-container {
   grid-column: 1;
+  margin-bottom: 3px;
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
-  height: min-content;
+  height: auto;
 }
 
 #answer-entry {
