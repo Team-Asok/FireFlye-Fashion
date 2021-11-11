@@ -157,7 +157,7 @@ background-size: cover;
   color: white;
 }
 
-#load-answers, #add-answer-button {
+#load-answers, .add-answer-button {
   border: 0px;
   font-size: 17px;
 }
@@ -171,11 +171,11 @@ background-size: cover;
   color:rgb(251, 198, 136);
 }
 
-#add-answer-button:hover {
+.add-answer-button:hover {
   background-color: rgb(251, 198, 136);
   border-color: rgb(216, 123, 16)
 }
-#add-answer-button:active {
+.add-answer-button:active {
   background-color: rgb(59, 43, 43);
   color:rgb(251, 198, 136);
 }
@@ -471,28 +471,28 @@ td {
   margin-left: auto;
 }
 
-#helpful-button {
+.helpful-button {
   border: 0px;
   font-size: 17px;
 }
 
-#helpful-button:hover {
+.helpful-button:hover {
   color:rgb(121, 35, 150)
 }
-#helpful-button:active {
+.helpful-button:active {
 
   color:rgb(203, 40, 40);
 }
 
-#report-button {
+.report-button {
   border: 0px;
   font-size: 17px
 }
 
-#report-button:hover {
+.report-button:hover {
   color:rgb(121, 35, 150)
 }
-#report-button:active {
+.report-button:active {
   color:rgb(203, 40, 40);
 }
 
@@ -500,7 +500,7 @@ td {
   font-size: 15px;
 }
 
-#star-button {
+.star-button {
   border: 0px;
   text-decoration: underline;
   font-size: 20px;
@@ -508,10 +508,10 @@ td {
   color: white;
 }
 
-#star-button:hover {
+.star-button:hover {
   color: rgb(147, 35, 147);
 }
-#star-button:active {
+.star-button:active {
   color:rgb(251, 198, 136);
 }
 

@@ -42,31 +42,31 @@ render() {
         <tbody>
           <tr>
             <td id="table-data-button">
-              <button id="star-button" onClick={() => {this.props.filter(5)}}>5 stars</button>
+              <button className="star-button" id="star-button1" onClick={() => {this.props.filter(5)}}>5 stars</button>
             </td >
             <PercentBar percentage={this.starPercentage('5')} />
           </tr>
           <tr>
           <td id="table-data-button">
-              <button id="star-button" onClick={() => {this.props.filter(4)}}>4  stars</button>
+              <button className="star-button" id="star-button2" onClick={() => {this.props.filter(4)}}>4  stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('4')} />
           </tr>
           <tr>
           <td id="table-data-button">
-              <button id="star-button" onClick={() => {this.props.filter(3)}}>3 stars</button>
+              <button className="star-button"  id="star-button3" onClick={() => {this.props.filter(3)}}>3 stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('3')} />
           </tr>
           <tr>
           <td id="table-data-button">
-              <button id="star-button" onClick={() => {this.props.filter(2)}}>2 stars</button>
+              <button className="star-button"  id="star-button4" onClick={() => {this.props.filter(2)}}>2 stars</button>
             </td>
             <PercentBar percentage={this.starPercentage('2')} />
           </tr>
           <tr>
           <td id="table-data-button">
-              <button id="star-button" onClick={() => {this.props.filter(1)}}>1 star</button>
+              <button className="star-button"  id="star-button5" onClick={() => {this.props.filter(1)}}>1 star</button>
             </td>
             <PercentBar percentage={this.starPercentage('1')} />
           </tr>

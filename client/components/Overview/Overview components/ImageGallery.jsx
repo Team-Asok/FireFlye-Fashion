@@ -42,11 +42,11 @@ const Gallery = ({ style, photo, updatePhoto, previousSlide, nextSlide }) => (
       ? (
         <div style={styling.main}>
           <Arrow glyph="&#8592;" changePhoto={previousSlide} />
-          <img src={photo.url} style={styling.gallery}/>
+          <img src={photo.url} style={styling.gallery} alt="main image gallery image"/>
           <Arrow glyph="&#8594;" changePhoto={nextSlide} />
         </div>
       )
-      : <img src={NoImage} style={styling.noImage}/>}
+      : <img src={NoImage} style={styling.noImage} alt="placeholder image"/>}
   </div>
 );
 

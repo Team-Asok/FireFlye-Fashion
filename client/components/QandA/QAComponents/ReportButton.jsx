@@ -27,7 +27,8 @@ class ReportButton extends React.Component {
     if (this.state.canClickButton) {
       return (
         <button
-          id="report-button"
+          className="report-button"
+          id={`report-button${this.props.id}`}
           onClick={() => { this.updateReport(this.props.id) }}>
           Report?
         </button>

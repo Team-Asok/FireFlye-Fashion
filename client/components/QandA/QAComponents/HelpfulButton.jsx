@@ -27,7 +27,8 @@ class HelpfulButton extends React.Component {
     if (this.state.canClickButton) {
       return (
         <button
-          id="helpful-button"
+          className="helpful-button"
+          id={`helpful-button${this.props.id}`}
           onClick={() => { this.updateHelpful(this.props.id) }}>
           Helpful? Yes({this.props.helpfulness})
         </button>
