@@ -16,7 +16,6 @@ class QAListEntry extends React.Component {
     return (
       <React.Fragment>
         <li id="question-container">
-          <div>
             <div id="question-entry">
               <QuestionEntry
                 helpfulness={this.state.question.question_helpfulness}
@@ -34,7 +33,6 @@ class QAListEntry extends React.Component {
                 productName={this.props.productName}
               />
             </div>
-          </div>
         </li>
       </React.Fragment>
 

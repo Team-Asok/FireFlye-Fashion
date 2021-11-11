@@ -6,13 +6,10 @@ import AddAnswer from './AddAnswer.jsx'
 class QuestionEntry extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
   }
   render() {
     return (
-      <div id="question-entry">
+      <React.Fragment>
         <span id="q-marker">Q:&nbsp;</span>
         {this.props.questionBody}
         <span id="question-buttons">
@@ -33,7 +30,7 @@ class QuestionEntry extends React.Component {
             path={`/qa/questions/${this.props.questionID}/report`}
           />
         </span>
-      </div>
+      </React.Fragment>
     )
   }
 }

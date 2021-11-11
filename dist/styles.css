@@ -36,7 +36,26 @@ background-size: cover;
 
 #qa-title {
   grid-row: 1/2;
-  grid-column: 2/3
+  grid-column: 2/3;
+  color: white;
+}
+
+#search-container {
+  display: flex;
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+#search-answer {
+  text-align: center;
+  padding-left: 20px;
+  font-size: 15px;
+  text-align: left;
+  height: 50px;
+  width: fit-content;
+  flex: 1;
+  background-color: rgb(244, 232, 219);
+  border-radius: 10px;
 }
 
 #qa-list {
@@ -44,10 +63,11 @@ background-size: cover;
   grid-row: 3/4;
   grid-column: 2/3;
   grid-template-rows: auto;
-  overflow: scroll;
-  height: 510px;
+  overflow: auto;
+  height: 490px;
   width: auto;
   padding-inline-start: 0%;
+  margin: 0px;
 }
 
 #qa-list::-webkit-scrollbar {
@@ -55,36 +75,54 @@ background-size: cover;
   display: none;
 }
 
-#a-marker {
-  margin: 7px;
-}
-
-#answer-entry {
-  display: grid;
-  grid-template-columns: 2% 98%;
-  grid-template-rows: auto;
-}
-
 #question-container {
   grid-column: 1;
-  margin-bottom: 30px;
+  margin-bottom: 3px;
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
   height: auto;
 }
 
+#answer-entry {
+  display: grid;
+  grid-template-columns: 2% 98%;
+  grid-template-rows: auto;
+  padding: 5px;
+}
+
+#a-marker {
+  margin-left: 1px;
+}
+
 #answer-list {
   overflow: scroll;
   height: 190px;
-  padding-inline-start: 10px;
+  padding-inline-start: 15px;
 }
 
 #answer-list::-webkit-scrollbar {
   width: 0;
   display: none;
 }
- #single-answer-entry, #question-entry {
+
+#individual-answer {
+  background-color: rgb(244, 232, 219);
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 10px;
+  margin: 2px;
+}
+
+#answer-info {
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+#answer-body {
+  margin-left: 3px;
+}
+
+#question-entry {
    padding: 5px;
  }
 
@@ -121,6 +159,7 @@ background-size: cover;
 
 #load-answers, #add-answer-button {
   border: 0px;
+  font-size: 17px;
 }
 
 #load-answer:hover {
@@ -139,28 +178,6 @@ background-size: cover;
 #add-answer-button:active {
   background-color: rgb(59, 43, 43);
   color:rgb(251, 198, 136);
-}
-
-#answer-info {
-  font-size: 12px
-}
-
-#search-container {
-  display: flex;
-  grid-row: 2/3;
-  grid-column: 2/3;
-}
-
-#search-answer {
-  text-align: center;
-  padding-left: 20px;
-  font-size: 15px;
-  text-align: left;
-  height: 50px;
-  width: fit-content;
-  flex: 1;
-  background-color: rgb(244, 232, 219);
-  border-radius: 10px;
 }
 
 ul {
