@@ -1,16 +1,8 @@
 import React from 'react';
 
-const styling = {
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    fontSize: 18,
-  },
-};
-
 const ProductDescription = ({currentProd, features}) => (
-  <div style={styling.container} id="ProductDescription">
-    <div style={{width: 900}}>
+  <div id="ProductDescription">
+    <div id="slogan">
       <h3>
         {currentProd.slogan}
       </h3>

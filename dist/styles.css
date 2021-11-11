@@ -253,12 +253,34 @@ ul {
 }
 
 #ProductDescription {
+  display: grid;
+  grid-template-columns: 60% 5% 35%;
   grid-column-start: 1;
   grid-column-end: 3;
+  background-color: rgb(244, 232, 219);
+  font-size: 18px;
+  text-align: left;
+  padding-left: 15px;
+  margin-top: 20px;
+  vertical-align: middle;
+}
+
+#slogan span {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 #ProductDescription ul {
   list-style-type: none;
+  padding: 0;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
 }
 
 #ProductDescription ul li:before {
@@ -267,7 +289,10 @@ ul {
 }
 
 #Separator {
-  width: 10px;
+  width: 5px;
+  background-color: rgb(161, 0, 215);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #reviewlist {
