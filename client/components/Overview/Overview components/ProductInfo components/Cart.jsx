@@ -3,8 +3,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import DropDownQuantity from "../../../GlobalComponents/DropDownMenu";
-import DropDownSize from "./DropDownSize";
+import DropDownQuantity from "../../../GlobalComponents/DropDownMenu.jsx";
+import DropDownSize from "./DropDownSize.jsx";
 
 const styling = {
   container: {
@@ -33,7 +33,7 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // items: [],
+      items: [],
       sizes: [],
       quantities: [],
       currentSize: '',
