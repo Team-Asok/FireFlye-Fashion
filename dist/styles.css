@@ -176,6 +176,7 @@ ul {
   grid-row-start: 2;
   grid-row-end: 3;
 }
+
 #reviewtile {
   display: grid;
   grid-template-columns: 1fr;
@@ -184,6 +185,7 @@ ul {
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
+  width: 80%;
 }
 
 #sort-drop-down {
@@ -457,12 +459,11 @@ td {
 }
 
 #helpful-button:hover {
-  background-color: rgb(251, 198, 136);
-  border-color: rgb(216, 123, 16)
+  color:rgb(121, 35, 150)
 }
 #helpful-button:active {
-  background-color: rgb(59, 43, 43);
-  color:rgb(251, 198, 136);
+
+  color:rgb(203, 40, 40);
 }
 
 #report-button {
@@ -471,12 +472,10 @@ td {
 }
 
 #report-button:hover {
-  background-color: rgb(251, 198, 136);
-  border-color: rgb(216, 123, 16)
+  color:rgb(121, 35, 150)
 }
 #report-button:active {
-  background-color: rgb(59, 43, 43);
-  color:rgb(251, 198, 136);
+  color:rgb(203, 40, 40);
 }
 
 #button-separator {
@@ -551,11 +550,23 @@ div#rating-bar {
 .review-body {
   font-size: 20px;
   background-color: rgb(244, 232, 219);
+  margin-left: 20px;
 }
+
 
 #percent-bar {
   stroke:rgb(59, 43, 43);
   stroke-width: 3px;
 }
 
+#review-tile-summary {
+  margin-left: 20px;
+  margin-top: 20px;
+
+}
+
+.percent-bar {
+  stroke:rgb(59, 43, 43);
+  stroke-width: 3px;
+}
 
