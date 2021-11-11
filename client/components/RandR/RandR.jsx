@@ -13,8 +13,6 @@ class RandR extends React.Component {
     this.starsFiltered = [];
   }
 
-  static contextType = AnalyticsContext;
-
   filterReviews(starRating) {
     console.log(this.context);
     if (this.starsFiltered.indexOf(starRating) === -1) {
@@ -39,7 +37,7 @@ class RandR extends React.Component {
     return (
     <div id="RandR">
       Reviews and ratings
-      <ReviewMetaDataContainer metaData={this.props.metaData} filter={this.filterReviews.bind(this)} reviews={this.state.allreviews} metaScore={this.props.metaScore}/>
+      <ReviewMetaDataContainer reviewCount={this.props.reviewCount} metaData={this.props.metaData} filter={this.filterReviews.bind(this)} reviews={this.state.allreviews} metaScore={this.props.metaScore}/>
       <ReviewList getProductReviews={this.props.getProductReviews} filteredReviews={this.state.filteredReviews} reviews={this.state.allreviews} metaData={this.props.metaData} productId={this.props.productId}/>
     </div>
     )

@@ -59,7 +59,6 @@ class App extends React.Component {
     })
   }
 
-
   getProductReviews(productID, sort) {
     if (!sort) {
       sort = 'relevance';
@@ -87,7 +86,7 @@ class App extends React.Component {
       <div id="index">
         <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA} productName={this.state.displayedProduct.name}/>
-        <RandR getProductReviews={this.getProductReviews} reviews={this.state.reviews.results} productId={this.state.displayedProduct.id} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
+        <RandR getProductReviews={this.getProductReviews} reviewCount={this.state.reviews.count} reviews={this.state.reviews.results} productId={this.state.displayedProduct.id} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
       </div>
     );
     }
