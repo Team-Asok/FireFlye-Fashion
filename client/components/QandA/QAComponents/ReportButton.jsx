@@ -11,7 +11,7 @@ const ReportButton = ({ id, path }) => {
       .catch(err => console.log(err))
   }
   return (
-    <button onClick={() => updateReport(id)} id="report-button" type="button">Report!</button>
+    <button className="report-button" onClick={() => updateReport(id)} id={`report-button${id}`} type="button">Report!</button>
   )
 }
 

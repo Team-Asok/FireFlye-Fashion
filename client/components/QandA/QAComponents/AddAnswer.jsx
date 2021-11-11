@@ -18,11 +18,15 @@ class AddAnswer extends React.Component {
     this.setState({ show: false })
   }
 
+
+
+
   render() {
     return (
       <React.Fragment>
         <button
-          id="add-answer-button"
+          className="add-answer-button"
+          id={`add-answer-button${this.props.questionID}`}
           onClick={(e) => this.showModal()}>
           Add Answer
         </button>

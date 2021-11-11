@@ -11,7 +11,7 @@ const HelpfulButton = ({ id, path, helpfulness }) => {
   }
 
   return (
-    <button onClick={() => {updateHelpful(id);}} id="helpful-button" type="button" >Helpful? Yes({helpfulness})</button>
+    <button onClick={() => {updateHelpful(id);}} className="helpful-button" id={`helpful-button${id}`} type="button" >Helpful? Yes({helpfulness})</button>
   )
 }
 
