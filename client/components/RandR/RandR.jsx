@@ -39,7 +39,12 @@ class RandR extends React.Component {
   render() {
     return (
       <div id="RandR">
-        Reviews and ratings
+        <span
+          id="review-title"
+          style={{ justifySelf: "center", color: "white" }}
+        >
+          Reviews and ratings
+        </span>
         <ReviewMetaDataContainer
           reviewCount={this.props.reviewCount}
           metaData={this.props.metaData}

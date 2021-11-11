@@ -43,7 +43,7 @@ const ReviewTile = function (props) {
           <StarGraphic metaScore={props.review.rating} />
           <span id="reviewer-name">{props.review.reviewer_name}</span>
           <span id="timestamp">
-            {moment(props.review.date).format("MMM do YYYY")}
+            {moment.utc(props.review.date).format("MMM Do YYYY")}
           </span>
         </div>
         <div id="review-tile-summary">{props.review.summary}</div>

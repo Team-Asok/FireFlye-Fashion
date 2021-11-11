@@ -14,7 +14,7 @@ import PercentBar from "./PercentBar.jsx";
 
 const StyledTable = styled.table`
   vertical-align: middle;
-  width: 500px;
+  width: 350;
   height: 250px;
   grid-row: 3 / 4;
   table-layout: fixed;

@@ -107,12 +107,16 @@ class ReviewModal extends React.Component {
   }
 
   handleUploadPhotosChange(files) {
+    const urlArray = [];
+    for (const key in files) {
+      urlArray.push(files[key].name);
+    }
     const fileData = new FileReader();
     fileData.onloadend = (e) => {
       const content = e.target.result;
       this.setState({
         thumbnail: content,
-        photos: files,
+        photos: urlArray,
       });
     };
     fileData.readAsDataURL(files[0]);
