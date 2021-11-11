@@ -10,10 +10,17 @@ import NoImage from "./NoImage.png";
 import Arrow from "./Arrow.jsx";
 
 const styling = {
-  tn: {
+  left: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "start",
+  },
+  tn: {
+    overflow: "scroll",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "start",
+    maxHeight: 510,
   },
   main: {
     overflow: 'hidden',
@@ -47,9 +54,11 @@ const styling = {
 const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlide, nextSlide }) => (
   <div id="Gallery">
     { style.photos[0].thumbnail_url
-      ? <div style={styling.tn}>
+      ? <div style={styling.left}>
           {currentIndex !== 0 ? <Arrow glyph="&#8679;" changePhoto={previousSlide} /> : <div style={styling.hiddenTN} />}
-          {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
+          <div style={styling.tn}>
+            {style.photos.map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
+          </div>
           {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8681;" changePhoto={nextSlide} /> : <div style={styling.hiddenTN} />}
         </div>
        : null}
