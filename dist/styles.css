@@ -238,6 +238,11 @@ ul {
   justify-content: left;
 }
 
+#Overview select {
+  background-color: rgb(244, 232, 219);
+  border-radius: 10px;
+}
+
 #Gallery {
   display: flex;
   flex-direction: row;
