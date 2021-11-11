@@ -44,15 +44,9 @@ const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlid
     {photo.url
       ? (
         <div style={styling.main}>
-<<<<<<< HEAD
           {currentIndex !== 0 ? <Arrow glyph="&#8592;" changePhoto={previousSlide} /> : null}
-          <img src={photo.url} style={styling.gallery}/>
-          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8594;" changePhoto={nextSlide} /> : null}
-=======
-          <Arrow glyph="&#8592;" changePhoto={previousSlide} />
           <img src={photo.url} style={styling.gallery} alt="main image gallery image"/>
-          <Arrow glyph="&#8594;" changePhoto={nextSlide} />
->>>>>>> dev
+          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8594;" changePhoto={nextSlide} /> : null}
         </div>
       )
       : <img src={NoImage} style={styling.noImage} alt="placeholder image"/>}
