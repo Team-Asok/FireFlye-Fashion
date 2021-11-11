@@ -11,7 +11,6 @@ const styling = {
   },
   main: {
     overflow: 'hidden',
-    border: '2px solid white',
   },
   noImage: {
     height: 500,
