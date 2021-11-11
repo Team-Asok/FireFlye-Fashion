@@ -1,5 +1,5 @@
 const sortQA = (arr) => {
-  var compareFunction = (a, b) => {
+  const compareFunction = (a, b) => {
     if (a.helpfulness > b.helpfulness) {
       return -1;
     }

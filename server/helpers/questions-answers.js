@@ -1,10 +1,9 @@
-/* eslint-disable prefer-const */
 const axios = require('axios');
 const config = require('../config');
 
 // GET QUESTIONS
 const getAllQuestions = (productID) => {
-  let options = {
+  const options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/',
     headers: {
       'User-Agent': 'request',
@@ -23,7 +22,7 @@ const getAllQuestions = (productID) => {
 
 // GET ANSWERS
 const getAnswers = (questionID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/answers`,
     headers: {
       'User-Agent': 'request',
@@ -42,8 +41,8 @@ const getAnswers = (questionID) => {
 
 // POST QUESTIONS
 const addQuestion = (paramsObj) => {
-  let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions`,
+  const options = {
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions',
     method: 'post',
     headers: {
       'User-Agent': 'request',
@@ -60,7 +59,7 @@ const addQuestion = (paramsObj) => {
 
 // POST ANSWER
 const addAnswer = (questionID, paramsObj) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/answers`,
     method: 'post',
     headers: {
@@ -81,7 +80,7 @@ const addAnswer = (questionID, paramsObj) => {
 
 // PUT QUESTION HELPFUL
 const markQuestionHelpful = (questionID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/helpful`,
     method: 'put',
     headers: {
@@ -101,7 +100,7 @@ const markQuestionHelpful = (questionID) => {
 
 // PUT QUESTION REPORT
 const reportQuestion = (questionID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/questions/${questionID}/report`,
     method: 'put',
     headers: {
@@ -112,8 +111,8 @@ const reportQuestion = (questionID) => {
       question_id: questionID,
     },
     data: {
-      reported: true
-    }
+      reported: true,
+    },
   };
   return (
     axios(options)
@@ -124,7 +123,7 @@ const reportQuestion = (questionID) => {
 
 // PUT ANSWER HELPFUL
 const markAnswerHelpful = (answerID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/answers/${answerID}/helpful`,
     method: 'put',
     headers: {
@@ -144,7 +143,7 @@ const markAnswerHelpful = (answerID) => {
 
 // PUT QUESTION REPORT
 const reportAnswer = (answerID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/qa/answers/${answerID}/report`,
     method: 'put',
     headers: {
@@ -171,18 +170,3 @@ module.exports = {
   markAnswerHelpful,
   reportAnswer,
 };
-
-/*
-
-PUT QUESTIONS HELPFUL
-  question_id
-
-PUT QUESTIONS REPORT
-  question_id
-
-PUT ANSWERS REPORT
-  answer_id
-
-PUT ANSWERS HELPFUL
-  answer_id
-*/

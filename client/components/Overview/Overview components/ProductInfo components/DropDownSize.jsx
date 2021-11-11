@@ -1,6 +1,11 @@
-import React from 'react';
+/* eslint-disable func-names */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable import/no-mutable-exports */
+import React from "react";
 
-const DropDownSize = (props) => {
+const DropDownSize = function (props) {
   if (props.sizes.length === 0) {
     return (
       <select disabled>
@@ -11,9 +16,15 @@ const DropDownSize = (props) => {
 
   return (
     <select id={`${props.default}}`} onChange={props.select}>
-      <option selected disabled>SELECT SIZE</option>
+      <option selected disabled>
+        SELECT SIZE
+      </option>
       {props.sizes.map((size, index) => {
-        return <option value={size} key={index}>{size}</option>
+        return (
+          <option value={size} key={index}>
+            {size}
+          </option>
+        );
       })}
     </select>
   );

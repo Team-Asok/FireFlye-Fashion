@@ -1,10 +1,16 @@
-import React from 'react';
-import axios from 'axios';
-import Banner from './Overview components/Banner.jsx';
-import Gallery from './Overview components/ImageGallery.jsx';
-import ProductDescription from './Overview components/ProductDescription.jsx';
-import ProductInfo from './Overview components/ProductInfo.jsx';
-import SiteMessage from './Overview components/SiteMessage.jsx';
+/* eslint-disable import/extensions */
+/* eslint-disable no-console */
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable no-plusplus */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from "react";
+import axios from "axios";
+import Banner from "./Overview components/Banner.jsx";
+import Gallery from "./Overview components/ImageGallery.jsx";
+import ProductDescription from "./Overview components/ProductDescription.jsx";
+import ProductInfo from "./Overview components/ProductInfo.jsx";
+import SiteMessage from "./Overview components/SiteMessage.jsx";
 
 class Overview extends React.Component {
   constructor(props) {
@@ -12,8 +18,8 @@ class Overview extends React.Component {
     this.state = {
       currentFeatures: [],
       currentStyles: [],
-      currentStyle: '',
-      currentPhoto: '',
+      currentStyle: "",
+      currentPhoto: "",
       photos: [],
       currentPhotoIndex: 0,
     };
@@ -32,30 +38,32 @@ class Overview extends React.Component {
   }
 
   getProductFeatures() {
-    axios.get(`/products/${this.props.currentProd.id}`)
+    axios
+      .get(`/products/${this.props.currentProd.id}`)
       .then((product) => {
         this.setState({ currentFeatures: product.data.features });
       })
       .catch((err) => {
-        console.log('Axios getProductFeatures Error: ', err);
+        console.log("Axios getProductFeatures Error: ", err);
       });
   }
 
   getProductStyles() {
-    axios.get(`/products/${this.props.currentProd.id}/styles`)
+    axios
+      .get(`/products/${this.props.currentProd.id}/styles`)
       .then((styles) => {
         this.setState({ currentStyles: styles.data.results }, () => {
           this.setDefaultStyle(styles.data.results);
         });
       })
       .catch((err) => {
-        console.log('Axios getProductStyles Error: ', err);
+        console.log("Axios getProductStyles Error: ", err);
       });
   }
 
   setDefaultStyle(data) {
     for (let j = 0; j < data.length; j++) {
-      if (data[j]['default?'] === true) {
+      if (data[j]["default?"] === true) {
         this.setState({
           currentStyle: data[j],
           currentPhoto: data[j].photos[0],
@@ -94,7 +102,7 @@ class Overview extends React.Component {
     if (this.state.currentPhotoIndex === 0) {
       return;
     }
-    let current = this.state.currentPhotoIndex;
+    const current = this.state.currentPhotoIndex;
     this.setState({
       currentPhoto: this.state.photos[current - 1],
       currentPhotoIndex: current - 1,
@@ -105,7 +113,7 @@ class Overview extends React.Component {
     if (this.state.currentPhotoIndex === this.state.photos.length - 1) {
       return;
     }
-    let current = this.state.currentPhotoIndex;
+    const current = this.state.currentPhotoIndex;
     this.setState({
       currentPhoto: this.state.photos[current + 1],
       currentPhotoIndex: current + 1,
@@ -113,7 +121,11 @@ class Overview extends React.Component {
   }
 
   render() {
-    if (this.state.currentFeatures.length === 0 || this.state.currentStyles.length === 0 || this.state.currentStyle.length === 0) {
+    if (
+      this.state.currentFeatures.length === 0 ||
+      this.state.currentStyles.length === 0 ||
+      this.state.currentStyle.length === 0
+    ) {
       return null;
     }
     return (
@@ -121,13 +133,13 @@ class Overview extends React.Component {
         <Banner />
         <SiteMessage />
         <Gallery
-        updatePhoto={this.updatePhoto}
-        previousSlide={this.previousSlide}
-        nextSlide={this.nextSlide}
-        style={this.state.currentStyle}
-        photo={this.state.currentPhoto}
-        photos={this.state.photos}
-        currentIndex={this.state.currentPhotoIndex}
+          updatePhoto={this.updatePhoto}
+          previousSlide={this.previousSlide}
+          nextSlide={this.nextSlide}
+          style={this.state.currentStyle}
+          photo={this.state.currentPhoto}
+          photos={this.state.photos}
+          currentIndex={this.state.currentPhotoIndex}
         />
         <ProductInfo
           updateStyle={this.updateStyle}
