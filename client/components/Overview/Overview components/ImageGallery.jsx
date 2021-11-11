@@ -1,13 +1,19 @@
-import React from 'react';
-import ImageThumbnail from './ImageThumbnail.jsx';
-import NoImage from './NoImage.png';
-import Arrow from './Arrow.jsx';
+/* eslint-disable import/extensions */
+/* eslint-disable func-names */
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable no-shadow */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prop-types */
+import React from "react";
+import ImageThumbnail from "./ImageThumbnail.jsx";
+import NoImage from "./NoImage.png";
+import Arrow from "./Arrow.jsx";
 
 const styling = {
   tn: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'start',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "start",
   },
   main: {
     overflow: 'hidden',
@@ -15,8 +21,8 @@ const styling = {
   noImage: {
     height: 500,
     width: 500,
-    marginTop: '10%',
-    marginLeft: '20%',
+    marginTop: "10%",
+    marginLeft: "20%",
   },
   arrows: {
     display: 'flex',
@@ -46,8 +52,7 @@ const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlid
           {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
           {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8681;" changePhoto={nextSlide} /> : <div style={styling.hiddenTN} />}
         </div>
-      : null
-    }
+       : null}
 
     {photo.url
       ? (
@@ -58,8 +63,9 @@ const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlid
           </div>
           {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8680;" changePhoto={nextSlide} style={styling.arrowSpace} /> : <div style={styling.hiddenMain} />}
         </div>
-      )
-      : <img src={NoImage} style={styling.noImage} alt="placeholder image"/>}
+      ) : (
+        <img src={NoImage} style={styling.noImage} alt="placeholder image" />
+      )}
   </div>
 );
 

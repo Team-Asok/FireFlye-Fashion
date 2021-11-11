@@ -13,7 +13,8 @@ const getAllReviews = (productID, sort) => {
     params: {
       product_id: productID,
       count: 50,
-      sort: sort
+      // eslint-disable-next-line object-shorthand
+      sort: sort,
     },
   };
   return (
@@ -56,7 +57,7 @@ const addReview = (paramsObj) => {
   return (
     axios(options)
       .then((response) => response)
-      .catch((err) => err)
+      .catch((err) => console.log(err))
   );
 };
 
@@ -82,7 +83,6 @@ const markReviewHelpful = (reviewID) => {
 
 // PUT REVIEW REPORT
 const reportReview = (reviewID) => {
-
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/report`,
     method: 'put',
