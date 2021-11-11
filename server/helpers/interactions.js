@@ -1,12 +1,12 @@
-const axios = require('axios');
-const config = require('../config');
+const axios = require("axios");
+const config = require("../config");
 
 const postAnalytic = (data) => {
   const options = {
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/interactions',
-    method: 'post',
+    url: "https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/interactions",
+    method: "post",
     headers: {
-      'User-Agent': 'request',
+      "User-Agent": "request",
       Authorization: config.API_KEY,
     },
     params: {
@@ -15,11 +15,9 @@ const postAnalytic = (data) => {
       time: data.time,
     },
   };
-  return (
-    axios(options)
-      .then((response) => console.log(response))
-      .catch((err) => err)
-  );
+  return axios(options)
+    .then(() => {})
+    .catch((err) => err);
 };
 
 module.exports.postAnalytic = postAnalytic;
