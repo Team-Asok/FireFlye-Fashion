@@ -187,12 +187,12 @@ ul {
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
-  word-wrap:break-word;
+  overflow: auto;
 }
-
+/*
 #reviewtile * {
-  word-break: break-all;
-}
+  word-wrap: break-word;
+} */
 
 #sort-drop-down {
   font-size: 30px;
