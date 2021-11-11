@@ -1,15 +1,16 @@
-import React from 'react';
-import HelpfulButton from './HelpfulButton.jsx'
-import ReportButton from './ReportButton.jsx'
-import AddAnswer from './AddAnswer.jsx'
+/* eslint-disable import/extensions */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prefer-stateless-function */
+import React from "react";
+import HelpfulButton from "./HelpfulButton.jsx";
+import ReportButton from "./ReportButton.jsx";
+import AddAnswer from "./AddAnswer.jsx";
 
 class QuestionEntry extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     return (
-      <React.Fragment>
+      <>
         <span id="q-marker">Q:&nbsp;</span>
         {this.props.questionBody}
         <span id="question-buttons">
@@ -30,8 +31,8 @@ class QuestionEntry extends React.Component {
             path={`/qa/questions/${this.props.questionID}/report`}
           />
         </span>
-      </React.Fragment>
-    )
+      </>
+    );
   }
 }
 

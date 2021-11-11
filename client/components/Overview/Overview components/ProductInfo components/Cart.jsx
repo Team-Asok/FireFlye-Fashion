@@ -1,12 +1,17 @@
-import React from 'react';
-import DropDownQuantity from '../../../GlobalComponents/DropDownMenu.jsx';
-import DropDownSize from './DropDownSize.jsx';
+/* eslint-disable import/extensions */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from "react";
+import DropDownQuantity from "../../../GlobalComponents/DropDownMenu.jsx";
+import DropDownSize from "./DropDownSize.jsx";
 
 const styling = {
   container: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
-    gridTemplateRows: '1fr 1fr',
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    gridTemplateRows: "1fr 1fr",
   },
   size: {
     gridColumnStart: 1,
@@ -29,10 +34,10 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      // items: [],
       sizes: [],
       quantities: [],
-      currentStyle: '',
+      currentStyle: "",
     };
     this.parseInventory = this.parseInventory.bind(this);
     this.updateSizeSelection = this.updateSizeSelection.bind(this);
@@ -53,15 +58,15 @@ class Cart extends React.Component {
       return;
     }
 
-    let sizes = [];
-    let quantities = [];
+    const sizes = [];
+    const quantities = [];
 
-    let inventory = Object.values(skus);
+    const inventory = Object.values(skus);
     inventory.forEach((product) => {
       // Handle duplicate XL entry
-      if (product.size === 'XL' && sizes.includes(product.size)) {
-        product.size = 'XXL';
-        currentSize = 'XXL';
+      if (product.size === "XL" && sizes.includes(product.size)) {
+        product.size = "XXL";
+        currentSize = "XXL";
       }
 
       sizes.push(product.size);
@@ -80,8 +85,8 @@ class Cart extends React.Component {
     });
 
     this.setState({
-      sizes: sizes,
-      quantities: quantities,
+      sizes,
+      quantities,
     });
   }
 
@@ -96,12 +101,17 @@ class Cart extends React.Component {
     return (
       <div style={styling.container} id="Cart">
         <div style={styling.size}>
-          <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
+          <DropDownSize
+            sizes={this.state.sizes}
+            select={this.updateSizeSelection}
+          />
         </div>
         <div style={styling.quantity}>
-          <DropDownQuantity dataList={this.state.quantities} default={'1'} />
+          <DropDownQuantity dataList={this.state.quantities} default="1" />
         </div>
-        <button id="addCart" type="button" style={styling.button}>Add To Bag</button>
+        <button id="addCart" type="button" style={styling.button}>
+          Add To Bag
+        </button>
       </div>
     );
   }
