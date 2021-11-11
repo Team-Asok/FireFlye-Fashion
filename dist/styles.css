@@ -253,6 +253,8 @@ ul {
 #Overview select {
   background-color: rgb(244, 232, 219);
   border-radius: 10px;
+  width: 113px;
+  text-align-last: center;
 }
 
 #Gallery {

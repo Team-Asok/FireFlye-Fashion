@@ -5,7 +5,7 @@ import DropDownSize from './DropDownSize.jsx';
 const styling = {
   container: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
+    gridTemplateColumns: '1fr 1fr',
     gridTemplateRows: '1fr 1fr',
   },
   size: {
