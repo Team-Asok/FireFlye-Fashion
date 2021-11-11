@@ -250,6 +250,11 @@ ul {
   justify-content: left;
 }
 
+#Overview select {
+  background-color: rgb(244, 232, 219);
+  border-radius: 10px;
+}
+
 #Gallery {
   display: flex;
   flex-direction: row;
@@ -259,18 +264,65 @@ ul {
 
 #ProductInfo {
   display: grid;
-  margin-left: 30px;
+  margin-left: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-template-rows: auto;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(244, 232, 219);
+  border-radius: 10px;
+  margin-right: 75px;
+}
+
+#Styles {
+  margin-top: 20px;
+}
+
+#addCart {
+  background-image: linear-gradient(to bottom right, rgb(255, 201, 25), rgb(161, 0, 215));
+  width: 300px;
+  height: 100px;
+  font-size: 35px;
+  font-weight: bold;
+  border-radius: 90px;
+  color: white;
 }
 
 #ProductDescription {
+  display: grid;
+  grid-template-columns: 60% 5% 35%;
   grid-column-start: 1;
   grid-column-end: 3;
+  background-color: rgb(244, 232, 219);
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: left;
+  padding-left: 15px;
+  margin-top: 20px;
+  vertical-align: middle;
+}
+
+#slogan span {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 #ProductDescription ul {
   list-style-type: none;
+  padding: 0;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
 }
 
 #ProductDescription ul li:before {
@@ -279,7 +331,10 @@ ul {
 }
 
 #Separator {
-  width: 10px;
+  width: 5px;
+  background-color: rgb(161, 0, 215);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #reviewlist {
@@ -385,7 +440,7 @@ div#buttons-container {
   justify-content: center;
   border-bottom: 3px solid rgb(238, 235, 206);
   border-top: 3px solid rgb(238, 235, 206);
-
+  margin-bottom: 20px;
 }
 
 .star {

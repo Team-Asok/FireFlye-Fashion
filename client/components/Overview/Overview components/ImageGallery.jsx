@@ -10,6 +10,7 @@ const styling = {
     maxHeight: 800,
     resizeMode: 'contain',
     overflow: 'hidden',
+    border: '2px solid white',
   },
   tn: {
     display: 'flex',
@@ -29,11 +30,13 @@ const styling = {
   },
 };
 
-const Gallery = ({ style, photo, updatePhoto, previousSlide, nextSlide }) => (
+const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlide, nextSlide }) => (
   <div id="Gallery">
     { style.photos[0].thumbnail_url
       ? <div style={styling.tn}>
+          {currentIndex !== 0 ? <Arrow glyph="&#8593;" changePhoto={previousSlide} /> : null}
           {style.photos.slice(0, 7).map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
+          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8595;" changePhoto={nextSlide} /> : null}
         </div>
       : null
     }
@@ -41,9 +44,15 @@ const Gallery = ({ style, photo, updatePhoto, previousSlide, nextSlide }) => (
     {photo.url
       ? (
         <div style={styling.main}>
+<<<<<<< HEAD
+          {currentIndex !== 0 ? <Arrow glyph="&#8592;" changePhoto={previousSlide} /> : null}
+          <img src={photo.url} style={styling.gallery}/>
+          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8594;" changePhoto={nextSlide} /> : null}
+=======
           <Arrow glyph="&#8592;" changePhoto={previousSlide} />
           <img src={photo.url} style={styling.gallery} alt="main image gallery image"/>
           <Arrow glyph="&#8594;" changePhoto={nextSlide} />
+>>>>>>> dev
         </div>
       )
       : <img src={NoImage} style={styling.noImage} alt="placeholder image"/>}

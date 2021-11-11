@@ -7,7 +7,8 @@ const styling = {
     flexDirection: 'row',
   },
   selected: {
-    fontSize: 32
+    fontSize: 32,
+    color: 'white',
   }
 };
 

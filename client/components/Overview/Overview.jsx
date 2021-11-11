@@ -75,7 +75,19 @@ class Overview extends React.Component {
   }
 
   updatePhoto(photo) {
-    this.setState({ currentPhoto: photo });
+    let current = this.state.currentPhotoIndex;
+
+    for (let i = 0; i < this.state.photos.length; i++) {
+      if (photo.url === this.state.photos[i].url) {
+        current = i;
+        break;
+      }
+    }
+
+    this.setState({
+      currentPhoto: photo,
+      currentPhotoIndex: current,
+    });
   }
 
   previousSlide() {
@@ -114,6 +126,8 @@ class Overview extends React.Component {
         nextSlide={this.nextSlide}
         style={this.state.currentStyle}
         photo={this.state.currentPhoto}
+        photos={this.state.photos}
+        currentIndex={this.state.currentPhotoIndex}
         />
         <ProductInfo
           updateStyle={this.updateStyle}

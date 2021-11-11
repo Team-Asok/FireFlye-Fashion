@@ -7,8 +7,9 @@ const styling = {
     flexDirection: 'row',
   },
   anchor: {
+    color: 'white',
     fontSize: 20,
-    marginTop: 20,
+    marginTop: 27,
     marginLeft: 10,
   },
 };
