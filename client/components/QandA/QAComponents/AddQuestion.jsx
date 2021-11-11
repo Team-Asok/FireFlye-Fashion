@@ -10,18 +10,18 @@ class AddQuestion extends React.Component {
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this)
   }
-  showModal (e) {
-    this.setState({show: true})
+  showModal(e) {
+    this.setState({ show: true })
   }
-  hideModal () {
-    this.setState({show: false})
+  hideModal() {
+    this.setState({ show: false })
   }
 
-  render () {
+  render() {
     return (
       <React.Fragment>
-        <button type="button" id="add-question" onClick={(e) => this.showModal()}>ADD A QUESTION</button>
-        <QuestionModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} show={this.state.show} handleClose={this.hideModal}/>
+        <button type="button" id="add-question" onClick={(e) => this.showModal()}>Ask a question</button>
+        <QuestionModal getProductQandA={this.props.getProductQandA} productID={this.props.productID} show={this.state.show} handleClose={this.hideModal} productName={this.props.productName} />
       </React.Fragment>
     )
   }

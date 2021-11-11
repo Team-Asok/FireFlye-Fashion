@@ -21,61 +21,61 @@ class QandA extends React.Component {
     this.showSearchedQuestion = this.showSearchedQuestion.bind(this);
   }
 
-  showAllQuestions () {
+  showAllQuestions() {
     if (!this.state.showAll) {
       return (
         <React.Fragment>
-          <QAList questions={this.state.limitedQuestions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id}/>
+          <QAList productName={this.props.productName} questions={this.state.limitedQuestions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
         </React.Fragment>
       )
     } else {
       return (
-        <QAList questions={this.state.questions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id}/>
+        <QAList productName={this.props.productName} questions={this.state.questions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
       )
     }
   }
 
-  setView () {
-    this.setState({showAll: true})
+  setView() {
+    this.setState({ showAll: true })
   }
 
-  closeView () {
-    this.setState({showAll: false})
+  closeView() {
+    this.setState({ showAll: false })
   }
 
-  showSearchedQuestion () {
+  showSearchedQuestion() {
     return (
-      <QAList questions={this.state.found} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id}/>
+      <QAList productName={this.props.productName} questions={this.state.found} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
     )
   }
 
-  search (searchedTerm) {
+  search(searchedTerm) {
     let result = [];
-    if (searchedTerm.length) {
-      this.setState({search: searchedTerm});
+    if (searchedTerm.length >= 3) {
+      this.setState({ search: searchedTerm });
       this.state.questions.filter((question) => {
         if (question.question_body.toLowerCase().includes(this.state.search)) {
           result.push(question)
         }
       })
-    } else if (!searchedTerm.length) {
-      this.setState({search: ''});
-      this.setState({found: []})
+    } else if (!searchedTerm.length || searchedTerm.length < 3) {
+      this.setState({ search: '' });
+      this.setState({ found: [] })
     }
-    this.setState({found: result})
+    this.setState({ found: result })
   }
 
-  render () {
+  render() {
     return (
       <div id="QandA">
         <h3 id="qa-title">
-        Questions and Answers
+          Questions and Answers
         </h3>
-        <SearchAnswer search={this.search}/>
+        <SearchAnswer search={this.search} />
         {!this.state.found.length ? this.showAllQuestions() : this.showSearchedQuestion()}
         <div id="qa-buttons-container">
-          <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA}/>
-          {this.state.questions.length > 2 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll}/> : null}
+          <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA} productName={this.props.productName} />
+          {this.state.questions.length >= 4 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
         </div>
       </div>
     );

@@ -13,11 +13,17 @@ class Overview extends React.Component {
       currentFeatures: [],
       currentStyles: [],
       currentStyle: '',
+      currentPhoto: '',
+      photos: [],
+      currentPhotoIndex: 0,
     };
     this.getProductFeatures = this.getProductFeatures.bind(this);
     this.getProductStyles = this.getProductStyles.bind(this);
     this.setDefaultStyle = this.setDefaultStyle.bind(this);
-    this.selectStyle = this.selectStyle.bind(this);
+    this.updateStyle = this.updateStyle.bind(this);
+    this.updatePhoto = this.updatePhoto.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   componentDidMount() {
@@ -38,8 +44,9 @@ class Overview extends React.Component {
   getProductStyles() {
     axios.get(`/products/${this.props.currentProd.id}/styles`)
       .then((styles) => {
-        this.setState({ currentStyles: styles.data.results, currentStyle: styles.data.results[0] });
-        this.setDefaultStyle(styles.data.results);
+        this.setState({ currentStyles: styles.data.results }, () => {
+          this.setDefaultStyle(styles.data.results);
+        });
       })
       .catch((err) => {
         console.log('Axios getProductStyles Error: ', err);
@@ -47,29 +54,70 @@ class Overview extends React.Component {
   }
 
   setDefaultStyle(data) {
-    for (let j = 1; j < data.length; j++) {
+    for (let j = 0; j < data.length; j++) {
       if (data[j]['default?'] === true) {
-        this.setState({ currentStyle: data[j] });
+        this.setState({
+          currentStyle: data[j],
+          currentPhoto: data[j].photos[0],
+          photos: data[j].photos,
+        });
         break;
       }
     }
   }
 
-  selectStyle(style) {
-    this.setState({ currentStyle: style });
+  updateStyle(style) {
+    this.setState({
+      currentStyle: style,
+      photos: style.photos,
+      currentPhotoIndex: 0,
+    });
+  }
+
+  updatePhoto(photo) {
+    this.setState({ currentPhoto: photo });
+  }
+
+  previousSlide() {
+    if (this.state.currentPhotoIndex === 0) {
+      return;
+    }
+    let current = this.state.currentPhotoIndex;
+    this.setState({
+      currentPhoto: this.state.photos[current - 1],
+      currentPhotoIndex: current - 1,
+    });
+  }
+
+  nextSlide() {
+    if (this.state.currentPhotoIndex === this.state.photos.length - 1) {
+      return;
+    }
+    let current = this.state.currentPhotoIndex;
+    this.setState({
+      currentPhoto: this.state.photos[current + 1],
+      currentPhotoIndex: current + 1,
+    });
   }
 
   render() {
-    if (this.state.currentFeatures.length === 0 || this.state.currentStyles.length === 0) {
+    if (this.state.currentFeatures.length === 0 || this.state.currentStyles.length === 0 || this.state.currentStyle.length === 0) {
       return null;
     }
     return (
       <div id="Overview">
         <Banner />
         <SiteMessage />
-        <Gallery style={this.state.currentStyle} />
+        <Gallery
+        updatePhoto={this.updatePhoto}
+        previousSlide={this.previousSlide}
+        nextSlide={this.nextSlide}
+        style={this.state.currentStyle}
+        photo={this.state.currentPhoto}
+        />
         <ProductInfo
-          select={this.selectStyle}
+          updateStyle={this.updateStyle}
+          updatePhoto={this.updatePhoto}
           style={this.state.currentStyle}
           styles={this.state.currentStyles}
           currentProd={this.props.currentProd}

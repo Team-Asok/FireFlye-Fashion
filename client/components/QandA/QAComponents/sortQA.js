@@ -7,8 +7,8 @@ const sortQA = (arr) => {
       return 1;
     }
     return 0;
-  }
+  };
   return arr.sort(compareFunction);
-}
+};
 
-export default sortQA
+export default sortQA;

@@ -109,18 +109,6 @@ class ReviewModal extends React.Component {
       })
     }
     fileData.readAsDataURL(files[0])
-    // if(event.target.files && event.target.files[0]) {
-    //   var reader = new FileReader();
-    //   var
-
-    //   reader.onload = function (event) {
-    //     console.log(event.target.result);
-
-    //   }
-
-    //   reader.readAsDataURL(event.target.files[0]);
-    // }
-    // this.setState({photos: event.target.files})
   }
 
   renderFactors() {
@@ -134,9 +122,9 @@ class ReviewModal extends React.Component {
     }
 
     let characteristicsArray = Object.entries(this.props.metaData.characteristics)
-   return characteristicsArray.map((characteristic) => {
+   return characteristicsArray.map((characteristic, index) => {
       return (
-      <>
+      <div key={`${index}`}>
         <div className="factors" key={characteristic[1].id} id={characteristic[0]}> {characteristic[0]}: <br/>
           <label htmlFor={`${characteristic[1].id}1` }>{characteristicsGuide[characteristic[0]][0]}</label>
               <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}1`} name={characteristic[0]} value="1" />
@@ -150,7 +138,7 @@ class ReviewModal extends React.Component {
               <input onChange={this.handleRadioSelect} type="radio" id={`${characteristic[1].id}5`} name={characteristic[0]} value="5" />
         </div>
       <br/>
-      </>)
+      </div>)
     })
 
   }
@@ -207,10 +195,7 @@ class ReviewModal extends React.Component {
               </div>
               <br/>
               <div className="modal-upload-pics">
-                {/* <label for="img">Select Photos:
-                  <input onChange={this.handleUploadPhotosChange} type="file" id="img" accept="image/*" multiple/>
-                </label> */}
-                <ReactFileReader handleFiles={this.handleUploadPhotosChange}>
+                <ReactFileReader handleFiles={this.handleUploadPhotosChange} >
                   <button className="btn">Upload Photo</button>
                 </ReactFileReader>
                 <p>Preview:</p>

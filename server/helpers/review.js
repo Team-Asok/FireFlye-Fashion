@@ -3,7 +3,7 @@ const axios = require('axios');
 const config = require('../config');
 
 // GET REVIEW LIST
-const getAllReviews = (productID) => {
+const getAllReviews = (productID, sort) => {
   let options = {
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/',
     headers: {
@@ -13,7 +13,7 @@ const getAllReviews = (productID) => {
     params: {
       product_id: productID,
       count: 50,
-      sort: "relevant"
+      sort: sort
     },
   };
   return (
@@ -62,7 +62,6 @@ const addReview = (paramsObj) => {
 
 // PUT REVIEW HELPFUL
 const markReviewHelpful = (reviewID) => {
-  console.log(reviewID);
   let options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${reviewID}/helpful`,
     method: 'put',
