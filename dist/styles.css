@@ -1,6 +1,7 @@
 * {
   color: rgb(59, 43, 43);
   font-family: 'Zen Antique', serif;
+  font-display: swap;
 }
 button {
   background-color: rgb(247, 243, 228, 0);
@@ -175,6 +176,7 @@ ul {
   grid-column: 1 / 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  width:900px;
 }
 
 #reviewtile {
@@ -185,7 +187,11 @@ ul {
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
-  width: 80%;
+  word-wrap:break-word;
+}
+
+#reviewtile * {
+  word-break: break-all;
 }
 
 #sort-drop-down {
