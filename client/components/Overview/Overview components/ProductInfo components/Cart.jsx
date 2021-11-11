@@ -1,6 +1,10 @@
-import React from 'react';
-import DropDownQuantity from '../../../GlobalComponents/DropDownMenu.jsx';
-import DropDownSize from './DropDownSize.jsx';
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from "react";
+import DropDownQuantity from "../../../GlobalComponents/DropDownMenu";
+import DropDownSize from "./DropDownSize";
 
 const styling = {
   container: {
@@ -29,7 +33,7 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      // items: [],
       sizes: [],
       quantities: [],
       currentSize: '',
@@ -54,15 +58,15 @@ class Cart extends React.Component {
       return;
     }
 
-    let sizes = [];
-    let quantities = [];
+    const sizes = [];
+    const quantities = [];
 
-    let inventory = Object.values(skus);
+    const inventory = Object.values(skus);
     inventory.forEach((product) => {
       // Handle duplicate XL entry
-      if (product.size === 'XL' && sizes.includes(product.size)) {
-        product.size = 'XXL';
-        currentSize = 'XXL';
+      if (product.size === "XL" && sizes.includes(product.size)) {
+        product.size = "XXL";
+        currentSize = "XXL";
       }
 
       sizes.push(product.size);
@@ -107,10 +111,13 @@ class Cart extends React.Component {
     return (
       <div style={styling.container} id="Cart">
         <div style={styling.size}>
-          <DropDownSize sizes={this.state.sizes} select={this.updateSizeSelection} />
+          <DropDownSize
+            sizes={this.state.sizes}
+            select={this.updateSizeSelection}
+          />
         </div>
         <div style={styling.quantity}>
-          <DropDownQuantity dataList={this.state.quantities} default={'1'} />
+          <DropDownQuantity dataList={this.state.quantities} default="1" />
         </div>
         <button id="addCart" type="button" style={styling.button} onClick={this.resetSelections}>Add To Bag</button>
       </div>

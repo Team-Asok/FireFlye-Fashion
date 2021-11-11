@@ -1,49 +1,67 @@
-import React from 'react';
-import ReviewList from './ReviewListContainer/ReviewList.jsx';
-import ReviewMetaDataContainer from './MetaData/ReviewMetaDataContainer.jsx';
-import trackAnalytic from '../GlobalComponents/Analytics.jsx'
+/* eslint-disable import/extensions */
+/* eslint-disable no-console */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from "react";
+import ReviewList from "./ReviewListContainer/ReviewList.jsx";
+import ReviewMetaDataContainer from "./MetaData/ReviewMetaDataContainer.jsx";
+// import trackAnalytic from "../GlobalComponents/Analytics";
+
 class RandR extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       allreviews: this.props.reviews,
-      starsFiltered: [],
-      filteredReviews: this.props.reviews
-    }
+      // starsFiltered: [],
+      filteredReviews: this.props.reviews,
+    };
     this.starsFiltered = [];
   }
 
   filterReviews(starRating) {
     console.log(this.context);
     if (this.starsFiltered.indexOf(starRating) === -1) {
-      this.starsFiltered.push(starRating)
+      this.starsFiltered.push(starRating);
     }
 
-    var reviewsFilteredByStarRating = [];
+    const reviewsFilteredByStarRating = [];
 
     this.state.allreviews.forEach((review) => {
       if (this.starsFiltered.indexOf(review.rating) !== -1) {
         reviewsFilteredByStarRating.push(review);
       }
-    })
+    });
 
-    this.setState({filteredReviews: reviewsFilteredByStarRating})
-
- }
-
-
+    this.setState({ filteredReviews: reviewsFilteredByStarRating });
+  }
 
   render() {
     return (
-    <div id="RandR">
-      <span id="review-title" style={{'justifySelf': 'center', 'color':'white'}}>
-      Reviews and ratings
-      </span>
-      <ReviewMetaDataContainer reviewCount={this.props.reviewCount} metaData={this.props.metaData} filter={this.filterReviews.bind(this)} reviews={this.state.allreviews} metaScore={this.props.metaScore}/>
-      <ReviewList getProductReviews={this.props.getProductReviews} filteredReviews={this.state.filteredReviews} reviews={this.state.allreviews} metaData={this.props.metaData} productId={this.props.productId}/>
-    </div>
-    )
+      <div id="RandR">
+        <span
+          id="review-title"
+          style={{ justifySelf: "center", color: "white" }}
+        >
+          Reviews and ratings
+        </span>
+        <ReviewMetaDataContainer
+          reviewCount={this.props.reviewCount}
+          metaData={this.props.metaData}
+          filter={this.filterReviews.bind(this)}
+          reviews={this.state.allreviews}
+          metaScore={this.props.metaScore}
+        />
+        <ReviewList
+          getProductReviews={this.props.getProductReviews}
+          filteredReviews={this.state.filteredReviews}
+          reviews={this.state.allreviews}
+          metaData={this.props.metaData}
+          productId={this.props.productId}
+        />
+      </div>
+    );
   }
 }
 
-export default RandR
+export default RandR;

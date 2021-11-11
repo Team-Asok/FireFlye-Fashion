@@ -3,8 +3,8 @@ const config = require('../config');
 
 // GET PRODUCT LIST
 const getProductList = () => {
-  let options = {
-    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/`,
+  const options = {
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/',
     headers: {
       'User-Agent': 'request',
       Authorization: config.API_KEY,
@@ -20,7 +20,7 @@ const getProductList = () => {
 
 // GET PRODUCT INFO
 const getProductInfo = (productID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productID}`,
     headers: {
       'User-Agent': 'request',
@@ -39,7 +39,7 @@ const getProductInfo = (productID) => {
 
 // GET PRODUCT STYLES
 const getProductStyles = (productID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productID}/styles`,
     headers: {
       'User-Agent': 'request',
@@ -58,7 +58,7 @@ const getProductStyles = (productID) => {
 
 // GET RELATED PRODUCTS
 const getRelatedProducts = (productID) => {
-  let options = {
+  const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products/${productID}/related`,
     headers: {
       'User-Agent': 'request',

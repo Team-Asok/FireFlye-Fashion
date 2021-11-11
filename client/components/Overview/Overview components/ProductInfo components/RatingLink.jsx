@@ -1,16 +1,17 @@
-import React from 'react';
-import StarGraphic from '../../../GlobalComponents/StarGraphic.jsx';
+/* eslint-disable react/prop-types */
+import React from "react";
+import StarGraphic from "../../../GlobalComponents/StarGraphic";
 
 const styling = {
   format: {
-    display: 'flex',
-    flexDirection: 'row',
+    display: "flex",
+    flexDirection: "row",
   },
   star: {
     fontSize: 20,
   },
   anchor: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
     marginTop: 27,
     marginLeft: 10,
