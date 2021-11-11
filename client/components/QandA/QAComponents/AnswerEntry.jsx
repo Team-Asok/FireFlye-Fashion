@@ -21,7 +21,7 @@ class AnswerEntry extends React.Component {
     if (!this.state.showAll) {
       return (
         this.state.limitedAnswers.map(answer =>
-          <li key={answer.id}>
+          <li id="individual-answer" key={answer.id}>
               <div id="answer-body">
                 {answer.body}
               </div>
@@ -36,7 +36,7 @@ class AnswerEntry extends React.Component {
     } else {
       return (
         this.state.sortedAnswers.map(answer =>
-          <li key={answer.id}>
+          <li id="individual-answer" key={answer.id}>
               <div id="answer-body">
                 {answer.body}
               </div>

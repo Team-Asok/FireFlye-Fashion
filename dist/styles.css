@@ -76,11 +76,10 @@ background-size: cover;
 
 #question-container {
   grid-column: 1;
-  margin-bottom: 3px;
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
   border-radius: 10px;
-  height: auto;
+  height: min-content;
 }
 
 #answer-entry {
@@ -104,7 +103,24 @@ background-size: cover;
   width: 0;
   display: none;
 }
- #single-answer-entry, #question-entry {
+
+#individual-answer {
+  background-color: rgb(244, 232, 219);
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 10px;
+  margin: 2px;
+}
+
+#answer-info {
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+#answer-body {
+  margin-left: 3px;
+}
+
+#question-entry {
    padding: 5px;
  }
 
@@ -159,10 +175,6 @@ background-size: cover;
 #add-answer-button:active {
   background-color: rgb(59, 43, 43);
   color:rgb(251, 198, 136);
-}
-
-#answer-info {
-  font-size: 12px
 }
 
 ul {
