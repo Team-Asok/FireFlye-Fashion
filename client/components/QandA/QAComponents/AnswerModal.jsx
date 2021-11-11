@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import ReactFileReader from 'react-file-reader'
 
 class AnswerModal extends React.Component {
   constructor(props) {
@@ -9,14 +10,16 @@ class AnswerModal extends React.Component {
       name: '',
       email: '',
       photos: [],
+      thumbnail: '',
       question_id: this.props.questionID,
       product_id: this.props.productID,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleUploadPhoto = this.handleUploadPhoto.bind(this);
   }
 
-  handleSubmit = (e) => {
+  handleSubmit (e) {
     e.preventDefault();
     axios.post(`/qa/questions/${this.props.questionID}/answers`, {
       params: this.state.question_id,
@@ -24,7 +27,7 @@ class AnswerModal extends React.Component {
         body: this.state.question,
         name: this.state.name,
         email: this.state.email,
-        photos: []
+        photos: this.state.photos
       }
     })
       .then((response) => {
@@ -34,8 +37,20 @@ class AnswerModal extends React.Component {
         console.log(err)
       })
   }
-  handleChange = (e) => {
+  handleChange (e) {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleUploadPhoto (files) {
+    let fileData = new FileReader();
+    fileData.onloadend = (e) => {
+      const content = e.target.result;
+      this.setState({
+        thumbnail: content,
+        photos: files
+      })
+    }
+    fileData.readAsDataURL(files[0])
   }
 
   render() {
@@ -74,9 +89,13 @@ class AnswerModal extends React.Component {
                 </label>
               </div>
               <div className="modal-upload-pics">
-                <label>
-                  <button>Upload pictures</button>
-                </label>
+                <ReactFileReader handleFiles={this.handleUploadPhoto}>
+                  <button>
+                    Upload Photos
+                  </button>
+                </ReactFileReader>
+                <p>Preview:</p>
+                <img src={this.state.thumbnail} height="10%" width="10%" />
               </div>
             </form>
           </div>

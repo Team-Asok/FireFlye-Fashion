@@ -30,7 +30,7 @@ function CharacteristicBar(props) {
             <rect className="percent-bar" width="100" height="10" fill='url(#characteristics-bar)' />
           </svg>
           </span>
-          <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (props.percentageValue / 100)}px) translateY(-8px)` }} />
+          <img id="triangle" src={triangle} height="25px" width="25px"style={{transform: `translateX(-${349.99 * (props.percentageValue / 100)}px) translateY(-8px)` }} alt="fire meter"/>
       </div>
       <div id="characteristic-criteria-container">
         <span id="charactistic-criteria">{props.characteristicsGuide[props.characteristic[0]][0]}</span>

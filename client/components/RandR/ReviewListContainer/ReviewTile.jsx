@@ -9,7 +9,8 @@ const ReviewTile = function(props) {
     if (props.review.photos.length === 0) {
       return null;
     } else {
-      return props.review.photos.map(photo => <img width="30%" height="auto" src={photo.url} />)
+      return (<span>{props.review.photos.map((photo, index ) => <img key={index} style={{display: 'inline-block', 'marginLeft': '10px'}} width="15%" height="auto" src={photo.url} />)}</span>)
+
     }
   }
   const recommendRender = () => {

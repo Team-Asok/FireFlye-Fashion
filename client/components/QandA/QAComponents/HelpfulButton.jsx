@@ -1,18 +1,54 @@
 import React from 'react';
 import axios from 'axios';
 
-const HelpfulButton = ({ id, path, helpfulness }) => {
-  const updateHelpful = (targetId) => {
-    axios.put(path, {
-      params: targetId
+class HelpfulButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      canClickButton: true
+    }
+    this.updateHelpful = this.updateHelpful.bind(this);
+    this.renderView = this.renderView.bind(this);
+  }
+
+  updateHelpful(id) {
+    axios.put(this.props.path, {
+      params: id
     })
-      .then(response => response)
+      .then(response => {
+        if (response) {
+          this.setState({ canClickButton: false });
+        }
+      })
       .catch(err => console.log(err));
   }
 
-  return (
-    <button onClick={() => {updateHelpful(id);}} id="helpful-button" type="button" >Helpful? Yes({helpfulness})</button>
-  )
+  renderView() {
+    if (this.state.canClickButton) {
+      return (
+        <button
+          className="helpful-button"
+          id={`helpful-button${this.props.id}`}
+          onClick={() => { this.updateHelpful(this.props.id) }}>
+          Helpful? Yes({this.props.helpfulness})
+        </button>
+      )
+    } else {
+      return (
+        <button
+          id="helpful-button"
+          disabled>
+          Thank you!
+        </button>
+      )
+    }
+  }
+
+  render() {
+    return (
+      this.renderView()
+    )
+  }
 }
 
-export default HelpfulButton;
+export default HelpfulButton

@@ -16,7 +16,7 @@ const styling = {
 
 const Style = ({style, updateStyle, updatePhoto}) => (
   style.photos[0].thumbnail_url
-    ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => {updateStyle(style); updatePhoto(style.photos[0])}} />
+    ? <img key={style.style_id} src={`${style.photos[0].thumbnail_url}`} style={styling.tn} onClick={() => {updateStyle(style); updatePhoto(style.photos[0])}} alt="style thumbnail"/>
     : <div style={styling.noImage}>
         <div onClick={() => updateStyle(style)}>{style.name}</div>
         <div onClick={() => updateStyle(style)}>No Image Available</div>

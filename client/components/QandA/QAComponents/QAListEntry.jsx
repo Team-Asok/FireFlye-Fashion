@@ -15,16 +15,13 @@ class QAListEntry extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <span id="q-marker">Q:</span>
         <li id="question-container">
-          <div>
             <div id="question-entry">
               <QuestionEntry
                 helpfulness={this.state.question.question_helpfulness}
                 productID={this.props.productID}
                 productName={this.props.productName}
                 questionBody={this.state.question.question_body}
-                getProductQandA={this.props.getProductQandA}
                 questionID={this.state.question.question_id}
               />
             </div>
@@ -36,7 +33,6 @@ class QAListEntry extends React.Component {
                 productName={this.props.productName}
               />
             </div>
-          </div>
         </li>
       </React.Fragment>
 
