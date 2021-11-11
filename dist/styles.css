@@ -40,15 +40,13 @@ background-size: cover;
 
 #qa-list {
   display: grid;
+  grid-row: 3/4;
+  grid-column: 2/3;
   grid-template-rows: auto;
-  grid-template-columns: 5% 95%;
   overflow: scroll;
   height: 510px;
   width: auto;
-  grid-column: 2/3;
-  grid-row: 3/4;
-  padding-inline-start: 0px;
-  margin-bottom: 10px;
+  padding-inline-start: 0%;
 }
 
 #qa-list::-webkit-scrollbar {
@@ -56,22 +54,18 @@ background-size: cover;
   display: none;
 }
 
-#q-marker {
-  grid-column: 1/2;
-}
-
 #a-marker {
-  padding: 6px;
+  margin: 7px;
 }
 
 #answer-entry {
   display: grid;
-  grid-template-columns: 4% 96%;
+  grid-template-columns: 2% 98%;
   grid-template-rows: auto;
 }
 
 #question-container {
-  grid-column: 2/3;
+  grid-column: 1;
   margin-bottom: 30px;
   border-bottom: 2px solid rgb(59, 43, 43);
   background-color: rgb(237, 220, 207);
@@ -96,6 +90,7 @@ background-size: cover;
 #qa-buttons-container {
   grid-row: 4/5;
   grid-column: 2/3;
+  position: relative;
 }
 
 #question-buttons {

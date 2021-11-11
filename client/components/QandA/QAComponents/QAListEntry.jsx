@@ -15,7 +15,6 @@ class QAListEntry extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <span id="q-marker">Q:</span>
         <li id="question-container">
           <div>
             <div id="question-entry">
