@@ -1,29 +1,44 @@
-import React from 'react';
-import QuestionModal from './QuestionModal.jsx'
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from "react";
+import QuestionModal from "./QuestionModal";
 
 class AddQuestion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
-    }
+      show: false,
+    };
     this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this)
+    this.hideModal = this.hideModal.bind(this);
   }
-  showModal(e) {
-    this.setState({ show: true })
+
+  showModal() {
+    this.setState({ show: true });
   }
+
   hideModal() {
-    this.setState({ show: false })
+    this.setState({ show: false });
   }
 
   render() {
     return (
-      <React.Fragment>
-        <button type="button" id="add-question" onClick={(e) => this.showModal()}>Ask a question</button>
-        <QuestionModal productID={this.props.productID} show={this.state.show} handleClose={this.hideModal} productName={this.props.productName} />
-      </React.Fragment>
-    )
+      <>
+        <button
+          type="button"
+          id="add-question"
+          onClick={() => this.showModal()}
+        >
+          Ask a question
+        </button>
+        <QuestionModal
+          productID={this.props.productID}
+          show={this.state.show}
+          handleClose={this.hideModal}
+          productName={this.props.productName}
+        />
+      </>
+    );
   }
 }
 
