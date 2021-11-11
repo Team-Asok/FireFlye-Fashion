@@ -3,6 +3,7 @@ import React from 'react';
 const styling = {
   position: {
     marginTop: '35%',
+    position: 'absolute',
   },
 };
 

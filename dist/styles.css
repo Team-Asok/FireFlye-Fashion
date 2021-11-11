@@ -262,6 +262,16 @@ ul {
   grid-column-end: 2;
 }
 
+.main-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-height: 750px;
+  object-position: center;
+  margin-left: 50px;
+}
+
 #ProductInfo {
   display: grid;
   margin-left: 10px;
