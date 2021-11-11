@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledPInfoContainer = styled.div`
-`;
-
 const styling = {
   sale: {
     color: 'red',
@@ -30,7 +27,7 @@ const styling = {
 };
 
 const Info = ({currentProd, style}) => (
-  <StyledPInfoContainer id="info">
+  <div id="info">
     <div style={styling.category}>{currentProd.category}</div>
     <div style={styling.name}>{currentProd.name}</div>
     {style.sale_price
@@ -41,7 +38,7 @@ const Info = ({currentProd, style}) => (
         </div>
       )
       : <div style={styling.originalNoSale}>${style.original_price}</div>}
-  </StyledPInfoContainer>
+  </div>
 );
 
 export default Info;
