@@ -185,6 +185,7 @@ app.get('/reviews/meta/:product_id', (req, res) => {
 
 // POST REVIEW
 app.post('/reviews', (req, res) => {
+  console.log(req.body.data);
   review.addReview(req.body.data)
     .then((response) => {
       res.status(201).send('Review Recieved');
