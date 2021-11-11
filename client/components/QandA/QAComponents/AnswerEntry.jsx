@@ -26,7 +26,7 @@ class AnswerEntry extends React.Component {
                 {answer.body}
               </div>
               <div id="answer-info">
-                by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')} |
+                by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment.utc(answer.date).format('MMMM Do YYYY')} |
                 <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} /> |
                 <ReportButton id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
@@ -41,7 +41,7 @@ class AnswerEntry extends React.Component {
                 {answer.body}
               </div>
               <div id="answer-info">
-                by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment(answer.date).format('MMMM Do YYYY')}
+                by: {answer.answerer_name === 'Seller' || 'seller' ? <strong>{answer.answerer_name}</strong> : answer.answerer_name}, {moment.utc(answer.date).format('MMMM Do YYYY')}
                 <HelpfulButton id={answer.id} path={`/qa/answers/${answer.id}/helpful`} helpfulness={answer.helpfulness} />
                 <ReportButton onReport={this.answerReported} id={answer.id} path={`/qa/answers/${answer.id}/report`} />
               </div>
