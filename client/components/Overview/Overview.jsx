@@ -119,7 +119,7 @@ class Overview extends React.Component {
     return (
       <div id="Overview">
         <Banner />
-        <SiteMessage />
+        <SiteMessage style={this.props.style}/>
         <Gallery
         updatePhoto={this.updatePhoto}
         previousSlide={this.previousSlide}

@@ -77,6 +77,11 @@ class App extends React.Component {
       });
   }
 
+  changeStyle() {
+    let style = document.getElementById('stylesheet')
+    style.href = 'darkStyles.css';
+  }
+
   render() {
     if (this.state.displayedProduct === null || this.state.products.length === 0 || this.state.reviews.length === 0 || this.state.metaData.length === 0 || this.state.qAndA.length === 0 ) {
       return null;
@@ -84,7 +89,8 @@ class App extends React.Component {
 
     return (
       <div id="index">
-        <Overview products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
+
+        <Overview style={this.changeStyle.bind(this)} products={this.state.products} currentProd={this.state.displayedProduct} metaScore={this.state.metaScore} reviews={this.state.reviews} />
         <QandA qAndA={this.state.qAndA} getProductQandA={this.getProductQandA} productName={this.state.displayedProduct.name}/>
         <RandR getProductReviews={this.getProductReviews} reviewCount={this.state.reviews.count} reviews={this.state.reviews.results} productId={this.state.displayedProduct.id} metaData={this.state.metaData} metaScore={this.state.metaScore}/>
       </div>

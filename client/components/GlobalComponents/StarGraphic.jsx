@@ -39,9 +39,15 @@ const StarGraphic = (props) => {
     {starValues.map((values, index) => {
       id += 1
       return (
-      <svg xmlns="http://www.w3.org/2000/svg" key={`${index}`} className="star" viewBox="0 0 20 20" id={props.id} fill={`url(#${id})`} onClick={() => {props.onClick(index + 1)}}>
+      <svg xmlns="http://www.w3.org/2000/svg" key={`${index}`} className="star" viewBox="0 0 20 20" id={props.id} onClick={() => {props.onClick(index + 1)}}>
         <defs>
             <linearGradient id={`${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset={`${values * 100}%`} style={{'stopColor':'rgb(59, 43, 43', 'stopOpacity':1}} />
+              <stop offset={`${(values * 100) + 1}%`} style={{'stopColor':'rgb(255, 255, 255)', 'stopOpacity':0}} />
+            </linearGradient>
+          </defs>
+          <defs>
+            <linearGradient id={`dark${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset={`${values * 100}%`} style={{'stopColor':'rgb(59, 43, 43', 'stopOpacity':1}} />
               <stop offset={`${(values * 100) + 1}%`} style={{'stopColor':'rgb(255, 255, 255)', 'stopOpacity':0}} />
             </linearGradient>
