@@ -88,6 +88,11 @@ class App extends React.Component {
     });
   }
 
+  changeStyle() {
+    let style = document.getElementById('stylesheet')
+    style.href = 'darkStyles.css';
+  }
+
   render() {
     if (
       this.state.displayedProduct === null ||
@@ -102,6 +107,7 @@ class App extends React.Component {
     return (
       <div id="index">
         <Overview
+          style={this.changeStyle.bind(this)}
           products={this.state.products}
           currentProd={this.state.displayedProduct}
           metaScore={this.state.metaScore}

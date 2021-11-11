@@ -4,7 +4,8 @@ import React from "react";
 const SiteMessage = function () {
   return (
     <div id="SiteMessage">
-      Generic site message... Welcome to FyreFlye fasion....
+      Generic site message... Welcome to FyreFlye fashion....
+      <button onClick={props.style} id="dmbutton">DarkMode</button>
     </div>
   );
 };
