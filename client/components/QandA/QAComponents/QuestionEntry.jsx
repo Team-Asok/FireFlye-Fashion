@@ -12,7 +12,7 @@ class QuestionEntry extends React.Component {
   }
   render() {
     return (
-      <div id="question-entry">
+      <React.Fragment>
         <span id="q-marker">Q:&nbsp;</span>
         {this.props.questionBody}
         <span id="question-buttons">
@@ -33,7 +33,7 @@ class QuestionEntry extends React.Component {
             path={`/qa/questions/${this.props.questionID}/report`}
           />
         </span>
-      </div>
+      </React.Fragment>
     )
   }
 }
