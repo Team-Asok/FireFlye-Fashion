@@ -25,12 +25,12 @@ class QandA extends React.Component {
     if (!this.state.showAll) {
       return (
         <React.Fragment>
-          <QAList productName={this.props.productName} questions={this.state.limitedQuestions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
+          <QAList productName={this.props.productName} questions={this.state.limitedQuestions} productID={this.props.qAndA.product_id} />
         </React.Fragment>
       )
     } else {
       return (
-        <QAList productName={this.props.productName} questions={this.state.questions} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
+        <QAList productName={this.props.productName} questions={this.state.questions} productID={this.props.qAndA.product_id} />
       )
     }
   }
@@ -45,7 +45,7 @@ class QandA extends React.Component {
 
   showSearchedQuestion() {
     return (
-      <QAList productName={this.props.productName} questions={this.state.found} getProductQandA={this.props.getProductQandA} productID={this.props.qAndA.product_id} />
+      <QAList productName={this.props.productName} questions={this.state.found} productID={this.props.qAndA.product_id} />
     )
   }
 
@@ -58,7 +58,7 @@ class QandA extends React.Component {
           result.push(question)
         }
       })
-    } else if (!searchedTerm.length || searchedTerm.length < 3) {
+    } else if (!searchedTerm.length) {
       this.setState({ search: '' });
       this.setState({ found: [] })
     }
@@ -74,7 +74,7 @@ class QandA extends React.Component {
         <SearchAnswer search={this.search} />
         {!this.state.found.length ? this.showAllQuestions() : this.showSearchedQuestion()}
         <div id="qa-buttons-container">
-          <AddQuestion productID={this.props.qAndA.product_id} getProductQandA={this.props.getProductQandA} productName={this.props.productName} />
+          <AddQuestion productID={this.props.qAndA.product_id} productName={this.props.productName} />
           {this.state.questions.length >= 4 ? <MoreAnsweredQuestions onClick={this.setView} closeView={this.closeView} return={this.state.showAll} /> : null}
         </div>
       </div>

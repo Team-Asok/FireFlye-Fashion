@@ -13,19 +13,13 @@ class QAList extends React.Component {
   }
 
   render() {
-    if (!this.state.questions.length) {
-      return (
-        <h4>Be the first one to ask a question!</h4>
-      )
-    } else {
-      return (
+    return (
       <ul id="qa-list">
-        {this.state.questions.map(question =>
-        <QAListEntry productName={this.state.productName} productID={this.state.productID} question={question} key={question.question_id} getProductQandA={this.props.getProductQandA}/>
+        {this.props.questions.map(question =>
+          <QAListEntry productName={this.state.productName} productID={this.state.productID} question={question} key={question.question_id} />
         )}
       </ul>
-      )
-    }
+    )
   }
 }
 

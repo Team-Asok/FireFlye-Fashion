@@ -6,35 +6,31 @@ import AddAnswer from './AddAnswer.jsx'
 class QuestionEntry extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
   }
   render() {
     return (
-      <div id="question-entry">
+      <React.Fragment>
+        <span id="q-marker">Q:&nbsp;</span>
         {this.props.questionBody}
         <span id="question-buttons">
-            <AddAnswer
+          <AddAnswer
             questionBody={this.props.questionBody}
             productID={this.props.productID}
             questionID={this.props.questionID}
-            getProductQandA={this.props.getProductQandA}
             productName={this.props.productName}
-            />
-            <HelpfulButton
+          />
+          <HelpfulButton
             id={this.props.questionID}
             path={`/qa/questions/${this.props.questionID}/helpful`}
             helpfulness={this.props.helpfulness}
             productID={this.props.productID}
-            getProductQandA={this.props.getProductQandA}
-            />
-            <ReportButton
+          />
+          <ReportButton
             id={this.props.questionID}
             path={`/qa/questions/${this.props.questionID}/report`}
-            />
+          />
         </span>
-      </div>
+      </React.Fragment>
     )
   }
 }

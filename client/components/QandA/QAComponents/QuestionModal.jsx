@@ -26,7 +26,6 @@ class QuestionModal extends React.Component {
     })
       .then((response) => {
         console.log('Question posted')
-        this.props.getProductQandA(this.state.productID);
         this.props.handleClose()
       })
       .catch((err) => {
@@ -34,7 +33,7 @@ class QuestionModal extends React.Component {
       })
   }
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({[e.target.name]: e.target.value })
   }
 
   render() {
