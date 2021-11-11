@@ -29,14 +29,23 @@ class ReviewList extends React.Component {
     event.preventDefault();
     axios.get(`/reviews`, { params: {product_id: this.props.productId, sort: event.target.value}})
     .then((results) => {
-      console.log(results.data);
       this.setState({ reviews: results.data.results, sort: event.target.value});
     });
   }
 
 
   renderView(view) {
+
     if (view === 'default') {
+      if (this.props.filteredReviews.length) {
+        return (
+          <>
+            <ReviewTile review={this.props.reviews[0]} />
+            <ReviewTile review={this.props.reviews[1]} />
+          </>
+        );
+
+      }
       return (
         <>
           <ReviewTile review={this.state.reviews[0]} />
@@ -45,6 +54,9 @@ class ReviewList extends React.Component {
       );
     }
     if(view === 'all-reviews') {
+      if (this.props.starsFiltered.length) {
+        return this.props.reviews.map((review) => <ReviewTile key={review.id} review={review} />);
+      }
     return this.state.reviews.map((review) => <ReviewTile key={review.id} review={review} />);
     }
   }
