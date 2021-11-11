@@ -5,6 +5,7 @@ const styling = {
     width: 75,
     height: 75,
     margin: 5,
+    border: '2px solid black',
   },
 };
 

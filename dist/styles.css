@@ -252,10 +252,9 @@ ul {
   grid-column-end: 3;
 }
 
-/* #info {
+#info {
   background-color: rgb(244, 232, 219);
-  background-size: contain;
-} */
+}
 
 #ProductDescription {
   display: grid;
@@ -403,7 +402,7 @@ div#buttons-container {
   justify-content: center;
   border-bottom: 3px solid rgb(238, 235, 206);
   border-top: 3px solid rgb(238, 235, 206);
-
+  margin-bottom: 20px;
 }
 
 .star {

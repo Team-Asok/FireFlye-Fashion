@@ -5,6 +5,7 @@ const styling = {
     width: 75,
     height: 75,
     borderRadius: 50,
+    border: '2px solid black',
     margin: 15,
   },
   noImage: {

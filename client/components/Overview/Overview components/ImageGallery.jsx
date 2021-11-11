@@ -10,6 +10,7 @@ const styling = {
     maxHeight: 800,
     resizeMode: 'contain',
     overflow: 'hidden',
+    border: '2px solid black',
   },
   tn: {
     display: 'flex',
