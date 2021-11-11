@@ -37,11 +37,11 @@ class ReviewList extends React.Component {
   renderView(view) {
 
     if (view === 'default') {
-      if (this.props.filteredReviews.length) {
+      if (this.props.filteredReviews.length < this.state.reviews.length) {
         return (
           <>
-            <ReviewTile review={this.props.reviews[0]} />
-            <ReviewTile review={this.props.reviews[1]} />
+            <ReviewTile review={this.props.filteredReviews[0]} />
+            <ReviewTile review={this.props.filteredReviews[1]} />
           </>
         );
 
@@ -54,8 +54,8 @@ class ReviewList extends React.Component {
       );
     }
     if(view === 'all-reviews') {
-      if (this.props.starsFiltered.length) {
-        return this.props.reviews.map((review) => <ReviewTile key={review.id} review={review} />);
+      if (this.props.filteredReviews.length < this.state.reviews.length) {
+        return this.props.filteredReviews.map((review) => <ReviewTile key={review.id} review={review} />);
       }
     return this.state.reviews.map((review) => <ReviewTile key={review.id} review={review} />);
     }
