@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewList from './ReviewListContainer/ReviewList.jsx';
 import ReviewMetaDataContainer from './MetaData/ReviewMetaDataContainer.jsx';
-
+import trackAnalytic from '../GlobalComponents/Analytics.jsx'
 class RandR extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +13,10 @@ class RandR extends React.Component {
     this.starsFiltered = [];
   }
 
+  static contextType = AnalyticsContext;
+
   filterReviews(starRating) {
+    console.log(this.context);
     if (this.starsFiltered.indexOf(starRating) === -1) {
       this.starsFiltered.push(starRating)
     }
