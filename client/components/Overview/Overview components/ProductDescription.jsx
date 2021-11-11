@@ -1,14 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const StyledProdDesc = styled.div`
-  display: flex;
-  flex-direction: row;
-  font-size: 18px;
-`;
+const styling = {
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    fontSize: 18,
+  },
+};
 
 const ProductDescription = ({currentProd, features}) => (
-  <StyledProdDesc id="ProductDescription">
+  <div style={styling.container} id="ProductDescription">
     <div style={{width: 900}}>
       <h3>
         {currentProd.slogan}
@@ -23,7 +24,7 @@ const ProductDescription = ({currentProd, features}) => (
         feature.value ? <li key={index}>{feature.feature}: {feature.value}</li> : <li key={index}>{feature.feature}</li>
       ))}
     </ul>
-  </StyledProdDesc>
+  </div>
 );
 
 export default ProductDescription;

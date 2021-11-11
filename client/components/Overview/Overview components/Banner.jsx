@@ -1,5 +1,5 @@
 import React from 'react';
-import FyreFlye from './FyreFlye.png'
+import FyreFlye from './FyreFlye.png';
 
 const Banner = (props) => (
   <div id="Banner">
