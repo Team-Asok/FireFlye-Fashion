@@ -13,10 +13,6 @@ class RandR extends React.Component {
     this.starsFiltered = [];
   }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
   filterReviews(starRating) {
     console.log(this.context);
     if (this.starsFiltered.indexOf(starRating) === -1) {
