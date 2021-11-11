@@ -158,6 +158,7 @@ background-size: cover;
 
 #load-answers, #add-answer-button {
   border: 0px;
+  font-size: 17px;
 }
 
 #load-answer:hover {
