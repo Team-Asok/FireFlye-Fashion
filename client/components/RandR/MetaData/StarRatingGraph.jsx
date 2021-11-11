@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable radix */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
@@ -8,7 +9,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import PercentBar from "./PercentBar";
+import PercentBar from "./PercentBar.jsx";
 // Helper fn. Find total stars of given review
 
 const StyledTable = styled.table`

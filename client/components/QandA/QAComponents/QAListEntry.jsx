@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import QuestionEntry from "./QuestionEntry";
-import AnswerEntry from "./AnswerEntry";
+import QuestionEntry from "./QuestionEntry.jsx";
+import AnswerEntry from "./AnswerEntry.jsx";
 
 class QAListEntry extends React.Component {
   constructor(props) {

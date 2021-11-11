@@ -1,12 +1,13 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable func-names */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import Characteristics from "./Characteristics";
-import MetaScore from "./MetaScore";
-import { StarRating, findTotalStars } from "./StarRatingGraph";
+import Characteristics from "./Characteristics.jsx";
+import MetaScore from "./MetaScore.jsx";
+import { StarRating, findTotalStars } from "./StarRatingGraph.jsx";
 
 const ReviewMetaDataContainer = function (props) {
   const total =

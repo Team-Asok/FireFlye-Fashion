@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import QuestionModal from "./QuestionModal";
+import QuestionModal from "./QuestionModal.jsx";
 
 class AddQuestion extends React.Component {
   constructor(props) {

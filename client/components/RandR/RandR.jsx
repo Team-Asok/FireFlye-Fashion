@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import ReviewList from "./ReviewListContainer/ReviewList";
-import ReviewMetaDataContainer from "./MetaData/ReviewMetaDataContainer";
+import ReviewList from "./ReviewListContainer/ReviewList.jsx";
+import ReviewMetaDataContainer from "./MetaData/ReviewMetaDataContainer.jsx";
 // import trackAnalytic from "../GlobalComponents/Analytics";
 
 class RandR extends React.Component {

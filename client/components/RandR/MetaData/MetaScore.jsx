@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable radix */
 /* eslint-disable guard-for-in */
@@ -6,7 +7,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import StarGraphic from "../../GlobalComponents/StarGraphic";
+import StarGraphic from "../../GlobalComponents/StarGraphic.jsx";
 
 const MetaScore = function (props) {
   const scoreSum = (ratingsObject) => {

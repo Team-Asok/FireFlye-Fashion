@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import Style from "./Style";
+import Style from "./Style.jsx";
 
 const styling = {
   direction: {
@@ -54,7 +55,7 @@ class Styles extends React.Component {
     return (
       <div id="Styles">
         <div style={styling.selected}>
-          <strong>STYLE `&gt;` </strong>
+          <strong>STYLE &gt; </strong>
           {this.props.currentStyle.name}
         </div>
         <div>{this.separateRows()}</div>

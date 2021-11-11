@@ -1,6 +1,8 @@
+/* eslint-disable func-names */
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 import React from "react";
-import StarGraphic from "../../../GlobalComponents/StarGraphic";
+import StarGraphic from "../../../GlobalComponents/StarGraphic.jsx";
 
 const styling = {
   format: {

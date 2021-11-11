@@ -1,12 +1,13 @@
+/* eslint-disable import/extensions */
 /* eslint-disable func-names */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React from "react";
-import ImageThumbnail from "./ImageThumbnail";
+import ImageThumbnail from "./ImageThumbnail.jsx";
 import NoImage from "./NoImage.png";
-import Arrow from "./Arrow";
+import Arrow from "./Arrow.jsx";
 
 const styling = {
   gallery: {

@@ -43,7 +43,7 @@ class ReportButton extends React.Component {
       );
     }
     return (
-      <button type="button" id="report-button" disabled>
+      <button type="button" className="report-button" disabled>
         Reported!
       </button>
     );

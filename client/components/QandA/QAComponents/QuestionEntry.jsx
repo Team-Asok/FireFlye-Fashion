@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
-import HelpfulButton from "./HelpfulButton";
-import ReportButton from "./ReportButton";
-import AddAnswer from "./AddAnswer";
+import HelpfulButton from "./HelpfulButton.jsx";
+import ReportButton from "./ReportButton.jsx";
+import AddAnswer from "./AddAnswer.jsx";
 
 class QuestionEntry extends React.Component {
   render() {

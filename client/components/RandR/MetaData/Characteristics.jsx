@@ -1,9 +1,10 @@
+/* eslint-disable import/extensions */
 /* eslint-disable func-names */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import CharacteristicBar from "./CharacteristicBar";
+import CharacteristicBar from "./CharacteristicBar.jsx";
 
 const Characteristics = function (props) {
   const characteristicsGuide = {

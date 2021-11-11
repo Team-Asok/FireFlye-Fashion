@@ -1,14 +1,15 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 import axios from "axios";
-import QandA from "./QandA/QandA";
-import RandR from "./RandR/RandR";
-import Overview from "./Overview/Overview";
-import getMetaScore from "./RandR/MetaData/getMetaScoreFn";
-import { findTotalStars } from "./RandR/MetaData/StarRatingGraph";
+import QandA from "./QandA/QandA.jsx";
+import RandR from "./RandR/RandR.jsx";
+import Overview from "./Overview/Overview.jsx";
+import getMetaScore from "./RandR/MetaData/getMetaScoreFn.js";
+import { findTotalStars } from "./RandR/MetaData/StarRatingGraph.jsx";
 
 class App extends React.Component {
   constructor(props) {

@@ -1,11 +1,12 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-constant-condition */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 import moment from "moment";
-import LoadAnswers from "./LoadAnswers";
-import HelpfulButton from "./HelpfulButton";
-import ReportButton from "./ReportButton";
+import LoadAnswers from "./LoadAnswers.jsx";
+import HelpfulButton from "./HelpfulButton.jsx";
+import ReportButton from "./ReportButton.jsx";
 
 class AnswerEntry extends React.Component {
   constructor(props) {

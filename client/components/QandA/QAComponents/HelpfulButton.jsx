@@ -43,7 +43,7 @@ class HelpfulButton extends React.Component {
       );
     }
     return (
-      <button type="button" id="helpful-button" disabled>
+      <button type="button" className="helpful-button" disabled>
         Thank you!
       </button>
     );

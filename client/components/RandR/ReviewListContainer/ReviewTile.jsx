@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable func-names */
 /* eslint-disable consistent-return */
 /* eslint-disable react/no-array-index-key */
@@ -6,9 +7,9 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 import moment from "moment";
-import StarGraphic from "../../GlobalComponents/StarGraphic";
-import HelpfulButton from "../../QandA/QAComponents/HelpfulButton";
-import ReportButton from "../../QandA/QAComponents/ReportButton";
+import StarGraphic from "../../GlobalComponents/StarGraphic.jsx";
+import HelpfulButton from "../../QandA/QAComponents/HelpfulButton.jsx";
+import ReportButton from "../../QandA/QAComponents/ReportButton.jsx";
 
 const ReviewTile = function (props) {
   const photosRender = () => {

@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable no-plusplus */
@@ -5,11 +6,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 import axios from "axios";
-import Banner from "./Overview components/Banner";
-import Gallery from "./Overview components/ImageGallery";
-import ProductDescription from "./Overview components/ProductDescription";
-import ProductInfo from "./Overview components/ProductInfo";
-import SiteMessage from "./Overview components/SiteMessage";
+import Banner from "./Overview components/Banner.jsx";
+import Gallery from "./Overview components/ImageGallery.jsx";
+import ProductDescription from "./Overview components/ProductDescription.jsx";
+import ProductInfo from "./Overview components/ProductInfo.jsx";
+import SiteMessage from "./Overview components/SiteMessage.jsx";
 
 class Overview extends React.Component {
   constructor(props) {

@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable func-names */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 
 import React from "react";
-import QAListEntry from "./QAListEntry";
+import QAListEntry from "./QAListEntry.jsx";
 import sortQA from "./sortQA";
 
 class QAList extends React.Component {

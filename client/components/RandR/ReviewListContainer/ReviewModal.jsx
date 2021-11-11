@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-no-bind */
@@ -10,7 +11,7 @@
 import React from "react";
 import axios from "axios";
 import ReactFileReader from "react-file-reader";
-import StarGraphic from "../../GlobalComponents/StarGraphic";
+import StarGraphic from "../../GlobalComponents/StarGraphic.jsx";
 
 class ReviewModal extends React.Component {
   constructor(props) {

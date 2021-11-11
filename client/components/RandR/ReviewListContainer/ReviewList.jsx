@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable consistent-return */
 /* eslint-disable no-restricted-globals */
@@ -6,10 +7,10 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
-import ReviewTile from "./ReviewTile";
-import AddAReview from "./AddAReview";
-import MoreReviews from "./MoreReviews";
-import ReviewCount from "./ReviewCount";
+import ReviewTile from "./ReviewTile.jsx";
+import AddAReview from "./AddAReview.jsx";
+import MoreReviews from "./MoreReviews.jsx";
+import ReviewCount from "./ReviewCount.jsx";
 
 const StyledDiv = styled.div``;
 

@@ -1,11 +1,12 @@
+/* eslint-disable import/extensions */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from "react";
-import QAList from "./QAComponents/QAList";
-import AddQuestion from "./QAComponents/AddQuestion";
-import MoreAnsweredQuestions from "./QAComponents/MoreAnsweredQuestions";
-import SearchAnswer from "./QAComponents/SearchAnswer";
+import QAList from "./QAComponents/QAList.jsx";
+import AddQuestion from "./QAComponents/AddQuestion.jsx";
+import MoreAnsweredQuestions from "./QAComponents/MoreAnsweredQuestions.jsx";
+import SearchAnswer from "./QAComponents/SearchAnswer.jsx";
 
 class QandA extends React.Component {
   constructor(props) {
