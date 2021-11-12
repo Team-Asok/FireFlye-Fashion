@@ -228,6 +228,7 @@ ul {
   grid-row: 1 / 2;
   font-weight: bold;
   margin-bottom: 20px;
+  color: rgb(237, 220, 207);
 }
 
 #RandR {
@@ -521,6 +522,11 @@ div#buttons-container {
   border-bottom: 3px solid rgb(238, 235, 206);
   border-top: 3px solid rgb(238, 235, 206);
   margin-bottom: 20px;
+  text-align: center;
+}
+
+#SiteMessage span {
+  margin-left: auto;
 }
 
 .star {
@@ -716,4 +722,14 @@ div#rating-bar {
 .percent-bar {
   stroke: rgb(59, 43, 43);
   stroke-width: 3px;
+}
+
+#dmbutton {
+  background-color: rgb(237, 220, 207);
+  border-radius: 10px;
+  border-color: rgb(161, 0, 215);
+  font-family: "Bungee";
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
 }
