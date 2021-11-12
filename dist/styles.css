@@ -265,20 +265,38 @@ ul {
   text-align-last: center;
 }
 
-#Gallery {
+#Gallery-default {
   display: flex;
   flex-direction: row;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
-.main-image {
+#Gallery-expanded {
+  display: flex;
+  flex-direction: row;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
+}
+
+.main-image-default {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   max-height: 750px;
   object-position: center;
+}
+
+.main-image-expanded {
+  width: 1300px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  max-height: 750px;
+  object-position: center;
+  position: absolute;
+  z-index: 1;
 }
 
 #ProductInfo {
@@ -301,7 +319,6 @@ ul {
 .share-tw {
   width: 75px;
   height: 75px;
-  background-image: url("../client/components/Overview/Overview components/Twitter.png");
 }
 
 .share-tw a {

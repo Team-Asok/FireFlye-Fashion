@@ -28,14 +28,8 @@ class Gallery extends React.Component {
 
   renderView() {
     if (!this.state.expanded) {
-    } else if (this.state.expanded) {
-
-    }
-  }
-
-  render() {
-    return (
-      <ImageMain
+      return (
+        <ImageMain
         updatePhoto={this.props.updatePhoto}
         previousSlide={this.props.previousSlide}
         nextSlide={this.props.nextSlide}
@@ -44,7 +38,31 @@ class Gallery extends React.Component {
         photos={this.props.photos}
         currentIndex={this.props.currentIndex}
         changeView={this.changeView}
-      />
+        status={'default'}
+        />
+      )
+    } else if (this.state.expanded) {
+      return (
+        <ImageMain
+        updatePhoto={this.props.updatePhoto}
+        previousSlide={this.props.previousSlide}
+        nextSlide={this.props.nextSlide}
+        style={this.props.style}
+        currentPhoto={this.props.currentPhoto}
+        photos={this.props.photos}
+        currentIndex={this.props.currentIndex}
+        changeView={this.changeView}
+        status={'expanded'}
+        />
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.renderView()}
+      </div>
     )
   }
 }
