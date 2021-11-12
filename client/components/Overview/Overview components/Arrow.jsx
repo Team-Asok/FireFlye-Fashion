@@ -4,18 +4,14 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 
-const styling = {
-  position: {
-    marginTop: "35%",
-  },
-};
-
-const Arrow = function ({ changePhoto, glyph }) {
-  return (
-    <div style={styling.position} onClick={() => changePhoto()}>
+const Arrow = ({ changePhoto, glyph, style }) => (
+  style
+  ? <div style={style} onClick={() => changePhoto()}>
       {glyph}
     </div>
-  );
-};
+  : <div onClick={() => changePhoto()}>
+      {glyph}
+    </div>
+);
 
 export default Arrow;

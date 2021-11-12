@@ -9,6 +9,7 @@ import Cart from "./ProductInfo components/Cart.jsx";
 
 const ProductInfo = function ({
   currentProd,
+  currentStyle,
   styles,
   style,
   metaScore,
