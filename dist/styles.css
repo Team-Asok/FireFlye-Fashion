@@ -298,6 +298,18 @@ ul {
   padding-left: 15px;
 }
 
+.share-tw {
+  width: 75px;
+  height: 75px;
+  background-image: url("../client/components/Overview/Overview components/Twitter.png");
+}
+
+.share-tw a {
+  display: block;
+  width: 75px;
+  height: 75px;
+}
+
 #Styles {
   margin-top: 20px;
 }
