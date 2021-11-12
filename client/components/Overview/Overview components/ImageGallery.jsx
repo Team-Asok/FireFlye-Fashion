@@ -55,11 +55,9 @@ const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlid
   <div id="Gallery">
     { style.photos[0].thumbnail_url
       ? <div style={styling.left}>
-          {currentIndex !== 0 ? <Arrow glyph="&#8679;" changePhoto={previousSlide} /> : <div style={styling.hiddenTN} />}
           <div style={styling.tn}>
             {style.photos.map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
           </div>
-          {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8681;" changePhoto={nextSlide} /> : <div style={styling.hiddenTN} />}
         </div>
        : null}
 
