@@ -522,10 +522,12 @@ div#buttons-container {
   border-bottom: 3px solid rgb(238, 235, 206);
   border-top: 3px solid rgb(238, 235, 206);
   margin-bottom: 20px;
-  text-align: center;
+  text-align: center center;
+
 }
 
 #SiteMessage span {
+  align-self: center;
   margin-left: auto;
 }
 
@@ -733,3 +735,5 @@ div#rating-bar {
   margin-bottom: 5px;
   margin-left: auto;
 }
+
+
