@@ -11,6 +11,7 @@ const getAllQuestions = (productID) => {
     },
     params: { // ADD PAGE AND COUNT PARAMS LATER
       product_id: productID,
+      count: 15
     },
   };
   return (
