@@ -17,11 +17,30 @@ const styling = {
     fontSize: 20,
     margin: 10,
   },
+  selected: {
+    width: 75,
+    height: 75,
+    borderRadius: 50,
+    border: "5px solid black",
+    margin: 15,
+  }
 };
 
-const Style = function ({ style, updateStyle, updatePhoto }) {
+const Style = function ({ style, currentStyle, updateStyle, updatePhoto }) {
   return style.photos[0].thumbnail_url ? (
-    <img
+    style.style_id === currentStyle.style_id ? (
+        <img
+          key={style.style_id}
+          src={`${style.photos[0].thumbnail_url}`}
+          style={styling.selected}
+          onClick={() => {
+            updateStyle(style);
+            updatePhoto(style.photos[0]);
+          }}
+          alt="style thumbnail"
+        />
+    ) : (
+      <img
       key={style.style_id}
       src={`${style.photos[0].thumbnail_url}`}
       style={styling.tn}
@@ -31,6 +50,7 @@ const Style = function ({ style, updateStyle, updatePhoto }) {
       }}
       alt="style thumbnail"
     />
+    )
   ) : (
     <div style={styling.noImage}>
       <div onClick={() => updateStyle(style)}>{style.name}</div>

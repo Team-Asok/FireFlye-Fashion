@@ -120,11 +120,11 @@ class Cart extends React.Component {
           <DropDownQuantity dataList={this.state.quantities} default="1" />
         </div>
         {this.props.currentStyle.photos[0].url ? <button id="addCart" type="button" style={styling.button} onClick={this.resetSelections}>Add To Bag</button> : null}
-        <ul>
+        {/* <ul>
           <li className="share-tw"><a href="http://twitter.com/share?text=This+is+google+a+search+engine&url=https%3A%2F%2Fwww.google.com"></a></li>
-          {/* <li class="share-fb"><a href="http://www.facebook.com/sharer.php?u=/node/[nid]&p=[title]"><span></span></a></li>
-          <li class="share-pinterest"><a href="http://pinterest.com/pin/create/button/?url=/node/[nid]&description=[title]"><span></span></a></li> */}
-        </ul>
+          <li class="share-fb"><a href="http://www.facebook.com/sharer.php?u=/node/[nid]&p=[title]"><span></span></a></li>
+          <li class="share-pinterest"><a href="http://pinterest.com/pin/create/button/?url=/node/[nid]&description=[title]"><span></span></a></li>
+        </ul> */}
       </div>
     );
   }
