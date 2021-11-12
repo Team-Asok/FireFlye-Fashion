@@ -43,17 +43,9 @@ class Gallery extends React.Component {
       )
     } else if (this.state.expanded) {
       return (
-        <ImageMain
-        updatePhoto={this.props.updatePhoto}
-        previousSlide={this.props.previousSlide}
-        nextSlide={this.props.nextSlide}
-        style={this.props.style}
-        currentPhoto={this.props.currentPhoto}
-        photos={this.props.photos}
-        currentIndex={this.props.currentIndex}
-        changeView={this.changeView}
-        status={'expanded'}
-        />
+        <div className="modal">
+          <img className="main-image-expanded" src={this.props.currentPhoto.url} alt="main image gallery image" onClick={this.changeView}/>
+        </div>
       )
     }
   }
