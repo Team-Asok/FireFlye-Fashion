@@ -57,17 +57,17 @@ const Info = function ({ currentProd, style }) {
       <ul style={styling.socialContainer}>
         <li>
           <a href="http://twitter.com/share?text=This+is+google+a+search+engine&url=https%3A%2F%2Fwww.google.com">
-            <img style={styling.social} src={Twitter} />
+            <img style={styling.social} src={Twitter} alt="social icon: Twitter" />
           </a>
         </li>
         <li>
           <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.google.com%This+Is%2C+Google+a+search+engine">
-            <img style={styling.social} src={Facebook}/>
+            <img style={styling.social} src={Facebook} alt="social icon: Facebook"/>
           </a>
         </li>
         <li>
           <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.google.com&description=This+is+google+a+search+engine">
-            <img style={styling.social} src={Pinterest}/>
+            <img style={styling.social} src={Pinterest} alt="social icon: Pinterest"/>
           </a>
         </li>
       </ul>
