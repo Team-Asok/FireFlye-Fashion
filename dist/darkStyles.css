@@ -1,6 +1,6 @@
 * {
-  color: rgb(243, 239, 225);
-  font-family: 'Zen Antique', serif;
+  color: antiquewhite;
+  font-family: "Zen Antique", serif;
   font-display: swap;
 }
 button {
@@ -15,14 +15,12 @@ select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3CradialGradient id='a' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%23018C91'/%3E%3Cstop offset='1' stop-color='%230E0025'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='750' x2='1550' y2='750'%3E%3Cstop offset='0' stop-color='%23004668'/%3E%3Cstop offset='1' stop-color='%230E0025'/%3E%3C/linearGradient%3E%3Cpath id='s' fill='url(%23b)' d='M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z'/%3E%3Cg id='g'%3E%3Cuse href='%23s' transform='scale(0.12) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.2) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.25) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(0.3) rotate(-20)'/%3E%3Cuse href='%23s' transform='scale(0.4) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(0.5) rotate(20)'/%3E%3Cuse href='%23s' transform='scale(0.6) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.7) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.835) rotate(-40)'/%3E%3Cuse href='%23s' transform='scale(0.9) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(1.05) rotate(25)'/%3E%3Cuse href='%23s' transform='scale(1.2) rotate(8)'/%3E%3Cuse href='%23s' transform='scale(1.333) rotate(-60)'/%3E%3Cuse href='%23s' transform='scale(1.45) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(1.6) rotate(10)'/%3E%3C/g%3E%3C/defs%3E%3Cg %3E%3Cg transform=''%3E%3Ccircle fill='url(%23a)' r='3000'/%3E%3Cg opacity='0.5'%3E%3Ccircle fill='url(%23a)' r='2000'/%3E%3Ccircle fill='url(%23a)' r='1800'/%3E%3Ccircle fill='url(%23a)' r='1700'/%3E%3Ccircle fill='url(%23a)' r='1651'/%3E%3Ccircle fill='url(%23a)' r='1450'/%3E%3Ccircle fill='url(%23a)' r='1250'/%3E%3Ccircle fill='url(%23a)' r='1175'/%3E%3Ccircle fill='url(%23a)' r='900'/%3E%3Ccircle fill='url(%23a)' r='750'/%3E%3Ccircle fill='url(%23a)' r='500'/%3E%3Ccircle fill='url(%23a)' r='380'/%3E%3Ccircle fill='url(%23a)' r='250'/%3E%3C/g%3E%3Cg transform='rotate(-90 0 0)'%3E%3Cuse href='%23g' transform='rotate(10)'/%3E%3Cuse href='%23g' transform='rotate(120)'/%3E%3Cuse href='%23g' transform='rotate(240)'/%3E%3C/g%3E%3Ccircle fill-opacity='0' fill='url(%23a)' r='3000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
-background-attachment: fixed;
-background-size: cover;
 }
 
 #index {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows:  auto;
+  grid-template-rows: auto;
 }
 
 #QandA {
@@ -39,7 +37,7 @@ background-size: cover;
 #qa-title {
   grid-row: 1/2;
   grid-column: 2/3;
-  color: white;
+  color: antiquewhite;
 }
 
 #search-container {
@@ -56,7 +54,7 @@ background-size: cover;
   height: 50px;
   width: fit-content;
   flex: 1;
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(1, 17, 36);
   border-radius: 10px;
 }
 
@@ -80,8 +78,8 @@ background-size: cover;
 #question-container {
   grid-column: 1;
   margin-bottom: 3px;
-  border-bottom: 2px solid rgb(255, 255, 255);
-  background-color: rgb(20, 0, 29);
+  border-bottom: 2px solid rgb(59, 43, 43);
+  background-color: rgb(1, 17, 36);
   border-radius: 10px;
   height: auto;
 }
@@ -109,7 +107,7 @@ background-size: cover;
 }
 
 #individual-answer {
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(1, 17, 36);
   border: 1px solid rgb(80, 80, 80);
   border-radius: 10px;
   margin: 2px;
@@ -125,8 +123,8 @@ background-size: cover;
 }
 
 #question-entry {
-   padding: 5px;
- }
+  padding: 5px;
+}
 
 #qa-buttons-container {
   grid-row: 4/5;
@@ -139,58 +137,67 @@ background-size: cover;
 }
 
 #load-questions {
-  background-image: linear-gradient(to bottom right, rgb(94, 174, 216), rgb(4, 15, 96));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
   width: 300px;
   height: 100px;
   font-size: 28px;
   font-weight: bold;
   border-radius: 90px;
-  color: white;
+  color: antiquewhite;
 }
 
 #add-question {
-  background-image: linear-gradient(to bottom right, rgb(94, 174, 216), rgb(4, 15, 96));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
   width: 300px;
   height: 100px;
   margin-right: 50px;
   font-size: 28px;
   font-weight: bold;
   border-radius: 90px;
-  color: white;
+  color: antiquewhite;
 }
 
-#load-answers, .add-answer-button {
+#load-answers,
+.add-answer-button {
   border: 0px;
   font-size: 17px;
 }
 
 #load-answer:hover {
   background-color: rgb(251, 198, 136);
-  border-color: rgb(216, 123, 16)
+  border-color: rgb(216, 123, 16);
 }
 #load-answer:active {
   background-color: rgb(59, 43, 43);
-  color:rgb(251, 198, 136);
+  color: rgb(251, 198, 136);
 }
 
 .add-answer-button:hover {
   background-color: rgb(251, 198, 136);
-  border-color: rgb(216, 123, 16)
+  border-color: rgb(216, 123, 16);
 }
 .add-answer-button:active {
   background-color: rgb(59, 43, 43);
-  color:rgb(251, 198, 136);
+  color: rgb(251, 198, 136);
 }
 
 ul {
   list-style-type: none;
- }
+}
 
 #reviewListTilescontainer {
   grid-column: 1 / 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  width:900px;
+  width: 900px;
 }
 
 #reviewtile {
@@ -199,7 +206,7 @@ ul {
   grid-template-rows: auto;
   margin-bottom: 50px;
   border-bottom: 2px solid rgb(59, 43, 43);
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(1, 17, 36);
   border-radius: 10px;
   overflow: auto;
 }
@@ -212,7 +219,7 @@ ul {
   font-size: 30px;
   border-width: 0px;
   text-decoration: underline;
-  color: white;
+  color: rgb(247, 243, 228);
 }
 
 #meta-score {
@@ -221,10 +228,11 @@ ul {
   grid-row: 1 / 2;
   font-weight: bold;
   margin-bottom: 20px;
+  color: rgb(237, 220, 207);
 }
 
 #RandR {
-  border-top:rgb(59, 43, 43);
+  border-top: rgb(59, 43, 43);
   border-width: 2px 0px 0px 0px;
   border-style: solid;
   grid-row-start: 3;
@@ -234,13 +242,12 @@ ul {
   grid-template-columns: 30% 1fr;
   grid-template-rows: 30px 1fr;
   margin-top: 40px;
-  color: white;
+  color: antiquewhite;
 }
 
 /* #RandR * {
   background-color:rgba(233, 199, 199, 0);
 } */
-
 
 #Overview {
   grid-row-start: 1;
@@ -253,20 +260,48 @@ ul {
 }
 
 #Overview select {
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(1, 17, 36);
   border-radius: 10px;
+  width: 150px;
+  text-align-last: center;
 }
 
-#Gallery {
+#Gallery-default {
   display: flex;
   flex-direction: row;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
+#Gallery-expanded {
+  display: flex;
+  flex-direction: row;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
+}
+
+.main-image-default {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-height: 750px;
+  object-position: center;
+}
+
+.main-image-expanded {
+  width: 1300px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  max-height: 750px;
+  object-position: center;
+  position: absolute;
+  z-index: 1;
+}
+
 #ProductInfo {
   display: grid;
-  margin-left: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-template-rows: auto;
@@ -276,23 +311,44 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(1, 17, 36);
   border-radius: 10px;
   margin-right: 75px;
+  padding-left: 15px;
+}
+
+.share-tw {
+  width: 75px;
+  height: 75px;
+}
+
+.share-tw a {
+  display: block;
+  width: 75px;
+  height: 75px;
 }
 
 #Styles {
   margin-top: 20px;
+  color: antiquewhite;
+}
+
+#Styles * {
+  color: antiquewhite;
 }
 
 #addCart {
-  background-image: linear-gradient(to bottom right, rgb(94, 174, 216), rgb(4, 15, 96));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
   width: 300px;
   height: 100px;
   font-size: 35px;
   font-weight: bold;
   border-radius: 90px;
-  color: white;
+  color: antiquewhite;
 }
 
 #ProductDescription {
@@ -300,7 +356,7 @@ ul {
   grid-template-columns: 60% 5% 35%;
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(1, 17, 36);
   border-radius: 10px;
   font-size: 18px;
   text-align: left;
@@ -328,13 +384,13 @@ ul {
 }
 
 #ProductDescription ul li:before {
-  content: '✓';
+  content: "✓";
   margin: 20px;
 }
 
 #Separator {
   width: 5px;
-  background-color: rgb(201, 219, 249);
+  background-color: rgb(36, 123, 147);
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -351,7 +407,7 @@ ul {
 
 #review-count {
   grid-row: 1 / 2;
-  color: white;
+  color: antiquewhite;
 }
 
 #review-meta-data-container {
@@ -361,7 +417,7 @@ ul {
   grid-column-end: 2;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 150px 30px 300px 400px 1fr ;
+  grid-template-rows: 150px 30px 300px 400px 1fr;
 }
 
 #review-meta-data-container * {
@@ -370,14 +426,20 @@ ul {
 
 #percent-recommended {
   grid-row: 2 / 3;
-  color: white;
+  color: antiquewhite;
 }
 
 #Banner {
-  background: rgb(170,44,217);
-  background: linear-gradient(90deg, rgba(170,44,217,0) 0%, rgb(25, 98, 99) 41%, rgb(29, 151, 227) 73%, rgb(34, 1, 63) 100%);
-  color:rgb(237, 220, 207);
-  font-family: 'Bungee';
+  background: rgb(170, 44, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(170, 44, 217, 0) 0%,
+    rgb(93, 204, 200) 41%,
+    rgb(29, 135, 227) 73%,
+    rgb(17, 2, 75) 100%
+  );
+  color: rgb(237, 220, 207);
+  font-family: "Bungee";
   font-size: 100px;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -385,51 +447,61 @@ ul {
   height: 150px;
   justify-content: right;
   align-items: center;
-
-
 }
 
 button#more-reviews {
-  background-image: linear-gradient(to bottom right, rgb(94, 174, 216), rgb(4, 15, 96));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
   width: 350px;
   height: 100px;
   margin-left: 50px;
   font-size: 35px;
   font-weight: bold;
   border-radius: 90px;
-  color: white;
+  color: antiquewhite;
 }
 
 #more-reviews:hover {
-
-  background-image: linear-gradient(to bottom right, rgb(94, 174, 216), rgb(4, 15, 96));
-
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
 }
 
-#more-reviews:active{
+#more-reviews:active {
   background-color: rgb(59, 43, 43);
-  color:rgb(237, 220, 207)
+  color: rgb(237, 220, 207);
 }
 
 button#add-review {
-  background-image: linear-gradient(to bottom right, rgb(94, 174, 216), rgb(4, 15, 96));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
   width: 300px;
   height: 100px;
   font-size: 35px;
   font-weight: bold;
   border-radius: 90px;
-  color: white;
-
+  color: antiquewhite;
 }
 
 #add-review:hover {
-  background-image: linear-gradient(to bottom right, rgb(255, 186, 107), rgb(121, 35, 150));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(122, 232, 228),
+    rgb(38, 7, 131)
+  );
 }
 
 #add-review:active {
   background-color: rgb(59, 43, 43);
-  color:rgb(237, 220, 207)
-
+  color: rgb(237, 220, 207);
 }
 
 div#buttons-container {
@@ -437,9 +509,16 @@ div#buttons-container {
 }
 
 #SiteMessage {
-  background: rgb(170,44,217);
-  background: linear-gradient(90deg, rgba(170,44,217,0) 0%, rgba(29, 174, 227) 28%, rgb(29, 174, 227) 51%, rgba(29, 174, 227) 82%, rgba(105,4,101,0) 100%);
-  color:rgb(241, 231, 223);
+  background: rgb(170, 44, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(170, 44, 217, 0) 0%,
+    rgb(114, 218, 203) 28%,
+    rgb(51, 16, 155) 51%,
+    rgb(148, 224, 213) 82%,
+    rgba(105, 4, 101, 0) 100%
+  );
+  color: rgb(241, 231, 223);
   grid-column-start: 1;
   grid-column-end: 3;
   font-size: 20px;
@@ -448,17 +527,22 @@ div#buttons-container {
   border-bottom: 3px solid rgb(238, 235, 206);
   border-top: 3px solid rgb(238, 235, 206);
   margin-bottom: 20px;
+  text-align: center;
+}
+
+#SiteMessage span {
+  margin-left: auto;
 }
 
 .star {
   width: 30px;
   height: 30px;
-  stroke: black;
+  stroke: antiquewhite;
   stroke-width: 1px;
   stroke-linejoin: miter;
 }
 
-.modal{
+.modal {
   font-size: 12px;
   position: fixed;
   left: 0;
@@ -471,12 +555,13 @@ div#buttons-container {
   justify-content: center;
 }
 
-.modal-content{
+.modal-content {
   width: 750px;
-  background-color: white;
+  background-color: antiquewhite;
 }
 
-.modal-header, .modal-footer{
+.modal-header,
+.modal-footer {
   padding: 10px;
 }
 
@@ -484,7 +569,7 @@ div#buttons-container {
   margin: 0;
 }
 
-.modal-body{
+.modal-body {
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -513,7 +598,7 @@ td {
 }
 
 #characteristics-area * {
-  color: white;
+  color: antiquewhite;
 }
 
 #timestamp {
@@ -539,23 +624,22 @@ td {
 }
 
 .helpful-button:hover {
-  color:rgb(121, 35, 150)
+  color: rgb(121, 35, 150);
 }
 .helpful-button:active {
-
-  color:rgb(203, 40, 40);
+  color: rgb(203, 40, 40);
 }
 
 .report-button {
   border: 0px;
-  font-size: 17px
+  font-size: 17px;
 }
 
 .report-button:hover {
-  color:rgb(121, 35, 150)
+  color: rgb(121, 35, 150);
 }
 .report-button:active {
-  color:rgb(203, 40, 40);
+  color: rgb(203, 40, 40);
 }
 
 #button-separator {
@@ -567,14 +651,14 @@ td {
   text-decoration: underline;
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: antiquewhite;
 }
 
 .star-button:hover {
   color: rgb(147, 35, 147);
 }
 .star-button:active {
-  color:rgb(251, 198, 136);
+  color: rgb(251, 198, 136);
 }
 
 #table-data-button {
@@ -590,7 +674,6 @@ div#rating-bar {
   flex-direction: row;
   justify-items: start;
   align-items: start;
-
 }
 
 #bar-1 {
@@ -608,7 +691,6 @@ div#rating-bar {
 *[id="charactistic-criteria"] {
   font-size: 12px;
   margin-right: 50px;
-
 }
 
 #characteristic-criteria-container {
@@ -619,34 +701,41 @@ div#rating-bar {
 }
 
 *[id="triangle"] {
-  background-color: rgb(0, 0 , 0 ,0);
+  background-color: rgb(0, 0, 0, 0);
 }
 
-*[id='star-in-metascore'] {
+*[id="star-in-metascore"] {
   transform: translateY(-25px);
 }
 
-
 .review-body {
   font-size: 20px;
-  background-color: rgb(20, 0, 29);
+  background-color: rgb(2, 26, 54);
   margin-left: 20px;
 }
 
-
 #percent-bar {
-  stroke:rgb(59, 43, 43);
+  stroke: rgb(59, 43, 43);
   stroke-width: 3px;
 }
 
 #review-tile-summary {
   margin-left: 20px;
   margin-top: 20px;
-
 }
 
 .percent-bar {
-  stroke:rgb(59, 43, 43);
+  stroke: rgb(59, 43, 43);
   stroke-width: 3px;
 }
 
+#dmbutton {
+  background-color: rgb(237, 220, 207);
+  color: #0E0025;
+  border-radius: 10px;
+  border-color: rgb(0, 7, 215);
+  font-family: "Bungee";
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+}

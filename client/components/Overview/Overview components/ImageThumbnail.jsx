@@ -12,10 +12,24 @@ const styling = {
     margin: 5,
     border: "2px solid white",
   },
+  selected: {
+    width: 75,
+    height: 75,
+    margin: 5,
+    border: "5px solid black",
+  }
 };
 
-const ImageThumbnail = function ({ photo, updatePhoto }) {
+const ImageThumbnail = function ({ photo, updatePhoto, current }) {
   return (
+    current.thumbnail_url === photo.thumbnail_url ?
+      <img
+        src={photo.thumbnail_url}
+        style={styling.selected}
+        onClick={() => updatePhoto(photo)}
+        alt="thumbnail image"
+      />
+    :
     <img
       src={photo.thumbnail_url}
       style={styling.tn}

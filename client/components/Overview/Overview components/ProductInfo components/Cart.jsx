@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/prop-types */
@@ -9,9 +8,9 @@ import DropDownSize from "./DropDownSize.jsx";
 
 const styling = {
   container: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
-    gridTemplateRows: "1fr 1fr",
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
   },
   size: {
     gridColumnStart: 1,
@@ -34,13 +33,13 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // items: [],
       sizes: [],
       quantities: [],
-      currentStyle: "",
+      currentSize: "",
     };
     this.parseInventory = this.parseInventory.bind(this);
     this.updateSizeSelection = this.updateSizeSelection.bind(this);
+    this.resetSelections = this.resetSelections.bind(this);
   }
 
   componentDidMount() {
@@ -72,7 +71,7 @@ class Cart extends React.Component {
       sizes.push(product.size);
 
       // Fill quantities based on selected size. Max 15
-      if (currentSize === product.size && this.state.currentStyle.length > 0) {
+      if (currentSize === product.size && this.state.currentSize.length > 0) {
         let totalQuantity = product.quantity;
         if (totalQuantity > 15) {
           totalQuantity = 15;
@@ -92,8 +91,18 @@ class Cart extends React.Component {
 
   // Pass selected style into parse to render correct quantities
   updateSizeSelection(size) {
-    this.setState({ currentStyle: size.target.value }, () => {
+    this.setState({ currentSize: size.target.value }, () => {
       this.parseInventory(this.props.currentStyle.skus, size.target.value);
+    });
+  }
+
+  resetSelections() {
+    this.setState({
+      currentSize: "",
+      quantities: [],
+      sizes: [],
+    }, () => {
+      this.parseInventory(this.props.currentStyle.skus);
     });
   }
 
@@ -109,9 +118,7 @@ class Cart extends React.Component {
         <div style={styling.quantity}>
           <DropDownQuantity dataList={this.state.quantities} default="1" />
         </div>
-        <button id="addCart" type="button" style={styling.button}>
-          Add To Bag
-        </button>
+        {this.props.currentStyle.photos[0].url ? <button id="addCart" type="button" style={styling.button} onClick={this.resetSelections}>Add To Bag</button> : null}
       </div>
     );
   }

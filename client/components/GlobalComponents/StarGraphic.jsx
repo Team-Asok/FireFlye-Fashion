@@ -63,7 +63,7 @@ const StarGraphic = (props) => {
               <linearGradient id={`${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop
                   offset={`${values * 100}%`}
-                  style={{ stopColor: "rgb(59, 43, 43", stopOpacity: 1 }}
+                  style={{ stopColor: `${props.color}`, stopOpacity: 1 }}
                 />
                 <stop
                   offset={`${values * 100 + 1}%`}

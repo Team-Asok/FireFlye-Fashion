@@ -1,5 +1,3 @@
-/* eslint-disable func-names */
-/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 import React from "react";
 import StarGraphic from "../../../GlobalComponents/StarGraphic.jsx";
@@ -9,6 +7,9 @@ const styling = {
     display: "flex",
     flexDirection: "row",
   },
+  star: {
+    fontSize: 20,
+  },
   anchor: {
     color: "white",
     fontSize: 20,
@@ -17,17 +18,11 @@ const styling = {
   },
 };
 
-const RatingLink = function ({ metaScore, reviews }) {
-  return (
-    <div id="RatingLink" style={styling.format}>
-      <StarGraphic metaScore={metaScore} />
-      {reviews.results.length > 0 ? (
-        <a href="#RandR" style={styling.anchor}>
-          Read all reviews
-        </a>
-      ) : null}
-    </div>
-  );
-};
+const RatingLink = ({metaScore, reviews}) => (
+  <div id="RatingLink" style={styling.format}>
+    <StarGraphic color="rgb(237, 220, 207)" metaScore={metaScore} />
+    {reviews.results.length > 0 ? <a href="#RandR" style={styling.anchor}>Read all reviews</a> : null}
+  </div>
+);
 
 export default RatingLink;

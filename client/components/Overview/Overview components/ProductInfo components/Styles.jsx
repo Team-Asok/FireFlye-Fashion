@@ -34,6 +34,7 @@ class Styles extends React.Component {
           return (
             <Style
               key={style.style_id}
+              currentStyle={this.props.currentStyle}
               style={style}
               updateStyle={this.props.updateStyle}
               updatePhoto={this.props.updatePhoto}

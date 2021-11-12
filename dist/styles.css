@@ -228,6 +228,7 @@ ul {
   grid-row: 1 / 2;
   font-weight: bold;
   margin-bottom: 20px;
+  color: rgb(237, 220, 207);
 }
 
 #RandR {
@@ -261,18 +262,46 @@ ul {
 #Overview select {
   background-color: rgb(244, 232, 219);
   border-radius: 10px;
+  width: 150px;
+  text-align-last: center;
 }
 
-#Gallery {
+#Gallery-default {
   display: flex;
   flex-direction: row;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
+#Gallery-expanded {
+  display: flex;
+  flex-direction: row;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
+}
+
+.main-image-default {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-height: 750px;
+  object-position: center;
+}
+
+.main-image-expanded {
+  width: 1300px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  max-height: 750px;
+  object-position: center;
+  position: absolute;
+  z-index: 1;
+}
+
 #ProductInfo {
   display: grid;
-  margin-left: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-template-rows: auto;
@@ -285,6 +314,18 @@ ul {
   background-color: rgb(244, 232, 219);
   border-radius: 10px;
   margin-right: 75px;
+  padding-left: 15px;
+}
+
+.share-tw {
+  width: 75px;
+  height: 75px;
+}
+
+.share-tw a {
+  display: block;
+  width: 75px;
+  height: 75px;
 }
 
 #Styles {
@@ -481,6 +522,13 @@ div#buttons-container {
   border-bottom: 3px solid rgb(238, 235, 206);
   border-top: 3px solid rgb(238, 235, 206);
   margin-bottom: 20px;
+  text-align: center center;
+
+}
+
+#SiteMessage span {
+  align-self: center;
+  margin-left: auto;
 }
 
 .star {
@@ -677,3 +725,15 @@ div#rating-bar {
   stroke: rgb(59, 43, 43);
   stroke-width: 3px;
 }
+
+#dmbutton {
+  background-color: rgb(237, 220, 207);
+  border-radius: 10px;
+  border-color: rgb(161, 0, 215);
+  font-family: "Bungee";
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+}
+
+

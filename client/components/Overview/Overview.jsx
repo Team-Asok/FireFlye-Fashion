@@ -30,6 +30,7 @@ class Overview extends React.Component {
     this.updatePhoto = this.updatePhoto.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.filterPhotos = this.filterPhotos.bind(this);
   }
 
   componentDidMount() {
@@ -68,6 +69,8 @@ class Overview extends React.Component {
           currentStyle: data[j],
           currentPhoto: data[j].photos[0],
           photos: data[j].photos,
+        }, () => {
+          this.filterPhotos(data[j].photos);
         });
         break;
       }
@@ -79,6 +82,8 @@ class Overview extends React.Component {
       currentStyle: style,
       photos: style.photos,
       currentPhotoIndex: 0,
+    }, () => {
+      this.filterPhotos(this.state.currentStyles)
     });
   }
 
@@ -120,6 +125,13 @@ class Overview extends React.Component {
     });
   }
 
+  //Handle duplicate slacks photos
+  filterPhotos(styles) {
+    if (styles.some((style) => style.style_id === 221014) && this.state.currentStyle.style_id !== 221014) {
+      this.setState({photos: this.state.photos.slice(0, 1)})
+    }
+  }
+
   render() {
     if (
       this.state.currentFeatures.length === 0 ||
@@ -137,7 +149,7 @@ class Overview extends React.Component {
           previousSlide={this.previousSlide}
           nextSlide={this.nextSlide}
           style={this.state.currentStyle}
-          photo={this.state.currentPhoto}
+          currentPhoto={this.state.currentPhoto}
           photos={this.state.photos}
           currentIndex={this.state.currentPhotoIndex}
         />

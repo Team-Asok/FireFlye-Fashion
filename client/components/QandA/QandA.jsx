@@ -91,7 +91,7 @@ class QandA extends React.Component {
             productID={this.props.qAndA.product_id}
             productName={this.props.productName}
           />
-          {this.state.questions.length >= 4 ? (
+          {this.state.questions.length > 2 ? (
             <MoreAnsweredQuestions
               onClick={this.setView}
               closeView={this.closeView}
