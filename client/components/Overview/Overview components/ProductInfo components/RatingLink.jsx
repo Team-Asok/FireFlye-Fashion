@@ -20,7 +20,7 @@ const styling = {
 const RatingLink = function ({ metaScore, reviews }) {
   return (
     <div id="RatingLink" style={styling.format}>
-      <StarGraphic metaScore={metaScore} />
+      <StarGraphic color="rgb(237, 220, 207)" metaScore={metaScore} />
       {reviews.results.length > 0 ? (
         <a href="#RandR" style={styling.anchor}>
           Read all reviews

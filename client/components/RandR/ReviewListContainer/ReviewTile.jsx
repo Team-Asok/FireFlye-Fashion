@@ -40,7 +40,7 @@ const ReviewTile = function (props) {
     return (
       <div list-style-type="none" id="reviewtile">
         <div id="tile-container">
-          <StarGraphic metaScore={props.review.rating} />
+          <StarGraphic color="rgb(59, 43, 43)" metaScore={props.review.rating} />
           <span id="reviewer-name">{props.review.reviewer_name}</span>
           <span id="timestamp">
             {moment.utc(props.review.date).format("MMM Do YYYY")}
