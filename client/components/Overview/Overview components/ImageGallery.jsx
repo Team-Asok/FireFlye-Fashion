@@ -54,7 +54,7 @@ const styling = {
 const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlide, nextSlide }) => (
   <div id="Gallery">
     { style.photos[0].thumbnail_url
-      ? <div style={styling.left}>
+      ? <div style={styling.left} key={style.style_id}>
           <div style={styling.tn}>
             {style.photos.map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
           </div>
