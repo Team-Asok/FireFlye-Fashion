@@ -90,7 +90,6 @@ class App extends React.Component {
 
   changeStyle() {
     let style = document.getElementsByClassName('styles')[0]
-    console.log(style.id);
     if (style.id === 'light') {
       style.href = 'darkStyles.css';
       style.id = 'dark';

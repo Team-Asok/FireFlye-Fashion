@@ -531,6 +531,7 @@ div#buttons-container {
 }
 
 #SiteMessage span {
+  align-self: center;
   margin-left: auto;
 }
 
