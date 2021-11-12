@@ -149,7 +149,7 @@ class Overview extends React.Component {
           previousSlide={this.previousSlide}
           nextSlide={this.nextSlide}
           style={this.state.currentStyle}
-          photo={this.state.currentPhoto}
+          currentPhoto={this.state.currentPhoto}
           photos={this.state.photos}
           currentIndex={this.state.currentPhotoIndex}
         />

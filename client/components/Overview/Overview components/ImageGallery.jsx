@@ -51,22 +51,22 @@ const styling = {
   },
 };
 
-const Gallery = ({ style, photo, photos, updatePhoto, currentIndex, previousSlide, nextSlide }) => (
+const Gallery = ({ style, currentPhoto, photos, updatePhoto, currentIndex, previousSlide, nextSlide }) => (
   <div id="Gallery">
     { style.photos[0].thumbnail_url
       ? <div style={styling.left} key={style.style_id}>
           <div style={styling.tn}>
-            {style.photos.map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} />)}
+            {style.photos.map((photo, index) => <ImageThumbnail key={index} photo={photo} updatePhoto={updatePhoto} current={currentPhoto}/>)}
           </div>
         </div>
        : null}
 
-    {photo.url
+    {currentPhoto.url
       ? (
         <div style={styling.arrows}>
           {currentIndex !== 0 ? <Arrow glyph="&#8678;" changePhoto={previousSlide} style={styling.arrowSpace} /> : <div style={styling.hiddenMain} />}
           <div style={styling.main}>
-            <img className="main-image" src={photo.url} alt="main image gallery image"/>
+            <img className="main-image" src={currentPhoto.url} alt="main image gallery image"/>
           </div>
           {currentIndex !== photos.length - 1 ? <Arrow glyph="&#8680;" changePhoto={nextSlide} style={styling.arrowSpace} /> : <div style={styling.hiddenMain} />}
         </div>
