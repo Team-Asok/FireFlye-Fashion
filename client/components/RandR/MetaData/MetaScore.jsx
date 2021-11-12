@@ -26,7 +26,7 @@ const MetaScore = function (props) {
     return (
       <div id="meta-score">
         <strong>{metaScore}</strong>
-        <StarGraphic id="star-in-metascore" metaScore={props.metaScore} />
+        <StarGraphic color="rgb(237, 220, 207)" id="star-in-metascore" metaScore={props.metaScore} />
       </div>
     );
   }
@@ -34,7 +34,7 @@ const MetaScore = function (props) {
   return (
     <div id="meta-score">
       {metaScore}
-      <StarGraphic id="star-in-metascore" metaScore={metaScore} />
+      <StarGraphic color="rgb(237, 220, 207)" id="star-in-metascore" metaScore={metaScore} />
     </div>
   );
 };

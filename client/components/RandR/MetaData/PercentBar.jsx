@@ -28,7 +28,7 @@ const PercentBar = function (props) {
           >
             <stop
               offset={`${percentage}%`}
-              style={{ stopColor: "rgb(59, 43, 43)", stopOpacity: 1 }}
+              style={{ stopColor: "rgb(255, 255, 255)", stopOpacity: 1 }}
             />
             <stop
               offset={`${percentage + 1}%`}

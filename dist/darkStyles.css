@@ -650,3 +650,18 @@ div#rating-bar {
   stroke-width: 3px;
 }
 
+#dmbutton {
+  background-color: rgb(237, 220, 207);
+  border-radius: 10px;
+  border-color: rgb(161, 0, 215);
+  margin-left: auto;
+  font-family: "Bungee";
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color:rgb(20, 0, 29)
+}
+
+#SiteMessage span {
+  margin-left: auto;
+}
+
