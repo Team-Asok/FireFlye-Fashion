@@ -119,7 +119,7 @@ class Cart extends React.Component {
         <div style={styling.quantity}>
           <DropDownQuantity dataList={this.state.quantities} default="1" />
         </div>
-        <button id="addCart" type="button" style={styling.button} onClick={this.resetSelections}>Add To Bag</button>
+        {this.props.currentStyle.photos[0].url ? <button id="addCart" type="button" style={styling.button} onClick={this.resetSelections}>Add To Bag</button> : null}
       </div>
     );
   }
