@@ -3,11 +3,11 @@
 # FYREFLYE FSHN 🔥
 
 ### Table of Contents 🏓
-1. [Overview](https://github.com/Team-Asok/hackreactor-front-end-capstone-#overview)
-2. [Installation](https://github.com/Team-Asok/hackreactor-front-end-capstone-#installation)
-3. [Usage](https://github.com/Team-Asok/hackreactor-front-end-capstone-#usage)
-4. [Requirements](https://github.com/Team-Asok/hackreactor-front-end-capstone-#requirements)
-5. [Contributors](https://github.com/Team-Asok/hackreactor-front-end-capstone-#contributors)
+1. [Overview](#overview)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Requirements](#requirements)
+5. [Contributors](#contributors)
 
 ### Overview 🌄
 A front-end focused project providing a user interface for customers to browse products in a retail catalog.
