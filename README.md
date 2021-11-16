@@ -37,6 +37,66 @@ Set up a config.js with the following:
 
 ### Usage 👍
 
+## Overview:
+
+DarkMode / LightMode Button:
+
+![](./Gifs/Darkmode.gif)
+
+Image Gallery:
+
+![](./Gifs/image-Gallery.gif)
+
+Read All Reviews Button:
+
+![](./Gifs/ReadAllReviews.gif)
+
+Social Media Buttons:
+
+![](./Gifs/SocialMediabuttons.gif)
+
+Styles Selector / Add To cart:
+
+![](./Gifs/Style Selector-bag.gif)
+
+## Q and A
+
+Q&A Search Bar:
+
+![](./Gifs/QASearchBar.gif)
+
+Add Question / Add Answer:
+
+![](./Gifs/AddAnswer-Question.gif)
+
+Mark Helpful / Report:
+
+![](./Gifs/Help-Report-Buttons.gif)
+
+See More Questions:
+
+![](./Gifs/SeeMoreQuestions.gif)
+
+## Ratings and Reviews
+
+Sort Reviews:
+
+![](./Gifs/ReviewSort.gif)
+
+Filter by Star Rating:
+
+![](./Gifs/StarFilter.gif)
+
+See More Reviews:
+
+![](./Gifs/ExpandReviews.gif)
+
+
+
+
+
+
+
 ### Contributors 🫂
 - [James Plier](https://www.linkedin.com/in/james-plier-ab9900107/)
 - [Kim Honrada](https://www.linkedin.com/in/kimhonrada21/)
