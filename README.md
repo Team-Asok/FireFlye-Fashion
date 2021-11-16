@@ -57,7 +57,7 @@ Social Media Buttons:
 
 Styles Selector / Add To cart:
 
-![](./Gifs/Style Selector-bag.gif)
+![](./Gifs/Style%20Selector-bag.gif)
 
 ## Q and A
 
