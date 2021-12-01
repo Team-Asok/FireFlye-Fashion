@@ -9,10 +9,10 @@
 4. [Requirements](#requirements)
 5. [Contributors](#contributors)
 
-### Overview 🌄
+### Overview
 A front-end focused project providing a user interface for customers to browse products in a retail catalog.
 
-### Technologies 🖥
+### Technologies
 * Axios : Version 0.24.0
 * Express : Version 4.17.1
 * Moment : Version 2.29.1
