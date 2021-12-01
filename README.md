@@ -35,7 +35,7 @@ Set up a config.js with the following:
 
 * TOKEN (from GitHub):
 
-### Usage 👍
+### Usage-👍
 
 ### Overview:
 
