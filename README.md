@@ -4,7 +4,7 @@
 
 ### Table of Contents 🏓
 1. [Overview](#overview)
-2. [Installation](#installation)
+2. [Installation](#installation 🔨)
 3. [Usage](#usage)
 4. [Requirements](#requirements)
 5. [Contributors](#contributors)
