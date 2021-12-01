@@ -4,7 +4,7 @@
 
 ### Table of Contents 🏓
 1. [Overview](#overview)
-2. [Installation](###installation)
+2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Requirements](#requirements)
 5. [Contributors](#contributors)
@@ -37,7 +37,7 @@ Set up a config.js with the following:
 
 ### Usage 👍
 
-## Overview:
+### Overview:
 
 DarkMode / LightMode Button:
 
