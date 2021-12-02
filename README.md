@@ -2,17 +2,17 @@
 
 # FYREFLYE FSHN 🔥
 
-### Table of Contents 🏓
+## Table of Contents 🏓
 1. [Overview](#overview)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Requirements](#requirements)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Usage](#usage)
 5. [Contributors](#contributors)
 
-### Overview 🌄
+## Overview
 A front-end focused project providing a user interface for customers to browse products in a retail catalog.
 
-### Technologies 🖥
+## Technologies
 * Axios : Version 0.24.0
 * Express : Version 4.17.1
 * Moment : Version 2.29.1
@@ -23,7 +23,7 @@ A front-end focused project providing a user interface for customers to browse p
 * ReactFileReader : Version 1.1.4
 * Styled-components : Version 5.3.3
 
-### Installation 🔨
+## Installation
 ```
 $ git clone https://github.com/Team-Asok/hackreactor-front-end-capstone-.git
 $ cd ../hackreactor-front-end-capstone-.git
@@ -35,7 +35,7 @@ Set up a config.js with the following:
 
 * TOKEN (from GitHub):
 
-### Usage 👍
+## Usage
 
 ## Overview:
 
@@ -97,7 +97,7 @@ See More Reviews:
 
 
 
-### Contributors 🫂
+## Contributors
 - [James Plier](https://www.linkedin.com/in/james-plier-ab9900107/)
 - [Kim Honrada](https://www.linkedin.com/in/kimhonrada21/)
 - [Thomas Rose](https://www.linkedin.com/in/thomas-rose1990/)
