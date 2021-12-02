@@ -13,6 +13,7 @@
 A front-end focused project providing a user interface for customers to browse products in a retail catalog.
 
 ## Technologies
+
 * Axios : Version 0.24.0
 * Express : Version 4.17.1
 * Moment : Version 2.29.1
@@ -37,7 +38,7 @@ Set up a config.js with the following:
 
 ## Usage
 
-## Overview:
+### Overview:
 
 DarkMode / LightMode Button:
 
